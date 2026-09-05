@@ -13,6 +13,9 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
  */
 export const SITE_ROOT = `${BASE_URL}${BASE_PATH}`;
 
+/** True on the GitHub Pages project preview, false on the apex build. */
+export const IS_PREVIEW = BASE_PATH !== "";
+
 /** Absolute URL for a root-relative path such as `/icons/zombit-mark.webp`. */
 export const abs = (path: string) => `${SITE_ROOT}${path}`;
 

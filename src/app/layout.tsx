@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Geist, Geist_Mono } from "next/font/google";
 import { DirectionContract } from "@/components/DirectionContract";
 import { SITE } from "@/data/apps";
-import { SITE_ROOT, abs } from "@/lib/site";
+import { IS_PREVIEW, SITE_ROOT, abs } from "@/lib/site";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: { card: "summary", title: SITE.name, description: SITE.description },
-  robots: { index: true, follow: true },
+  robots: IS_PREVIEW ? { index: false, follow: false } : { index: true, follow: true },
   icons: { icon: abs("/icons/zombit-mark.webp"), apple: abs("/icons/zombit-mark.webp") },
 };
 
