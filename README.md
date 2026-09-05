@@ -30,5 +30,12 @@ binding through its bundled postcss worker on this toolchain.
 ## Deploy
 
 Pushing to `main` builds and publishes via `.github/workflows/deploy.yml`.
-The site is built for the apex domain `zombit.io`, which still points at the old
-Google Sites page; the DNS cutover is a separate, deliberate step.
+
+The preview lives at <https://ktodaz.github.io/zombit-website/> and is served
+`Disallow: /` plus `noindex`, so it cannot compete with the real site in search.
+
+The apex domain `zombit.io` still points at the old Google Sites page. At cutover:
+point the DNS at GitHub Pages, add a `CNAME` file, and delete the two
+`NEXT_PUBLIC_*` env lines from the workflow. Dropping the base path is what flips
+canonicals, the sitemap, JSON-LD, and `robots.txt` back to the apex and makes the
+site indexable — there is nothing else to change.
