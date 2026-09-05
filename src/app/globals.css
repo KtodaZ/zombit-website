@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THE FIELD GUIDE — a catalogue of small tools.
+   Paper ground, ink text, one hairline rule system, and exactly
+   one accent per entry which is always the action.
+   ============================================================ */
+
+@theme {
+  /* Ground and ink. Light is chosen from the use scene: a store
+     visitor glancing at a page in daylight on a phone. */
+  --color-paper: #F7F4ED;
+  --color-paper-deep: #EFEBE0;
+  --color-plate: #FFFFFF;
+  --color-ink: #16181D;
+  --color-ink-soft: #43474F;
+  --color-slate: #6E7A85;
+  --color-rule: #CFC8B8;
+  --color-rule-soft: #E2DCCE;
+
+  --font-display: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* The sacred measure: one column lattice every page obeys. */
+  --measure-page: 74rem;
+  --measure-read: 34rem;
+}
+
+:root {
+  color-scheme: light;
+  --accent: #2F6DE0;
+  --accent-ink: #1B4FAE;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Browser surfaces carry the design too --- */
+::selection {
+  background: color-mix(in oklab, var(--accent) 24%, transparent);
+  color: var(--color-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: from-font;
+}
+@supports (scrollbar-color: auto) {
+  html {
+    scrollbar-color: var(--color-rule) transparent;
+    scrollbar-width: thin;
+  }
+}
+/* Ratings and any figure read as tabular. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* --- The plate: how every screenshot is mounted --- */
+.plate {
+  background: var(--color-plate);
+  border: 1px solid var(--color-rule-soft);
+  box-shadow:
+    0 1px 2px rgb(22 24 29 / 0.04),
+    0 12px 28px -18px rgb(22 24 29 / 0.35);
+}
+
+/* The device screen sits in a mat, mask keeps the corner radius honest. */
+.screen {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 0 0 1px rgb(22 24 29 / 0.16),
+    0 18px 40px -24px rgb(22 24 29 / 0.55);
+}
+
+/* One authored moment: entries settle onto the page like pasted plates. */
+@keyframes settle {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.settle {
+  animation: settle 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .settle { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

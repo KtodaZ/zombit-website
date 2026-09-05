@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-09-05",
+  "apps": {
+    "artillery": {
+      "ios": {
+        "score": 4.9,
+        "count": 22
+      },
+      "android": {
+        "score": 4.7,
+        "count": null
+      }
+    },
+    "montessori": {
+      "ios": {
+        "score": 4.8,
+        "count": 4
+      }
+    },
+    "alwaysontime": {
+      "android": {
+        "score": 4.7,
+        "count": null
+      }
+    }
+  }
+}
