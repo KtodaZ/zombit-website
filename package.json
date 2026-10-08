@@ -2,6 +2,8 @@
   "name": "zombit-website",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Zombit Studios LLC",
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
