@@ -24,12 +24,17 @@ JavaScript (most AI fetchers) get the full text, FAQs, and policies.
 | Privacy pages | Organization, WebPage (about the app), BreadcrumbList |
 | Support | Organization (with ContactPoint), WebPage, BreadcrumbList |
 | Assistants help | Organization, WebPage, FAQPage, BreadcrumbList |
+| Blog index | Organization, Blog (listing its posts), BreadcrumbList |
+| Blog post | Organization, BlogPosting, FAQPage, BreadcrumbList |
 
 - One Organization `@id` (`/#organization`); everything else points at it. `sameAs` lists the
   Google Play and App Store developer pages.
 - MobileApplication carries `alternateName` (the store titles where they differ from the app's
   name), one Offer per store with the real US price, `privacyPolicy`, and `aggregateRating` only
   from `ratings.json`, using a single store's figure (the store with the most ratings), never a blend.
+- **Ratings threshold.** A store rating appears only with at least 10 ratings (`MIN_RATINGS` in
+  `src/data/apps.ts`): on the page, in llms-full.txt, and as `aggregateRating`. Thinner figures
+  stay in `ratings.json` but are not shown.
 - FAQPage only on pages where the same questions are rendered visibly.
 
 **Visible FAQs.** Each app page has a "Questions" section written as the questions people type
@@ -40,14 +45,35 @@ only with listing or policy facts. No superlatives, no comparisons to named comp
 spelling bee word puzzle"), a description, a canonical URL, Open Graph and Twitter tags, and a
 1200×630 card (`public/og/`, rendered by `scripts/og-images.mjs`).
 
+**Blog** (`src/content/blog/*.md`, rendered by `src/lib/blog.ts`). One Markdown file per post
+with YAML frontmatter: `title`, `description`, `slug`, `date`, `updated`, optional `app`, `kind`
+(`guide` or `comparison`), `faq` (rendered visibly and as FAQPage), `sources`, and optional
+`draft`. The build fails on malformed frontmatter. Posts open with the answer, then explain.
+
+- `/blog/` lists posts; `/blog/<slug>/` is the post with its FAQ, sources, and the related
+  app's store actions (`store_click` placement `blog-post`). Each app page lists that app's posts
+  under "Guides".
+- `draft: true` posts render only in `npm run dev` (or a local `BLOG_DRAFTS=1 npm run build`,
+  never in CI). The blog link, sitemap entries (lastmod = `updated`), llms.txt "Blog" section,
+  and the RSS feed at `/blog/rss.xml` appear only once a published post exists; until then
+  `/blog/` builds `noindex`.
+- Social cards: `node scripts/og-images.mjs blog` renders `public/og/blog/<slug>.png` for
+  published posts; a post without one uses its app's card.
+- To publish: set `draft: false` (or remove it), render its card, bump nothing else.
+
+**AI referral tracking** (`src/components/Analytics.tsx`). A visit whose referrer is ChatGPT,
+Perplexity, Gemini, Copilot, Claude, You.com, or Phind (or whose `utm_source` names one) sends
+one GA4 `ai_referral` event with `ai_source`. In GA4, register `ai_source` as an event-scoped
+custom dimension to report on it. It loads only with the existing tag (production apex build).
+
 **robots.txt** (`src/app/robots.ts`). On the apex build it names and allows the major search and
 AI crawlers (Googlebot, Google-Extended, Bingbot, Applebot, Applebot-Extended, DuckDuckBot,
 GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot,
 Perplexity-User), then allows everyone else, and points to the sitemap. The Pages preview stays
 `Disallow: /` with `noindex`.
 
-**Sitemap** (`src/app/sitemap.ts`). Home, five app pages (with image entries), support, website privacy,
-Terms of Use, and five app privacy pages, each with a `lastmod` from `LASTMOD` in `src/data/flags.ts` rather than the build
+**Sitemap** (`src/app/sitemap.ts`). Home, five app pages (with image entries), the blog and its
+published posts, support, website privacy, Terms of Use, and five app privacy pages, each with a `lastmod` from `LASTMOD` in `src/data/flags.ts` rather than the build
 time. Bump the relevant date when content actually changes. The assistants page joins the sitemap
 when `ASSISTANTS_LIVE` is flipped.
 
