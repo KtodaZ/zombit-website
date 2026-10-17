@@ -14,51 +14,11 @@ connector help page. It is not yet the live zombit.io.
 
 ---
 
-## 1. The DNS cutover
+## 1. The DNS cutover — done 2026-10-17
 
-This is the only task that changes what the public sees. Nothing below depends on
-it, and it depends on nothing below.
-
-**Do not start this without the owner's explicit go-ahead.** It takes zombit.io
-off Google Sites, and DNS changes are slow to walk back.
-
-Before cutting over, confirm the preview looks right on a phone — the whole point
-of the preview is that it is the same build.
-
-1. **In Squarespace DNS for `zombit.io`,** replace the records pointing at Google
-   Sites with GitHub's. Read the current values off GitHub's own docs rather than
-   trusting this file — the apex IPs have changed before:
-   <https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site>
-   - four `A` records on the apex, plus the matching `AAAA` records
-   - a `CNAME` on `www` → `ktodaz.github.io`
-2. **Add a `CNAME` file** containing `zombit.io` at `public/CNAME`, so the static
-   export carries it into `out/` on every build. Setting the custom domain in the
-   repo's Pages settings writes this file at the repo root instead; either works,
-   but do not end up with both disagreeing.
-3. **Delete the two `NEXT_PUBLIC_*` env lines** from the `npm run build` step in
-   `.github/workflows/deploy.yml`. This is the important one. Dropping the base
-   path is what flips canonicals, the sitemap, JSON-LD ids, image URLs,
-   `robots.txt`, and the robots meta from the preview back to the apex — and what
-   makes the site indexable at all. There is no other switch.
-4. **Wait for HTTPS.** GitHub provisions the certificate after DNS resolves; the
-   Pages settings page shows "Enforce HTTPS" once it is ready. Turn it on.
-5. **Verify** — every line should mention `zombit.io`, and robots should say
-   `Allow`, not `Disallow`:
-   ```sh
-   curl -s https://zombit.io/robots.txt
-   curl -s https://zombit.io/sitemap.xml | grep -o '<loc>[^<]*</loc>'
-   curl -s https://zombit.io/always-on-time/ | grep -o 'rel="canonical" href="[^"]*"'
-   ```
-
-### Why the preview is `noindex`
-
-It serves copy identical to the real site. An indexed preview would put zombit.io
-into a duplicate-content fight with itself. `src/app/robots.ts` and the `robots`
-metadata in `src/app/layout.tsx` both branch on `IS_PREVIEW`, which is simply
-"was a base path set". Step 3 flips both at once. Do not hand-edit either file to
-force indexing before cutover.
-
----
+zombit.io and www now point at GitHub Pages; `public/CNAME` is committed and the
+workflow builds for the apex. noelle, wordgarden, alwaysontime and email records
+were left untouched. The old Google Sites page no longer serves zombit.io.
 
 ## 2. After cutover
 
