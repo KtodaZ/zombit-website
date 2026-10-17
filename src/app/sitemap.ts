@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ]
       : []),
     { url: `${SITE_ROOT}/support/`, lastModified: at(LASTMOD.support), changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_ROOT}/terms/`, lastModified: at(LASTMOD.privacy), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_ROOT}/privacy/`, lastModified: at(LASTMOD.privacy), changeFrequency: "yearly", priority: 0.3 },
     ...APPS.map((a) => ({
       url: `${SITE_ROOT}${privacyPath(a)}`,
       lastModified: at(LASTMOD.privacy),

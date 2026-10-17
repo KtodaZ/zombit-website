@@ -27,6 +27,9 @@ binding through its bundled postcss worker on this toolchain.
   refresh ratings and prices from the App Store and Google Play. Never edit by hand.
 - `src/data/flags.ts` — `ASSISTANTS_LIVE`, the connector address, and sitemap dates.
 - `src/content/privacy/` — the privacy policies, ported verbatim. Legal text; see TODO.md §4.
+- `src/components/Analytics.tsx` — GA4, apex production build only; `/privacy/` (`src/app/privacy/`)
+  describes what it collects. Store links carry `data-store`/`data-app`/`data-placement` for the
+  `store_click` event.
 - `docs/AEO.md` — structured data, llms.txt, robots, and the post-cutover search steps.
 - `ASSETS.md` — where every shipping image came from.
 - `PRODUCT.md` / `DESIGN.md` — product truth and the visual system.
@@ -35,11 +38,9 @@ binding through its bundled postcss worker on this toolchain.
 
 Pushing to `main` builds and publishes via `.github/workflows/deploy.yml`.
 
-The preview lives at <https://ktodaz.github.io/zombit-website/> and is served
-`Disallow: /` plus `noindex`, so it cannot compete with the real site in search.
-
-The apex domain `zombit.io` still points at the old Google Sites page. At cutover:
-point the DNS at GitHub Pages, add a `CNAME` file, and delete the two
-`NEXT_PUBLIC_*` env lines from the workflow. Dropping the base path is what flips
-canonicals, the sitemap, JSON-LD, and `robots.txt` back to the apex and makes the
-site indexable — there is nothing else to change.
+The site is served at <https://zombit.io> (custom domain from `public/CNAME`;
+DNS at Squarespace: four `A` + four `AAAA` apex records for GitHub Pages and a
+`www` CNAME to `ktodaz.github.io`). Building without `NEXT_PUBLIC_BASE_PATH` is
+what makes canonicals, the sitemap, JSON-LD and `robots.txt` target the apex and
+the site indexable. Setting `NEXT_PUBLIC_BASE_PATH` (e.g. for a project-page
+preview) flips all of them back to `noindex`.

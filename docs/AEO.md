@@ -46,8 +46,8 @@ GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, P
 Perplexity-User), then allows everyone else, and points to the sitemap. The Pages preview stays
 `Disallow: /` with `noindex`.
 
-**Sitemap** (`src/app/sitemap.ts`). Home, five app pages (with image entries), support, and five
-privacy pages, each with a `lastmod` from `LASTMOD` in `src/data/flags.ts` rather than the build
+**Sitemap** (`src/app/sitemap.ts`). Home, five app pages (with image entries), support, website privacy,
+Terms of Use, and five app privacy pages, each with a `lastmod` from `LASTMOD` in `src/data/flags.ts` rather than the build
 time. Bump the relevant date when content actually changes. The assistants page joins the sitemap
 when `ASSISTANTS_LIVE` is flipped.
 

@@ -80,7 +80,7 @@ function Entry({ app, index }: { app: AppEntry; index: number }) {
 
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
           {app.stores.map((s) => (
-            <StoreAction key={s.kind} store={s} accent={app.accent} />
+            <StoreAction key={s.kind} store={s} accent={app.accent} app={app.slug} placement="home" />
           ))}
           <Link
             href={`/${app.slug}/`}
