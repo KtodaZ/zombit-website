@@ -93,7 +93,7 @@ export default function SupportPage() {
             Support
           </h1>
           <p className="mt-4 max-w-[var(--measure-doc)] text-[1.0625rem] leading-relaxed text-ink-soft">
-            {SITE.legalName} is a small studio, and every message reaches the people who make the apps.
+            Every message reaches a real person.
             Email{" "}
             <a className={link} href={`mailto:${SITE.email}`}>
               {SITE.email}
