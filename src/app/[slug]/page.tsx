@@ -29,6 +29,7 @@ import {
 import { ASSISTANTS_LIVE } from "@/data/flags";
 import { SITE_ROOT, asset } from "@/lib/site";
 import { pageMeta } from "@/lib/meta";
+import { postPath, postsForApp } from "@/lib/blog";
 
 export const dynamicParams = false;
 
@@ -68,6 +69,7 @@ export default async function AppPage({
   if (!app) notFound();
   const url = `${SITE_ROOT}/${app.slug}/`;
   const single = app.shots.length === 1;
+  const guides = postsForApp(app.slug);
 
   return (
     <>
@@ -231,6 +233,24 @@ export default async function AppPage({
             )}
           </div>
         </section>
+
+        {guides.length > 0 && (
+          <section aria-labelledby="guides" className={sectionRule}>
+            <h2 id="guides" className={sectionTitle}>
+              Guides
+            </h2>
+            <ul className="mt-5 max-w-[var(--measure-doc)] space-y-4">
+              {guides.map((p) => (
+                <li key={p.slug} className="border-t border-rule-soft pt-3">
+                  <Link href={postPath(p)} className={`font-display text-[1.125rem] leading-snug ${textLink}`}>
+                    {p.title}
+                  </Link>
+                  <p className="mt-1 text-[0.9375rem] leading-relaxed text-ink-soft">{p.description}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <section aria-labelledby="help" className={sectionRule}>
           <h2 id="help" className={sectionTitle}>

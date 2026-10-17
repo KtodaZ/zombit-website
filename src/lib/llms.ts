@@ -1,6 +1,7 @@
-import { APPS, RATINGS_FETCHED_AT, SITE, priceLabel, privacyPath, type AppEntry } from "@/data/apps";
+import { APPS, RATINGS_FETCHED_AT, SITE, priceLabel, privacyPath, showsRating, type AppEntry } from "@/data/apps";
 import { ASSISTANTS_LIVE } from "@/data/flags";
 import { SITE_ROOT } from "./site";
+import { indexedPosts, postPath } from "./blog";
 
 /**
  * llms.txt (https://llmstxt.org): a plain-text map of the site for language-model tools. Built
@@ -19,6 +20,18 @@ function storeLine(app: AppEntry) {
     .join("; ");
 }
 
+/** Published guides and comparisons, if any, with the app each one is about. */
+function blogLines() {
+  const posts = indexedPosts();
+  if (!posts.length) return [];
+  return [
+    "## Blog",
+    "",
+    ...posts.map((p) => `- [${p.title}](${url(postPath(p))}): ${p.description} (updated ${p.updated})`),
+    "",
+  ];
+}
+
 export function llmsTxt() {
   const lines = [
     `# ${SITE.name}`,
@@ -31,6 +44,7 @@ export function llmsTxt() {
     "",
     ...APPS.map((a) => `- [${a.name}](${url(`/${a.slug}/`)}): ${a.descriptor}. ${a.line} Available on ${storeLine(a)}.`),
     "",
+    ...blogLines(),
     "## Support and policies",
     "",
     `- [Support](${url("/support/")}): email ${SITE.email}, per-app help, and Always On Time account deletion`,
@@ -45,6 +59,7 @@ export function llmsTxt() {
     "",
     `- [Full text of every app page](${url("/llms-full.txt")})`,
     `- [Sitemap](${url("/sitemap.xml")})`,
+    ...(indexedPosts().length ? [`- [Blog RSS feed](${url("/blog/rss.xml")})`] : []),
     "",
   ];
   return lines.join("\n");
@@ -54,14 +69,14 @@ export function llmsFullTxt() {
   const out = [`# ${SITE.name}: full app descriptions`, "", `> ${SITE.description}`, ""];
   for (const a of APPS) {
     out.push(`## ${a.name}: ${a.descriptor}`, "", `URL: ${url(`/${a.slug}/`)}`, `Stores: ${storeLine(a)}`);
-    const rated = a.stores.filter((s) => a.listings[s.kind]?.score != null);
+    const rated = a.stores.filter((s) => showsRating(a.listings[s.kind]));
     if (rated.length) {
       out.push(
         `Ratings (read ${RATINGS_FETCHED_AT}): ` +
           rated
             .map((s) => {
               const l = a.listings[s.kind]!;
-              return `${l.score} on ${STORE[s.kind]}${l.count ? ` from ${l.count} ratings` : ""}`;
+              return `${l.score} on ${STORE[s.kind]} from ${l.count} ratings`;
             })
             .join("; "),
       );

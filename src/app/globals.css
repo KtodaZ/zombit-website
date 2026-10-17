@@ -189,3 +189,118 @@ a {
   padding: 0.1em 0.35em;
   border-radius: 3px;
 }
+
+/* --- Blog posts ---
+   The document system at a reading size: serif h2s over a soft rule, serif h3s, sans body,
+   hairline tables that scroll sideways on phones rather than squeezing. */
+.post {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+}
+.post > * + * {
+  margin-top: 1em;
+}
+.post h2 {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--color-ink);
+  margin-top: 2.2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--color-rule-soft);
+}
+.post h3 {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin-top: 1.8em;
+}
+.post > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.post h2 + *,
+.post h3 + * {
+  margin-top: 0.6em;
+}
+.post strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.post ul,
+.post ol {
+  padding-left: 1.25em;
+}
+.post ul {
+  list-style: disc;
+}
+.post ol {
+  list-style: decimal;
+}
+.post li + li {
+  margin-top: 0.45em;
+}
+.post li::marker {
+  color: var(--color-slate);
+}
+.post a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule);
+  text-underline-offset: 0.22em;
+  overflow-wrap: anywhere;
+}
+.post a:hover {
+  text-decoration-color: var(--color-ink);
+}
+.post code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-paper-deep);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+.post blockquote {
+  border-left: 1px solid var(--color-rule);
+  padding-left: 1em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--color-ink-soft);
+}
+.post hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule-soft);
+}
+.post .table-wrap {
+  overflow-x: auto;
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+.post th,
+.post td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55em 1em 0.55em 0;
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+.post th {
+  font-weight: 500;
+  color: var(--color-ink);
+  border-bottom-color: var(--color-rule);
+  white-space: nowrap;
+}
+.post td:first-child {
+  color: var(--color-ink);
+}
