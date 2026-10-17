@@ -1,11 +1,11 @@
 /**
- * The Always On Time assistant connector is not live yet. While this is false, the help page at
+ * The connector server is live (2026-10-17) and the privacy policy describes it, but the Android
+ * release that syncs alarms to it has not shipped. While this is false, the help page at
  * /always-on-time/assistants/ still builds (the app links to it), but it renders `noindex`, says
  * the connector is not available yet, and is left out of the sitemap, navigation, support page,
- * and llms.txt. Flip it in the same change that ports the connector section of the privacy policy
- * (branch `policy/assistant-connector`). See TODO.md.
+ * and llms.txt. Flip it when the Always On Time release with Connected assistants is live on Play.
  */
-export const ASSISTANTS_LIVE = true;
+export const ASSISTANTS_LIVE = false;
 
 /** What the user pastes into Claude or ChatGPT. */
 export const CONNECTOR_URL = "https://alwaysontime.zombit.io/mcp";
