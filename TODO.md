@@ -26,9 +26,12 @@ were left untouched. The old Google Sites page no longer serves zombit.io.
   [docs/AEO.md](docs/AEO.md#after-the-cutover).
 - **Store listings:** point each app's developer website and privacy policy URL at its zombit.io
   page and `/<slug>/privacy/`. The old Flycricket and Google Sites URLs can then be retired.
-- **Analytics:** the Google Sites page had a GA tag; this site has **none**. If it should keep
-  measuring, add the GA4 tag to `src/app/layout.tsx`. Decide deliberately — shipping without it is
-  a legitimate choice.
+- **Analytics:** done 2026-10-17. GA4 (`G-8VH9SBYS6Z`, the existing "zombit.io" property) loads from
+  `src/components/Analytics.tsx` on the production apex build only, with `store_click` events
+  (`app`, `store`, `placement`) on every App Store / Google Play link that carries `data-store`.
+  `/privacy/` describes it; change the two together. Optional in the GA4 admin: mark `store_click`
+  as a key event, and register `app`, `store`, `placement` as event-scoped custom dimensions so
+  they show up in reports.
 - **Retire or redirect the Google Sites page** so the two do not both exist. Not urgent, but
   leaving it published means two pages competing for the same name.
 

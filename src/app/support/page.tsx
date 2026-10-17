@@ -144,7 +144,14 @@ export default function SupportPage() {
                   {app.stores.map((s, i) => (
                     <span key={s.kind}>
                       {i > 0 && <span aria-hidden="true"> · </span>}
-                      <a className={link} href={s.url} rel="noopener">
+                      <a
+                        className={link}
+                        href={s.url}
+                        rel="noopener"
+                        data-store={s.kind}
+                        data-app={app.slug}
+                        data-placement="support"
+                      >
                         {s.kind === "ios" ? "App Store" : "Google Play"}
                       </a>
                     </span>

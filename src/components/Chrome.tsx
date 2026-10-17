@@ -127,6 +127,11 @@ export function Colophon({ app }: { app?: AppEntry }) {
                   </li>
                 ))
               )}
+              <li>
+                <Link className={quietLink} href="/privacy/">
+                  This website
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
