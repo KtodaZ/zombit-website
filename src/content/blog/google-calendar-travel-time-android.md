@@ -40,7 +40,6 @@ sources:
   - title: "Always On Time privacy policy: Travel-time alarms and location"
     url: "https://zombit.io/always-on-time/privacy/#travel-location"
     accessed: "2026-10-17"
-draft: true
 ---
 
 Google Calendar doesn't add travel time to your events automatically, and its Android notification settings have no "time to leave" option. A reminder 15 minutes before a dentist appointment is no help if the drive takes 25. You have three practical fixes: use an app that plans the trip and rings an alarm when it's time to go, connect your calendar to Waze for traffic-based driving alerts, or add travel time by hand.
