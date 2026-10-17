@@ -1,8 +1,9 @@
 # Work remaining
 
 Written so a session with no prior context can pick this up. Current state: the
-site is built, committed, and deploying to a GitHub Pages preview. It is not yet
-the live zombit.io.
+site is built, committed, and deploying to a GitHub Pages preview, with all five
+apps, their privacy policies, a support page, and the (unlisted) assistant
+connector help page. It is not yet the live zombit.io.
 
 - **Repo:** `KtodaZ/zombit-website` (public — GitHub Pages will not serve a
   private repo on a free plan)
@@ -61,62 +62,71 @@ force indexing before cutover.
 
 ## 2. After cutover
 
-- **Google Search Console:** add `zombit.io` as a property and submit
-  `https://zombit.io/sitemap.xml`. The old Google Sites page could not serve a
-  sitemap at all, so this is new capability, not a re-do.
-- **Analytics:** the Google Sites page had a GA tag; this site has **none**. If
-  it should keep measuring, add the GA4 tag to `src/app/layout.tsx`. Decide
-  deliberately — shipping without it is a legitimate choice.
-- **Retire or redirect the Google Sites page** so the two do not both exist. Not
-  urgent, but leaving it published means two pages competing for the same name.
+- **Search Console, Bing, IndexNow:** the steps and the exact IndexNow ping are in
+  [docs/AEO.md](docs/AEO.md#after-the-cutover).
+- **Store listings:** point each app's developer website and privacy policy URL at its zombit.io
+  page and `/<slug>/privacy/`. The old Flycricket and Google Sites URLs can then be retired.
+- **Analytics:** the Google Sites page had a GA tag; this site has **none**. If it should keep
+  measuring, add the GA4 tag to `src/app/layout.tsx`. Decide deliberately — shipping without it is
+  a legitimate choice.
+- **Retire or redirect the Google Sites page** so the two do not both exist. Not urgent, but
+  leaving it published means two pages competing for the same name.
 
 ---
 
-## 3. Content gaps
+## 3. The assistant connector page
 
-- **Artillery has one screenshot; the other two apps have three.** This is the
-  most visible unfinished thing on the site. The App Store images are angled
-  marketing composites that cannot be cropped back to a flat screen, and scraping
-  the Play Store listing returned images belonging to unrelated apps. Two more
-  straight-on captures from the app itself would close it. See `ASSETS.md` for the
-  crop and encode commands used for the existing shots.
-- **Ratings go stale.** `src/data/ratings.json` is generated; re-run
-  `node scripts/fetch-ratings.mjs` to refresh from the App Store and Google Play.
-  Never hand-edit it. The script keeps the previous committed value on a fetch
-  failure rather than writing a placeholder, so a silent failure degrades to
-  "slightly old" rather than "invented".
-- **Nothing on this site may be invented.** No testimonials, press, awards,
-  download counts, revenue, team size, or founding date — none of it exists, and
-  the studio has none to cite. Review counts are genuinely small (22 and 4); the
-  design deliberately does not lean on volume as proof.
+`/always-on-time/assistants/` builds today, because the Always On Time app links to it, but it is
+held back by one flag, `ASSISTANTS_LIVE` in `src/data/flags.ts`. While it is `false` the page:
+
+- renders `noindex` and a "Not available yet" note,
+- is left out of the sitemap, llms.txt, the Always On Time page, and the support page.
+
+**To go live,** merge the pushed branch `policy/assistant-connector`. It ports the connector and
+usage-statistics sections of the Always On Time privacy policy (from the cloud repo's
+`assistant/server` branch, anchors `#assistants` and `#usage-statistics`) and flips the flag in
+the same commit. Merge it only when the connector is deployed and `CONNECTOR_URL`
+(`https://alwaysontime.zombit.io/mcp`) answers. Check that the app's own connector address
+(`AppLinks.CONNECTOR_URL` in calendar-meeting-alarm) is the same URL before merging.
 
 ---
 
-## 4. Design work not yet done
+## 4. Content
 
-The site was built under the `impeccable` skill and its finish sequence is
-incomplete:
-
-- **Run the detector** once against the finished UI:
-  ```sh
-  node ~/.claude/skills/impeccable/scripts/detect.mjs --json src/app src/components
-  ```
-- **Batched inspection round** — desktop and mobile together, fix findings in one
-  batch, at most one confirming round. Not an open-ended polish loop.
-- **Write `DESIGN.md`** from the built site, not from intent. It does not exist yet.
-- The direction contract lives in `src/components/DirectionContract.tsx` and ships
-  as a real HTML comment in the built output (seed `afdb082e`). It records the
-  design thesis. Verify it survives any build change:
-  ```sh
-  grep -c afdb082e out/index.html   # must be > 0
-  ```
-
-The owner has said to expect **lots of refinements** to the visual design. None
-of them are captured here yet.
+- **Screenshots.** Word Garden and Coffee Roast Tracker ship one screen each. Their store images
+  are marketing composites, and only one per app shows a full, straight-on screen that could be
+  cropped back. The other apps have three. Two more real captures per app would close it; see
+  `ASSETS.md` for the crop and encode commands.
+- **Ratings and prices go stale.** `src/data/ratings.json` is generated; re-run
+  `node scripts/fetch-ratings.mjs` to refresh ratings and US prices from the App Store and Google
+  Play. Never hand-edit it. A store that cannot be read keeps its previous value. Play ratings come
+  from the listing's own JSON-LD; the old "Rated N stars" match picked up unrelated page furniture
+  and reported 4.7 for apps with no ratings.
+- **Privacy policies are legal text.** `src/content/privacy/*.html` are verbatim ports. Change
+  their wording only when the policy changes, keep heading ids (apps deep-link to
+  `#travel-location`, `#assistants`, `#usage-statistics`), and update `privacyEffective` in
+  `src/data/apps.ts` to match.
+- **Sitemap dates.** Bump `LASTMOD` in `src/data/flags.ts` when a page's content changes.
+- **Nothing on this site may be invented.** No testimonials, press, awards, download counts,
+  revenue, team size, or founding date — none of it exists, and the studio has none to cite.
 
 ---
 
-## 5. Build gotchas worth knowing
+## 5. Design
+
+The impeccable finish sequence is done: detector clean, one batched desktop + mobile inspection
+round with its fixes, and [DESIGN.md](DESIGN.md) written from the built site. Keep the direction
+contract seed in the build:
+
+```sh
+grep -c afdb082e out/index.html   # must be > 0
+```
+
+The owner has said to expect **lots of refinements** to the visual design. None are captured yet.
+
+---
+
+## 6. Build gotchas worth knowing
 
 - **`dev` and `build` are pinned to `--webpack`.** Turbopack cannot load
   Tailwind's native oxide binding through its bundled postcss worker on this
@@ -130,3 +140,6 @@ of them are captured here yet.
   downloads, and was missing `@emnapi` packages Linux needs. If `npm ci` fails on
   the runner but installs fine locally, regenerate with a clean
   `rm -rf node_modules package-lock.json && npm install`.
+- **OG cards** are committed PNGs in `public/og/`. Re-run `node scripts/og-images.mjs` after
+  changing an app's name, descriptor, icon, or first screenshot (needs Chrome and network for
+  fonts).

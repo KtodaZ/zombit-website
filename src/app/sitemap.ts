@@ -1,18 +1,41 @@
 import type { MetadataRoute } from "next";
-import { APPS } from "@/data/apps";
-import { SITE_ROOT } from "@/lib/site";
+import { APPS, privacyPath } from "@/data/apps";
+import { ASSISTANTS_LIVE, LASTMOD } from "@/data/flags";
+import { SITE_ROOT, abs } from "@/lib/site";
 
 export const dynamic = "force-static";
 
+/**
+ * Every indexable page. lastmod comes from LASTMOD in src/data/flags.ts, not the build clock:
+ * search engines stop trusting a lastmod that changes on every deploy.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const at = (d: string) => new Date(`${d}T00:00:00Z`);
   return [
-    { url: `${SITE_ROOT}/`, lastModified: now, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_ROOT}/`, lastModified: at(LASTMOD.home), changeFrequency: "monthly", priority: 1 },
     ...APPS.map((a) => ({
       url: `${SITE_ROOT}/${a.slug}/`,
-      lastModified: now,
+      lastModified: at(LASTMOD.apps),
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.9,
+      images: [abs(a.icon), ...a.shots.map((s) => abs(s))],
+    })),
+    ...(ASSISTANTS_LIVE
+      ? [
+          {
+            url: `${SITE_ROOT}/always-on-time/assistants/`,
+            lastModified: at(LASTMOD.assistants),
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+          },
+        ]
+      : []),
+    { url: `${SITE_ROOT}/support/`, lastModified: at(LASTMOD.support), changeFrequency: "yearly", priority: 0.5 },
+    ...APPS.map((a) => ({
+      url: `${SITE_ROOT}${privacyPath(a)}`,
+      lastModified: at(LASTMOD.privacy),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
     })),
   ];
 }

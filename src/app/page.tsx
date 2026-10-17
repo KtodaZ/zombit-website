@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Masthead, Colophon } from "@/components/Chrome";
@@ -6,6 +7,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { organization, website, catalogue } from "@/lib/schema";
 import { APPS, SITE, type AppEntry } from "@/data/apps";
 import { asset } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
+
+export const metadata: Metadata = pageMeta({
+  title: `${SITE.name} — ${SITE.tagline}`,
+  description: SITE.description,
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   return (
@@ -14,19 +23,22 @@ export default function Home() {
       <JsonLd data={website} />
       <JsonLd data={catalogue} />
       <Masthead />
-      <main className="mx-auto max-w-[var(--measure-page)] px-6 sm:px-8">
+      <main id="main" className="mx-auto max-w-[var(--measure-page)] px-6 sm:px-8">
         <section className="settle border-b border-rule pt-16 pb-12 sm:pt-24 sm:pb-16">
           <h1 className="max-w-[var(--measure-read)] font-display text-[2.25rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3.25rem]">
             {SITE.tagline}
           </h1>
           <p className="mt-5 max-w-[var(--measure-read)] text-[1.0625rem] leading-relaxed text-ink-soft">
-            {SITE.legalName} is a small independent studio. We ship three apps, and each one
-            does a single thing: an alarm that catches your calendar, an artillery calculator for Hell Let
-            Loose, and a visual timer children can read without knowing how to read a clock.
+            {SITE.legalName} is a small independent studio. We make five apps, and each one does a
+            single thing: an alarm that catches your calendar, an artillery calculator for Hell Let
+            Loose and WARDOGS, a visual timer children can read without reading a clock, a daily word
+            puzzle, and a log for home coffee roasting.
           </p>
         </section>
 
-        <h2 className="sr-only">The apps</h2>
+        <h2 id="apps" className="sr-only">
+          The apps
+        </h2>
         {APPS.map((app, i) => (
           <Entry key={app.slug} app={app} index={i} />
         ))}
@@ -74,7 +86,7 @@ function Entry({ app, index }: { app: AppEntry; index: number }) {
             href={`/${app.slug}/`}
             className="text-[0.875rem] text-ink underline decoration-rule underline-offset-4 transition-colors hover:decoration-ink"
           >
-            Read the entry
+            About {app.shortName}
           </Link>
         </div>
 
@@ -86,7 +98,7 @@ function Entry({ app, index }: { app: AppEntry; index: number }) {
       <div className="w-[10.5rem] shrink-0 sm:w-[12.5rem]">
         <Screen
           src={app.shots[0]}
-          alt={`${app.name} on a phone screen`}
+          alt={`${app.name}: ${app.shotAlts[0] ?? "app screen"}`}
           priority={index === 0}
         />
       </div>

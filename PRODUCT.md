@@ -43,8 +43,9 @@ and answer engines (which is why static HTML and JSON-LD matter).
 
 ## Positioning
 
-Three genuinely unrelated apps — a meeting alarm, a Hell Let Loose artillery calculator, and a
-children's visual timer — shipped by one two-person studio. The honest through-line is small,
+Five genuinely unrelated apps — a calendar meeting alarm, an artillery calculator for Hell Let
+Loose and WARDOGS, a children's visual timer, a daily spelling bee word puzzle, and a home coffee
+roast log — shipped by one small studio. The honest through-line is small,
 useful, single-purpose tools that do one job without ads or manipulation, not a themed portfolio.
 Do not invent a fake unifying brand story.
 
@@ -56,21 +57,30 @@ existing Google Analytics property (`G-8VH9SBYS6Z`, property "zombit.io").
 
 ## Capabilities and Constraints
 
-- Four routes: homepage, plus one page per app.
-- Store availability differs per app and must be stated accurately, never uniformly:
-  - **Always On Time: Meeting Alarm** — Android only (`com.zombitstudios.alwaysontime`). Has a
-    Wear OS companion. No iOS build exists.
-  - **ALL - HLL Artillery Calculator** — both iOS (`1616413054`) and Android
-    (`flutter.app.artillery_let_loose`).
-  - **Montessori Visual Timer** — iOS only (`6760267134`). No Android build exists.
-- Ratings are real and fetched from Apple's public lookup API and the Play listing at build time,
-  then committed as static JSON. Review counts are genuinely low (iOS: 22 and 4 respectively) —
-  the design must not lean on volume as proof.
-- Screenshot assets are inconsistent in kind: Always On Time has raw device screenshots; the other
-  two ship only pre-composed store marketing slides with device frames baked in. Raw screens can
-  be cropped back out of the straight-on slides.
-- No backend, so no working contact form. Support contact must be a real channel (email, or the
-  Artillery Discord, which is a genuine published link).
+- Routes: homepage; one page per app; `/<slug>/privacy/` for each app; `/support/`; and
+  `/always-on-time/assistants/` (built but unlisted and `noindex` until the connector is live).
+  These paths are fixed: the apps, the cloud service's redirects, and store listings link to them.
+- Store availability differs per app and must be stated accurately, never uniformly. Store titles
+  differ from the app names for two apps, and both are shown:
+  - **Always On Time** — Android only (`com.zombitstudios.alwaysontime`, listed as "Calendar
+    Alarm: Always On Time"). Has a Wear OS companion. No iOS build exists.
+  - **Artillery Let Loose** — iOS (`1616413054`, "ALL - HLL Artillery Calculator", $1.99) and
+    Android (`flutter.app.artillery_let_loose`, "Wardogs & HLL Calculator", free with in-app
+    purchases).
+  - **Montessori Visual Timer** — iOS (`6760267134`, $1.99) and Android
+    (`com.zombitstudios.visualtimer`, free).
+  - **Word Garden: Spelling Bee** — iOS (`6781898007`) and Android (`com.zombit.wordgarden`), both
+    free; also a web version at wordgarden.zombit.io (a separate site, not this one).
+  - **Coffee Roast Tracker** — iOS (`6760438622`, $0.99) and Android
+    (`com.zombit.coffeeRoastingCompanion`, free).
+- Ratings and prices are real, fetched from Apple's lookup API and each Play listing's JSON-LD,
+  then committed as static JSON. Counts are genuinely low or absent (Artillery: 22 on iOS, 1,219 on
+  Play; Montessori 4; Word Garden 1; none for Always On Time or Coffee) — the design must not lean
+  on volume as proof.
+- Screenshots are real screens in one site-drawn frame. Word Garden and Coffee Roast Tracker have
+  one each, because their store images are composites with only one clean screen.
+- No backend, so no working contact form. Support is email (zombit.studios@gmail.com), the
+  Artillery Let Loose Discord, and Always On Time's account deletion page.
 
 ## Brand Commitments
 
@@ -82,23 +92,22 @@ existing Google Analytics property (`G-8VH9SBYS6Z`, property "zombit.io").
 - The rest of the current Google Sites look (blue banner, repeated ZOMBIT wallpaper, default
   template type) is explicitly an anti-reference. The user asked for something "completely new"
   and "professional modern," at "Apple quality."
-- The three app pages must share one layout system, so the studio reads as one publisher.
+- The app pages share one layout system, so the studio reads as one publisher.
 
 ## Evidence on Hand
 
 Real, verified, in `_assets-raw/`:
 
-- Official App Store descriptions and metadata for both iOS apps (via iTunes lookup API).
+- Official App Store descriptions and metadata for all four iOS apps (via iTunes lookup API), and
+  Google Play descriptions for all five Android apps.
 - Official Play Store long description for Always On Time, from the app repo at
   `~/repos/calendar-meeting-alarm/play-store-assets/listing/en-US/`.
-- App icons at 1024px for all three; the Zombit Z mark at 2000px.
+- App icons at 1024px for all five; the Zombit Z mark at 2000px.
 - Screenshots: raw 1080x1920 for Always On Time; composed store slides for the other two.
-- Live ratings, confirmed fetchable: iOS 4.86 (22 ratings) Artillery, 4.75 (4) Montessori;
-  Play 4.7 for both Android apps.
+- Live ratings in `src/data/ratings.json` (see above).
 - A real Discord invite published in the Artillery store listing:
   `https://discord.gg/PsuUYHAKkT`.
-- Always On Time privacy policy exists at
-  `~/repos/calendar-meeting-alarm/play-store-assets/privacy-policy.html`.
+- Privacy policies for all five apps, now hosted on this site (sources in `ASSETS.md`).
 
 Explicitly absent — must not be fabricated: press coverage, testimonials, customer logos, award
 claims, revenue or download figures, team bios, and a company founding date.
@@ -106,13 +115,14 @@ claims, revenue or download figures, team bios, and a company founding date.
 ## Product Principles
 
 1. **Accurate per app.** Store badges, platform claims, and ratings differ per app and must reflect
-   reality. A uniform "Download on iOS and Android" row would be a lie on two of three pages.
-2. **One layout, three characters.** Shared structure and components so the studio reads as one
+   reality. A uniform "Download on iOS and Android" row would be a lie on the Always On Time page.
+2. **One layout, five characters.** Shared structure and components so the studio reads as one
    publisher, with each app's own artwork and accent carrying its personality.
 3. **Ship real artifacts.** Use the actual screenshots, icons, copy, and ratings. Never a
    placeholder, a lorem block, or an invented number.
-4. **Machine-legible by construction.** Static HTML, correct metadata, sitemap, robots, and
-   per-app `SoftwareApplication` JSON-LD are part of the deliverable, not an afterthought.
+4. **Machine-legible by construction.** Static HTML, correct metadata, sitemap, robots, llms.txt,
+   per-app `MobileApplication` and `FAQPage` JSON-LD, and visible FAQs are part of the
+   deliverable, not an afterthought. See `docs/AEO.md`.
 5. **Quiet about the studio, loud about the apps.** The visitor came for an app. Studio framing
    stays brief and factual.
 

@@ -1,6 +1,7 @@
 # zombit.io
 
-The Zombit Studios site: a studio index plus one landing page per app.
+The Zombit Studios site: a studio index, one page per app, each app's privacy policy, a support
+page, and the Always On Time assistant connector help page.
 
 Static Next.js, exported to plain HTML at build time and served from GitHub
 Pages. Static export is the point — answer engines and crawlers that do not run
@@ -23,7 +24,10 @@ binding through its bundled postcss worker on this toolchain.
 - `src/data/apps.ts` — the whole content model. Copy is drawn from the official
   store listings; per-app store availability, accents, and caveats live here.
 - `src/data/ratings.json` — generated. Run `node scripts/fetch-ratings.mjs` to
-  refresh from the App Store and Google Play. Never edit by hand.
+  refresh ratings and prices from the App Store and Google Play. Never edit by hand.
+- `src/data/flags.ts` — `ASSISTANTS_LIVE`, the connector address, and sitemap dates.
+- `src/content/privacy/` — the privacy policies, ported verbatim. Legal text; see TODO.md §4.
+- `docs/AEO.md` — structured data, llms.txt, robots, and the post-cutover search steps.
 - `ASSETS.md` — where every shipping image came from.
 - `PRODUCT.md` / `DESIGN.md` — product truth and the visual system.
 

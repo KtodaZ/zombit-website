@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { AppEntry, Rating, Store } from "@/data/apps";
+import { priceLabel, type AppEntry, type Listing, type Store } from "@/data/apps";
 import { asset } from "@/lib/site";
 
 /** Intrinsic pixel size of each committed raster, so nothing is guessed at render. */
@@ -7,15 +7,19 @@ const SHOT_SIZE: Record<string, { w: number; h: number }> = {
   "/shots/alwaysontime-1.webp": { w: 620, h: 1103 },
   "/shots/alwaysontime-2.webp": { w: 620, h: 1103 },
   "/shots/alwaysontime-3.webp": { w: 620, h: 1103 },
-  "/shots/artillery-1.webp": { w: 620, h: 1147 },
-  "/shots/montessori-1.webp": { w: 620, h: 1405 },
-  "/shots/montessori-2.webp": { w: 620, h: 1405 },
-  "/shots/montessori-3.webp": { w: 620, h: 1405 },
+  "/shots/artillery-1.webp": { w: 620, h: 1348 },
+  "/shots/artillery-2.webp": { w: 620, h: 1378 },
+  "/shots/artillery-3.webp": { w: 620, h: 1378 },
+  "/shots/coffee-1.webp": { w: 620, h: 1237 },
+  "/shots/montessori-1.webp": { w: 620, h: 1287 },
+  "/shots/montessori-2.webp": { w: 620, h: 1203 },
+  "/shots/montessori-3.webp": { w: 620, h: 1203 },
+  "/shots/wordgarden-1.webp": { w: 620, h: 1257 },
 };
 
 /**
  * One device screen. The frame is site-drawn and identical across apps, which is
- * what lets three unrelated apps sit in one catalogue without looking mismatched.
+ * what lets unrelated apps sit in one catalogue without looking mismatched.
  */
 export function Screen({
   src,
@@ -46,14 +50,29 @@ export function Screen({
 
 const STORE_NAME: Record<Store["kind"], string> = { ios: "App Store", android: "Google Play" };
 
+/** WCAG relative luminance of a #RRGGBB colour. */
+function luminance(hex: string) {
+  const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  const [r, g, b] = c.map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+const INK = "#16181D";
+/** White or ink, whichever reads better on the accent. Light accents get ink. */
+function onAccent(accent: string) {
+  const l = luminance(accent);
+  const white = 1.05 / (l + 0.05);
+  const ink = (l + 0.05) / (luminance(INK) + 0.05);
+  return white >= ink ? "#FFFFFF" : INK;
+}
+
 /** The one place an entry's accent is allowed to appear. Accent always means "act". */
 export function StoreAction({ store, accent }: { store: Store; accent: string }) {
   return (
     <a
       href={store.url}
       rel="noopener"
-      style={{ backgroundColor: accent }}
-      className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.8125rem] font-medium text-white no-underline shadow-[0_1px_2px_rgba(22,24,29,0.18)] transition-transform duration-200 hover:-translate-y-px focus-visible:-translate-y-px motion-reduce:transform-none"
+      style={{ backgroundColor: accent, color: onAccent(accent) }}
+      className="inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2 text-[0.8125rem] font-medium no-underline shadow-[0_1px_2px_rgba(22,24,29,0.18)] transition-transform duration-200 hover:-translate-y-px focus-visible:-translate-y-px motion-reduce:transform-none"
     >
       {store.kind === "ios" ? <AppleGlyph /> : <PlayGlyph />}
       <span>{store.label}</span>
@@ -65,7 +84,10 @@ export function StoreAction({ store, accent }: { store: Store; accent: string })
 /** Platform availability is information, not decoration — it sets in the margin. */
 export function PlatformTags({ app }: { app: AppEntry }) {
   return (
-    <ul className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.6875rem] uppercase tracking-[0.11em] text-slate">
+    <ul
+      aria-label="Platforms and category"
+      className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.6875rem] uppercase tracking-[0.11em] text-slate"
+    >
       {app.stores.map((s) => (
         <li key={s.kind} className="border border-rule-soft px-1.5 py-0.5">
           {s.kind === "ios" ? "iOS" : "Android"}
@@ -76,18 +98,21 @@ export function PlatformTags({ app }: { app: AppEntry }) {
   );
 }
 
-function ratingLine(kind: "ios" | "android", r: Rating) {
-  const where = kind === "ios" ? "App Store" : "Google Play";
+function ratingLine(kind: Store["kind"], r: Listing) {
+  const where = STORE_NAME[kind];
+  const score = (r.score ?? 0).toFixed(1);
   return r.count === null
-    ? `${r.score.toFixed(1)} on ${where}`
-    : `${r.score.toFixed(1)} on ${where} · ${r.count} ${r.count === 1 ? "rating" : "ratings"}`;
+    ? `${score} on ${where}`
+    : `${score} on ${where} · ${r.count.toLocaleString("en-US")} ${r.count === 1 ? "rating" : "ratings"}`;
 }
+
+const rated = (l: Listing | undefined): l is Listing => Boolean(l && l.score !== null);
 
 /** Only prints numbers that were actually fetched from a store. Never a placeholder. */
 export function Ratings({ app }: { app: AppEntry }) {
-  const rows = (["ios", "android"] as const)
-    .map((k) => [k, app.ratings[k]] as const)
-    .filter((e): e is readonly ["ios" | "android", Rating] => Boolean(e[1]));
+  const rows = app.stores
+    .map((s) => [s.kind, app.listings[s.kind]] as const)
+    .filter((e): e is readonly [Store["kind"], Listing] => rated(e[1]));
   if (rows.length === 0) return null;
   return (
     <ul className="tnum space-y-0.5 text-[0.8125rem] text-ink-soft">
@@ -95,6 +120,41 @@ export function Ratings({ app }: { app: AppEntry }) {
         <li key={k}>{ratingLine(k, r)}</li>
       ))}
     </ul>
+  );
+}
+
+export const hasRatings = (app: AppEntry) => app.stores.some((s) => rated(app.listings[s.kind]));
+
+/**
+ * Where to get it, store by store: the listing's own title and its US price. Store titles differ
+ * from the app's name for two apps, and people search by either.
+ */
+export function StoreFacts({ app }: { app: AppEntry }) {
+  return (
+    <dl className="tnum grid gap-x-8 gap-y-4 text-[0.9375rem] sm:grid-cols-2">
+      {app.stores.map((s) => {
+        const price = priceLabel(app.listings[s.kind]);
+        return (
+          <div key={s.kind} className="border-t border-rule-soft pt-3">
+            <dt className="text-[0.75rem] uppercase tracking-[0.11em] text-slate">{STORE_NAME[s.kind]}</dt>
+            <dd className="mt-1 text-ink">
+              <a
+                href={s.url}
+                rel="noopener"
+                className="underline decoration-rule underline-offset-4 transition-colors hover:decoration-ink"
+              >
+                {s.title}
+              </a>
+            </dd>
+            {price && (
+              <dd className="mt-0.5 text-ink-soft">
+                {price === "Free" ? "Free to download" : `${price} (US price)`}
+              </dd>
+            )}
+          </div>
+        );
+      })}
+    </dl>
   );
 }
 
