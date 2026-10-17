@@ -1,7 +1,7 @@
 # zombit.io
 
 The Zombit Studios site: a studio index, one page per app, each app's privacy policy, a support
-page, and the Always On Time assistant connector help page.
+page, a blog, and the Always On Time assistant connector help page.
 
 Static Next.js, exported to plain HTML at build time and served from GitHub
 Pages. Static export is the point — answer engines and crawlers that do not run
@@ -24,12 +24,16 @@ binding through its bundled postcss worker on this toolchain.
 - `src/data/apps.ts` — the whole content model. Copy is drawn from the official
   store listings; per-app store availability, accents, and caveats live here.
 - `src/data/ratings.json` — generated. Run `node scripts/fetch-ratings.mjs` to
-  refresh ratings and prices from the App Store and Google Play. Never edit by hand.
+  refresh ratings and prices from the App Store and Google Play. Never edit by hand. The
+  deploy workflow also refreshes it before each build, falling back to the committed file.
+  Ratings show only with at least 10 ratings.
+- `src/content/blog/` — blog posts as Markdown with frontmatter; see docs/AEO.md. Drafts
+  (`draft: true`) appear only in `npm run dev`.
 - `src/data/flags.ts` — `ASSISTANTS_LIVE`, the connector address, and sitemap dates.
 - `src/content/privacy/` — the privacy policies, ported verbatim. Legal text; see TODO.md §4.
 - `src/components/Analytics.tsx` — GA4, apex production build only; `/privacy/` (`src/app/privacy/`)
   describes what it collects. Store links carry `data-store`/`data-app`/`data-placement` for the
-  `store_click` event.
+  `store_click` event; visits from AI assistants send `ai_referral`.
 - `docs/AEO.md` — structured data, llms.txt, robots, and the post-cutover search steps.
 - `ASSETS.md` — where every shipping image came from.
 - `PRODUCT.md` / `DESIGN.md` — product truth and the visual system.

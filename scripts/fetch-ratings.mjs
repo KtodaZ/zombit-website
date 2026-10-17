@@ -2,8 +2,16 @@
 // Never invents numbers: a store that cannot be read keeps its previous value, and a listing
 // that has no rating yet is recorded as having none.
 //
-//   node scripts/fetch-ratings.mjs
-import { readFileSync, writeFileSync } from "node:fs";
+//   node scripts/fetch-ratings.mjs                # local refresh; commit the result
+//   node scripts/fetch-ratings.mjs --allow-clear  # also accept a rating that disappeared
+//
+// The deploy workflow runs this before every build. It must never make the site worse than the
+// committed file: a store that is down, slow, or serves an unexpected page keeps its previous
+// value, and a listing that used to have a rating but now reads as unrated keeps the old figure
+// unless --allow-clear is passed (ratings do not vanish; a missing one is far more likely a
+// changed page than a real reset). `fetchedAt` only moves forward when every store was read
+// fresh, so the "ratings read <date>" line is never newer than the oldest figure on the page.
+import { readFileSync, renameSync, writeFileSync } from "node:fs";
 
 const OUT = new URL("../src/data/ratings.json", import.meta.url);
 
@@ -23,10 +31,14 @@ const PLAY = {
 };
 
 const round1 = (n) => Math.round(n * 10) / 10;
+const ALLOW_CLEAR = process.argv.includes("--allow-clear");
+const TIMEOUT_MS = 20_000;
 
 /** US App Store listing via Apple's public lookup API. */
 async function ios(id) {
-  const r = await fetch(`https://itunes.apple.com/lookup?id=${id}&country=us`);
+  const r = await fetch(`https://itunes.apple.com/lookup?id=${id}&country=us`, {
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const a = (await r.json()).results?.[0];
   if (!a) throw new Error("no result");
@@ -47,7 +59,10 @@ async function ios(id) {
 async function play(pkg) {
   const r = await fetch(
     `https://play.google.com/store/apps/details?id=${pkg}&hl=en_US&gl=US`,
-    { headers: { "User-Agent": "Mozilla/5.0 (Macintosh) Chrome/130 Safari/537.36" } },
+    {
+      headers: { "User-Agent": "Mozilla/5.0 (Macintosh) Chrome/130 Safari/537.36" },
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    },
   );
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const html = await r.text();
@@ -76,23 +91,45 @@ try {
   prev = JSON.parse(readFileSync(OUT, "utf8"));
 } catch {}
 
-const out = { fetchedAt: new Date().toISOString().slice(0, 10), apps: {} };
-const keep = (key, store) => prev.apps?.[key]?.[store];
+const out = { fetchedAt: prev.fetchedAt, apps: {} };
+let allFresh = true;
 
-for (const [key, id] of Object.entries(IOS)) {
-  const v = await ios(id).catch((e) => (console.warn("ios", key, e.message), null));
-  out.apps[key] ??= {};
-  const value = v ?? keep(key, "ios");
-  if (value) out.apps[key].ios = value;
-  console.log("ios ", key, v ?? "(kept previous)");
-}
-for (const [key, pkg] of Object.entries(PLAY)) {
-  const v = await play(pkg).catch((e) => (console.warn("play", key, e.message), null));
-  out.apps[key] ??= {};
-  const value = v ?? keep(key, "android");
-  if (value) out.apps[key].android = value;
-  console.log("play", key, v ?? "(kept previous)");
+/**
+ * Picks what to record for one store: the fresh read, or the previous value when the read failed
+ * or lost a rating the store had before.
+ */
+function settle(label, prevValue, fresh) {
+  if (!fresh) {
+    allFresh = false;
+    console.log(label, "(kept previous)", prevValue ?? "(none)");
+    return prevValue;
+  }
+  if (fresh.score === null && prevValue?.score != null && !ALLOW_CLEAR) {
+    allFresh = false;
+    console.warn(label, "read as unrated but had", prevValue.score, "- kept previous rating (use --allow-clear to accept)");
+    return { ...fresh, score: prevValue.score, count: prevValue.count };
+  }
+  console.log(label, fresh);
+  return fresh;
 }
 
-writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
-console.log("wrote src/data/ratings.json");
+const STORES = [
+  ["ios", IOS, ios],
+  ["android", PLAY, play],
+];
+for (const [store, ids, read] of STORES) {
+  for (const [key, id] of Object.entries(ids)) {
+    const fresh = await read(id).catch((e) => (console.warn(store, key, e.message), null));
+    const value = settle(`${store} ${key}`, prev.apps?.[key]?.[store], fresh);
+    out.apps[key] ??= {};
+    if (value) out.apps[key][store] = value;
+  }
+}
+
+if (allFresh || !out.fetchedAt) out.fetchedAt = new Date().toISOString().slice(0, 10);
+// Write-then-rename, so a run killed mid-write (the workflow step has a timeout) leaves the
+// committed file intact rather than a truncated one.
+const TMP = new URL("../src/data/ratings.json.tmp", import.meta.url);
+writeFileSync(TMP, JSON.stringify(out, null, 2) + "\n");
+renameSync(TMP, OUT);
+console.log(`wrote src/data/ratings.json (fetchedAt ${out.fetchedAt}${allFresh ? "" : ", some stores kept previous values"})`);

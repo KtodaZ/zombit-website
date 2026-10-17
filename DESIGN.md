@@ -153,7 +153,7 @@ One centred column, max 74rem, with 24px gutters (32px from `sm`). Two measures:
 marketing copy, 40rem for documents. Sections are separated by full-width hairline rules and
 48px/64px vertical padding. Capability lists go 1 → 2 → 3 columns; FAQs go 1 → 2.
 
-On phones, the masthead collapses to "Apps" and "Support", and an app's screenshots become one
+On phones, the masthead collapses to "Apps", "Blog" (once a post is published), and "Support", and an app's screenshots become one
 sideways-scrolling row (snap, keyboard-focusable) instead of a tall stack. An app with a single
 screenshot carries it beside the header instead of in a row of its own.
 
@@ -174,7 +174,12 @@ store shape (~22%); pill store actions. No other radii.
   "(opens App Store)". Lifts 1px on hover and focus, not under reduced motion. Min height 40px.
 - **Platform tags:** uppercase labels in hairline boxes beside the icon: platforms, then category.
 - **Screen:** real screenshot, black mat, 14px corners, sized from its intrinsic pixels.
-- **Ratings:** one line per store, only for fetched ratings with a count; a dated footnote.
+- **Ratings:** one line per store, only for fetched ratings with at least 10 ratings; a dated
+  footnote.
+- **Blog post:** the document armature (crumbs, h1, a slate kind-and-date line) over `.post`
+  body copy at the 40rem measure; hairline tables that scroll sideways on phones; then the
+  visible FAQ, a numbered sources list, and the related app set like a catalogue entry (rules,
+  never a card).
 - **Questions:** an open definition list, never an accordion. It is also the FAQPage JSON-LD.
 - **Breadcrumbs:** on document pages only; matches the BreadcrumbList JSON-LD.
 - **Policy body:** `.policy` / `.doc` in `globals.css`: serif h2s over a soft rule, sans body at

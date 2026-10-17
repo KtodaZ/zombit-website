@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { APPS, SITE, privacyPath, type AppEntry } from "@/data/apps";
 import { asset } from "@/lib/site";
+import { hasBlog } from "@/lib/blog";
 
 const quietLink =
   "text-ink-soft underline decoration-rule underline-offset-4 transition-colors hover:text-ink hover:decoration-ink";
@@ -33,15 +34,19 @@ export function Masthead({ current }: { current?: string }) {
         </Link>
         <nav aria-label="Apps and support" className="ml-auto">
           <ul className="flex flex-wrap items-baseline gap-x-5 gap-y-1 text-[0.8125rem]">
-            {/* Phones get two links instead of six wrapped across three lines; the home page lists every app. */}
+            {/* Phones get Apps, Blog, and Support instead of every app wrapped across three lines; the home page lists every app. */}
             <li className="sm:hidden">
               <Link href="/#apps" className="text-slate no-underline transition-colors hover:text-ink">
                 Apps
               </Link>
             </li>
-            {[...APPS.map((a) => [a.slug, a.shortName] as const), ["support", "Support"] as const].map(
+            {[
+              ...APPS.map((a) => [a.slug, a.shortName] as const),
+              ...(hasBlog() ? [["blog", "Blog"] as const] : []),
+              ["support", "Support"] as const,
+            ].map(
               ([slug, label]) => (
-                <li key={slug} className={slug === "support" ? undefined : "hidden sm:list-item"}>
+                <li key={slug} className={slug === "support" || slug === "blog" ? undefined : "hidden sm:list-item"}>
                   <Link
                     href={`/${slug}/`}
                     aria-current={current === slug ? "page" : undefined}
@@ -99,6 +104,13 @@ export function Colophon({ app }: { app?: AppEntry }) {
                   {SITE.email}
                 </a>
               </li>
+              {hasBlog() && (
+                <li>
+                  <Link className={quietLink} href="/blog/">
+                    Blog
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link className={quietLink} href="/terms/">
                   Terms of use

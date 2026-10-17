@@ -2,12 +2,16 @@
 // and screenshots the site ships. Re-run after changing an app's name, descriptor, icon, or
 // first screenshot:
 //
-//   node scripts/og-images.mjs
+//   node scripts/og-images.mjs          # studio, app, and blog cards
+//   node scripts/og-images.mjs blog     # blog post cards only (public/og/blog/<slug>.png)
+//
+// Post cards are rendered for published posts only (pass --drafts to include drafts for a
+// look; do not commit those). A post without its own card falls back to its app's card.
 //
 // Needs Google Chrome installed (CHROME env var overrides the path) and network access for the
 // Newsreader and Geist web fonts.
 import { execFileSync } from "node:child_process";
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -71,9 +75,47 @@ function homeCard() {
   </body></html>`;
 }
 
+// Blog frontmatter, read with a few line regexes (title, slug, app, draft are one-line scalars).
+const BLOG = join(ROOT, "src/content/blog");
+const field = (fm, k) => fm.match(new RegExp(`^${k}:\\s*"?(.*?)"?\\s*$`, "m"))?.[1];
+let posts = [];
+try {
+  posts = readdirSync(BLOG)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => {
+      const fm = readFileSync(join(BLOG, f), "utf8").split(/^---$/m)[1] ?? "";
+      return {
+        slug: field(fm, "slug") || f.replace(/\.md$/, ""),
+        title: field(fm, "title") ?? "",
+        app: apps.find((a) => a.slug === field(fm, "app")),
+        draft: field(fm, "draft") === "true",
+      };
+    })
+    .filter((p) => p.title && (!p.draft || process.argv.includes("--drafts")));
+} catch {}
+
+const escHtml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+function postCard(p) {
+  const size = p.title.length > 48 ? 64 : 76;
+  return `<!doctype html><html><head><meta charset="utf-8">${FONTS}<style>${BASE}
+  .kicker{position:absolute;left:72px;top:168px;font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:#5F6A75}
+  h1{position:absolute;left:72px;top:212px;width:1040px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:${size}px;line-height:1.08;letter-spacing:-0.02em}
+  .app{position:absolute;right:72px;bottom:44px;display:flex;align-items:center;gap:14px;font-family:Newsreader,Georgia,serif;font-size:26px;color:#43474F}
+  .app img{width:52px;height:52px;border-radius:12px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  </style></head><body>
+  <div class="mast"><img src="${file("/icons/zombit-mark.webp")}">Zombit Studios</div>
+  <div class="rule"></div>
+  <div class="kicker">Blog</div>
+  <h1>${escHtml(p.title)}</h1>
+  ${p.app ? `<div class="app"><img src="${file(p.app.icon)}">${p.app.name}</div>` : ""}
+  <div class="foot">zombit.io/blog</div>
+  </body></html>`;
+}
+
 const tmp = mkdtempSync(join(tmpdir(), "zombit-og-"));
 function render(name, html) {
-  const page = join(tmp, `${name}.html`);
+  const page = join(tmp, `${name.replace(/\//g, "-")}.html`);
   writeFileSync(page, html);
   execFileSync(CHROME, [
     "--headless=new",
@@ -90,5 +132,9 @@ function render(name, html) {
   console.log("wrote public/og/" + name + ".png");
 }
 
-render("home", homeCard());
-for (const a of apps) render(a.slug, appCard(a));
+if (process.argv[2] !== "blog") {
+  render("home", homeCard());
+  for (const a of apps) render(a.slug, appCard(a));
+}
+mkdirSync(join(OUT, "blog"), { recursive: true });
+for (const p of posts) render(`blog/${p.slug}`, postCard(p));

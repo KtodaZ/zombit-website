@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { priceLabel, type AppEntry, type Listing, type Store } from "@/data/apps";
+import { priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
 import { asset } from "@/lib/site";
 
 /** Intrinsic pixel size of each committed raster, so nothing is guessed at render. */
@@ -114,15 +114,16 @@ export function PlatformTags({ app }: { app: AppEntry }) {
 
 function ratingLine(kind: Store["kind"], r: Listing) {
   const where = STORE_NAME[kind];
-  const score = (r.score ?? 0).toFixed(1);
-  return r.count === null
-    ? `${score} on ${where}`
-    : `${score} on ${where} · ${r.count.toLocaleString("en-US")} ${r.count === 1 ? "rating" : "ratings"}`;
+  const count = r.count ?? 0;
+  return `${(r.score ?? 0).toFixed(1)} on ${where} · ${count.toLocaleString("en-US")} ratings`;
 }
 
-const rated = (l: Listing | undefined): l is Listing => Boolean(l && l.score !== null);
+const rated = showsRating;
 
-/** Only prints numbers that were actually fetched from a store. Never a placeholder. */
+/**
+ * Only prints numbers that were actually fetched from a store, and only with at least
+ * MIN_RATINGS ratings behind them. Never a placeholder.
+ */
 export function Ratings({ app }: { app: AppEntry }) {
   const rows = app.stores
     .map((s) => [s.kind, app.listings[s.kind]] as const)
