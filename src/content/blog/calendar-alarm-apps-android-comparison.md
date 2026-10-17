@@ -59,20 +59,38 @@ On Android, Google Calendar can only send notifications. It can't ring like an a
 >
 > [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
 
-We make Always On Time. Everything below about other apps comes from their Google Play listings as of October 2026 (US store). Ratings and prices change, so check the listing before you install.
+We make Always On Time. Everything below about other apps comes from their Google Play listings as of October 2026 (US store). Prices and features change, so check the listing before you install.
 
-## Quick comparison
+## Features compared
 
-| Option | What it does | Price as of Oct 2026 | Play rating as of Oct 2026 |
-|---|---|---|---|
-| **Always On Time** | **Full-screen alarms** for calendar events, **one-tap meeting join**, travel-time alarms | **Free, no ads** | No rating shown yet |
-| Google Calendar settings | Notifications with your choice of tone, timing and vibration | Free | — |
-| Calendar Alarm Clock Reminder | Alarms for calendar events, plus a calendar view, an alarm clock and weather | Free, contains ads, in-app purchases ($0.99–$9.99 per item) | 3.9 (6.26K reviews) |
-| ZenLendar: Fullscreen Reminder | Full-screen alarms for synced calendars; Pro adds per-calendar rules | Free, contains ads, in-app purchases ($4.99–$8.99 per item) | 4.9 (40 reviews) |
-| Events Notifier for Calendar | Repeats calendar alerts until stopped | Free, contains ads, in-app purchases ($2.49 per item) | 3.1 (393 reviews); last updated Jan 2024 |
-| BuzzKill Notification Manager | Rules that turn chosen notifications into alarms or repeat reminders | $3.99 | 4.7 (2.99K reviews) |
-| Meeting Alarm (Senko Apps) | Persistent full-screen alarm before meetings | Free, in-app purchases ($4.99 per item) | No rating shown yet |
-| Callendar: Meeting Alarm | Meeting reminders from Google Calendar (primary calendar only); full-screen call-style alarm with Premium | Free, in-app purchases ($4.99–$39.99 per item) | No rating shown yet |
+<!-- matrix -->
+
+| Feature | **Always On Time** | ZenLendar | Calendar Alarm Clock Reminder | BuzzKill | Callendar | Meeting Alarm | Events Notifier |
+|---|---|---|---|---|---|---|---|
+| Full-screen alarm | ✓ | ✓ | Not listed | Not listed | Premium | ✓ | ✓ |
+| Join Meet, Zoom or Teams in one tap | ✓ | Not listed | Not listed | Not listed | ✓ | Not listed | Not listed |
+| "Time to leave" alarms for events with an address | ✓ | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
+| Alarm settings per calendar or per event | ✓ | Pro | Not listed | Not listed | Premium | Not listed | Pro |
+| No ads | ✓ | Pro | ✗ | ✓ | ✓ | ✓ | Pro |
+| Snooze from the alarm | ✓ | ✓ | ✓ | Not listed | ✓ | Not listed | Pro |
+| Any calendar synced to your phone | ✓ | ✓ | ✓ | Via notifications | ✗ Google primary only | Not listed | Not listed |
+| Wear OS watch | Beta¹ | PRO+ | Not listed | ✓ | Not listed | Not listed | Not listed |
+| AI assistant connector (Claude, ChatGPT, Gemini) | Coming soon² | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
+
+From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Always On Time's connector for Claude, ChatGPT and Gemini isn't in a released version yet.
+
+## Prices at a glance
+
+| Option | What it does | Price as of Oct 2026 |
+|---|---|---|
+| **Always On Time** | **Full-screen alarms** for calendar events, **one-tap meeting join**, travel-time alarms | **Free, no ads** |
+| Google Calendar settings | Notifications with your choice of tone, timing and vibration | Free |
+| Calendar Alarm Clock Reminder | Alarms for calendar events, plus a calendar view, an alarm clock and weather | Free, contains ads, in-app purchases ($0.99–$9.99 per item) |
+| ZenLendar: Fullscreen Reminder | Full-screen alarms for synced calendars; Pro adds per-calendar rules | Free, contains ads, in-app purchases ($4.99–$8.99 per item) |
+| Events Notifier for Calendar | Repeats calendar alerts until stopped; last updated Jan 2024 | Free, contains ads, in-app purchases ($2.49 per item) |
+| BuzzKill Notification Manager | Rules that turn chosen notifications into alarms or repeat reminders | $3.99 |
+| Meeting Alarm (Senko Apps) | Persistent full-screen alarm before meetings | Free, in-app purchases ($4.99 per item) |
+| Callendar: Meeting Alarm | Meeting reminders from Google Calendar (primary calendar only); full-screen call-style alarm with Premium | Free, in-app purchases ($4.99–$39.99 per item) |
 
 ## Option 1: Google Calendar's own settings
 
@@ -104,7 +122,7 @@ What it does, per its Play listing and app:
 - **Leave-on-time alarms.** Optional travel-time alarms for events with an address ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - **Designed with ADHD and time blindness in mind**, with no scores or streaks.
 
-**Trade-offs:** it's Android-only and still new, so it doesn't have many ratings yet. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
+**Trade-offs:** it's Android-only and still new. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
 
 **Pick this if** a missed notification has cost you a meeting, most of your day is video calls or appointments, or you want one tap from the alarm to the call.
 
@@ -118,7 +136,7 @@ Its listing describes alarm clocks for calendar events with custom ringtones or 
 
 ## Option 4: ZenLendar
 
-ZenLendar replaces small banner alerts with full-screen alarms. It works with Google Calendar, Outlook, Exchange and other calendars linked to your device. The free tier includes unlimited calendars and global sound, vibration and snooze settings. Pro adds per-account and per-calendar rules, postponing events, backup and no ads. A separate PRO+ purchase adds a Wear OS companion. Its optional Focus Mode uses Android's Accessibility Service, and the listing explains what that permission is used for. It's rated 4.9 from 40 reviews.
+ZenLendar replaces small banner alerts with full-screen alarms. It works with Google Calendar, Outlook, Exchange and other calendars linked to your device. The free tier includes unlimited calendars and global sound, vibration and snooze settings. Pro adds per-account and per-calendar rules, postponing events, backup and no ads. A separate PRO+ purchase adds a Wear OS companion. Its optional Focus Mode uses Android's Accessibility Service, and the listing explains what that permission is used for.
 
 **Trade-offs:** the free version contains ads, and per-calendar sound and vibration rules and the watch app are paid.
 
@@ -145,7 +163,7 @@ Two newer, meeting-focused apps:
 - **Meeting Alarm** plays a persistent alarm and shows a full-screen alarm screen before meetings. You choose which calendars and meetings to track.
 - **Callendar** syncs the primary calendar of a connected Google account (Premium allows more than one account) and can open Zoom, Google Meet and Teams links. Its listing says the full-screen call-style alarm needs Premium on supported devices. It doesn't sync Outlook, shared calendars or secondary calendars.
 
-Both show 10+ downloads and no public rating yet.
+Both are new, with 10+ downloads each on Google Play.
 
 ## Which should you pick?
 

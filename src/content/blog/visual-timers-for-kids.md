@@ -48,6 +48,21 @@ sources:
   - title: "The three-hour work cycle (AMI)"
     url: "https://montessori-ami.org/node/8475"
     accessed: "2026-10-17"
+  - title: "Montessori Visual Timer (App Store)"
+    url: "https://apps.apple.com/us/app/montessori-visual-timer/id6760267134"
+    accessed: "2026-10-17"
+  - title: "Montessori Visual Timer (Google Play)"
+    url: "https://play.google.com/store/apps/details?id=com.zombitstudios.visualtimer"
+    accessed: "2026-10-17"
+  - title: "Time Timer Visual Productivity (Google Play)"
+    url: "https://play.google.com/store/apps/details?id=com.timetimer.android"
+    accessed: "2026-10-17"
+  - title: "Time Timer products and prices"
+    url: "https://www.timetimer.com/products.json?limit=250"
+    accessed: "2026-10-17"
+  - title: "Time Timer Original 8 inch"
+    url: "https://www.timetimer.com/products/time-timer-8-magnet"
+    accessed: "2026-10-17"
 ---
 
 A visual timer helps children by turning time into something they can see. Instead of numbers ticking down, a colored section shrinks until it's gone, so a child knows how much is left without reading a clock. That makes transitions, routines and waiting easier, because the end of an activity stops being a surprise announced by an adult.
@@ -63,6 +78,22 @@ A visual timer helps children by turning time into something they can see. Inste
 > - **Free on Google Play**, $1.99 on the App Store for iPhone and iPad.
 >
 > [Download on the App Store](https://apps.apple.com/us/app/montessori-visual-timer/id6760267134) [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.visualtimer) · [See the app](/montessori-visual-timer/)
+
+## Timer options compared
+
+<!-- matrix -->
+
+| Feature | **Montessori Visual Timer** | Time Timer app | Physical Time Timer | Sand timer |
+|---|---|---|---|---|
+| A child can start it alone | ✓ | Not listed | Not listed | ✓ |
+| PIN lock so the time can't be changed | ✓ | Not listed | Not listed | Nothing to change |
+| One-tap timers for routines | ✓ | ✓ | ✗ | ✗ |
+| Sound when time is up | ✓ | ✓ | ✓ Can be switched off | ✗ Silent |
+| No ads | ✓ | ✓ | No screen | No screen |
+| Works with no screen in the room | ✗ | ✗ | ✓ | ✓ |
+| Price | Free on Android, $1.99 on iPhone and iPad | Free; $9.95 unlock | $22.95 to $43.95 | Varies |
+
+From the apps' store listings, timetimer.com and NCPMI's guidance on sand timers, October 2026. "Not listed" means the listing doesn't mention it. "No ads" means the listing says so or Google Play shows no "Contains ads" label.
 
 ## Why young children struggle with time
 

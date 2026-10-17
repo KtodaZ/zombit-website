@@ -50,6 +50,24 @@ Google Calendar on Android can't ring like an alarm clock. It only sends notific
 >
 > [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
 
+## Always On Time vs the built-in options
+
+<!-- matrix -->
+
+| Feature | **Always On Time** | Google Calendar notifications | Clock app alarm |
+|---|---|---|---|
+| Rings as an alarm, not a notification | ✓ | ✗ | ✓ |
+| Plays at your alarm volume | ✓ | ✗ | ✓ |
+| Set automatically from calendar events | ✓ | ✓ | ✗ Set by hand |
+| Moves when the event moves | ✓ | ✓ | ✗ |
+| Join Meet, Zoom, Teams or Webex from the alert | ✓ | From the event | ✗ |
+| Alarm times per calendar or per event | ✓ | ✓ | ✗ |
+| "Time to leave" alarms | ✓ | ✗ | ✗ |
+| Wear OS watch | Beta¹ | ✓ | Varies by phone |
+| No ads | ✓ | ✓ | ✓ |
+
+Google Calendar details are from Google's help pages, October 2026. ¹ Always On Time's Wear OS app is in open testing on Google Play.
+
 Below are the built-in steps first, then the app option. Menu names vary a little between Android versions and phone makers, so look for the closest match on your phone.
 
 ## Step 1: Set notifications for each calendar
