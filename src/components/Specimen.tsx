@@ -66,11 +66,25 @@ function onAccent(accent: string) {
 }
 
 /** The one place an entry's accent is allowed to appear. Accent always means "act". */
-export function StoreAction({ store, accent }: { store: Store; accent: string }) {
+export function StoreAction({
+  store,
+  accent,
+  app,
+  placement,
+}: {
+  store: Store;
+  accent: string;
+  /** App slug and page position, reported with the store_click analytics event. */
+  app: string;
+  placement: string;
+}) {
   return (
     <a
       href={store.url}
       rel="noopener"
+      data-store={store.kind}
+      data-app={app}
+      data-placement={placement}
       style={{ backgroundColor: accent, color: onAccent(accent) }}
       className="inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2 text-[0.8125rem] font-medium no-underline shadow-[0_1px_2px_rgba(22,24,29,0.18)] transition-transform duration-200 hover:-translate-y-px focus-visible:-translate-y-px motion-reduce:transform-none"
     >
@@ -141,6 +155,9 @@ export function StoreFacts({ app }: { app: AppEntry }) {
               <a
                 href={s.url}
                 rel="noopener"
+                data-store={s.kind}
+                data-app={app.slug}
+                data-placement="app-facts"
                 className="underline decoration-rule underline-offset-4 transition-colors hover:decoration-ink"
               >
                 {s.title}

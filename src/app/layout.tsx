@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import { DirectionContract } from "@/components/DirectionContract";
 import { SITE } from "@/data/apps";
 import { IS_PREVIEW, SITE_ROOT, abs } from "@/lib/site";
@@ -16,6 +17,9 @@ const newsreader = Newsreader({
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
+
+/** Analytics only on the production apex build: not in `next dev`, not on a base-path preview. */
+const ANALYTICS = process.env.NODE_ENV === "production" && !IS_PREVIEW;
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_ROOT}/`),
@@ -39,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-paper font-sans text-ink antialiased">
         <DirectionContract />
         {children}
+        {ANALYTICS && <Analytics />}
       </body>
     </html>
   );

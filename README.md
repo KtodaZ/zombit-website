@@ -27,6 +27,9 @@ binding through its bundled postcss worker on this toolchain.
   refresh ratings and prices from the App Store and Google Play. Never edit by hand.
 - `src/data/flags.ts` — `ASSISTANTS_LIVE`, the connector address, and sitemap dates.
 - `src/content/privacy/` — the privacy policies, ported verbatim. Legal text; see TODO.md §4.
+- `src/components/Analytics.tsx` — GA4, apex production build only; `/privacy/` (`src/app/privacy/`)
+  describes what it collects. Store links carry `data-store`/`data-app`/`data-placement` for the
+  `store_click` event.
 - `docs/AEO.md` — structured data, llms.txt, robots, and the post-cutover search steps.
 - `ASSETS.md` — where every shipping image came from.
 - `PRODUCT.md` / `DESIGN.md` — product truth and the visual system.

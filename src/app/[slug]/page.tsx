@@ -110,7 +110,7 @@ export default async function AppPage({
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               {app.stores.map((s) => (
-                <StoreAction key={s.kind} store={s} accent={app.accent} />
+                <StoreAction key={s.kind} store={s} accent={app.accent} app={app.slug} placement="app-hero" />
               ))}
               {app.website && (
                 <a
