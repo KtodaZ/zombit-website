@@ -1,157 +1,165 @@
 <p><strong>Effective date:</strong> October 17, 2026</p>
-<p>Always On Time: Calendar Alarm is an Android and Wear OS alarm application provided by
-Zombit Studios LLC.</p>
-<h2 id="at-a-glance">At a glance</h2>
+<h2 id="at-a-glance">The short version</h2>
+<p>Always On Time: Calendar Alarm is an Android and Wear OS alarm app from Zombit Studios LLC
+(&quot;we&quot;).</p>
 <ul>
-<li>Your calendar is processed on your phone to schedule alarms.</li>
-<li>Crash reports are sent automatically. Other transfers depend on features you use,
-including account sync, AI assistants, travel-time alarms, feedback, remote log streaming,
-battery guidance and the Wear OS companion. Usage statistics are optional and on by default
-in some regions. These features and their controls are described below.</li>
-<li>We never sell your information or use it for advertising.</li>
+<li>Your calendar is processed on your phone to schedule alarms. Alarm preferences and history are
+stored on your device.</li>
+<li>Crash reports are sent to Firebase Crashlytics automatically. Other transfers depend on the
+features you use, including account sync and feedback (Google Firebase), travel-time alarms (TomTom
+or Google), AI assistants (the assistant&#x27;s provider, such as Anthropic, OpenAI or Google),
+remote log streaming, battery guidance (DontKillMyApp.com) and the Wear OS companion.</li>
+<li>Usage statistics (Google Analytics for Firebase) are optional and on by default in some regions.
+You can turn them off in Settings.</li>
+<li>The app shows no ads. We never sell your information or use it for advertising.</li>
+<li>To delete your account and synced data, go to <strong>Settings &gt; Account &gt; Manage account
+&gt; Delete account</strong>. For feedback or diagnostics, email zombit.studios@gmail.com.</li>
 <li>The cloud code that handles your information is
 <a href="https://github.com/KtodaZ/always-on-time-cloud">open source</a>.</li>
 </ul>
-<h2 id="information-processed-on-your-devices">Information processed on your devices</h2>
+<p>The details are below, with the controls for each feature.</p>
+<h2 id="information-processed-on-your-devices">On your devices</h2>
 <p>With your permission, the app reads selected calendar details, including event titles,
 descriptions, times, and meeting links, to schedule alarms. Alarm preferences and history are
-stored locally on your device.</p>
+stored on your device.</p>
 <p>The app does not display ads, use AdMob, or use behavioral advertising.</p>
 <h2 id="travel-location">Travel-time alarms and location</h2>
 <p>Travel-time alarms are off by default. If you turn them on, you choose where trips start from.</p>
 <p><strong>Use my location.</strong> With your permission to access location all the time, the app
 collects your device&#x27;s location, including when the app is closed or not in use, to work out
-when you need to leave for in-person calendar events. Location is read only when an in-person
-event is coming up, when a leave-time alarm rings, or when you open the app; the app does not
-track you continuously. The most recent location is stored on your device, left out of backups
-and device transfers, and deleted when you turn off travel-time alarms or switch to
-&quot;Use my places.&quot;</p>
+when you need to leave for in-person calendar events. It reads location only when an in-person
+event is coming up, when a leave-time alarm rings, or when you open the app. It does not track you
+continuously. The most recent location is stored on your device, left out of backups and device
+transfers, and deleted when you turn off travel-time alarms or switch to &quot;Use my places.&quot;</p>
 <p><strong>Use my places.</strong> The app never reads your device&#x27;s location. Trips start from
 places you save, such as Home, Work or Gym, following a weekly schedule of where you usually are.
 Saved places and their map coordinates are stored on your device. You can also save places when
 using your location.</p>
-<p><strong>Who we share this with.</strong> When planning a trip, the starting point (your location
-or a saved place), the calendar destination, the transport mode, and the appointment time are sent
-through the developer&#x27;s Google Firebase routing service to one of these route providers:
-TomTom (for driving, cycling and walking) or Google (for public transit, or when TomTom is
-unavailable). The event address is first matched to map coordinates by your phone&#x27;s built-in
-geocoder, which on most phones is provided by Google. Address search while saving places uses
-Google Places. Routing requests happen only for physical events without a detected meeting link.
-Location is not used for advertising and is not sold or shared for any other purpose.</p>
+<p><strong>Who we share this with.</strong> To plan a trip, the app sends the starting point (your
+location or a saved place), the calendar destination, the transport mode, and the appointment time
+through our Google Firebase routing service to one of these route providers: TomTom (for driving,
+cycling and walking) or Google (for public transit, or when TomTom is unavailable). First, your
+phone&#x27;s built-in geocoder, which on most phones is provided by Google, matches the event
+address to map coordinates. Address search while saving places uses Google Places. Routing requests
+happen only for physical events without a detected meeting link. Location is not used for
+advertising and is not sold or shared for any other purpose.</p>
 <p>To prevent abuse, the routing service checks that requests come from a genuine copy of the app
 (Firebase App Check with Google Play Integrity) and counts each installation&#x27;s daily route
-requests by its Firebase installation ID; those counts are kept for about two days. Trip details
-are not stored by the routing service. If routing is unavailable, the app keeps the last
-successful plan or falls back to the event&#x27;s existing alarms.</p>
+requests by its Firebase installation ID. Those counts are kept for about two days. The routing
+service does not store trip details. If routing is unavailable, the app keeps the last successful
+plan or falls back to the event&#x27;s existing alarms.</p>
 <h2 id="always-on-time-plus-subscription">Always On Time Plus subscription</h2>
 <p>Always On Time Plus is an optional subscription sold through Google Play. Google Play processes
-payment and your Google account details under Google&#x27;s terms; the developer does not receive your
-payment details. The app reads from Google Play whether your subscription is active and stores
-that status on your device. Manage or cancel the subscription in Google Play.</p>
+payment and your Google account details under Google&#x27;s terms; we don&#x27;t receive your payment
+details. The app reads from Google Play whether your subscription is active and stores that status
+on your device. Manage or cancel the subscription in Google Play.</p>
 <h2 id="optional-google-account-sync">Optional Google account sync</h2>
-<p>When you choose <strong>Sign in with Google</strong> in Settings, Google Firebase Authentication processes
-your Google profile, email address, and account identifier to identify your Always On Time
-account. Sign-in does not give the app access to your Gmail or Google Calendar through Google&#x27;s
-web APIs; calendar access still uses the phone&#x27;s calendar permission.</p>
-<p>While signed in, the app saves supported alarm and appearance preferences, selected-calendar
-choices, calendar and recurring-series alarm rules, individual event overrides, and whether
-alarms are paused to Firebase Cloud Firestore. Calendar and event matching identifiers are hashed; they remain account data,
-not anonymous data. These settings restore after reinstalling or changing phones and update
-other signed-in phones when those phones can connect. Offline edits are queued on the phone.
-For simultaneous edits to the same setting, the last accepted upload wins.</p>
+<p>When you choose <strong>Sign in with Google</strong> in Settings, Google Firebase Authentication
+processes your Google profile, email address, and account identifier to identify your Always On
+Time account. Signing in does not give the app access to your Gmail or Google Calendar through
+Google&#x27;s web APIs; calendar access still uses the phone&#x27;s calendar permission.</p>
+<p>While you&#x27;re signed in, the app saves these to Firebase Cloud Firestore: supported alarm and
+appearance preferences, selected-calendar choices, calendar and recurring-series alarm rules,
+individual event overrides, and whether alarms are paused. Calendar and event matching identifiers
+are hashed, but they are still account data, not anonymous data. These settings come back when you
+reinstall or change phones, and they update your other signed-in phones when those phones can
+connect. Offline edits are queued on the phone. If two phones change the same setting at the same
+time, the last accepted upload wins.</p>
 <p>The app also saves the most recent 14 days of calendar alarm history: event titles, event and
 alarm times, dismiss/snooze actions, lead times, and a device model label. History from other
 phones is shown for reference and never recreates or triggers an alarm. Account sync does not
-upload event descriptions, meeting URLs, destinations, saved places, custom sound
-files or their device paths, local voice identifiers, permissions, or diagnostic-consent choices.</p>
-<p>Google Firebase processes this information on the developer&#x27;s behalf for account management,
-backup, and synchronization. Signing out stops sync on that phone and keeps its local settings
-and history; it does not delete the saved account. Cloud history older than 14 days is removed
-by a daily cleanup, so deletion can take up to an additional day. Other account settings remain
-until you delete your Always On Time account.</p>
-<p>Choose <strong>Settings &gt; Account &gt; Manage account &gt; Delete account</strong>, or use the
-<a href="https://alwaysontime.zombit.io/delete-account/">account deletion page</a>, to delete
-saved account settings, synced history, and your Always On Time authentication identity.
-You may need to sign in again to confirm deletion. A minimal disabled account identifier is
-retained to block writes from previously issued authentication tokens. This does not delete
-your Google account, Google calendars, local phone data, or separately submitted feedback and
-diagnostics. Contact us using the deletion instructions below for feedback or diagnostic records.</p>
+upload event descriptions, meeting URLs, destinations, saved places, custom sound files or their
+device paths, local voice identifiers, permissions, or diagnostic-consent choices.</p>
+<p>Google Firebase processes this information on our behalf for account management, backup, and
+synchronization. Signing out stops sync on that phone and keeps its local settings and history; it
+does not delete the saved account. A daily cleanup removes cloud history older than 14 days, so
+deletion can take up to one extra day. Other account settings stay until you delete your Always On
+Time account.</p>
+<p>To delete saved account settings, synced history, and your Always On Time authentication
+identity, choose <strong>Settings &gt; Account &gt; Manage account &gt; Delete account</strong>, or
+use the <a href="https://alwaysontime.zombit.io/delete-account/">account deletion page</a>. You may
+need to sign in again to confirm. We keep a minimal disabled account identifier to block writes
+from previously issued authentication tokens. This does not delete your Google account, Google
+calendars, local phone data, or feedback and diagnostics you sent separately. To delete those
+records, follow the <a href="#retention-and-deletion">deletion instructions below</a>.</p>
 <h2 id="assistants">Connecting an AI assistant</h2>
 <p>This is optional and needs account sync. To connect an assistant such as Claude or ChatGPT, you
-sign in with your Google account on the Always On Time connection page and approve the
-connection. The cloud connector collects the information below only after you approve a connection.
-Gemini on this phone works separately, as described below.</p>
+sign in with your Google account on the Always On Time connection page and approve the connection.
+The cloud connector collects the information below only after you approve a connection. Gemini on
+this phone works separately, as described below.</p>
 <ul>
-<li><strong>Upcoming alarms copy.</strong> Your phone saves a copy of upcoming events and alarms on watched calendars for the next
-30 days to your account: event titles, start and end times, whether events repeat or are
-all-day, your invitation response or organizer status, and hashed matching identifiers.
-It also includes all calendar names, their account types, watched state and alarm settings;
-alarm times, lead times, sources and status; whether and until when alarms are paused;
-and the phone&#x27;s model label and time zone. It never includes event descriptions,
-attendee lists, locations, meeting links, travel origins or destinations, or sound choices. The
-phone replaces the copy each time it updates it.</li>
-<li><strong>Phone registration.</strong> Your phone registers a Firebase Cloud Messaging token, its model label,
-app version and supported features, so the connector can ask it to apply a change, refresh the
-copy, or show a test notification.</li>
-<li><strong>Connection records.</strong> We store which assistant is connected, the address it returns to after
-approval, when it connected and was last used, and its access tokens, stored only as one-way
-hashes. Changes the assistant makes are logged with the previous values for 30 days so you can
-undo them. Connector request logs (which action was taken, random IDs, the outcome and timing,
-never event titles or settings contents) are kept for troubleshooting for up to 30 days. They
-identify your account only by a random log ID, never your name, email address or account ID.
-Google Cloud, which hosts the connector, also keeps standard request logs, including IP address
+<li><strong>Upcoming alarms copy.</strong> Your phone saves to your account a copy of upcoming events
+and alarms on watched calendars for the next 30 days: event titles, start and end times, whether
+events repeat or are all-day, your invitation response or organizer status, and hashed matching
+identifiers. It also includes all calendar names, their account types, watched state and alarm
+settings; alarm times, lead times, sources and status; whether and until when alarms are paused;
+and the phone&#x27;s model label and time zone. It never includes event descriptions, attendee
+lists, locations, meeting links, travel origins or destinations, or sound choices. Each update from
+the phone replaces the copy.</li>
+<li><strong>Phone registration.</strong> Your phone registers a Firebase Cloud Messaging token, its
+model label, app version and supported features, so the connector can ask it to apply a change,
+refresh the copy, or show a test notification.</li>
+<li><strong>Connection records.</strong> We store which assistant is connected, the address it
+returns to after approval, when it connected and was last used, and its access tokens, stored only
+as one-way hashes. Changes the assistant makes are logged with the previous values for 30 days so
+you can undo them. Connector request logs record which action was taken, random IDs, the outcome
+and timing, never event titles or settings contents. We keep them for troubleshooting for up to 30
+days. They identify your account only by a random log ID, never your name, email address or account
+ID. Google Cloud, which hosts the connector, also keeps standard request logs, including IP address
 and app or browser type, for up to 30 days.</li>
 </ul>
-<p>A connected assistant can read the upcoming alarms copy, your synced alarm settings and 14 days of
-alarm history, and change your alarm settings. It cannot read or change your calendar, and
-signing in on the connection page does not give the assistant your Google account.</p>
-<p><strong>What the assistant reads is sent to the assistant&#x27;s provider</strong> (for example Anthropic or
-OpenAI). From then on, that provider&#x27;s privacy policy and terms apply to it, not this policy.</p>
+<p>A connected assistant can read the upcoming alarms copy, your synced alarm settings and 14 days
+of alarm history, and it can change your alarm settings. It cannot read or change your calendar,
+and signing in on the connection page does not give the assistant your Google account.</p>
+<p><strong>What the assistant reads is sent to the assistant&#x27;s provider</strong> (for example
+Anthropic or OpenAI). From then on, that provider&#x27;s privacy policy and terms apply to it, not
+this policy.</p>
 <p>The connector also keeps anonymous daily totals, such as how many assistants are connected and
 how often each feature is used, with no account identifiers or content.</p>
-<p>Disconnect anytime in <strong>Settings &gt; Connected assistants</strong> or in your assistant. Disconnecting the
-last assistant deletes the upcoming alarms copy, phone registrations and change log right away.
-Connections unused for 90 days are removed. Deleting your Always On Time account removes its connections, tokens, upcoming alarms copy,
-phone registrations, change log and the record linking your random log ID to you, so request
-logs that remain until they expire can no longer be connected to you. Anonymous daily totals are
-kept without account identifiers.</p>
+<p>Disconnect anytime in <strong>Settings &gt; Connected assistants</strong> or in your assistant.
+Disconnecting the last assistant deletes the upcoming alarms copy, phone registrations and change
+log right away. Connections unused for 90 days are removed. Deleting your Always On Time account
+removes its connections, tokens, upcoming alarms copy, phone registrations, change log and the
+record linking your random log ID to you. After that, request logs that remain until they expire
+can no longer be connected to you. Anonymous daily totals are kept without account identifiers.</p>
 <p><strong>Gemini on this phone.</strong> On Android 16 and later, Gemini can check and change your
-alarms on the phone itself when you ask it to. This needs no account sync or cloud connector. If
-you use account sync, supported settings changed through Gemini sync to your account like changes
-made in the app. The app answers
-Gemini with the same kinds of information listed above (event titles and times, calendar names and
-alarm settings, never descriptions, attendee lists, locations, meeting links or travel places), and
-Gemini sends what it reads to Google as part of your Gemini conversation, where Google&#x27;s privacy
-policy applies. A local change log lets you undo recent Gemini changes for up to 30 days; older entries
-may be replaced sooner. Expired entries are hidden and cleared the next time the log is updated.
-The log is left out of backups and device transfers. Gemini access is on by default on supported
-phones and responds when you ask Gemini to use the app. Turn it off anytime in
-<strong>Settings &gt; Connected assistants</strong>.</p>
+alarms on the phone itself when you ask it to. This needs no account sync or cloud connector. If you
+use account sync, supported settings changed through Gemini sync to your account like changes made
+in the app. The app answers Gemini with the same kinds of information listed above (event titles
+and times, calendar names and alarm settings, never descriptions, attendee lists, locations, meeting
+links or travel places). Gemini sends what it reads to Google as part of your Gemini conversation,
+where Google&#x27;s privacy policy applies.</p>
+<p>A local change log lets you undo recent Gemini changes for up to 30 days; older entries may be
+replaced sooner. Expired entries are hidden and cleared the next time the log is updated. The log is
+left out of backups and device transfers. Gemini access is on by default on supported phones and
+responds when you ask Gemini to use the app. Turn it off anytime in <strong>Settings &gt;
+Connected assistants</strong>.</p>
 <h2 id="wear-os-companion">Wear OS companion</h2>
-<p>If you use the Wear OS companion, the alarm information needed to display and operate an
-alarm is transferred between your paired phone and watch through Google Play services&#x27;
-Wearable Data Layer. The phone remains authoritative for calendar data, settings, and history.</p>
-<h2 id="feedback-and-diagnostic-information-collected">Feedback and diagnostic information collected</h2>
-<p>When you choose <strong>Leave feedback</strong>, the app sends the text you enter, a required email address,
-the app version, and a server-generated submission time to the developer&#x27;s Firebase Cloud
-Firestore database. Optional screenshots or photos are uploaded to Firebase Cloud Storage under a
-user-scoped path that other app users cannot read. Firebase Anonymous Authentication creates a
-random account identifier solely to authorize the submission; that identifier is not included in
-the feedback document. After submission, a trusted Firebase backend sends the developer a short
-alert in a private Discord channel saying that feedback arrived. The alert contains only
-the app version, the platform, and the number of attached images and logs; your feedback text,
-email address, images, and logs are not included in it.</p>
+<p>If you use the Wear OS companion, the alarm information needed to show and operate an alarm
+passes between your paired phone and watch through Google Play services&#x27; Wearable Data Layer.
+The phone remains authoritative for calendar data, settings, and history.</p>
+<h2 id="feedback-and-diagnostic-information-collected">Feedback and diagnostics</h2>
+<p>When you choose <strong>Leave feedback</strong>, the app sends the text you enter, a required email
+address, the app version, and a server-generated submission time to our Firebase Cloud Firestore
+database. Optional screenshots or photos are uploaded to Firebase Cloud Storage under a user-scoped
+path that other app users cannot read. Firebase Anonymous Authentication creates a random account
+identifier only to authorize the submission; that identifier is not included in the feedback
+document.</p>
+<p>After you submit, a trusted Firebase backend sends us a short alert in a private Discord channel
+saying that feedback arrived. The alert contains only the app version, the platform, and the number
+of attached images and logs. It does not include your feedback text, email address, images, or
+logs.</p>
 <p>The feedback form also has an optional <strong>Include app logs</strong> checkbox, which is
-checked by default. When selected, the app attaches a text export of Always On Time diagnostic
-entries from the last 24 hours. Android system
-<code>logcat</code> is not included because ordinary apps cannot read it. Links and email addresses are
-removed from this export before upload. The log is stored privately in Firebase Cloud Storage for
-developer review and is not included in the public notification channel.</p>
-<p>When <strong>Remote log streaming</strong> is enabled in Settings &gt; Developer, the app sends diagnostic
-information to the developer&#x27;s remote logging service to monitor alarm reliability and
-troubleshoot problems. Fresh installs keep this setting off, and it can be disabled at any time
-from the same menu. Firebase Crashlytics separately receives crash, non-fatal error, and
-application-not-responding reports.</p>
+checked by default. When it is checked, the app attaches a text export of Always On Time diagnostic
+entries from the last 24 hours. Android system <code>logcat</code> is not included because ordinary
+apps cannot read it. Links and email addresses are removed from this export before upload. The log
+is stored privately in Firebase Cloud Storage for us to review and is not included in the Discord
+alert.</p>
+<p>When <strong>Remote log streaming</strong> is on in Settings &gt; Developer, the app sends
+diagnostic information to our remote logging service to monitor alarm reliability and troubleshoot
+problems. It is off on fresh installs, and you can turn it off at any time from the same menu.
+Separately, Firebase Crashlytics receives crash, non-fatal error, and application-not-responding
+reports.</p>
 <p>Diagnostic records can include:</p>
 <ul><li>a Firebase Installation ID and a short identifier for the current app session;</li><li>device manufacturer and model, device build family fields, Android release/API level, security
   patch level, app version/build type, supported CPU ABIs, locale, IP-derived approximate
@@ -161,19 +169,17 @@ application-not-responding reports.</p>
   transport failure is recorded;</li><li>app interactions and technical diagnostic messages; and</li><li>calendar-event titles and internal identifiers when the app records
   scheduling, synchronization, cancellation, alarm, or restoration activity.</li></ul>
 <p>Failure context does not include serial numbers, Android IDs, IMEI/SIM identifiers, Wi-Fi or
-Bluetooth names, precise location, feedback text, contact email, or attachment contents. The
-separate feedback submission still contains the information described above when you choose to
-send it.</p>
-<p>The app does not sell this information. Feedback is used to improve the app and respond to
-reported problems. Diagnostics are used only for app-health analytics, troubleshooting,
-security, and reliability improvements. Service providers, including Google Firebase and the
-developer&#x27;s hosting provider, process information on the developer&#x27;s behalf. Information is
-transmitted using HTTPS.</p>
+Bluetooth names, precise location, feedback text, contact email, or attachment contents. A
+feedback submission you choose to send still contains the information described above.</p>
+<p>We don&#x27;t sell this information. Feedback is used to improve the app and respond to reported
+problems. Diagnostics are used only for app-health analytics, troubleshooting, security, and
+reliability improvements. Service providers, including Google Firebase and our hosting provider,
+process information on our behalf. Information is sent over HTTPS.</p>
 <h2 id="usage-statistics">Usage statistics</h2>
-<p>The app has a <strong>Share usage statistics</strong> setting in Settings. It is on by default, except in the
-European Economic Area, the United Kingdom and Switzerland (or when the app cannot tell the
-region), where it stays off unless you turn it on during setup or in Settings. When it is on, the
-app uses Google Analytics for Firebase to send:</p>
+<p>The <strong>Share usage statistics</strong> setting in Settings is on by default, except in the
+European Economic Area, the United Kingdom and Switzerland (or when the app cannot tell the region).
+There it stays off unless you turn it on during setup or in Settings. When it is on, the app uses
+Google Analytics for Firebase to send:</p>
 <ul>
 <li>which app screens you open, using fixed screen names;</li>
 <li>when you view the Always On Time Plus screen, start a purchase or buy Plus, and which part of the
@@ -184,40 +190,39 @@ device category, language, and country-level location derived from your IP addre
 </ul>
 <p>It never includes calendar or event details, event titles, calendar or account names, email
 addresses, places, or routes. The advertising ID, Android ID, Google signals, ads personalization,
-and city-level location and detailed device collection are turned off. Google acts as a service
-provider, and the developer has set Google Analytics to keep this data for 2 months. Turning the
-setting off stops collection right away and resets the analytics data stored on your device.</p>
+city-level location and detailed device collection are turned off. Google acts as a service
+provider, and we have set Google Analytics to keep this data for 2 months. Turning the setting off
+stops collection right away and resets the analytics data stored on your device.</p>
 <h2 id="other-network-requests">Other network requests</h2>
-<p>The app may request public, manufacturer-specific battery guidance from DontKillMyApp.com.
-The request can reveal the device manufacturer and IP address, but it does not intentionally
-include calendar events or meeting links.</p>
+<p>The app may request public, manufacturer-specific battery guidance from DontKillMyApp.com. The
+request can reveal the device manufacturer and IP address, but it does not intentionally include
+calendar events or meeting links.</p>
 <h2 id="retention-and-deletion">Retention and deletion</h2>
-<p>Feedback and diagnostic records may be retained for up to 24 months and may then be deleted or
-retained only in aggregated form. To request deletion of remotely collected feedback or
-diagnostics, email
-zombit.studios@gmail.com with the subject &quot;Always On Time data deletion.&quot; Include the device
-model and approximate dates of use, plus the feedback text, Firebase Installation ID, or
-diagnostic session ID if available, so matching records can be located. Zombit Studios will
-respond within a reasonable period and will explain if records cannot be reliably identified
-from the details provided.</p>
-<p>Local app data remains on your devices until you delete it in the app, clear the app&#x27;s storage,
-or uninstall the app. Wear alarm records are removed or replaced as alarms are completed,
-cancelled, or updated.</p>
+<p>We may keep feedback and diagnostic records for up to 24 months, then delete them or keep them
+only in aggregated form.</p>
+<p>To request deletion of remotely collected feedback or diagnostics, email zombit.studios@gmail.com
+with the subject &quot;Always On Time data deletion.&quot; Include the device model and approximate
+dates of use, plus the feedback text, Firebase Installation ID, or diagnostic session ID if you have
+them, so we can find matching records. We will respond within a reasonable period and will explain
+if records cannot be reliably identified from the details provided.</p>
+<p>Local app data stays on your devices until you delete it in the app, clear the app&#x27;s storage,
+or uninstall the app. Wear alarm records are removed or replaced as alarms are completed, cancelled,
+or updated.</p>
 <h2 id="permissions">Permissions</h2>
-<p>The app requests permissions needed for calendar access, notifications, exact alarms,
-full-screen alarm presentation, vibration, startup restoration, and related reliability
-features, plus location (including all the time) if you choose &quot;Use my location&quot; for
-travel-time alarms. Permissions can be reviewed or revoked in Android system settings.</p>
+<p>The app asks for the permissions it needs for calendar access, notifications, exact alarms,
+full-screen alarm presentation, vibration, startup restoration, and related reliability features.
+It also asks for location (including all the time) if you choose &quot;Use my location&quot; for
+travel-time alarms. You can review or revoke permissions in Android system settings.</p>
 <h2 id="children">Children</h2>
-<p>The app is not directed to children under 13 and does not knowingly collect personal
+<p>The app is not directed to children under 13, and we do not knowingly collect personal
 information from children under 13. If you believe a child has supplied personal information,
-contact zombit.studios@gmail.com.</p>
+email zombit.studios@gmail.com.</p>
 <h2 id="open-source-cloud-code">Open-source cloud code</h2>
 <p>The server code that receives, stores, or forwards the information described in this policy is
-published at <a href="https://github.com/KtodaZ/always-on-time-cloud">github.com/KtodaZ/always-on-time-cloud</a>, and production updates are deployed
-from that repository.</p>
+published at <a href="https://github.com/KtodaZ/always-on-time-cloud">github.com/KtodaZ/always-on-time-cloud</a>,
+and production updates are deployed from that repository.</p>
 <h2 id="changes">Changes</h2>
-<p>This policy may be updated when app behavior changes. The effective date above identifies the
-current version.</p>
+<p>We may update this policy when the app&#x27;s behavior changes. The effective date at the top
+identifies the current version.</p>
 <h2 id="contact">Contact</h2>
-<p>Privacy questions and deletion requests can be sent to zombit.studios@gmail.com.</p>
+<p>Send privacy questions and deletion requests to zombit.studios@gmail.com.</p>

@@ -141,6 +141,12 @@ a {
   padding-top: 0;
   border-top: 0;
 }
+/* A policy that opens with its effective-date line goes straight into the summary, unruled. */
+.policy > p:first-child + h2 {
+  margin-top: 1.5em;
+  padding-top: 0;
+  border-top: 0;
+}
 .policy h2 + *,
 .doc h2 + * {
   margin-top: 0.75em;
