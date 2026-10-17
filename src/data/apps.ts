@@ -253,7 +253,7 @@ export const APPS: AppEntry[] = [
       "An unofficial companion app. Not affiliated with or endorsed by Black Matter Pty Ltd, Team17 Digital Limited, or Bulkhead Limited.",
       "The Google Play version offers in-app purchases.",
     ],
-    privacyEffective: "2026-05-10",
+    privacyEffective: "TBD",
     privacySource: "https://pages.flycricket.io/artillery-let-loose/privacy.html",
     support: [
       {
@@ -352,7 +352,7 @@ export const APPS: AppEntry[] = [
     schemaCategory: "EducationalApplication",
     category: "Education",
     notes: ["iPhone, iPad, and Android.", "No ads."],
-    privacyEffective: "2026-04-10",
+    privacyEffective: "TBD",
     privacySource:
       "https://doc-hosting.flycricket.io/montessori-visual-timer/1c5cdcb2-37e1-424c-988b-4e81d2ee7950/privacy",
   },
@@ -442,7 +442,7 @@ export const APPS: AppEntry[] = [
     schemaCategory: "GameApplication",
     category: "Word game",
     notes: ["No ads. No timers.", "iPhone, iPad, Android, and the web."],
-    privacyEffective: "2026-06-19",
+    privacyEffective: "TBD",
     privacySource:
       "https://doc-hosting.flycricket.io/word-garden-spelling/d33dc669-7ac3-449a-b039-8adbd3019491/privacy",
     website: { label: "Play on the web", url: "https://wordgarden.zombit.io" },
@@ -521,7 +521,7 @@ export const APPS: AppEntry[] = [
     schemaCategory: "UtilitiesApplication",
     category: "Utilities",
     notes: ["No account required. Your data stays on your device."],
-    privacyEffective: "2026-03-12",
+    privacyEffective: "TBD",
     privacySource:
       "https://doc-hosting.flycricket.io/coffee-roast-tracker/214425cb-dda9-4b2e-8894-d739a752cae3/privacy",
   },
