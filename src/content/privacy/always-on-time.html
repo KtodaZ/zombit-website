@@ -4,9 +4,10 @@ Zombit Studios LLC.</p>
 <h2 id="at-a-glance">At a glance</h2>
 <ul>
 <li>Your calendar is processed on your phone to schedule alarms.</li>
-<li>Crash reports are sent automatically. Everything else that leaves your phone is optional:
-account sync, connecting an AI assistant, travel-time alarms, usage statistics, and feedback
-you choose to send. Each is described below, and you can turn it off or delete it.</li>
+<li>Crash reports are sent automatically. Other transfers depend on features you use,
+including account sync, AI assistants, travel-time alarms, feedback, remote log streaming,
+battery guidance and the Wear OS companion. Usage statistics are optional and on by default
+in some regions. These features and their controls are described below.</li>
 <li>We never sell your information or use it for advertising.</li>
 <li>The cloud code that handles your information is
 <a href="https://github.com/KtodaZ/always-on-time-cloud">open source</a>.</li>
@@ -78,13 +79,16 @@ diagnostics. Contact us using the deletion instructions below for feedback or di
 <h2 id="assistants">Connecting an AI assistant</h2>
 <p>This is optional and needs account sync. To connect an assistant such as Claude or ChatGPT, you
 sign in with your Google account on the Always On Time connection page and approve the
-connection. Nothing below is collected until you do.</p>
+connection. The cloud connector collects the information below only after you approve a connection.
+Gemini on this phone works separately, as described below.</p>
 <ul>
-<li><strong>Upcoming alarms copy.</strong> Your phone saves a copy of its upcoming alarms for the next 30 days to
-your account: event titles, start and end times, calendar names and whether each calendar is
-watched, and each alarm&#x27;s time, which setting it comes from, and whether it is on, off or
-paused, plus the phone&#x27;s model label and time zone. It never includes event descriptions,
-attendees, locations, meeting links, travel origins or destinations, or sound choices. The
+<li><strong>Upcoming alarms copy.</strong> Your phone saves a copy of upcoming events and alarms on watched calendars for the next
+30 days to your account: event titles, start and end times, whether events repeat or are
+all-day, your invitation response or organizer status, and hashed matching identifiers.
+It also includes all calendar names, their account types, watched state and alarm settings;
+alarm times, lead times, sources and status; whether and until when alarms are paused;
+and the phone&#x27;s model label and time zone. It never includes event descriptions,
+attendee lists, locations, meeting links, travel origins or destinations, or sound choices. The
 phone replaces the copy each time it updates it.</li>
 <li><strong>Phone registration.</strong> Your phone registers a Firebase Cloud Messaging token, its model label,
 app version and supported features, so the connector can ask it to apply a change, refresh the
@@ -104,15 +108,20 @@ OpenAI). From then on, that provider&#x27;s privacy policy and terms apply to it
 how often each feature is used, with no account identifiers or content.</p>
 <p>Disconnect anytime in <strong>Settings &gt; Connected assistants</strong> or in your assistant. Disconnecting the
 last assistant deletes the upcoming alarms copy, phone registrations and change log right away.
-Connections unused for 90 days are removed. Deleting your Always On Time account removes all of
-it.</p>
+Connections unused for 90 days are removed. Deleting your Always On Time account removes its connections, tokens, upcoming alarms copy,
+phone registrations and change log. Connector request logs remain for their normal retention
+period, and anonymous daily totals are kept without account identifiers.</p>
 <p><strong>Gemini on this phone.</strong> On Android 16 and later, Gemini can check and change your
-alarms on the phone itself when you ask it to, without account sync or our servers. The app answers
+alarms on the phone itself when you ask it to. This needs no account sync or cloud connector. If
+you use account sync, supported settings changed through Gemini sync to your account like changes
+made in the app. The app answers
 Gemini with the same kinds of information listed above (event titles and times, calendar names and
-alarm settings, never descriptions, attendees, locations, meeting links or travel places), and
+alarm settings, never descriptions, attendee lists, locations, meeting links or travel places), and
 Gemini sends what it reads to Google as part of your Gemini conversation, where Google&#x27;s privacy
-policy applies. A record of the changes Gemini makes stays on your phone for 30 days so you can undo
-them; it is left out of backups and device transfers. Turn this off anytime in
+policy applies. A local change log lets you undo recent Gemini changes for up to 30 days; older entries
+may be replaced sooner. Expired entries are hidden and cleared the next time the log is updated.
+The log is left out of backups and device transfers. Gemini access is on by default on supported
+phones and responds when you ask Gemini to use the app. Turn it off anytime in
 <strong>Settings &gt; Connected assistants</strong>.</p>
 <h2 id="wear-os-companion">Wear OS companion</h2>
 <p>If you use the Wear OS companion, the alarm information needed to display and operate an
