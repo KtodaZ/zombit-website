@@ -1,6 +1,6 @@
 ---
 title: "Hell Let Loose Artillery Mils Explained, With Tables"
-description: "How Hell Let Loose artillery mils work: distance-to-mils tables for US/Germany, Soviet and British guns, worked examples, common mistakes, and WARDOGS notes."
+description: "How Hell Let Loose artillery mils work, with tables for US/Germany, Soviet and British guns, worked examples, and Artillery Let Loose to do the math mid-match."
 slug: "hell-let-loose-artillery-mils-explained"
 date: "2026-10-17"
 updated: "2026-10-17"
@@ -36,6 +36,18 @@ sources:
 ---
 
 In Hell Let Loose, artillery is aimed by setting the gun's elevation in mils. You measure the distance from your gun to the target, look up the mil value for that distance in your faction's table, and dial it in. For US and German howitzers that's 978 mils at 100 m down to 622 mils at 1,600 m; Soviet and British guns use different tables, which is where most misses come from.
+
+> **Our pick: Artillery Let Loose**
+>
+> Our calculator holds every table in this guide, so you **type the distance and read the mils**.
+>
+> - **The right table for your gun.** US, German, Soviet, British and Canadian howitzers, each self-propelled gun, the Vietnam mortar, and WARDOGS.
+> - **Built for mid-match use.** A large readout you can glance at, with USB or Bluetooth keyboard and numpad input.
+> - **Terrain and slope corrections** where the game needs them.
+> - **History mode and walk buttons** to juggle several targets and step your fire 10 to 100 m at a time.
+> - **Rated 4.7 on Google Play** from over 1,200 ratings, and 4.9 on the App Store (October 2026).
+>
+> [Download on the App Store](https://apps.apple.com/us/app/all-hll-artillery-calculator/id1616413054) [Get it on Google Play](https://play.google.com/store/apps/details?id=flutter.app.artillery_let_loose) · [See the app](/artillery-calculator/)
 
 ## What a mil is
 
@@ -107,18 +119,21 @@ On the L81 and the SPH-2's high arc, a higher number lands closer, like the Hell
 
 The tables were measured on flat ground, so park the SPH-2 on level ground: vehicle tilt changes the range. Fire one ranging shot, see where it lands, and adjust from there.
 
-## How a calculator helps
+## How Artillery Let Loose helps
 
-The math is easy on paper and harder with tanks rolling toward your gun and your squad lead calling targets. A calculator takes over the error-prone steps:
+The math is easy on paper and harder with tanks rolling toward your gun and your squad lead calling targets. **Artillery Let Loose takes over every error-prone step above:**
 
-- **The right table every time.** Pick your faction or vehicle once, and every number comes from that gun's scale.
-- **Speed.** Type the distance and read the mils straight away, on a large readout you can glance at mid-match. It also accepts input from a connected USB or Bluetooth keyboard or numpad.
+- **The right table every time.** Pick your faction or vehicle once, and every number comes from that gun's scale. No more British numbers on a US gun.
+- **Speed.** Type the distance and **read the mils straight away**, on a large readout you can glance at mid-match. It also accepts input from a connected USB or Bluetooth keyboard or numpad.
 - **Several targets at once.** History mode keeps your targets in a grid, color-coded by range, with optional labels, so you can switch between fire missions without re-measuring. It's included in the iPhone app; on Android it's a one-time purchase, or you can unlock it free for 3 hours by watching an ad.
 - **Walk buttons.** Optional − and + buttons step the distance by 10, 25, 50 or 100 m after each shot.
 - **Terrain and slope.** Height and vehicle-tilt adjustments are built in where the game needs them.
+- **Every gun in one app.** Hell Let Loose howitzers for every faction, self-propelled artillery, the Vietnam mortar, and the WARDOGS L81 and SPH-2.
 
 A note on fair play: a pinned post on the Hell Let Loose Steam forum says third-party modification tools or overlays that give some players an unfair advantage are "not condoned," and that players who use them risk anti-cheat action. Artillery Let Loose is a separate phone app; it doesn't modify the game, read its data or draw over it. Servers can set their own rules, so check yours if you're unsure.
 
-As of October 2026, Artillery Let Loose is free on Android (with ads) and $1.99 on iPhone, with no ads on iOS. It's listed as "Wardogs & HLL Calculator" on Google Play and "ALL - HLL Artillery Calculator" on the App Store. [See the app](/artillery-calculator/) or [join the Discord](https://discord.gg/PsuUYHAKkT) to report a number that looks off.
+As of October 2026, Artillery Let Loose is **rated 4.7 on Google Play** from over 1,200 ratings and 4.9 on the App Store. It's **free on Android** (with ads) and $1.99 on iPhone, with no ads on iOS. It's listed as "Wardogs & HLL Calculator" on Google Play and "ALL - HLL Artillery Calculator" on the App Store.
+
+**Stop doing mil math under fire: [get Artillery Let Loose](/artillery-calculator/)** for iPhone or Android, and [join the Discord](https://discord.gg/PsuUYHAKkT) to report a number that looks off.
 
 *Artillery Let Loose is an unofficial companion app. It is not affiliated with or endorsed by Black Matter, Expression Games, Team17 or BULKHEAD.*
