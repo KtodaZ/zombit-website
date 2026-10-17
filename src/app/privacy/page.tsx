@@ -45,8 +45,10 @@ export default function SitePrivacyPage() {
         </header>
 
         <article className="policy max-w-[var(--measure-doc)] py-10 sm:py-14">
+          <h2 id="short-version">The short version</h2>
           <p>
-            This page covers the zombit.io website only. Each app has its own privacy policy:{" "}
+            This page covers the zombit.io website, run by {SITE.legalName} (“we”). Each app has its
+            own privacy policy:{" "}
             {APPS.map((a, i) => (
               <span key={a.slug}>
                 {i > 0 && (i === APPS.length - 1 ? ", and " : ", ")}
@@ -57,13 +59,37 @@ export default function SitePrivacyPage() {
             ))}
             .
           </p>
+          <ul>
+            <li>
+              We use Google Analytics to count visits, see which pages people read, and see how often
+              they follow a link to the App Store or Google Play. We look at these numbers in aggregate.
+            </li>
+            <li>The site has no accounts or forms, and we do not try to identify individual visitors.</li>
+            <li>
+              Google Analytics sets first-party cookies. Google signals and ad-personalisation signals
+              are off, so visits are not used for advertising.
+            </li>
+            <li>
+              To opt out, use Google’s opt-out browser add-on or block analytics scripts or cookies. The
+              site works the same either way.
+            </li>
+            <li>GitHub Pages hosts the site and logs visitors’ IP addresses for security.</li>
+            <li>
+              Questions:{" "}
+              <a className={link} href={`mailto:${SITE.email}`}>
+                {SITE.email}
+              </a>
+              .
+            </li>
+          </ul>
+          <p>The details are below.</p>
 
           <h2 id="analytics">Google Analytics</h2>
           <p>
-            {SITE.legalName} uses Google Analytics to see how many people visit this site, which pages
-            they read, and how often they follow a link to the App Store or Google Play. We look at
-            these numbers in aggregate. The site has no accounts or forms, and we do not try to
-            identify individual visitors.
+            We use Google Analytics to see how many people visit this site, which pages they read, and
+            how often they follow a link to the App Store or Google Play. We look at these numbers in
+            aggregate. The site has no accounts or forms, and we do not try to identify individual
+            visitors.
           </p>
           <p>When you visit, Google Analytics collects, in general terms:</p>
           <ul>
