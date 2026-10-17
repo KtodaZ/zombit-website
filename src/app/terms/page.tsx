@@ -14,7 +14,7 @@ import { pageMeta } from "@/lib/meta";
  */
 const PATH = "/terms/";
 const TITLE = "Terms of Use";
-const EFFECTIVE = "TBD";
+const EFFECTIVE = "October 17, 2026";
 const DESCRIPTION = `The terms for using zombit.io and the ${SITE.legalName} apps, including the Always On Time assistant connector.`;
 
 export const metadata: Metadata = pageMeta({ title: TITLE, description: DESCRIPTION, path: PATH });
