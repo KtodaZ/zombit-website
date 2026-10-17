@@ -63,8 +63,8 @@ assistants is live on Google Play. The connector server is already deployed (202
   Play. Never hand-edit it. A store that cannot be read keeps its previous value. Play ratings come
   from the listing's own JSON-LD; the old "Rated N stars" match picked up unrelated page furniture
   and reported 4.7 for apps with no ratings.
-- **Privacy policies are legal text.** `src/content/privacy/*.html` are verbatim ports. Change
-  their wording only when the policy changes, keep heading ids (apps deep-link to
+- **Privacy policies are legal text.** `src/content/privacy/*.html` were rewritten in plain
+  language on 2026-10-17. Change their wording only when the policy changes, keep heading ids (apps deep-link to
   `#travel-location`, `#assistants`, `#usage-statistics`), and update `privacyEffective` in
   `src/data/apps.ts` to match.
 - **Sitemap dates.** Bump `LASTMOD` in `src/data/flags.ts` when a page's content changes.

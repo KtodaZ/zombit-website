@@ -16,9 +16,10 @@ export function generateStaticParams() {
 }
 
 /**
- * The policy text lives in src/content/privacy/<slug>.html, ported verbatim from where each
- * policy was previously hosted (see ASSETS.md). It is a legal document: edit its wording only
- * when the policy itself changes, and keep existing heading ids, because apps deep-link to them.
+ * The policy text lives in src/content/privacy/<slug>.html. The policies were ported from where
+ * each was previously hosted and rewritten in plain language on 2026-10-17 (see ASSETS.md). Each
+ * is a legal document: edit its wording only when the policy itself changes, and keep existing
+ * heading ids, because apps deep-link to them.
  */
 function policyHtml(slug: string) {
   return readFileSync(join(process.cwd(), "src/content/privacy", `${slug}.html`), "utf8");

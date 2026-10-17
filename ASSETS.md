@@ -55,17 +55,19 @@ Montessori's "quick timers" and "PIN lock" items come from its Google Play scree
 
 ## Privacy policies — `src/content/privacy/`
 
-Ported verbatim. Only markup changed: Flycricket's literal `**bold**` paragraphs became `<h2>`
-headings, empty spacer paragraphs were dropped, and headings got ids. A normalised text diff
-against each source shows no wording changes.
+Originally ported verbatim from the sources below (only markup changed: Flycricket's literal
+`**bold**` paragraphs became `<h2>` headings, empty spacer paragraphs were dropped, and headings got
+ids). On 2026-10-17 each policy was rewritten in plain language with a short summary at the top.
+The data practices they describe did not change, and the existing heading ids were kept because
+apps and store listings deep-link to them.
 
 | File | Source | Effective |
 |---|---|---|
-| `always-on-time.html` | `always-on-time-cloud` `origin/main:account-web/privacy-policy.html` | October 16, 2026 |
-| `artillery-calculator.html` | <https://pages.flycricket.io/artillery-let-loose/privacy.html> | 2026-05-10 |
-| `montessori-visual-timer.html` | <https://doc-hosting.flycricket.io/montessori-visual-timer/1c5cdcb2-37e1-424c-988b-4e81d2ee7950/privacy> | 2026-04-10 |
-| `word-garden.html` | <https://doc-hosting.flycricket.io/word-garden-spelling/d33dc669-7ac3-449a-b039-8adbd3019491/privacy> | 2026-06-19 |
-| `coffee-roast-tracker.html` | <https://doc-hosting.flycricket.io/coffee-roast-tracker/214425cb-dda9-4b2e-8894-d739a752cae3/privacy> | 2026-03-12 |
+| `always-on-time.html` | `always-on-time-cloud` `origin/main:account-web/privacy-policy.html` | October 17, 2026 |
+| `artillery-calculator.html` | <https://pages.flycricket.io/artillery-let-loose/privacy.html> | October 17, 2026 |
+| `montessori-visual-timer.html` | <https://doc-hosting.flycricket.io/montessori-visual-timer/1c5cdcb2-37e1-424c-988b-4e81d2ee7950/privacy> | October 17, 2026 |
+| `word-garden.html` | <https://doc-hosting.flycricket.io/word-garden-spelling/d33dc669-7ac3-449a-b039-8adbd3019491/privacy> | October 17, 2026 |
+| `coffee-roast-tracker.html` | <https://doc-hosting.flycricket.io/coffee-roast-tracker/214425cb-dda9-4b2e-8894-d739a752cae3/privacy> | October 17, 2026 |
 
 One hosting reference changed in the Always On Time policy: the account deletion link now points
 to `https://alwaysontime.zombit.io/delete-account/` instead of the Firebase Hosting address.
