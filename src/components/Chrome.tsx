@@ -99,6 +99,11 @@ export function Colophon({ app }: { app?: AppEntry }) {
                   {SITE.email}
                 </a>
               </li>
+              <li>
+                <Link className={quietLink} href="/terms/">
+                  Terms of use
+                </Link>
+              </li>
               {app?.support?.map((s) => (
                 <li key={s.url}>
                   <a className={quietLink} href={s.url} rel="noopener">

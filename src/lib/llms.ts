@@ -36,6 +36,7 @@ export function llmsTxt() {
     `- [Support](${url("/support/")}): email ${SITE.email}, per-app help, and Always On Time account deletion`,
     ...APPS.map((a) => `- [${a.name} privacy policy](${url(privacyPath(a))})`),
     `- [Website privacy](${url("/privacy/")}): how zombit.io itself uses Google Analytics`,
+    `- [Terms of Use](${url("/terms/")}): terms for the website, the apps, and the Always On Time assistant connector`,
     ...(ASSISTANTS_LIVE
       ? [`- [Connect Claude or ChatGPT to Always On Time](${url("/always-on-time/assistants/")})`]
       : []),
