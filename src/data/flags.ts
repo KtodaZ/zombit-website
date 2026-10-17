@@ -5,7 +5,7 @@
  * and llms.txt. Flip it in the same change that ports the connector section of the privacy policy
  * (branch `policy/assistant-connector`). See TODO.md.
  */
-export const ASSISTANTS_LIVE = false;
+export const ASSISTANTS_LIVE = true;
 
 /** What the user pastes into Claude or ChatGPT. */
 export const CONNECTOR_URL = "https://alwaysontime.zombit.io/mcp";
