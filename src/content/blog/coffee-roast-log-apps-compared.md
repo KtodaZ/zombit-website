@@ -49,7 +49,6 @@ sources:
   - title: "Sweet Maria's: How to calculate weight loss in coffee roasting"
     url: "https://library.sweetmarias.com/how-to-calculate-weight-loss-in-coffee-roasting/"
     accessed: "2026-10-17"
-draft: true
 ---
 
 The best roast log depends on how much data your setup can capture. If your roaster or a probe connects to a computer, Artisan is the widely used free choice for temperature curves. If you roast by sight, sound and a scale, a simple mobile log or a spreadsheet that records weights, times and tasting notes will do more for your consistency than a tool built for data you can't collect.

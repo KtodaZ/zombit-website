@@ -48,7 +48,6 @@ sources:
   - title: "The three-hour work cycle (AMI)"
     url: "https://montessori-ami.org/node/8475"
     accessed: "2026-10-17"
-draft: true
 ---
 
 A visual timer helps children by turning time into something they can see. Instead of numbers ticking down, a colored section shrinks until it's gone, so a child knows how much is left without reading a clock. That makes transitions, routines and waiting easier, because the end of an activity stops being a surprise announced by an adult.

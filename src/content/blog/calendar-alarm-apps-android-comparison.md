@@ -43,7 +43,6 @@ sources:
   - title: "Google Play: Calendar Alarm: Always On Time (Zombit Studios)"
     url: "https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime&hl=en_US"
     accessed: "2026-10-17"
-draft: true
 ---
 
 On Android, Google Calendar can only send notifications. It can't ring like an alarm clock. You can make those notifications louder and harder to miss with a few settings. If you need a full-screen alarm that keeps ringing until you snooze or dismiss it, you need a separate app. This guide compares Google Calendar's own settings with the main alarm apps.

@@ -78,7 +78,6 @@ sources:
   - title: "Montessori Visual Timer (Google Play)"
     url: "https://play.google.com/store/apps/details?id=com.zombitstudios.visualtimer"
     accessed: "2026-10-17"
-draft: true
 ---
 
 The best-known visual timer app is the official Time Timer app: free to download, with a $9.95 premium unlock, and available on iPhone, iPad, Mac, Apple Watch and Android. If you want something different, Visual Countdown Timer reveals a picture as colors change, Mouse Timer and Little Timer use playful characters, and Montessori Visual Timer keeps it minimal with no ads and a PIN lock. A physical Time Timer costs $22.95 to $43.95 for the main models and suits rooms that want no screen at all.

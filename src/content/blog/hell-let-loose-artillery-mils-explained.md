@@ -33,7 +33,6 @@ sources:
   - title: "Modification Tools & Overlays (Hell Let Loose Steam announcement thread)"
     url: "https://steamcommunity.com/app/686810/discussions/0/3823033163011381984/"
     accessed: "2026-10-17"
-draft: true
 ---
 
 In Hell Let Loose, artillery is aimed by setting the gun's elevation in mils. You measure the distance from your gun to the target, look up the mil value for that distance in your faction's table, and dial it in. For US and German howitzers that's 978 mils at 100 m down to 622 mils at 1,600 m; Soviet and British guns use different tables, which is where most misses come from.

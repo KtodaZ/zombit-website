@@ -69,7 +69,6 @@ sources:
   - title: "Scripps Word Club"
     url: "https://spellingbee.com/word-club"
     accessed: "2026-10-17"
-draft: true
 ---
 
 Several free games use the NYT Spelling Bee format, and some offer more than one puzzle a day. SpellBee and Spelling Queen Pangrams give you unlimited puzzles with ads, Spelling Bee – Unlimited is ad-free on Android, Pangram lets you change the rules, and Word Garden is a free daily puzzle with no ads and settings for kids. The table below has the details, checked on each store listing in October 2026.

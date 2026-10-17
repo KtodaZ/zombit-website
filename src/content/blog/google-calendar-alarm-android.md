@@ -34,7 +34,6 @@ sources:
   - title: "Google Play: Calendar Alarm: Always On Time"
     url: "https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime&hl=en_US"
     accessed: "2026-10-17"
-draft: true
 ---
 
 Google Calendar on Android can't ring like an alarm clock. It only sends notifications. You can get close by setting the right notification times, picking a louder tone, letting calendar alerts through Do Not Disturb, and turning on pop-up alerts. If you need an event to keep ringing on a full screen until you deal with it, you need a calendar alarm app.
