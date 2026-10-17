@@ -45,12 +45,10 @@ held back by one flag, `ASSISTANTS_LIVE` in `src/data/flags.ts`. While it is `fa
 - renders `noindex` and a "Not available yet" note,
 - is left out of the sitemap, llms.txt, the Always On Time page, and the support page.
 
-**To go live,** merge the pushed branch `policy/assistant-connector`. It ports the connector and
-usage-statistics sections of the Always On Time privacy policy (from the cloud repo's
-`assistant/server` branch, anchors `#assistants` and `#usage-statistics`) and flips the flag in
-the same commit. Merge it only when the connector is deployed and `CONNECTOR_URL`
-(`https://alwaysontime.zombit.io/mcp`) answers. Check that the app's own connector address
-(`AppLinks.CONNECTOR_URL` in calendar-meeting-alarm) is the same URL before merging.
+**To go live,** set `ASSISTANTS_LIVE = true` once the Always On Time release with Connected
+assistants is live on Google Play. The connector server is already deployed (2026-10-17) at
+`https://alwaysontime.zombit.io/mcp`, and the privacy policy's `#assistants` and
+`#usage-statistics` sections (plus the Gemini paragraph) are already published.
 
 ---
 
