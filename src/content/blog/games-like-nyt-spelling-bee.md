@@ -87,6 +87,21 @@ Several free games use the NYT Spelling Bee format, and some offer more than one
 
 Spelling Bee is a New York Times game. Word Garden and the other apps here are independent and not affiliated with The New York Times.
 
+## Features compared
+
+<!-- matrix -->
+
+| Feature | **Word Garden** | NYT Spelling Bee | SpellBee | Spelling Bee – Unlimited | Spelling Queen Pangrams | Pangram | SpellsBee.com |
+|---|---|---|---|---|---|---|---|
+| Free to play | ✓ | ✗ Full game needs a subscription | ✓ | ✓ | ✓ | One free game a day | ✓ |
+| No ads | ✓ | ✗ | ✗ | ✓ | ✗ | Not labeled | Not labeled |
+| No in-app purchases | ✓ | ✗ | ✗ | Not listed | ✗ | ✗ | Not listed |
+| Settings for kids | ✓ | Not listed | Not listed | Not listed | Not listed | Adjustable rules | Not listed |
+| iPhone, Android and web | ✓ | ✓ | ✓ | Android only | iPhone and Android | iPhone only | Web only |
+| Unlimited puzzles | ✗ Daily | ✗ Daily | ✓ | ✓ | ✓ | Paid upgrade | ✓ |
+
+From each game's store listing or website, October 2026. "Not listed" means the listing doesn't mention it. In the No ads row, ✓ means the listing says there are no ads, "Not labeled" means it has no ads label and doesn't mention ads, and ✗ means the App Store or Google Play listing carries an ads label, or the site shows ads.
+
 ## How Spelling Bee-style puzzles work
 
 You get seven letters, usually arranged in a hive or grid, and you make as many words as you can. In NYT's version, per its own How to Play screen:
@@ -108,13 +123,13 @@ Ratings and prices are as shown on each listing on October 17, 2026. Store ratin
 
 | Game | Platforms | Price | Rating | Puzzles | Ads | Kid settings |
 |---|---|---|---|---|---|---|
-| **Word Garden** | iOS, Android, web | **Free, no in-app purchases** | 5.0 iOS (1 rating); no Play rating yet | Daily | **No** | **Yes** |
+| **Word Garden** | iOS, Android, web | **Free, no in-app purchases** | 5.0 iOS (1 rating) | Daily | **No** | **Yes** |
 | NYT Games (Spelling Bee) | iOS, Android, web | Free app; full Spelling Bee needs a Games subscription ($6 every 4 weeks or $50/year) | 4.8 iOS (297K), 4.8 Play (148K) | Daily, plus archive for subscribers | Yes (App Store label) | Not listed |
 | SpellBee: Spelling Puzzle / spellbee.org | iOS, Android, web | Free; Premium in-app purchase on iOS ($2.99 or $24.99) | 4.5 iOS (3.6K), 4.2 Play (2.84K) | Daily, unlimited practice, 1,000+ past puzzles | Yes | Not listed |
 | Spelling Bee – Unlimited | Android | Free, no subscriptions | 3.8 Play (437) | Unlimited | No | Not listed |
 | Spelling Queen Pangrams | iOS, Android | Free; No Ads $4.99 on iOS | 4.7 iOS (6.1K), 4.0 Play (137) | Game of the Day plus unlimited | Yes | Not listed |
 | Pangram | iOS | Free for one game a day; Unlimited Games $3.99 | 4.7 iOS (4.4K) | Daily free, unlimited paid | Not labeled | Not listed (rules are configurable) |
-| SpellBee – Daily Word Puzzle | iOS, Android | Free; Premium $2.99/month or $9.99/year | 4.5 iOS (45); no Play rating yet | Daily; archive needs Premium | Yes (Google Play label) | Not listed |
+| SpellBee – Daily Word Puzzle | iOS, Android | Free; Premium $2.99/month or $9.99/year | 4.5 iOS (45) | Daily; archive needs Premium | Yes (Google Play label) | Not listed |
 | SpellsBee.com | Web | Free, no account | n/a | Daily plus unlimited | Not labeled | Not listed |
 
 ## Which one to pick
@@ -141,7 +156,7 @@ Word Garden is our app. It's a calm daily puzzle: **a fresh set of letters each 
 - **No timers**, so nobody feels rushed.
 - **Every platform:** iPhone, iPad, Android and a web version.
 
-It is a daily game, so if you want ten puzzles in a row, SpellBee or Spelling Queen suit you better. It's also new, with only one store rating so far, and it doesn't have the archive and community that come with NYT's puzzle.
+It is a daily game, so if you want ten puzzles in a row, SpellBee or Spelling Queen suit you better. It also doesn't have the archive and community that come with NYT's puzzle.
 
 ## Tips for scoring higher in any pangram puzzle
 

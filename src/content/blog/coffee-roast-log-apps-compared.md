@@ -68,7 +68,24 @@ The best roast log depends on how much data your setup can capture. If your roas
 
 Below are the main options, then a list of what to record. We make one of the apps here, Coffee Roast Tracker, and its section lists what it doesn't do. Prices and ratings come from the App Store and Google Play (US) as of October 2026.
 
-## Quick comparison
+## Features compared
+
+<!-- matrix -->
+
+| Feature | **Coffee Roast Tracker** | Artisan | Roastmaster | Beanconqueror | CrackLog | RoastTrace | Coffee Roaster Pro |
+|---|---|---|---|---|---|---|---|
+| Weight loss worked out for you | ✓ | Not listed | Not listed | Not listed | ✓ | ✓ | Not listed |
+| Roast level from weight loss | ✓ | Not listed | Not listed | Not listed | You pick it | Not listed | Not listed |
+| No account needed | ✓ | Not listed | Not listed | Not listed | ✓ | ✓ | Not listed |
+| No ads | ✓ | Not listed | Not listed | ✓ | ✓ | ✓ | ✓ |
+| No in-app purchases | ✓ | Paid cloud optional | ✗ | ✓ | ✗ | ✗ | ✗ |
+| iPhone and Android | ✓ | Desktop | Apple only | ✓ | ✓ | Android only | Android only |
+| Temperature log and roast curve | ✗ | ✓ | ✓ | Not listed | ✓ | ✓ | ✓ |
+| Roast timer and crack times | ✗ | ✓ | ✓ | Not listed | ✓ | ✓ | ✓ |
+
+From each app's store listing or website, October 2026. "Not listed" means the listing doesn't mention it. "No ads" means the Google Play listing has no "Contains ads" label (Roastmaster is iPhone-only, and Artisan is desktop software). Prices are in the next table.
+
+## Prices at a glance
 
 | Tool | Best for | Platforms | Price as of Oct 2026 |
 |---|---|---|---|

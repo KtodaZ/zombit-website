@@ -94,6 +94,22 @@ The best-known visual timer app is the official Time Timer app: free to download
 >
 > [Download on the App Store](https://apps.apple.com/us/app/montessori-visual-timer/id6760267134) [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.visualtimer) · [See the app](/montessori-visual-timer/)
 
+## Features compared
+
+<!-- matrix -->
+
+| Feature | **Montessori Visual Timer** | Time Timer | Visual Countdown Timer | Little Timer | Mouse Timer | Visual Timer - Countdown |
+|---|---|---|---|---|---|---|
+| No ads | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ |
+| PIN lock for the controls | ✓ | Not listed | Not listed | Not listed | Not listed | Not listed |
+| Locks when a timer starts | ✓ | Not listed | Not listed | Not listed | Not listed | Not listed |
+| Preset timers for routines | ✓ | ✓ | Not listed | Not listed | Not listed | ✓ |
+| Nothing to unlock on Android | ✓ | ✗ $9.95 unlock | ✗ Premium $3.99 | ✗ Premium $2.99 | Optional add-on | ✓ |
+| iPhone, iPad and Android | ✓ | ✓ | ✓ | ✓ | ✓ | Android only |
+| Pictures or characters | ✗ | Not listed | ✓ | ✓ | ✓ | Not listed |
+
+From each app's App Store and Google Play listings, October 2026. "Not listed" means the listings don't mention it. "No ads" means the listing says so or Google Play shows no "Contains ads" label.
+
 ## What to look for in a visual timer app
 
 For children, these features matter most:
@@ -111,7 +127,7 @@ Ratings and prices come from each app's US store listing on October 17, 2026. Ra
 
 | App | Platforms | Price | Rating (count) | Ads | Stand-out features |
 |---|---|---|---|---|---|
-| **Montessori Visual Timer** | iPhone, iPad, Android | **Free on Google Play**; $1.99 on iOS | 4.8 iOS (4); not yet rated on Play | **No** | Minimal clock face, editable quick timers, **PIN lock**, **auto-lock on start** |
+| **Montessori Visual Timer** | iPhone, iPad, Android | **Free on Google Play**; $1.99 on iOS | 4.8 iOS (4) | **No** | Minimal clock face, editable quick timers, **PIN lock**, **auto-lock on start** |
 | Time Timer | iPhone, iPad, Mac, Apple Watch, Android | Free; "Unlock all Time Timer features" $9.95 (Google Play also lists $9.95) | 4.6 iOS (15K); 4.4 Play (1.61K) | No ads label on Play | Classic red disk, up to 3 timers free, several timers at once; premium adds sequences, groups and sync |
 | Visual Countdown Timer | iOS, Android | Free; Premium $3.99, Remove Ads $1.99 | 4.6 iOS (41K); 4.6 Play (5.49K) | Yes | Green-amber-red stages, picture reveal; widgets and Live Activities on iOS |
 | Visual Timer for Kids | iPhone, iPad | Free; Premium $5.99, subscriptions $5.99 to $39.99, lifetime $99.99 | 4.5 iOS (1.5K) | Not stated | Picture reveal, 200 pictures, 20 music themes |
@@ -124,7 +140,7 @@ A note on Tiimo, which often appears in "visual timer" searches: it's a visual d
 
 ## Which app suits which family
 
-**You want calm, no ads, and locked controls: Montessori Visual Timer (our pick).** That's what we built it for. A colored section of the clock face shrinks as time passes, with **no ads or clutter** around it. **Quick timers** start routines like Brush Teeth or Cleanup in one tap, a **PIN keeps small hands from changing the time**, and it can **lock automatically when a timer starts**. Both store listings say **no data is collected**. It's new, with only a few ratings so far, and it doesn't do pictures or characters. If your child is motivated by those, one of the apps below may suit them better.
+**You want calm, no ads, and locked controls: Montessori Visual Timer (our pick).** That's what we built it for. A colored section of the clock face shrinks as time passes, with **no ads or clutter** around it. **Quick timers** start routines like Brush Teeth or Cleanup in one tap, a **PIN keeps small hands from changing the time**, and it can **lock automatically when a timer starts**. Both store listings say **no data is collected**. It doesn't do pictures or characters. If your child is motivated by those, one of the apps below may suit them better.
 
 **You want the classic, everywhere.** Time Timer's app comes from the makers of the red disk timer, and it's listed for more devices than any other app here, including Mac and Apple Watch. Teachers who already have a physical Time Timer will recognize the red disk right away. The free version is limited to three timers; a $9.95 purchase unlocks the premium features.
 

@@ -114,12 +114,39 @@ function renderer(app?: string) {
  * cell is wholly bold is our app's row and gets a tint.
  */
 const finish = (html: string) =>
-  html
-    .replace(/<a href="\/(?!\/)/g, `<a href="${BASE_PATH}/`)
-    .replace(/<a href="(https?:\/\/(?!zombit\.io)[^"]*)"/g, '<a rel="noopener" href="$1"')
-    .replace(/<table>/g, '<div class="table-wrap" tabindex="0"><table>')
-    .replace(/<\/table>/g, "</table></div>")
-    .replace(/<tr>(\s*<td>)<strong>([^<]*)<\/strong>(<\/td>)/g, '<tr class="pick">$1<strong>$2</strong>$3');
+  matrices(
+    html
+      .replace(/<a href="\/(?!\/)/g, `<a href="${BASE_PATH}/`)
+      .replace(/<a href="(https?:\/\/(?!zombit\.io)[^"]*)"/g, '<a rel="noopener" href="$1"')
+      .replace(/<table>/g, '<div class="table-wrap" tabindex="0"><table>')
+      .replace(/<\/table>/g, "</table></div>")
+      .replace(/<tr>(\s*<td>)<strong>([^<]*)<\/strong>(<\/td>)/g, '<tr class="pick">$1<strong>$2</strong>$3'),
+  );
+
+/**
+ * Feature matrix: a table preceded by a `<!-- matrix -->` line. Rows are features, the first
+ * column names them, and the second column is our app (tinted, and pinned with the feature
+ * column while the rest scrolls sideways on a phone). A cell that is ✓ or ✗ (optionally followed
+ * by a short qualifier) gets a mark that screen readers hear as "Yes" or "No"; any other cell
+ * ("Not listed", "Coming soon", "Pro") is set as a quieter text note. The paragraph right after
+ * a matrix is its key and sources line and sets small.
+ */
+const MARKS: Record<string, [string, string]> = { "✓": ["yes", "Yes"], "✗": ["no", "No"] };
+const matrices = (html: string) =>
+  html.replace(
+    /<!-- matrix -->\s*<div class="table-wrap" tabindex="0"><table>([\s\S]*?)<\/table><\/div>/g,
+    (_, body: string) =>
+      `<div class="table-wrap matrix-wrap" tabindex="0" role="region" aria-label="Feature comparison">` +
+      `<table class="matrix">` +
+      body.replace(/<td>(?!<strong>)([\s\S]*?)<\/td>/g, (cell: string, text: string) => {
+        const m = /^([✓✗])\s*([\s\S]*)$/.exec(text.trim());
+        if (!m) return cell;
+        const [cls, said] = MARKS[m[1]];
+        const rest = m[2] ? ` <span class="mark-note">${m[2]}</span>` : "";
+        return `<td class="m-${cls}"><span class="mark" aria-hidden="true">${m[1]}</span><span class="sr-only">${said}</span>${rest}</td>`;
+      }) +
+      `</table></div>`,
+  );
 
 function parse(file: string): Post {
   const raw = readFileSync(join(DIR, file), "utf8");

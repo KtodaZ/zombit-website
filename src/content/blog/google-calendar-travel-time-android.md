@@ -31,6 +31,9 @@ sources:
   - title: "Google Calendar Community: I can't set travel time in calendar"
     url: "https://support.google.com/calendar/thread/242500740/i-can%E2%80%99t-set-travel-time-in-calendar?hl=en"
     accessed: "2026-10-17"
+  - title: "Google Play: Waze Navigation & Live Traffic"
+    url: "https://play.google.com/store/apps/details?id=com.waze&hl=en_US"
+    accessed: "2026-10-17"
   - title: "Google Play: Calendar Alarm: Always On Time"
     url: "https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime&hl=en_US"
     accessed: "2026-10-17"
@@ -53,6 +56,22 @@ Google Calendar doesn't add travel time to your events automatically, and its An
 > - **Directions in one tap.** Opens Google Maps with the destination and travel mode filled in.
 >
 > [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
+
+## Features compared
+
+<!-- matrix -->
+
+| Feature | **Always On Time** | Waze calendar sync | Manual buffer |
+|---|---|---|---|
+| Full-screen alarm at leave time | ✓ | ✗ Notification | ✗ Notification |
+| Driving | ✓ | ✓ | You estimate |
+| Public transit, biking and walking | ✓ | ✗ | You estimate |
+| Live traffic for driving | Plus¹ | ✓ | ✗ |
+| Works without location access | ✓ Saved places | ✗ | ✓ |
+| Plans from your calendar automatically | ✓ | ✓ | ✗ |
+| No ads | ✓ | ✗ | ✓ |
+
+Waze details are from Waze Help and its Google Play listing, October 2026. Both apps need a full address in the event's location. ¹ Live traffic is part of Always On Time Plus, free for a limited time; without it, driving estimates use typical traffic for that time of day.
 
 ## Why a normal reminder isn't enough
 
@@ -119,17 +138,6 @@ In Google's help community, the answer to the travel-time question is that there
 Some reports say Google can show a leave-time alert for events that have a location, but Google Calendar's help pages don't document it and there's no setting for it, so don't count on it.
 
 **Limits:** it doesn't react to traffic, it's easy to forget, and the reminder is still an ordinary notification.
-
-## Quick comparison
-
-| | **Always On Time travel alarms** | Waze calendar sync | Manual buffer |
-|---|---|---|---|
-| Cost | **Free, no ads** (live traffic via Plus, free for a limited time) | Free | Free |
-| Alert type | **Full-screen alarm** | Notification | Notification |
-| Travel modes | **Driving, transit, biking, walking** | Driving | Any (you estimate) |
-| Uses live traffic | Yes, for driving with Plus | Yes | No |
-| Location access | **Not needed with saved places**; Allow all the time to plan from your location | Allow all the time | None |
-| Needs a full address | Yes (a physical location) | Yes | No |
 
 ## Which should you use?
 

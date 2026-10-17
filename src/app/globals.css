@@ -389,6 +389,112 @@ a {
   padding-left: 0.6em;
 }
 
+/* Feature matrix (src/lib/blog.ts): features down the side, our app first and tinted like the
+   pick row. The feature column and ours stay pinned while the other apps scroll under them, so
+   on a phone our column never leaves the screen. On wide screens the matrix may run past the
+   reading measure, up to the page lattice, instead of scrolling. Marks are ink, never an accent
+   (the Accent Means Act rule); text cells are quieter so ✓ and ✗ carry the scan. */
+.post .matrix-wrap {
+  /* Positioned so the cells' screen-reader text stays inside the scroller, not the page. */
+  position: relative;
+  /* On a phone the third column only half fits, so the edge shows there is more to scroll. */
+  --mx-feature: 8rem;
+  --mx-col: 5.75rem;
+  width: max-content;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-rule) transparent;
+  overscroll-behavior-x: contain;
+}
+.post .matrix-wrap:focus-visible {
+  outline-offset: 2px;
+}
+.post table.matrix {
+  width: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+.post .matrix th,
+.post .matrix td {
+  min-width: var(--mx-col);
+  max-width: 8.5rem;
+  padding: 0.6em 0.7em;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  color: var(--color-slate);
+}
+.post .matrix th {
+  vertical-align: bottom;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+.post .matrix th:first-child,
+.post .matrix td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: var(--mx-feature);
+  min-width: var(--mx-feature);
+  max-width: var(--mx-feature);
+  padding-left: 0;
+  text-align: left;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+.post .matrix th:nth-child(2),
+.post .matrix td:nth-child(2) {
+  position: sticky;
+  left: var(--mx-feature);
+  z-index: 1;
+  background: var(--color-paper-deep);
+  color: var(--color-ink);
+  box-shadow: inset -1px 0 0 var(--color-rule);
+}
+.post .matrix th:nth-child(2) {
+  border-top: 1px solid var(--color-ink);
+}
+.post .matrix th:nth-child(2) strong {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+}
+.post .matrix .mark {
+  font-size: 1.0625rem;
+  line-height: 1;
+}
+.post .matrix .m-yes .mark {
+  color: var(--color-ink);
+}
+.post .matrix .m-no .mark {
+  color: var(--color-slate);
+}
+.post .matrix .mark-note {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.8125rem;
+  color: var(--color-slate);
+}
+.post .matrix-wrap + p {
+  margin-top: -0.4em;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-slate);
+}
+@media (min-width: 48rem) {
+  .post .matrix-wrap {
+    --mx-feature: 11rem;
+    --mx-col: 6.75rem;
+  }
+}
+@media (min-width: 64rem) {
+  .post .matrix-wrap {
+    max-width: min(66rem, calc(100vw - 4rem));
+  }
+}
+
 /* --- The showcase strip: store images in one sideways row ---
    A hairline scrollbar in the rule colour, so the row says it scrolls without a widget. */
 .strip {
