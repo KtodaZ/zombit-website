@@ -26,6 +26,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Fresh store ratings and prices for this build. A store that is down or slow keeps the
+      # committed value (the script never writes null over a known rating), and if the script
+      # itself fails the committed src/data/ratings.json is restored, so a store outage can
+      # never fail or degrade the deploy. The refreshed file is used for this build only.
+      - name: Refresh store ratings
+        timeout-minutes: 3
+        continue-on-error: true
+        run: node scripts/fetch-ratings.mjs || git checkout -- src/data/ratings.json
       # Turbopack cannot load Tailwind's native oxide binding through its bundled
       # postcss worker on every platform, so the build stays on webpack everywhere.
       # Builds for the apex domain (zombit.io, set by public/CNAME): no base path,
