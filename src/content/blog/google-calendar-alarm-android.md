@@ -62,11 +62,11 @@ Google Calendar on Android can't ring like an alarm clock. It only sends notific
 | Moves when the event moves | ✓ | ✓ | ✗ |
 | Join Meet, Zoom, Teams or Webex from the alert | ✓ | From the event | ✗ |
 | Alarm times per calendar or per event | ✓ | ✓ | ✗ |
-| "Time to leave" alarms | Coming soon² | ✗ | ✗ |
+| "Time to leave" alarms | ✓ | ✗ | ✗ |
 | Wear OS watch | Beta¹ | ✓ | Varies by phone |
 | No ads | ✓ | ✓ | ✓ |
 
-Google Calendar details are from Google's help pages, October 2026. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Travel-time alarms are in an update that is rolling out on Google Play.
+Google Calendar details are from Google's help pages, October 2026. ¹ Always On Time's Wear OS app is in open testing on Google Play.
 
 Below are the built-in steps first, then the app option. Menu names vary a little between Android versions and phone makers, so look for the closest match on your phone.
 

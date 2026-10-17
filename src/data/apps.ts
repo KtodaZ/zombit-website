@@ -130,7 +130,7 @@ export const APPS: AppEntry[] = [
         ],
       },
       {
-        title: "Leave on time (coming soon)",
+        title: "Leave on time",
         items: [
           "Optional travel alarms tell you when to leave, based on driving, transit, cycling, or walking time",
           "Live traffic for driving is part of Always On Time Plus, free for a limited time",
