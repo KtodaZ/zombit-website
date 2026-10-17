@@ -28,12 +28,9 @@ jobs:
       - run: npm ci
       # Turbopack cannot load Tailwind's native oxide binding through its bundled
       # postcss worker on every platform, so the build stays on webpack everywhere.
+      # Builds for the apex domain (zombit.io, set by public/CNAME): no base path,
+      # canonicals on zombit.io, and indexable robots.
       - run: npm run build
-        env:
-          # GitHub Pages serves this repo at <user>.github.io/<repo>/ until the
-          # apex domain is cut over. Delete both lines (and add a CNAME) at cutover.
-          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

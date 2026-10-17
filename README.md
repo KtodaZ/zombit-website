@@ -35,11 +35,9 @@ binding through its bundled postcss worker on this toolchain.
 
 Pushing to `main` builds and publishes via `.github/workflows/deploy.yml`.
 
-The preview lives at <https://ktodaz.github.io/zombit-website/> and is served
-`Disallow: /` plus `noindex`, so it cannot compete with the real site in search.
-
-The apex domain `zombit.io` still points at the old Google Sites page. At cutover:
-point the DNS at GitHub Pages, add a `CNAME` file, and delete the two
-`NEXT_PUBLIC_*` env lines from the workflow. Dropping the base path is what flips
-canonicals, the sitemap, JSON-LD, and `robots.txt` back to the apex and makes the
-site indexable — there is nothing else to change.
+The site is served at <https://zombit.io> (custom domain from `public/CNAME`;
+DNS at Squarespace: four `A` + four `AAAA` apex records for GitHub Pages and a
+`www` CNAME to `ktodaz.github.io`). Building without `NEXT_PUBLIC_BASE_PATH` is
+what makes canonicals, the sitemap, JSON-LD and `robots.txt` target the apex and
+the site indexable. Setting `NEXT_PUBLIC_BASE_PATH` (e.g. for a project-page
+preview) flips all of them back to `noindex`.
