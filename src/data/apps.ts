@@ -88,7 +88,14 @@ export const APPS: AppEntry[] = [
           "Add more than one alarm per meeting to give yourself time to prepare",
           "Choose sound and vibration, then snooze or dismiss from the alarm screen",
           "Alarms can appear over your lock screen once the required Android permissions are on",
-          "Create one-time or recurring personal reminders",
+        ],
+      },
+      {
+        title: "Leave on time",
+        items: [
+          "Optional travel alarms tell you when to leave, based on driving, transit, cycling, or walking time",
+          "Live traffic for driving is part of Always On Time Plus, free for a limited time",
+          "Choose where the trip starts and how early you want to arrive",
         ],
       },
       {
