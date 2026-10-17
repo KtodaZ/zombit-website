@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
 import { asset } from "@/lib/site";
+import { onAccent } from "@/lib/accent";
 
 /** Intrinsic pixel size of each committed raster, so nothing is guessed at render. */
 const SHOT_SIZE: Record<string, { w: number; h: number }> = {
@@ -49,21 +50,6 @@ export function Screen({
 }
 
 const STORE_NAME: Record<Store["kind"], string> = { ios: "App Store", android: "Google Play" };
-
-/** WCAG relative luminance of a #RRGGBB colour. */
-function luminance(hex: string) {
-  const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-  const [r, g, b] = c.map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-}
-const INK = "#16181D";
-/** White or ink, whichever reads better on the accent. Light accents get ink. */
-function onAccent(accent: string) {
-  const l = luminance(accent);
-  const white = 1.05 / (l + 0.05);
-  const ink = (l + 0.05) / (luminance(INK) + 0.05);
-  return white >= ink ? "#FFFFFF" : INK;
-}
 
 /** The one place an entry's accent is allowed to appear. Accent always means "act". */
 export function StoreAction({

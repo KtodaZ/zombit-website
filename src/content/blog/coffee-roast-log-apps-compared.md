@@ -1,6 +1,6 @@
 ---
 title: "Coffee Roast Log Apps Compared: Artisan, Roastmaster and More"
-description: "Compare home coffee roast logs: Artisan, Roastmaster, Beanconqueror, CrackLog, spreadsheets and Coffee Roast Tracker, plus what to record in a roast log."
+description: "Coffee Roast Tracker, Artisan, Roastmaster, Beanconqueror and CrackLog compared for home roasters, plus what to record in a roast log and how weight loss works."
 slug: "coffee-roast-log-apps-compared"
 date: "2026-10-17"
 updated: "2026-10-17"
@@ -53,12 +53,26 @@ sources:
 
 The best roast log depends on how much data your setup can capture. If your roaster or a probe connects to a computer, Artisan is the widely used free choice for temperature curves. If you roast by sight, sound and a scale, a simple mobile log or a spreadsheet that records weights, times and tasting notes will do more for your consistency than a tool built for data you can't collect.
 
+> **Our pick: Coffee Roast Tracker**
+>
+> For roasters who judge by weight loss and want a quick record rather than a data rig, we recommend **our own app, made for exactly that**.
+>
+> - **Two weights, one answer.** Enter green and roasted weight, and it works out the weight-loss percentage and the roast level, from Light (City-) to French.
+> - **No account and no setup.** Your roasts stay on your device.
+> - **Every batch at a glance.** Searchable history by date, plus average weight loss and your most common roast level.
+> - **Cheap:** $0.99 on iPhone, free on Android, with no ads or in-app purchases.
+>
+> It doesn't time roasts or log temperatures. For curves, see Artisan or CrackLog below.
+>
+> [Download on the App Store](https://apps.apple.com/us/app/coffee-roast-tracker/id6760438622) [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombit.coffeeRoastingCompanion) · [See the app](/coffee-roast-tracker/)
+
 Below are the main options, then a list of what to record. We make one of the apps here, Coffee Roast Tracker, and its section lists what it doesn't do. Prices and ratings come from the App Store and Google Play (US) as of October 2026.
 
 ## Quick comparison
 
 | Tool | Best for | Platforms | Price as of Oct 2026 |
 |---|---|---|---|
+| **Coffee Roast Tracker** | **Quick roast level from green and roasted weight**, no account | iPhone, Android | **iPhone $0.99; Android free, no ads or in-app purchases** |
 | Spreadsheet or paper log | Full control, any setup | Anywhere | Free |
 | Artisan | Live temperature curves from a connected roaster or probe | Windows, macOS, Linux, Raspberry Pi | Free, open source |
 | Roastmaster | Inventory, profiles and logging in the Apple ecosystem | iPhone, iPad, Apple silicon Mac, Vision Pro (OS 26 or later) | Free download; in-app purchases include Data Logging ($14.99) and subscriptions from $4.99/month |
@@ -66,7 +80,14 @@ Below are the main options, then a list of what to record. We make one of the ap
 | CrackLog | Manual time, temperature and crack logging with a live curve | iPhone, Android | Free; optional one-time Roaster's Kit ($7.99 on iPhone) |
 | RoastTrace | Local-first roast log with development ratio and cupping notes | Android | Free; one-time Premium |
 | Coffee Roaster Pro | Roast records with thermocouple support on Android | Android | $3.49, plus in-app purchases |
-| Coffee Roast Tracker | Quick roast level from green and roasted weight | iPhone, Android | iPhone $0.99; Android free, no ads or in-app purchases |
+
+## Coffee Roast Tracker (our pick for a quick log)
+
+Coffee Roast Tracker is our app, and it's **deliberately small**. You start a roast with the bean origin and green weight. After roasting, you enter the final weight, and the app **calculates the weight-loss percentage and the roast level** it corresponds to, from Light (City-) to French. It keeps a **searchable history** grouped by date, shows **quick stats** (average weight loss, most common roast level, total roasts), and includes a **reference chart** of weight-loss ranges for each level. There's **no account, and your data stays on your device**.
+
+**What it doesn't do:** there's no timer, temperature log, crack markers or roast curve. If you want those, Artisan, CrackLog or a spreadsheet will serve you better. Coffee Roast Tracker suits roasters who mainly judge roasts by weight loss and want a quick, tidy record of every batch.
+
+It's **$0.99 on iPhone and free on Android**, with **no ads or in-app purchases**.
 
 ## Spreadsheets and paper logs
 
@@ -108,14 +129,6 @@ Three smaller apps to consider if you log by hand:
 - **RoastTrace** (Android, free with a one-time Premium) records beans and batch setup, runs a roast timer, captures events and temperatures, and calculates development ratio and weight loss. It also has cupping notes and JSON backup. The free version has capacity limits that Premium raises.
 - **Coffee Roaster Pro** (Android, $3.49 with in-app purchases, rated 4.8 from 61 reviews) stores coffees, batches, roasts and roasters, shows roasts as charts, and can export and import them. Its listing mentions support for Yocto-Thermocouple and MQTT for recording roast progress.
 
-## Coffee Roast Tracker
-
-Coffee Roast Tracker is our app, and it's deliberately small. You start a roast with the bean origin and green weight. After roasting, you enter the final weight, and the app calculates the weight-loss percentage and the roast level it corresponds to, from Light (City-) to French. It keeps a searchable history grouped by date, shows quick stats (average weight loss, most common roast level, total roasts), and includes a reference chart of weight-loss ranges for each level. There's no account, and your data stays on your device.
-
-**What it doesn't do:** there's no timer, temperature log, crack markers or roast curve. If you want those, Artisan, CrackLog or a spreadsheet will serve you better. Coffee Roast Tracker suits roasters who mainly judge roasts by weight loss and want a quick, tidy record of every batch.
-
-It's $0.99 on iPhone and free on Android, with no ads or in-app purchases.
-
 ## What to track in a roast log
 
 Whatever tool you use, the same handful of numbers does most of the work. Start with the first group and add more as your setup allows.
@@ -149,9 +162,19 @@ The last line is the most useful one. A log only improves your roasting if each 
 
 ## Which should you pick?
 
+**If you roast by sight, sound and a scale and want a quick record of every batch, we recommend Coffee Roast Tracker.** It's built to be quick:
+
+- **Two numbers per roast.** Green weight in, roasted weight out, and the app does the math.
+- **Roast level from weight loss**, matched to a reference chart from City- to French.
+- **No account and nothing to set up**, with your data kept on your device.
+- **$0.99 on iPhone, free on Android**, with no ads or in-app purchases.
+
+[Get Coffee Roast Tracker](/coffee-roast-tracker/) and log your next batch.
+
+If you want more data than that:
+
 - **You have a probe or a connected roaster:** Artisan.
 - **You're all-Apple and want inventory, profiles and logging in one place:** Roastmaster.
 - **You also want a detailed brewing log:** Beanconqueror.
 - **You roast by hand and want times, temperatures and cracks on your phone:** CrackLog or RoastTrace.
 - **You want total flexibility and don't mind typing:** a spreadsheet.
-- **You mainly judge roasts by weight loss and want a quick record:** Coffee Roast Tracker.

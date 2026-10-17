@@ -1,6 +1,6 @@
 ---
 title: "Google Calendar Travel Time on Android: Get Time-to-Leave Alarms"
-description: "Google Calendar won't add travel time automatically. How to get leave-on-time alerts on Android with manual buffers, Waze, or a travel-time alarm app."
+description: "Google Calendar won't add travel time for you. Always On Time plans the trip and rings a full-screen alarm when it's time to leave, for any way you travel."
 slug: "google-calendar-travel-time-android"
 date: "2026-10-17"
 updated: "2026-10-17"
@@ -40,7 +40,19 @@ sources:
 draft: true
 ---
 
-Google Calendar doesn't add travel time to your events automatically, and its Android notification settings have no "time to leave" option. A reminder 15 minutes before a dentist appointment is no help if the drive takes 25. You have three practical fixes: add travel time by hand, connect your calendar to Waze for traffic-based driving alerts, or use an app that plans the trip and rings an alarm when it's time to go.
+Google Calendar doesn't add travel time to your events automatically, and its Android notification settings have no "time to leave" option. A reminder 15 minutes before a dentist appointment is no help if the drive takes 25. You have three practical fixes: use an app that plans the trip and rings an alarm when it's time to go, connect your calendar to Waze for traffic-based driving alerts, or add travel time by hand.
+
+> **Our pick: Always On Time**
+>
+> Our free Android app **plans the trip to each event and rings a full-screen alarm when it's time to leave**.
+>
+> - **A real alarm, not a notification.** "Leave in 10 minutes", then "Time to leave", by default.
+> - **Any way you travel.** Driving, public transit, biking or walking. Waze's reminders are for driving.
+> - **Location is optional.** Plan trips from saved places like Home and Work without sharing your location.
+> - **Live traffic for driving** with Always On Time Plus, free for a limited time.
+> - **Directions in one tap.** Opens Google Maps with the destination and travel mode filled in.
+>
+> [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
 
 ## Why a normal reminder isn't enough
 
@@ -48,40 +60,9 @@ A calendar reminder counts back from the start of the event. Getting there on ti
 
 Two things help: a reminder based on the actual trip, and an alert that's hard to miss.
 
-## Option 1: Add travel time by hand (free, no setup)
+## Option 1: Travel-time alarms in Always On Time (our pick)
 
-1. **Add an earlier notification to the event.** Open the event in Google Calendar, tap **Edit**, then **Add notification**, and set it for your travel time plus a few minutes of buffer.
-2. **Or block the trip as its own event.** Create a "Drive to dentist" event that ends when the appointment starts. Its start time is your leave time, and its notification is your leave reminder.
-3. **Check the trip in a maps app** when you add the event, so the estimate isn't a guess.
-
-In Google's help community, the answer to the travel-time question is that there's no automatic option, so you pick a route and add the time yourself.
-
-Some reports say Google can show a leave-time alert for events that have a location, but Google Calendar's help pages don't document it and there's no setting for it, so don't count on it.
-
-**Limits:** it doesn't react to traffic, it's easy to forget, and the reminder is still an ordinary notification.
-
-## Option 2: Waze calendar sync (free, driving only)
-
-Waze can read your phone's calendar and send a "time to leave" notification based on live traffic. Per Waze Help, the setup on Android is:
-
-1. Open Waze, tap the menu, then **Plan a drive**.
-2. Tap **Connect calendar** and allow access.
-3. Under **Plan a drive > Settings > Time to leave reminder**, choose **Early and Time to leave** (alerts 90 and 10 minutes before you should leave) or **Time to leave** (10 minutes before) only.
-4. Set Waze's location permission to **Allow all the time**.
-
-**What to watch for:**
-
-- Each event needs a **full address** with street, house number and city. If Waze shows "Set address" next to an event, no reminder will be sent until you fix it.
-- Waze uses your device's default calendar. Other calendars need to sync to it.
-- It's built for **driving**: the reminders are for planned drives.
-- The alert is a **notification**, so the earlier advice about Do Not Disturb and missed banners still applies.
-- Waze Help says this feature isn't supported on Android Auto, Android Automotive or CarPlay.
-
-**Pick this if** you mostly drive and already use Waze.
-
-## Option 3: Travel-time alarms in Always On Time
-
-Always On Time is our app. It turns calendar events into full-screen alarms, and it can also plan the trip to an event and ring when it's time to leave. By default, alarms show **"Leave in 10 minutes"** and then **"Time to leave"**, and the alarm screen has a Directions button.
+Always On Time is our app. It **turns calendar events into full-screen alarms**, and it can also **plan the trip to an event and ring when it's time to leave**. By default, alarms show **"Leave in 10 minutes"** and then **"Time to leave"**, and the alarm screen has a Directions button. It's **free on Google Play, with no ads**.
 
 ### How to set it up
 
@@ -106,18 +87,61 @@ For driving, **live traffic** lets the leave time move when roads are slow. With
 - **Online meetings are skipped.** Events with a Meet, Zoom, Teams or Webex link get normal alarms, not travel alarms.
 - **Estimates aren't guarantees.** Road closures and late trains happen, so keep a few minutes of "Arrive early" buffer.
 
-**Pick this if** you want a real alarm rather than a notification, or you travel by transit, bike or on foot.
+**Pick this if** you want a real alarm rather than a notification, you travel by transit, bike or on foot, or you'd rather not share your location.
+
+## Option 2: Waze calendar sync (free, driving only)
+
+Waze can read your phone's calendar and send a "time to leave" notification based on live traffic. Per Waze Help, the setup on Android is:
+
+1. Open Waze, tap the menu, then **Plan a drive**.
+2. Tap **Connect calendar** and allow access.
+3. Under **Plan a drive > Settings > Time to leave reminder**, choose **Early and Time to leave** (alerts 90 and 10 minutes before you should leave) or **Time to leave** (10 minutes before) only.
+4. Set Waze's location permission to **Allow all the time**.
+
+**What to watch for:**
+
+- Each event needs a **full address** with street, house number and city. If Waze shows "Set address" next to an event, no reminder will be sent until you fix it.
+- Waze uses your device's default calendar. Other calendars need to sync to it.
+- It's built for **driving**: the reminders are for planned drives.
+- The alert is a **notification**, so Do Not Disturb or a missed banner can still make you late.
+- Waze Help says this feature isn't supported on Android Auto, Android Automotive or CarPlay.
+
+**Pick this if** you mostly drive and already use Waze.
+
+## Option 3: Add travel time by hand (free, no setup)
+
+1. **Add an earlier notification to the event.** Open the event in Google Calendar, tap **Edit**, then **Add notification**, and set it for your travel time plus a few minutes of buffer.
+2. **Or block the trip as its own event.** Create a "Drive to dentist" event that ends when the appointment starts. Its start time is your leave time, and its notification is your leave reminder.
+3. **Check the trip in a maps app** when you add the event, so the estimate isn't a guess.
+
+In Google's help community, the answer to the travel-time question is that there's no automatic option, so you pick a route and add the time yourself.
+
+Some reports say Google can show a leave-time alert for events that have a location, but Google Calendar's help pages don't document it and there's no setting for it, so don't count on it.
+
+**Limits:** it doesn't react to traffic, it's easy to forget, and the reminder is still an ordinary notification.
 
 ## Quick comparison
 
-| | Manual buffer | Waze calendar sync | Always On Time travel alarms |
+| | **Always On Time travel alarms** | Waze calendar sync | Manual buffer |
 |---|---|---|---|
-| Cost | Free | Free | Free (live traffic via Plus, free for a limited time) |
-| Uses live traffic | No | Yes | Yes, for driving with Plus |
-| Travel modes | Any (you estimate) | Driving | Driving, transit, biking, walking |
-| Alert type | Notification | Notification | Full-screen alarm |
-| Needs a full address | No | Yes | Yes (a physical location) |
-| Location access | None | Allow all the time | Not needed with saved places; Allow all the time to plan from your location |
+| Cost | **Free, no ads** (live traffic via Plus, free for a limited time) | Free | Free |
+| Alert type | **Full-screen alarm** | Notification | Notification |
+| Travel modes | **Driving, transit, biking, walking** | Driving | Any (you estimate) |
+| Uses live traffic | Yes, for driving with Plus | Yes | No |
+| Location access | **Not needed with saved places**; Allow all the time to plan from your location | Allow all the time | None |
+| Needs a full address | Yes (a physical location) | Yes | No |
+
+## Which should you use?
+
+**For most people, we recommend Always On Time's travel alarms.** Of the three options, it's the only one that rings a **full-screen alarm** at leave time. It also:
+
+- **Plans transit, biking and walking trips**, where Waze's reminders are for drives.
+- **Works without location access** when you plan from saved places. Waze needs location set to Allow all the time.
+- **Adjusts for live traffic** on drives with Always On Time Plus, free for a limited time.
+
+[Get Always On Time on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) and turn on **Plan time to leave** under Getting there in Settings.
+
+If you only drive and already use Waze, its calendar sync is a good free alternative. If you'd rather not install anything, add travel time by hand.
 
 ## Tips that help whichever option you use
 

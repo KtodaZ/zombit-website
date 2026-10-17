@@ -1,9 +1,10 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { load } from "js-yaml";
-import { Marked } from "marked";
+import { Marked, type Tokens } from "marked";
 import { bySlug } from "@/data/apps";
 import { BASE_PATH } from "@/lib/site";
+import { INK, onAccent } from "@/lib/accent";
 
 /**
  * Blog posts: one Markdown file per post in src/content/blog/, YAML frontmatter on top. Read at
@@ -42,8 +43,22 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-function renderer() {
+const STORE_HOSTS: [RegExp, "ios" | "android", string][] = [
+  [/^https:\/\/apps\.apple\.com\//, "ios", "App Store"],
+  [/^https:\/\/play\.google\.com\//, "android", "Google Play"],
+];
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+
+/**
+ * A post can open with one "pick" callout: a blockquote whose first line is `**Our pick: Name**`.
+ * It renders as a tinted inset (the design's one sanctioned inset) with the app name set as a
+ * title, the body as written, and a last line of links turned into actions: store links become
+ * accent pills (the Accent Means Act rule), other links stay text links. Any other blockquote
+ * renders as a plain quote.
+ */
+function renderer(app?: string) {
   const md = new Marked({ gfm: true });
+  const accent = (app && bySlug(app)?.accent) || INK;
   md.use({
     renderer: {
       heading({ tokens, depth }) {
@@ -52,6 +67,42 @@ function renderer() {
         const level = Math.max(depth, 2);
         return `<h${level} id="${slugify(text)}">${text}</h${level}>\n`;
       },
+      blockquote({ tokens }) {
+        const body = tokens.filter((t) => t.type !== "space");
+        const head = body[0];
+        const title = head?.type === "paragraph" && /^\*\*Our pick:\s*(.+?)\*\*$/.exec(head.raw.trim());
+        if (!title) return false;
+        const last = body[body.length - 1] as Tokens.Paragraph;
+        const isActions =
+          body.length > 2 &&
+          last.type === "paragraph" &&
+          last.tokens.some((t) => t.type === "link") &&
+          last.tokens.every((t) => t.type === "link" || (t.type === "text" && /^[\s·]*$/.test(t.raw)));
+        const middle = body.slice(1, isActions ? -1 : undefined);
+        const actions = isActions
+          ? last.tokens
+              .filter((t): t is Tokens.Link => t.type === "link")
+              .map((l) => {
+                const text = this.parser.parseInline(l.tokens);
+                const store = STORE_HOSTS.find(([re]) => re.test(l.href));
+                if (!store) return `<a href="${esc(l.href)}">${text}</a>`;
+                const [, kind, name] = store;
+                return (
+                  `<a href="${esc(l.href)}" class="callout-store" data-store="${kind}" data-app="${esc(app ?? "")}" ` +
+                  `data-placement="blog-pick" style="background-color:${accent};color:${onAccent(accent)}">` +
+                  `${text}<span class="sr-only"> (opens ${name})</span></a>`
+                );
+              })
+          : [];
+        return (
+          `<aside class="callout" aria-label="Our pick">\n` +
+          `<p class="callout-label">Our pick</p>\n` +
+          `<p class="callout-name">${this.parser.parseInline(md.Lexer.lexInline(title[1]))}</p>\n` +
+          this.parser.parse(middle) +
+          (actions.length ? `<p class="callout-actions">${actions.join("\n")}</p>\n` : "") +
+          `</aside>\n`
+        );
+      },
     },
   });
   return md;
@@ -59,14 +110,16 @@ function renderer() {
 
 /**
  * External links get rel="noopener"; site links get the base path (raw HTML bypasses next/link);
- * wide tables scroll sideways on phones instead of squeezing the page.
+ * wide tables scroll sideways on phones instead of squeezing the page. A table row whose first
+ * cell is wholly bold is our app's row and gets a tint.
  */
 const finish = (html: string) =>
   html
     .replace(/<a href="\/(?!\/)/g, `<a href="${BASE_PATH}/`)
     .replace(/<a href="(https?:\/\/(?!zombit\.io)[^"]*)"/g, '<a rel="noopener" href="$1"')
     .replace(/<table>/g, '<div class="table-wrap" tabindex="0"><table>')
-    .replace(/<\/table>/g, "</table></div>");
+    .replace(/<\/table>/g, "</table></div>")
+    .replace(/<tr>(\s*<td>)<strong>([^<]*)<\/strong>(<\/td>)/g, '<tr class="pick">$1<strong>$2</strong>$3');
 
 function parse(file: string): Post {
   const raw = readFileSync(join(DIR, file), "utf8");
@@ -86,7 +139,7 @@ function parse(file: string): Post {
     faq: Array.isArray(fm.faq) ? (fm.faq as Post["faq"]) : [],
     sources: Array.isArray(fm.sources) ? (fm.sources as Post["sources"]) : [],
     draft: fm.draft === true,
-    html: finish(renderer().parse(m[2], { async: false }) as string),
+    html: finish(renderer(str("app") || undefined).parse(m[2], { async: false }) as string),
   };
   // Fail the build on a malformed post rather than ship a page with holes in its metadata.
   const problems = [

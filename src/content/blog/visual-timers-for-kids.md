@@ -52,6 +52,18 @@ sources:
 
 A visual timer helps children by turning time into something they can see. Instead of numbers ticking down, a colored section shrinks until it's gone, so a child knows how much is left without reading a clock. That makes transitions, routines and waiting easier, because the end of an activity stops being a surprise announced by an adult.
 
+> **Our pick: Montessori Visual Timer**
+>
+> Our app puts the ideas in this guide into **one simple timer children can read and run themselves**.
+>
+> - **Time they can see.** A colored section of the clock face shrinks as time passes, from a few seconds up to 60 minutes.
+> - **Kids press start**, and a **PIN lock** stops them changing the time.
+> - **One-tap quick timers** for Brush Teeth, Cleanup, Quiet Time and Screen Time.
+> - **No ads**, and both store listings say **no data is collected**.
+> - **Free on Google Play**, $1.99 on the App Store for iPhone and iPad.
+>
+> [Download on the App Store](https://apps.apple.com/us/app/montessori-visual-timer/id6760267134) [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.visualtimer) · [See the app](/montessori-visual-timer/)
+
 ## Why young children struggle with time
 
 To an adult, "five more minutes" is precise. To a three-year-old it means almost nothing. The National Center for Pyramid Model Innovations (NCPMI), which produces early-childhood guidance funded by the US Department of Education's Office of Special Education Programs, notes in one of its family handouts that to young children there is little difference between five minutes and an hour.
@@ -130,4 +142,12 @@ You can use a physical timer, a sand timer or an app. Whatever you pick, look fo
 - **No distractions.** No ads, games or pop-ups competing with the routine.
 - **A way to stop fiddling.** If small hands keep changing the time, you'll want a lock.
 
-[Montessori Visual Timer](/montessori-visual-timer/) is our app, built around these ideas. A colored section of the clock face shrinks as time passes, and you can set anything from a few seconds up to 60 minutes. Quick timers start common routines in one tap (it comes with Brush Teeth, Cleanup, Quiet Time and Screen Time, and you can edit them). A PIN lock keeps the controls from being changed, and it can lock automatically when the timer starts. It has no ads on iOS or Android, and both store listings say it collects no data. It runs on iPhone, iPad and Android: $1.99 on the App Store and free on Google Play.
+**We built [Montessori Visual Timer](/montessori-visual-timer/) to tick every box on this list**, and it's the app we recommend:
+
+- **A clear visual.** A colored section of the clock face shrinks as time passes, and you can set anything from a few seconds up to 60 minutes.
+- **Simple enough for a child to run.** Quick timers start common routines in one tap. It comes with Brush Teeth, Cleanup, Quiet Time and Screen Time, and you can edit them.
+- **A gentle alert** when time is up.
+- **No distractions.** No ads on iOS or Android, and both store listings say it collects no data.
+- **A PIN lock** keeps the controls from being changed, and it can lock automatically when the timer starts.
+
+It runs on iPhone, iPad and Android: **free on Google Play** and $1.99 on the App Store. [Get Montessori Visual Timer](/montessori-visual-timer/) and try it with one routine this week.

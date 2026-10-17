@@ -310,3 +310,81 @@ a {
 .post td:first-child {
   color: var(--color-ink);
 }
+
+/* Our pick: the one tinted inset a post gets, under the opening answer. An ink rule on top,
+   paper-deep ground, square corners. The app name sets as a serif title; store links are the
+   only accent, as pills. */
+.post .callout {
+  margin-top: 1.75em;
+  margin-bottom: 1.75em;
+  padding: 1.25em 1.25em 1.4em;
+  background: var(--color-paper-deep);
+  border-top: 1px solid var(--color-ink);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+.post .callout > * + * {
+  margin-top: 0.8em;
+}
+.post .callout-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.post .callout .callout-name {
+  margin-top: 0.15em;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+.post .callout .callout-name strong {
+  font-weight: 400;
+}
+.post .callout ul {
+  font-size: 1rem;
+}
+.post .callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75em 1.25em;
+  padding-top: 0.35em;
+  font-size: 0.875rem;
+}
+.post .callout .callout-actions {
+  margin-top: 1.1em;
+}
+.post .callout-actions a.callout-store {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(22, 24, 29, 0.18);
+  transition: transform 200ms;
+}
+.post .callout-actions a.callout-store:hover,
+.post .callout-actions a.callout-store:focus-visible {
+  transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .post .callout-actions a.callout-store {
+    transition: none;
+    transform: none;
+  }
+}
+.post tr.pick td {
+  background: var(--color-paper-deep);
+  color: var(--color-ink);
+}
+/* The first column steps in so the tinted pick row has room on its left edge. */
+.post th:first-child,
+.post td:first-child {
+  padding-left: 0.6em;
+}

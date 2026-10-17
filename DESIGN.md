@@ -180,6 +180,11 @@ store shape (~22%); pill store actions. No other radii.
   body copy at the 40rem measure; hairline tables that scroll sideways on phones; then the
   visible FAQ, a numbered sources list, and the related app set like a catalogue entry (rules,
   never a card).
+- **Our pick (blog):** a post's related app, under the opening answer. A blockquote whose first
+  line is `**Our pick: Name**` renders as the one sanctioned tinted inset: paper-deep ground, an ink
+  hairline on top, square corners, the name in Newsreader, bold-led bullets, and a last line of
+  links where store links become accent pills (the only accent in it). In tables, a row whose first
+  cell is wholly bold is the app's own row and gets the same paper-deep tint.
 - **Questions:** an open definition list, never an accordion. It is also the FAQPage JSON-LD.
 - **Breadcrumbs:** on document pages only; matches the BreadcrumbList JSON-LD.
 - **Policy body:** `.policy` / `.doc` in `globals.css`: serif h2s over a soft rule, sans body at
