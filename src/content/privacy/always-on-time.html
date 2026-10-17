@@ -96,8 +96,11 @@ copy, or show a test notification.</li>
 <li><strong>Connection records.</strong> We store which assistant is connected, the address it returns to after
 approval, when it connected and was last used, and its access tokens, stored only as one-way
 hashes. Changes the assistant makes are logged with the previous values for 30 days so you can
-undo them. Connector request logs (which action was taken, its IDs and outcome, never event
-titles or settings contents) are kept for troubleshooting for up to 30 days.</li>
+undo them. Connector request logs (which action was taken, random IDs, the outcome and timing,
+never event titles or settings contents) are kept for troubleshooting for up to 30 days. They
+identify your account only by a random log ID, never your name, email address or account ID.
+Google Cloud, which hosts the connector, also keeps standard request logs, including IP address
+and app or browser type, for up to 30 days.</li>
 </ul>
 <p>A connected assistant can read the upcoming alarms copy, your synced alarm settings and 14 days of
 alarm history, and change your alarm settings. It cannot read or change your calendar, and
@@ -109,8 +112,9 @@ how often each feature is used, with no account identifiers or content.</p>
 <p>Disconnect anytime in <strong>Settings &gt; Connected assistants</strong> or in your assistant. Disconnecting the
 last assistant deletes the upcoming alarms copy, phone registrations and change log right away.
 Connections unused for 90 days are removed. Deleting your Always On Time account removes its connections, tokens, upcoming alarms copy,
-phone registrations and change log. Connector request logs remain for their normal retention
-period, and anonymous daily totals are kept without account identifiers.</p>
+phone registrations, change log and the record linking your random log ID to you, so request
+logs that remain until they expire can no longer be connected to you. Anonymous daily totals are
+kept without account identifiers.</p>
 <p><strong>Gemini on this phone.</strong> On Android 16 and later, Gemini can check and change your
 alarms on the phone itself when you ask it to. This needs no account sync or cloud connector. If
 you use account sync, supported settings changed through Gemini sync to your account like changes
