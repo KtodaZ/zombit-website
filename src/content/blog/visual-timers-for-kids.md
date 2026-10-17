@@ -53,33 +53,31 @@ draft: true
 
 A visual timer helps children by turning time into something they can see. Instead of numbers ticking down, a colored section shrinks until it's gone, so a child knows how much is left without reading a clock. That makes transitions, routines and waiting easier, because the end of an activity stops being a surprise announced by an adult.
 
-Here's why that works, how to use one at home and in the classroom, and how it fits with Montessori ideas about independence.
-
 ## Why young children struggle with time
 
-To an adult, "five more minutes" is precise. To a three-year-old it means almost nothing. The National Center for Pyramid Model Innovations (NCPMI), which produces early-childhood guidance funded by the US Department of Education's Office of Special Education Programs, puts it plainly in one of its family handouts: to young children there is little difference between five minutes and an hour.
+To an adult, "five more minutes" is precise. To a three-year-old it means almost nothing. The National Center for Pyramid Model Innovations (NCPMI), which produces early-childhood guidance funded by the US Department of Education's Office of Special Education Programs, notes in one of its family handouts that to young children there is little difference between five minutes and an hour.
 
-So when a parent says "time to go" and the child melts down, it often isn't defiance. The change came out of nowhere from the child's point of view. They had no way to see it coming.
+When a parent says "time to go" and the child melts down, it often isn't defiance. From the child's point of view, the change came without warning.
 
-A visual timer gives them that view. The same NCPMI handout recommends timers, sand timers in particular, because they have a clear beginning, middle and end that children can watch. It also says sand timers can help with transitions and let children manage timed tasks without help from an adult.
+A visual timer shows the change coming. The same NCPMI handout recommends timers, sand timers in particular, because they have a clear beginning, middle and end that children can watch. It also says sand timers can help with transitions and let children manage timed tasks without help from an adult.
 
 ## How visual timers help with transitions
 
 Transitions are the moments between activities: leaving the park, turning off a show, coming in from the garden, starting homework. They're also where a lot of family friction happens.
 
-Guidance from NCPMI and the Mount Sinai Parenting Center points the same way:
+NCPMI and the Mount Sinai Parenting Center give similar advice:
 
 - **Warn before the change.** Both suggest giving a warning before a transition, and both mention timers as one way to do it.
-- **Make the day predictable.** NCPMI pairs timers with visual schedules. Its bottom line is that the more a child can predict and take part in the day's schedule, the less likely challenging behavior is.
+- **Make the day predictable.** NCPMI pairs timers with visual schedules. It says that the more a child can predict and take part in the day's schedule, the less likely challenging behavior is.
 - **Keep it concrete.** Mount Sinai suggests a timer to show young children how long they have left, says sand timers work best, and suggests turning routines like bedtime into a simple visual chart.
 
-A visual timer works on the same idea as a sand timer: the child watches time run out.
+A visual timer works like a sand timer: the child watches time run out.
 
-### Let the timer deliver the news
+### Warnings from a parent vs. from the timer
 
-One study is worth knowing about. In a 2016 diary study, University of Washington researchers followed 28 families with children aged 1 to 5 and found that children who got a two-minute warning from a parent before screen time ended were *more* upset, not less, while routines made the switch easier. The study didn't test timers, but the researchers suggested a reminder from the technology itself might go over better than one from a parent.
+In a 2016 diary study, University of Washington researchers followed 28 families with children aged 1 to 5 and found that children who got a two-minute warning from a parent before screen time ended were *more* upset, not less, while routines made the switch easier. The study didn't test timers, but the researchers suggested a reminder from the technology itself might go over better than one from a parent.
 
-That matches what many families find: "the timer says it's time" lands differently from "I say it's time." The timer is neutral, and the child saw it coming.
+Many families find that "the timer says it's time" lands differently from "I say it's time." The timer is neutral, and the child saw it coming.
 
 ## Ways to use a visual timer at home
 
@@ -98,7 +96,7 @@ A few habits help:
 - **Show it before you start it.** Say "when the red is gone, it's time for bath," then start the timer together.
 - **Hand over control.** Let your child press start. NCPMI notes that children are more cooperative when they can be part of the process.
 - **Follow through.** If the timer ends and nothing changes, it stops meaning anything.
-- **Keep it calm.** A gentle sound at the end is enough. The point is predictability, not alarm.
+- **Keep it calm.** A gentle sound at the end is enough.
 
 ## Visual timers in the classroom
 
@@ -111,11 +109,11 @@ Teachers use visual timers for many of the same reasons, across a whole group:
 
 Many parents and teachers of children with ADHD or autism also use visual timers. A timer is a practical tool rather than a treatment, so if your child has support needs, talk to their clinician or school about what fits.
 
-## The Montessori angle
+## Visual timers and Montessori principles
 
 Montessori education puts a lot of weight on two ideas that a visual timer can support.
 
-**Independence.** The Montessori Family Alliance sums up the child's side of it as "help me do it myself," and describes independence as starting with the environment: set things up so the child can manage without an adult stepping in. A timer the child can read and start supports that. They don't need to ask how long is left.
+**Independence.** The Montessori Family Alliance sums up the child's side of it as "help me do it myself," and describes independence as starting with the environment: set things up so the child can manage without an adult stepping in. A timer the child can read and start supports that, because they don't need to ask how long is left.
 
 **The prepared environment.** AMI describes the prepared environment as one the adult arranges for the learner, built around order, reality, beauty and simplicity. A simple timer with one clear job fits that better than a busy screen full of options.
 
@@ -134,5 +132,3 @@ You can use a physical timer, a sand timer or an app. Whatever you pick, look fo
 - **A way to stop fiddling.** If small hands keep changing the time, you'll want a lock.
 
 [Montessori Visual Timer](/montessori-visual-timer/) is our app, built around these ideas. A colored section of the clock face shrinks as time passes, and you can set anything from a few seconds up to 60 minutes. Quick timers start common routines in one tap (it comes with Brush Teeth, Cleanup, Quiet Time and Screen Time, and you can edit them). A PIN lock keeps the controls from being changed, and it can lock automatically when the timer starts. It has no ads on iOS or Android, and both store listings say it collects no data. It runs on iPhone, iPad and Android: $1.99 on the App Store and free on Google Play.
-
-Whichever timer you use, the idea is the same. When children can see time, they spend less of it being surprised.

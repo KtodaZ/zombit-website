@@ -38,17 +38,15 @@ draft: true
 
 In Hell Let Loose, artillery is aimed by setting the gun's elevation in mils. You measure the distance from your gun to the target, look up the mil value for that distance in your faction's table, and dial it in. For US and German howitzers that's 978 mils at 100 m down to 622 mils at 1,600 m; Soviet and British guns use different tables, which is where most misses come from.
 
-This guide explains what mils are, gives the tables for each faction, walks through the mistakes that cost the most shells, and covers self-propelled guns, the Vietnam mortar and WARDOGS.
-
 ## What a mil is
 
 A mil is a small unit of angle. Real-world artillery uses it because it scales neatly with distance: one milliradian covers about one meter at a range of one thousand meters. NATO divides a full circle into 6,400 mils.
 
-You don't need the geometry to fire in Hell Let Loose. What matters is that each gun has a sight with a mil scale, and every distance maps to one setting on that scale. Learn your faction's table, or let a calculator hold it for you, and the rest is measuring distance well.
+You don't need the geometry to fire in Hell Let Loose. Each gun has a sight with a mil scale, and every distance maps to one setting on that scale. Learn your faction's table, or let a calculator hold it for you, and the rest is measuring distance well.
 
 ## Why bigger numbers land closer
 
-The stationary howitzers fire high, lobbing shells at a steep angle. Above 45 degrees, raising the barrel sends the shell higher but not as far. So on these guns the table runs backwards from what new players expect: **a higher mil value lands closer to the gun, and a lower one lands farther away.**
+The stationary howitzers fire high, lobbing shells at a steep angle. Above 45 degrees, raising the barrel sends the shell higher but not as far. As a result, the table on these guns runs the opposite way from what new players expect. **A higher mil value lands closer to the gun, and a lower one lands farther away.**
 
 If your first shell falls short, lower the number. If it flies long, raise it.
 
@@ -75,11 +73,11 @@ As formulas (d is distance in meters):
 
 A worked example: your US gun is 850 m from an enemy garrison. 1001.47 − (0.237 × 850) = 800, so dial 800. On a Soviet gun the same 850 m is about 960 mils, and on a British gun about 400.
 
-## Self-propelled artillery is a different animal
+## Self-propelled artillery uses its own tables
 
 Update 19 (December 3, 2025) added self-propelled artillery (SPA), one vehicle per faction: the KV-2, Sherman M4A3 105, Sturmpanzer IV Brummbär, Churchill AVRE, Panzer III Ausf. N and Bishop SP 25pdr. Only the new Artillery Squad can use them. The same update cut static artillery from three guns to one buildable gun per team.
 
-Two things catch people out with SPA:
+SPA differs from the howitzers in two ways:
 
 - **Shorter ranges, per vehicle.** The ranges in our app run from 100–250 m for the Churchill AVRE to 100–800 m for the Bishop, with the others in between.
 - **The scale runs the other way.** In the SPA tables our app uses, the number goes up as the distance goes up. Don't carry your howitzer habits over.
@@ -90,7 +88,7 @@ Because a tank can sit on a slope, vehicle tilt also matters. Artillery Let Loos
 
 1. **Using the wrong faction's table.** British numbers are roughly half the US/German ones. A US value dialed on a British gun misses completely. Check which faction you're playing every match.
 2. **Measuring from the wrong spot.** Measure from your gun to the target, not from HQ or the center of a grid square. With only one buildable gun per team now, the gun may not be where you're used to.
-3. **Ignoring height.** The tables assume the target is level with you. A target on a hill or down in a valley needs a correction. Artillery Let Loose's terrain setting uses standard mil geometry (height difference × 1000 ÷ distance), and the app says plainly that this is a strong theoretical estimate that hasn't been fully validated in-game.
+3. **Ignoring height.** The tables assume the target is level with you. A target on a hill or down in a valley needs a correction. Artillery Let Loose's terrain setting uses standard mil geometry (height difference × 1000 ÷ distance), and the app states that this is a strong theoretical estimate that hasn't been fully validated in-game.
 4. **Doing the math in your head under fire.** 23.7 mils per 100 m is easy at a desk and easy to fumble mid-match. Small slips add up when you're walking fire onto a target.
 5. **Mixing up SPA and the howitzer.** The tables point in opposite directions. Make sure the number you dial came from the right gun.
 6. **Not walking your fire.** If a shell misses, adjust in small steps rather than re-measuring from scratch. A fixed step (say 25 m) toward or away from the gun is quick to apply and easy to track.
@@ -108,11 +106,11 @@ WARDOGS is a separate game from developer BULKHEAD, in Steam Early Access since 
 
 On the L81 and the SPH-2's high arc, a higher number lands closer, like the Hell Let Loose howitzers. On the SPH-2's low arc, the number goes up with distance.
 
-The tables were measured on flat ground, so park the SPH-2 on level ground: vehicle tilt changes the range. A good habit is to fire one ranging shot, see where it lands, and adjust from there.
+The tables were measured on flat ground, so park the SPH-2 on level ground: vehicle tilt changes the range. Fire one ranging shot, see where it lands, and adjust from there.
 
 ## How a calculator helps
 
-None of this is hard on paper. It's hard with tanks rolling toward your gun and your squad lead calling targets. A calculator removes the steps where mistakes creep in:
+The math is easy on paper and harder with tanks rolling toward your gun and your squad lead calling targets. A calculator takes over the error-prone steps:
 
 - **The right table every time.** Pick your faction or vehicle once, and every number comes from that gun's scale.
 - **Speed.** Type the distance and read the mils straight away, on a large readout you can glance at mid-match. It also accepts input from a connected USB or Bluetooth keyboard or numpad.
