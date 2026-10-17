@@ -67,7 +67,7 @@ export default function SitePrivacyPage() {
           </p>
           <p>When you visit, Google Analytics collects, in general terms:</p>
           <ul>
-            <li>the pages you view and how you arrived, such as a search engine or another site;</li>
+            <li>the pages you view and how you arrived, such as a search engine, an AI assistant, or another site;</li>
             <li>your device type, browser, operating system, screen size, and language;</li>
             <li>an approximate location, such as country or city, worked out from your IP address;</li>
             <li>clicks on App Store and Google Play buttons, recorded with the app and the store only.</li>
