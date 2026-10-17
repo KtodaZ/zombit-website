@@ -1,4 +1,4 @@
-import { APPS, SITE, privacyPath, type AppEntry, type Faq, type Listing } from "@/data/apps";
+import { APPS, SITE, privacyPath, showsRating, type AppEntry, type Faq, type Listing } from "@/data/apps";
 import { SITE_ROOT, abs } from "./site";
 
 const ORG_ID = `${SITE_ROOT}/#organization`;
@@ -52,13 +52,13 @@ function offer(store: AppEntry["stores"][number], l: Listing | undefined) {
 
 /**
  * One MobileApplication per app. aggregateRating is emitted only for a real fetched rating with
- * a real count, and only one store's: the store with the most ratings. Blending two stores into
+ * at least MIN_RATINGS ratings, and only one store's: the store with the most ratings. Blending two stores into
  * one number would be a figure neither store published.
  */
 export function mobileApplication(app: AppEntry) {
   const rated = (["ios", "android"] as const)
     .map((k) => app.listings[k])
-    .filter((l): l is Listing => Boolean(l && l.score !== null && l.count))
+    .filter(showsRating)
     .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))[0];
   const offers = app.stores
     .map((s) => offer(s, app.listings[s.kind]))
@@ -154,3 +154,55 @@ export const catalogue = {
     name: a.name,
   })),
 };
+
+/** One blog post. Author and publisher are the studio: posts carry no personal byline. */
+export function blogPosting(p: {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  updated: string;
+  app?: string;
+  image: string;
+}) {
+  const url = `${SITE_ROOT}/blog/${p.slug}/`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    headline: p.title,
+    description: p.description,
+    datePublished: p.date,
+    dateModified: p.updated,
+    inLanguage: "en",
+    image: abs(p.image),
+    author: { "@id": ORG_ID, "@type": "Organization", name: SITE.legalName, url: `${SITE_ROOT}/` },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@type": "Blog", "@id": `${SITE_ROOT}/blog/#blog` },
+    ...(p.app ? { about: { "@id": `${SITE_ROOT}/${p.app}/#app` } } : {}),
+  };
+}
+
+/** The blog index: a Blog node listing its posts. */
+export function blog(posts: { slug: string; title: string; date: string; updated: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${SITE_ROOT}/blog/#blog`,
+    url: `${SITE_ROOT}/blog/`,
+    name: `${SITE.name} blog`,
+    inLanguage: "en",
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": SITE_ID },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      "@id": `${SITE_ROOT}/blog/${p.slug}/#article`,
+      url: `${SITE_ROOT}/blog/${p.slug}/`,
+      headline: p.title,
+      datePublished: p.date,
+      dateModified: p.updated,
+    })),
+  };
+}

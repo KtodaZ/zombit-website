@@ -530,6 +530,17 @@ export const APPS: AppEntry[] = [
 export const bySlug = (slug: string) => APPS.find((a) => a.slug === slug);
 export const RATINGS_FETCHED_AT = ratings.fetchedAt;
 
+/**
+ * Fewest ratings a store average needs before the site shows it anywhere: on the page, in
+ * llms-full.txt, or as aggregateRating JSON-LD. A 5.0 from one rating says little and reads as
+ * padding; under the threshold the store link alone carries the listing.
+ */
+export const MIN_RATINGS = 10;
+
+/** A fetched store rating with a real score and enough ratings behind it to publish. */
+export const showsRating = (l: Listing | undefined): l is Listing =>
+  Boolean(l && l.score !== null && l.count !== null && l.count >= MIN_RATINGS);
+
 export const privacyPath = (app: AppEntry) => `/${app.slug}/privacy/`;
 
 /** Store price as a short phrase, or null when the listing has not been read. */
