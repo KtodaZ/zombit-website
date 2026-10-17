@@ -6,7 +6,7 @@
 const CONTRACT = `<!--
 impeccable:direction-contract seed afdb082e
 
-THESIS — The Field Guide. Three unrelated apps do not share a mood, so the site
+THESIS — The Field Guide. Five unrelated apps do not share a mood, so the site
 stops pretending they do. It is a catalogue of specimens: paper ground, hairline
 rules, one editorial serif, one plate per app. The studio is the careful hand
 that wrote the labels, not a personality shouting over them.
@@ -17,9 +17,11 @@ accent, and that accent appears only on a thing you can act on. Rules are
 hairlines in a single weight, never boxes. No gradients, glass, glow, or hero
 device render. The old Google Sites template is the explicit anti-reference.
 
-STORY — Studio line, then three plates in fixed order, then a page per app that
+STORY — Studio line, then five plates in fixed order, then a page per app that
 reads as a field entry: what it is, what it looks like, what it does, where to
-get it, and the true limits (platform, affiliation, ads).
+get it, the questions people ask, and the true limits (platform, price,
+affiliation, ads). Documents (policies, support, help) share the paper and
+rules but drop the plates.
 
 FIRST VIEWPORT — One honest sentence about what the studio makes, set in the
 serif, with the first specimen already beginning below it. No full-bleed splash,

@@ -1,26 +1,68 @@
 {
-  "fetchedAt": "2026-09-05",
+  "fetchedAt": "2026-10-17",
   "apps": {
     "artillery": {
       "ios": {
         "score": 4.9,
-        "count": 22
+        "count": 22,
+        "price": 1.99,
+        "currency": "USD"
       },
       "android": {
         "score": 4.7,
-        "count": null
+        "count": 1219,
+        "price": 0,
+        "currency": "USD"
       }
     },
     "montessori": {
       "ios": {
         "score": 4.8,
-        "count": 4
+        "count": 4,
+        "price": 1.99,
+        "currency": "USD"
+      },
+      "android": {
+        "score": null,
+        "count": null,
+        "price": 0,
+        "currency": "USD"
+      }
+    },
+    "wordgarden": {
+      "ios": {
+        "score": 5,
+        "count": 1,
+        "price": 0,
+        "currency": "USD"
+      },
+      "android": {
+        "score": null,
+        "count": null,
+        "price": 0,
+        "currency": "USD"
+      }
+    },
+    "coffee": {
+      "ios": {
+        "score": null,
+        "count": null,
+        "price": 0.99,
+        "currency": "USD"
+      },
+      "android": {
+        "score": null,
+        "count": null,
+        "price": 0,
+        "currency": "USD"
       }
     },
     "alwaysontime": {
       "android": {
-        "score": 4.7,
-        "count": null
+        "score": null,
+        "count": null,
+        "price": 0,
+        "currency": "USD"
       }
     }
   }

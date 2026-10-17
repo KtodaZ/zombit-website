@@ -3,6 +3,8 @@ import { Newsreader, Geist, Geist_Mono } from "next/font/google";
 import { DirectionContract } from "@/components/DirectionContract";
 import { SITE } from "@/data/apps";
 import { IS_PREVIEW, SITE_ROOT, abs } from "@/lib/site";
+
+// Per-page canonical, Open Graph, and Twitter tags come from pageMeta() in src/lib/meta.ts.
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -26,18 +28,9 @@ export const metadata: Metadata = {
   authors: [{ name: SITE.legalName, url: SITE_ROOT }],
   creator: SITE.legalName,
   publisher: SITE.legalName,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
-    url: SITE_ROOT,
-    locale: "en_US",
-  },
-  twitter: { card: "summary", title: SITE.name, description: SITE.description },
   robots: IS_PREVIEW ? { index: false, follow: false } : { index: true, follow: true },
   icons: { icon: abs("/icons/zombit-mark.webp"), apple: abs("/icons/zombit-mark.webp") },
+  formatDetection: { email: false, telephone: false, address: false },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
