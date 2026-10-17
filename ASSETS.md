@@ -4,12 +4,41 @@ Every raster and every ported document this site ships is listed here with its s
 uncompressed captures live in `_assets-raw/`, which is gitignored because it is large and fully
 derivable from the sources below.
 
-## Screenshots — `public/shots/`
+## Store screenshots — `public/screens/<slug>/`
 
-All are real app screens, not marketing composites. Composites were cropped back to the raw
+The showcase strip on the home page and each app page shows the current store listing's own
+images (caption plus device, as the store shows them), in listing order. Fetched 2026-10-17:
+App Store images through the App Store Connect API (live version, en-US, iPhone set), Play images
+through the Play Developer API (`edits.images.list` for `phoneScreenshots` on a throwaway edit
+that was deleted, never committed). Each is encoded at 360, 540, and 720px wide with
+`cwebp -q 80 -m 6 -resize <w> 0` as `<n>-<w>.webp`; sizes and alt text are in `storeShots` in
+`src/data/apps.ts`.
+
+| App | Set used | Why |
+|---|---|---|
+| Always On Time | Google Play, 4 images (1080×1920) | Android only |
+| Artillery Let Loose | Google Play, 3 images (1080×1920) | Most of its ratings are on Play; the iOS set is the same slides drawn on an iPhone |
+| Montessori Visual Timer | Google Play, 4 images (1080×1920) | Superset of the iOS set (adds Quick Timers) |
+| Word Garden | App Store iPhone 6.5", 4 images (1242×2688) | Identical to the Play set |
+| Coffee Roast Tracker | App Store iPhone 6.5", 3 images (1242×2688) | Identical to the Play set (Play's copies are JPEG) |
+
+Re-fetch when a listing's screenshots change, and keep the alt text in step with the captions.
+
+## Videos and posters — `public/screens/<slug>/video-poster-<w>.webp`
+
+| App | Video | Poster |
+|---|---|---|
+| Always On Time | YouTube `UVZwlFZaIBc` (landscape, 0:17, 2026-09-24) | YouTube `maxresdefault.jpg`, encoded at 640/960/1280 |
+| Montessori Visual Timer | YouTube Short `W3l46xFXA5s` (portrait, 0:28, 2026-10-14) | Frame at 2 s of the master `Montessori-Visual-Timer/marketing/promo-video/out/preview-final.mp4` (YouTube's thumbnail is a landscape crop of the PIN pad), encoded at 360/540/720 |
+
+The player is the youtube-nocookie embed, loaded only after a click (`src/components/VideoFacade.tsx`).
+
+## Real screens — `public/shots/`
+
+These now feed only the social cards (`scripts/og-images.mjs`). All are real app screens, not marketing composites. Composites were cropped back to the raw
 screen with `ffmpeg -vf crop=w:h:x:y`, and everything is encoded with
 `cwebp -q 86 -resize 620 0`. The site draws its own device frame, so every app sits in an
-identical one. Intrinsic sizes are recorded in `SHOT_SIZE` in `src/components/Specimen.tsx`.
+identical one.
 
 | File | Source | Treatment |
 |---|---|---|

@@ -113,6 +113,16 @@ export default function SitePrivacyPage() {
             .
           </p>
 
+          <h2 id="videos">Embedded videos</h2>
+          <p>
+            Some pages show one of our videos. Nothing loads from YouTube until you press play; then
+            the video loads from YouTube (Google), and the{" "}
+            <a className={link} href="https://policies.google.com/privacy" rel="noopener">
+              Google Privacy Policy
+            </a>{" "}
+            applies to that playback.
+          </p>
+
           <h2 id="contact">Contact</h2>
           <p>
             Questions about this page:{" "}

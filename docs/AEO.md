@@ -19,8 +19,8 @@ JavaScript (most AI fetchers) get the full text, FAQs, and policies.
 
 | Page | Nodes |
 | --- | --- |
-| Home | Organization, WebSite, ItemList of the five apps |
-| App pages | Organization, MobileApplication, FAQPage, BreadcrumbList |
+| Home | Organization, WebSite, ItemList of the five apps, VideoObject per app video |
+| App pages | Organization, MobileApplication, FAQPage, BreadcrumbList, VideoObject (when the app has a video) |
 | Privacy pages | Organization, WebPage (about the app), BreadcrumbList |
 | Support | Organization (with ContactPoint), WebPage, BreadcrumbList |
 | Assistants help | Organization, WebPage, FAQPage, BreadcrumbList |

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Masthead, Colophon } from "@/components/Chrome";
-import { Screen, StoreAction, PlatformTags, Ratings } from "@/components/Specimen";
+import { StoreAction, PlatformTags, Ratings } from "@/components/Specimen";
+import { Showcase } from "@/components/Showcase";
 import { JsonLd } from "@/components/JsonLd";
-import { organization, website, catalogue } from "@/lib/schema";
+import { organization, website, catalogue, videoObject } from "@/lib/schema";
 import { APPS, SITE, type AppEntry } from "@/data/apps";
 import { asset } from "@/lib/site";
 import { pageMeta } from "@/lib/meta";
@@ -22,6 +23,9 @@ export default function Home() {
       <JsonLd data={organization} />
       <JsonLd data={website} />
       <JsonLd data={catalogue} />
+      {APPS.filter((a) => a.video).map((a) => (
+        <JsonLd key={a.slug} data={videoObject(a)} />
+      ))}
       <Masthead />
       <main id="main" className="mx-auto max-w-[var(--measure-page)] px-6 sm:px-8">
         <section className="settle border-b border-rule pt-16 pb-12 sm:pt-24 sm:pb-16">
@@ -39,8 +43,8 @@ export default function Home() {
         <h2 id="apps" className="sr-only">
           The apps
         </h2>
-        {APPS.map((app, i) => (
-          <Entry key={app.slug} app={app} index={i} />
+        {APPS.map((app) => (
+          <Entry key={app.slug} app={app} />
         ))}
       </main>
       <Colophon />
@@ -48,13 +52,14 @@ export default function Home() {
   );
 }
 
-/** One catalogue entry. Identical armature for every app; only the specimen changes. */
-function Entry({ app, index }: { app: AppEntry; index: number }) {
+/**
+ * One catalogue entry. Identical armature for every app: the label copy, then the plates (its video
+ * when it has one, and its store screenshots). Nothing here is above the fold on a phone, so every
+ * plate loads lazily and the hero text stays the largest paint.
+ */
+function Entry({ app }: { app: AppEntry }) {
   return (
-    <section
-      aria-labelledby={`${app.slug}-heading`}
-      className="grid grid-cols-1 gap-8 border-b border-rule py-12 sm:py-16 md:grid-cols-[1fr_auto] md:gap-14"
-    >
+    <section aria-labelledby={`${app.slug}-heading`} className="border-b border-rule py-12 sm:py-16">
       <div className="max-w-[var(--measure-read)]">
         <div className="flex items-center gap-3">
           <Image
@@ -95,12 +100,8 @@ function Entry({ app, index }: { app: AppEntry; index: number }) {
         </div>
       </div>
 
-      <div className="w-[10.5rem] shrink-0 sm:w-[12.5rem]">
-        <Screen
-          src={app.shots[0]}
-          alt={`${app.name}: ${app.shotAlts[0] ?? "app screen"}`}
-          priority={index === 0}
-        />
+      <div className="mt-8 sm:mt-10">
+        <Showcase app={app} />
       </div>
     </section>
   );

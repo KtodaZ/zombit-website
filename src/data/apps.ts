@@ -17,6 +17,41 @@ export type Listing = {
 };
 export type Faq = { q: string; a: string };
 
+/** Widths each store image is encoded at, in public/screens/<slug>/<n>-<w>.webp. */
+export const SHOT_WIDTHS = [360, 540, 720] as const;
+
+/**
+ * The screenshots as published on one store listing, in listing order. They are the store's own
+ * composed images (caption plus device), fetched from App Store Connect or the Play Developer
+ * API, never redrawn here.
+ */
+export type StoreShots = {
+  source: StoreKind;
+  /** Intrinsic size of the widest (720px) encoding. Every image in a set shares it. */
+  w: number;
+  h: number;
+  /** One description per image: the caption it carries and the screen it shows. */
+  alts: string[];
+};
+
+/** One of our own videos, hosted on YouTube and embedded only after the visitor presses play. */
+export type Video = {
+  youtubeId: string;
+  /** The video's title on YouTube. */
+  title: string;
+  /** First paragraph of the YouTube description. */
+  description: string;
+  /** YouTube publish date, YYYY-MM-DD. */
+  uploadDate: string;
+  seconds: number;
+  /** Landscape sits beside the screenshots; portrait (a Short) leads the row as the first plate. */
+  orientation: "landscape" | "portrait";
+  /** Poster widths in public/screens/<slug>/video-poster-<w>.webp, and the widest one's size. */
+  posterWidths: number[];
+  posterW: number;
+  posterH: number;
+};
+
 export type AppEntry = {
   slug: string;
   /** The app's own name, as it calls itself in the app and its store copy. */
@@ -46,6 +81,10 @@ export type AppEntry = {
   shots: string[];
   /** Short description of each shot, in order, for alt text. */
   shotAlts: string[];
+  /** The current store listing's screenshots, shown in the showcase strip. */
+  storeShots: StoreShots;
+  /** Present only when the app has a published video. */
+  video?: Video;
   stores: Store[];
   listings: { ios?: Listing; android?: Listing };
   /** schema.org applicationCategory, e.g. "UtilitiesApplication". */
@@ -153,6 +192,29 @@ export const APPS: AppEntry[] = [
       "Full-screen alarm ten minutes before a meeting",
       "Alarm health screen confirming permissions are granted",
     ],
+    storeShots: {
+      source: "android",
+      w: 720,
+      h: 1280,
+      alts: [
+        "“Never late to a meeting again”: the home screen with the next meeting and today’s alarms",
+        "“Join in one tap”: a full-screen alarm ten minutes before a meeting, with Join now and Snooze",
+        "“Your schedule, your control”: choosing which calendars the app watches",
+        "“Make it yours”: choosing an alarm colour on the Appearance screen",
+      ],
+    },
+    video: {
+      youtubeId: "UVZwlFZaIBc",
+      title: "Always On Time – Turn Calendar Meetings into Real Alarms",
+      description:
+        "Calendar notifications are easy to miss. Always On Time turns your meetings into real alarms: full screen, with sound, even on a locked phone. When it's time, tap Join and you're in.",
+      uploadDate: "2026-09-24",
+      seconds: 17,
+      orientation: "landscape",
+      posterWidths: [640, 960, 1280],
+      posterW: 1280,
+      posterH: 720,
+    },
     stores: [
       {
         kind: "android",
@@ -239,6 +301,16 @@ export const APPS: AppEntry[] = [
       "Calculator showing an elevation of 800 for a target at 850 metres",
       "History mode with five targets colour-coded by range",
     ],
+    storeShots: {
+      source: "android",
+      w: 720,
+      h: 1280,
+      alts: [
+        "“Distance in, elevation out” for Hell Let Loose and WARDOGS: an elevation of 800 for a target at 850 metres",
+        "WARDOGS SPH-2 in high and low arc: 1213 and 84 mils for a target at 1500 metres",
+        "“Track every target”: history mode with five targets colour-coded by range",
+      ],
+    },
     stores: [
       {
         kind: "ios",
@@ -341,6 +413,29 @@ export const APPS: AppEntry[] = [
       "Timer counting down, with the coloured section shrinking",
       "PIN pad that keeps the timer controls locked",
     ],
+    storeShots: {
+      source: "android",
+      w: 720,
+      h: 1280,
+      alts: [
+        "Visual Timer: a ten-minute timer set on the clock face",
+        "“No distractions”: the timer counting down, with the coloured section shrinking",
+        "“Lock controls”: the PIN pad that keeps little hands out",
+        "“Quick timers”: one-tap routines such as Brush Teeth, Cleanup, and Quiet Time",
+      ],
+    },
+    video: {
+      youtubeId: "W3l46xFXA5s",
+      title: "Montessori Visual Timer – A Visual Countdown Timer",
+      description:
+        "Montessori Visual Timer shows time as a colored wedge that shrinks as the minutes pass, so kids who can't read a clock yet can still see how much time is left.",
+      uploadDate: "2026-10-14",
+      seconds: 28,
+      orientation: "portrait",
+      posterWidths: [360, 540, 720],
+      posterW: 720,
+      posterH: 1561,
+    },
     stores: [
       {
         kind: "ios",
@@ -431,6 +526,17 @@ export const APPS: AppEntry[] = [
     icon: "/icons/wordgarden.webp",
     shots: ["/shots/wordgarden-1.webp"],
     shotAlts: ["Daily puzzle with seven letter tiles and the rank progress bar, in dark mode"],
+    storeShots: {
+      source: "ios",
+      w: 720,
+      h: 1559,
+      alts: [
+        "“Grow vocabulary”: the daily puzzle’s letter tiles on a tilted phone",
+        "“Daily puzzles”: new letter combinations every day",
+        "“Set the pace”: settings for the centre letter, minimum word length, and hints",
+        "“Built for focus, not screen time”: the puzzle in the calm dark theme",
+      ],
+    },
     stores: [
       {
         kind: "ios",
@@ -510,6 +616,16 @@ export const APPS: AppEntry[] = [
     icon: "/icons/coffee.webp",
     shots: ["/shots/coffee-1.webp"],
     shotAlts: ["Home screen with a roast in progress and four recent roasts with their levels"],
+    storeShots: {
+      source: "ios",
+      w: 720,
+      h: 1559,
+      alts: [
+        "“Meet your coffee roasting companion”: the home screen with a roast in progress and recent roasts",
+        "“See your roasting history”: past roasts with their weight loss and roast level",
+        "“Quick-reference guide”: the weight-loss range for each roast level",
+      ],
+    },
     stores: [
       {
         kind: "ios",
@@ -547,6 +663,14 @@ export const MIN_RATINGS = 10;
 /** A fetched store rating with a real score and enough ratings behind it to publish. */
 export const showsRating = (l: Listing | undefined): l is Listing =>
   Boolean(l && l.score !== null && l.count !== null && l.count >= MIN_RATINGS);
+
+/** public/ path of one encoded store image, n counted from 1. */
+export const storeShotPath = (app: AppEntry, n: number, w: number) => `/screens/${app.slug}/${n}-${w}.webp`;
+/** The widest encoding of every store image, in listing order. */
+export const storeShotUrls = (app: AppEntry) => app.storeShots.alts.map((_, i) => storeShotPath(app, i + 1, 720));
+export const posterPath = (app: AppEntry, w: number) => `/screens/${app.slug}/video-poster-${w}.webp`;
+export const watchUrl = (v: Video) => `https://www.youtube.com/watch?v=${v.youtubeId}`;
+export const embedUrl = (v: Video) => `https://www.youtube-nocookie.com/embed/${v.youtubeId}`;
 
 export const privacyPath = (app: AppEntry) => `/${app.slug}/privacy/`;
 

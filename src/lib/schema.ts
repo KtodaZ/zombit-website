@@ -1,4 +1,16 @@
-import { APPS, SITE, privacyPath, showsRating, type AppEntry, type Faq, type Listing } from "@/data/apps";
+import {
+  APPS,
+  SITE,
+  embedUrl,
+  posterPath,
+  privacyPath,
+  showsRating,
+  storeShotUrls,
+  watchUrl,
+  type AppEntry,
+  type Faq,
+  type Listing,
+} from "@/data/apps";
 import { SITE_ROOT, abs } from "./site";
 
 const ORG_ID = `${SITE_ROOT}/#organization`;
@@ -75,7 +87,7 @@ export function mobileApplication(app: AppEntry) {
     applicationCategory: app.schemaCategory,
     operatingSystem: app.stores.map((s) => OS[s.kind]).join(", "),
     image: abs(app.icon),
-    screenshot: app.shots.map((s) => abs(s)),
+    screenshot: storeShotUrls(app).map((s) => abs(s)),
     installUrl: app.stores.map((s) => s.url),
     sameAs: app.stores.map((s) => s.url),
     featureList: app.groups.flatMap((g) => g.items),
@@ -94,6 +106,30 @@ export function mobileApplication(app: AppEntry) {
           },
         }
       : {}),
+  };
+}
+
+/**
+ * One of our own videos, for a page that shows its player. The thumbnail is the poster the site
+ * hosts; the embed is the youtube-nocookie player the page loads on play.
+ */
+export function videoObject(app: AppEntry) {
+  const v = app.video;
+  if (!v) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": `${SITE_ROOT}/${app.slug}/#video`,
+    name: v.title,
+    description: v.description,
+    thumbnailUrl: [abs(posterPath(app, v.posterWidths[v.posterWidths.length - 1]))],
+    uploadDate: v.uploadDate,
+    duration: `PT${v.seconds}S`,
+    embedUrl: embedUrl(v),
+    contentUrl: watchUrl(v),
+    inLanguage: "en",
+    publisher: { "@id": ORG_ID },
+    about: { "@id": `${SITE_ROOT}/${app.slug}/#app` },
   };
 }
 

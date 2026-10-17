@@ -304,3 +304,24 @@ a {
 .post td:first-child {
   color: var(--color-ink);
 }
+
+/* --- The showcase strip: store images in one sideways row ---
+   A hairline scrollbar in the rule colour, so the row says it scrolls without a widget. */
+.strip {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-rule) transparent;
+  overscroll-behavior-x: contain;
+}
+/* The row runs edge to edge on phones, so its focus ring sits inside it. */
+.strip:focus-visible {
+  outline-offset: -2px;
+}
+/* Store images are composed slides, not bare screens: a paper-toned hairline keeps light
+   slides from dissolving into the page, and the same soft drop as a device screen. */
+.store-shot {
+  border-radius: 14px;
+  background: var(--color-paper-deep);
+  box-shadow:
+    0 0 0 1px rgb(22 24 29 / 0.1),
+    0 16px 32px -22px rgb(22 24 29 / 0.5);
+}
