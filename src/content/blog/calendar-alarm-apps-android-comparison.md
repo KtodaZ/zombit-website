@@ -55,7 +55,7 @@ On Android, Google Calendar can only send notifications. It can't ring like an a
 > - **Rings until you act, if you want.** One minute by default, or set it to keep ringing until you snooze or dismiss it.
 > - **Join the call from the alarm.** One tap opens Google Meet, Zoom, Microsoft Teams or Webex links.
 > - **Set up to ring reliably.** Guided setup checks exact alarms, full-screen alerts and battery settings, and alarms come back after a restart.
-> - **Tells you when to leave.** Optional travel-time alarms for events with an address.
+> - **Coming soon: tells you when to leave.** Optional travel-time alarms for events with an address, in an update rolling out on Google Play.
 >
 > [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
 
@@ -69,7 +69,7 @@ We make Always On Time. Everything below about other apps comes from their Googl
 |---|---|---|---|---|---|---|---|
 | Full-screen alarm | ✓ | ✓ | Not listed | Not listed | Premium | ✓ | ✓ |
 | Join Meet, Zoom or Teams in one tap | ✓ | Not listed | Not listed | Not listed | ✓ | Not listed | Not listed |
-| "Time to leave" alarms for events with an address | ✓ | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
+| "Time to leave" alarms for events with an address | Coming soon³ | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
 | Alarm settings per calendar or per event | ✓ | Pro | Not listed | Not listed | Premium | Not listed | Pro |
 | No ads | ✓ | Pro | ✗ | ✓ | ✓ | ✓ | Pro |
 | Snooze from the alarm | ✓ | ✓ | ✓ | Not listed | ✓ | Not listed | Pro |
@@ -77,13 +77,13 @@ We make Always On Time. Everything below about other apps comes from their Googl
 | Wear OS watch | Beta¹ | PRO+ | Not listed | ✓ | Not listed | Not listed | Not listed |
 | AI assistant connector (Claude, ChatGPT, Gemini) | Coming soon² | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
 
-From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Always On Time's connector for Claude, ChatGPT and Gemini isn't in a released version yet.
+From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Always On Time's connector for Claude, ChatGPT and Gemini isn't in a released version yet. ³ Travel-time alarms are in an update that is rolling out on Google Play.
 
 ## Prices at a glance
 
 | Option | What it does | Price as of Oct 2026 |
 |---|---|---|
-| **Always On Time** | **Full-screen alarms** for calendar events, **one-tap meeting join**, travel-time alarms | **Free, no ads** |
+| **Always On Time** | **Full-screen alarms** for calendar events, **one-tap meeting join**, travel-time alarms (coming soon) | **Free, no ads** |
 | Google Calendar settings | Notifications with your choice of tone, timing and vibration | Free |
 | Calendar Alarm Clock Reminder | Alarms for calendar events, plus a calendar view, an alarm clock and weather | Free, contains ads, in-app purchases ($0.99–$9.99 per item) |
 | ZenLendar: Fullscreen Reminder | Full-screen alarms for synced calendars; Pro adds per-calendar rules | Free, contains ads, in-app purchases ($4.99–$8.99 per item) |
@@ -119,7 +119,7 @@ What it does, per its Play listing and app:
 - **Alarms that fit your day.** Choose which calendars to watch, set several alarms per event (such as 10 minutes before and at the start), and adjust settings per calendar or per event.
 - **Snooze or dismiss from your wrist** on a compatible Wear OS watch.
 - **Guided setup for reliable alarms.** It walks you through notifications, exact alarms, full-screen alerts and battery settings, and alarms are restored after a restart.
-- **Leave-on-time alarms.** Optional travel-time alarms for events with an address ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
+- **Leave-on-time alarms (coming soon).** Optional travel-time alarms for events with an address ring when it's time to leave. They're in an update rolling out on Google Play. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - **Designed with ADHD and time blindness in mind**, with no scores or streaks.
 
 **Trade-offs:** it's Android-only and still new. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
@@ -173,7 +173,7 @@ Both are new, with 10+ downloads each on Google Play.
 - **A full-screen alarm**, not a notification, that can ring until you snooze or dismiss it.
 - **One-tap joining** for Google Meet, Zoom, Microsoft Teams and Webex.
 - **Any calendar synced to your phone**, not only a primary Google calendar.
-- **Leave-on-time alarms** for events with an address.
+- **Leave-on-time alarms** for events with an address, coming in the next update.
 
 [Get Always On Time on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime), then run a test alarm from Settings.
 
