@@ -14,7 +14,7 @@ faq:
   - q: "Do I need a thermocouple to log roasts?"
     a: "No. A scale, a timer and your ears get you weight loss, first crack time and total time, which is enough to roast more consistently. Probes and software like Artisan add temperature curves and rate of rise."
   - q: "Is Artisan free?"
-    a: "Yes. Artisan is open-source software released under the AGPLv3 license, and it runs on Windows, macOS, Linux and Raspberry Pi. Its optional cloud platform is a paid service with a free trial."
+    a: "Yes. Artisan is open-source software released under the AGPLv3 license, and it runs on Windows, macOS, Linux and Raspberry Pi. Its optional cloud platform is a paid service with a three-month free trial."
 sources:
   - title: "Artisan: About"
     url: "https://artisan-scope.org/about/"
@@ -52,7 +52,7 @@ sources:
 draft: true
 ---
 
-The best roast log depends on how much data your setup can capture. If your roaster or a probe connects to a computer, Artisan is the free, standard choice for temperature curves. If you roast by sight, sound and a scale, a simple mobile log or a spreadsheet that records weights, times and tasting notes will do more for your consistency than a tool built for data you can't collect.
+The best roast log depends on how much data your setup can capture. If your roaster or a probe connects to a computer, Artisan is the widely used free choice for temperature curves. If you roast by sight, sound and a scale, a simple mobile log or a spreadsheet that records weights, times and tasting notes will do more for your consistency than a tool built for data you can't collect.
 
 This guide compares the main options and then lists what's worth recording. We make one of the apps here, Coffee Roast Tracker, so we've tried to be clear about what it doesn't do. Prices and ratings come from the App Store and Google Play (US) as of October 2026.
 
@@ -62,26 +62,26 @@ This guide compares the main options and then lists what's worth recording. We m
 |---|---|---|---|
 | Spreadsheet or paper log | Full control, any setup | Anywhere | Free |
 | Artisan | Live temperature curves from a connected roaster or probe | Windows, macOS, Linux, Raspberry Pi | Free, open source |
-| Roastmaster | Inventory, profiles and logging in the Apple ecosystem | iPhone, iPad, Mac, Vision Pro (OS 26 or later) | Free download; data logging $14.99; subscriptions from $4.99/month |
+| Roastmaster | Inventory, profiles and logging in the Apple ecosystem | iPhone, iPad, Apple silicon Mac, Vision Pro (OS 26 or later) | Free download; in-app purchases include Data Logging ($14.99) and subscriptions from $4.99/month |
 | Beanconqueror | Brewing log that also tracks your own roasts | iPhone, iPad, Android | Free, open source |
-| CrackLog | Manual time, temperature and crack logging with a live curve | iPhone, Android | Free |
+| CrackLog | Manual time, temperature and crack logging with a live curve | iPhone, Android | Free; optional one-time Roaster's Kit ($7.99 on iPhone) |
 | RoastTrace | Local-first roast log with development ratio and cupping notes | Android | Free; one-time Premium |
-| Coffee Roaster Pro | Roast records with thermocouple support on Android | Android | $3.49 |
-| Coffee Roast Tracker | Quick roast level from green and roasted weight | iPhone, Android | iPhone $0.99; Android free |
+| Coffee Roaster Pro | Roast records with thermocouple support on Android | Android | $3.49, plus in-app purchases |
+| Coffee Roast Tracker | Quick roast level from green and roasted weight | iPhone, Android | iPhone $0.99; Android free, no ads or in-app purchases |
 
 ## Spreadsheets and paper logs
 
 Plenty of home roasters never move past a notebook or a Google Sheet, and that's a reasonable choice. You decide the columns, you can chart anything, and it costs nothing.
 
-**Downsides:** typing numbers into a spreadsheet on a phone next to a hot roaster is awkward, and the weight-loss formula is one more thing to get right. A good compromise is to jot times on paper during the roast and enter everything afterwards.
+**Downsides:** typing numbers into a spreadsheet on a phone next to a hot roaster is awkward, and the weight-loss formula is one more thing to get right. A good compromise is to jot times on paper during the roast and enter everything afterward.
 
 There's a ready-to-copy column list in the "What to track" section below.
 
 ## Artisan
 
-Artisan is open-source roasting software released under AGPLv3. It runs on Windows, macOS, Linux and Raspberry Pi. Its site lists support for roasting machines from 80+ brands and 50+ devices. It calculates rate of rise, development time ratio and area under the curve, and it can detect events and project phases. An optional paid cloud platform adds inventory features.
+Artisan is open-source roasting software released under AGPLv3. It runs on Windows, macOS, Linux and Raspberry Pi. Its site lists support for roasting machines from 80+ brands and 50+ devices. It calculates rate of rise, development time ratio and area under the curve, and it can detect events and project phases. An optional paid cloud platform, with a three-month free trial, adds inventory management.
 
-**Where it's strong:** it's the most capable free option, with a big community and support for a huge range of hardware.
+**Where it's strong:** it's a very capable free option, with a large user base and support for a huge range of hardware.
 
 **Trade-offs:** it's desktop software, and it shines when it's reading temperatures from a connected roaster or probe. If you roast in a popcorn popper with no probe, most of its power goes unused.
 
@@ -89,11 +89,11 @@ Artisan is open-source roasting software released under AGPLv3. It runs on Windo
 
 ## Roastmaster
 
-Roastmaster, from Rainfrog, is a long-running Apple app. It covers green coffee inventory and purchase planning as well as roast logging. You can log temperatures from supported probe hardware or DIY Bluetooth electronics, or enter readings by hand, then build profiles from past roasts. It's free to download. Data logging is a $14.99 in-app purchase, and subscription tiers range from $4.99/month (Basic) to $39.99/month (Premium). It has a 3.9 rating from 32 ratings and needs iOS 26 or later.
+Roastmaster, from Rainfrog, is a long-running Apple app. It covers green coffee inventory and purchase planning as well as roast logging. You can log temperatures from supported probe hardware or DIY Bluetooth electronics, or enter readings by hand, then build profiles from past roasts. It's free to download, and features vary by subscription tier. In-app purchases include Data Logging ($14.99) and monthly tiers from $4.99 (Basic) to $39.99 (Premium), with yearly options. It's rated 3.9 from 32 ratings on the App Store and needs iOS 26 or later.
 
 **Where it's strong:** one of the most complete roasting apps on iPhone, especially if you manage a lot of green coffee.
 
-**Trade-offs:** Apple-only, and the full feature set costs more than most home roasters will need.
+**Trade-offs:** it's Apple-only, and its higher tiers are aimed partly at roasting businesses, so a casual home roaster may not need everything they include.
 
 ## Beanconqueror
 
@@ -105,9 +105,9 @@ Beanconqueror is a free, open-source coffee companion that's mostly about brewin
 
 Three smaller apps worth a look if you log by hand:
 
-- **CrackLog** (iPhone and Android, free) gives you a big button to tap at first and second crack while you type in temperatures as you read them. It draws a curve as you go, works out total time and development time ratio, and saves each batch as a card. There's no account, and logs stay on your phone.
-- **RoastTrace** (Android, free with a one-time Premium) records beans and batch setup, runs a roast timer, captures events and temperatures, and calculates development ratio and weight loss. It also has cupping notes and JSON backup.
-- **Coffee Roaster Pro** (Android, $3.49, rated 4.8 from 61 reviews) stores coffees, batches, roasts and roasters, and its listing mentions support for Yocto-Thermocouple and MQTT for recording roast progress.
+- **CrackLog** (iPhone and Android, free) gives you a big button to tap at first and second crack while you type in temperatures as you read them. It draws a curve as you go, works out total time and development time ratio, and saves each batch as a card. There's no account, logs stay on your phone, and you can export them to a file. An optional one-time Roaster's Kit ($7.99 on iPhone) adds a replay guide and multi-curve overlay. It doesn't connect to probes by design.
+- **RoastTrace** (Android, free with a one-time Premium) records beans and batch setup, runs a roast timer, captures events and temperatures, and calculates development ratio and weight loss. It also has cupping notes and JSON backup. The free version has capacity limits that Premium raises.
+- **Coffee Roaster Pro** (Android, $3.49 with in-app purchases, rated 4.8 from 61 reviews) stores coffees, batches, roasts and roasters, shows roasts as charts, and can export and import them. Its listing mentions support for Yocto-Thermocouple and MQTT for recording roast progress.
 
 ## Coffee Roast Tracker
 
@@ -115,7 +115,7 @@ Coffee Roast Tracker is our app, and it's deliberately small. You start a roast 
 
 **What it doesn't do:** there's no timer, temperature log, crack markers or roast curve. If you want those, Artisan, CrackLog or a spreadsheet will serve you better. Coffee Roast Tracker suits roasters who mainly judge roasts by weight loss and want a quick, tidy record of every batch.
 
-It's $0.99 on iPhone and free on Android.
+It's $0.99 on iPhone and free on Android, with no ads or in-app purchases.
 
 ## What to track in a roast log
 
@@ -136,7 +136,7 @@ Whatever tool you use, the same handful of numbers does most of the work. Start 
 - Drop temperature
 - Development time (first crack to drop) and development time ratio (development time ÷ total time)
 - Heat and fan changes, and when you made them
-- Room temperature, which can affect small home roasters
+- Room temperature
 
 **After resting and brewing:**
 

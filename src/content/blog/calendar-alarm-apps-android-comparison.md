@@ -12,7 +12,7 @@ faq:
   - q: "What is the best free calendar alarm app for Android?"
     a: "It depends on what you need. Always On Time is free with no ads and adds one-tap meeting joining. ZenLendar has a free tier with ads and a paid Pro upgrade. Calendar Alarm Clock Reminder is free with ads and includes a full calendar view and a regular alarm clock."
   - q: "Do these apps work with Outlook calendars?"
-    a: "Most of them read the calendars that are synced to your phone's Android calendar, so Outlook works if it syncs there. Callendar is an exception: its listing says it syncs only the primary calendar of a connected Google account."
+    a: "Most of them read the calendars that are synced to your phone's Android calendar, so Outlook works if it syncs there. Callendar is an exception: its listing says it syncs Google Calendar only, and only each connected account's primary calendar."
   - q: "Will a calendar alarm app drain my battery?"
     a: "Always On Time schedules its alarms ahead of time with Android's exact alarms instead of running all the time. The bigger risk is the other way round: battery-saving settings on some phones can delay or block alarms, so follow each app's battery setup steps."
 sources:
@@ -57,11 +57,11 @@ We make one of these apps, Always On Time, so keep that in mind as you read. Eve
 | Google Calendar settings | Notifications with your choice of tone, timing and vibration | Free | — |
 | Calendar Alarm Clock Reminder | Alarms for calendar events, plus a calendar view, an alarm clock and weather | Free, contains ads, in-app purchases ($0.99–$9.99 per item) | 3.9 (6.26K reviews) |
 | ZenLendar: Fullscreen Reminder | Full-screen alarms for synced calendars; Pro adds per-calendar rules | Free, contains ads, in-app purchases ($4.99–$8.99 per item) | 4.9 (40 reviews) |
-| Events Notifier for Calendar | Repeats calendar alerts until stopped | Free, contains ads, in-app purchases | 3.1 (393 reviews); last updated Jan 2024 |
+| Events Notifier for Calendar | Repeats calendar alerts until stopped | Free, contains ads, in-app purchases ($2.49 per item) | 3.1 (393 reviews); last updated Jan 2024 |
 | BuzzKill Notification Manager | Rules that turn chosen notifications into alarms or repeat reminders | $3.99 | 4.7 (2.99K reviews) |
-| Meeting Alarm (Senko Apps) | Persistent full-screen alarm before meetings | Free, in-app purchases ($9.99–$199.99 per item) | Not enough ratings shown |
-| Callendar: Meeting Alarm | Meeting reminders from one Google account; full-screen call-style alarm with Premium | Free, in-app purchases ($4.99–$39.99 per item) | Not enough ratings shown |
-| Always On Time | Full-screen alarms for calendar events, one-tap meeting join, travel-time alarms | Free, no ads | Not enough ratings shown |
+| Meeting Alarm (Senko Apps) | Persistent full-screen alarm before meetings | Free, in-app purchases ($4.99 per item) | No rating shown yet |
+| Callendar: Meeting Alarm | Meeting reminders from Google Calendar (primary calendar only); full-screen call-style alarm with Premium | Free, in-app purchases ($4.99–$39.99 per item) | No rating shown yet |
+| Always On Time | Full-screen alarms for calendar events, one-tap meeting join, travel-time alarms | Free, no ads | No rating shown yet |
 
 ## Option 1: Google Calendar's own settings
 
@@ -75,7 +75,7 @@ According to Google's help page, on Android you can:
 
 On the Android side, Do Not Disturb and Modes can allow reminders and calendar events through. That matters if your phone is often silenced during focus time.
 
-**Where it falls short:** these are still notifications. You hear a short tone once, and the banner can be swiped away or covered by other notifications. If you're deep in a task or the phone is across the room, it's easy to miss. Our [step-by-step guide to making Google Calendar ring like an alarm](/blog/google-calendar-alarm-android/) covers every built-in setting in detail.
+**Where it falls short:** these are still notifications. The tone plays once, and the banner can be swiped away or covered by other notifications. If you're deep in a task or the phone is across the room, it's easy to miss. Our [step-by-step guide to making Google Calendar ring like an alarm](/blog/google-calendar-alarm-android/) covers every built-in setting in detail.
 
 **Pick this if** you usually notice notifications and want to keep things simple.
 
@@ -83,7 +83,7 @@ On the Android side, Do Not Disturb and Modes can allow reminders and calendar e
 
 This is a broad app. Its listing describes alarm clocks for calendar events with custom ringtones or your own MP3s, plus snooze. It also includes a standard wake-up alarm clock, a combined calendar view, and weather forecasts for event locations. It works with Google, Outlook and Android calendars, though Outlook needs a short manual setup.
 
-**Where it's strong:** it does a lot in one app, and it has the largest user base of the dedicated apps here (100K+ downloads).
+**Where it's strong:** it does a lot in one app, and it has the most downloads of the calendar-focused apps here (100K+).
 
 **Trade-offs:** the free version contains ads. If you only want meeting alarms, the extra features may feel like clutter.
 
@@ -93,11 +93,11 @@ This is a broad app. Its listing describes alarm clocks for calendar events with
 
 ZenLendar replaces small banner alerts with full-screen alarms. It works with Google Calendar, Outlook, Exchange and other calendars linked to your device. The free tier includes unlimited calendars and global sound, vibration and snooze settings. Pro adds per-account and per-calendar rules, postponing events, backup and no ads. A separate PRO+ purchase adds a Wear OS companion. Its optional Focus Mode uses Android's Accessibility Service, and the listing explains what that permission is used for.
 
-**Where it's strong:** a polished, focused full-screen alarm, a high rating, and a generous free tier.
+**Where it's strong:** a polished, focused full-screen alarm, a 4.9 rating (from 40 reviews), and a generous free tier that already lets you turn alerts on or off per calendar.
 
-**Trade-offs:** the free version contains ads, and per-calendar control and the watch app are paid.
+**Trade-offs:** the free version contains ads, and per-calendar sound and vibration rules and the watch app are paid.
 
-**Pick this if** you want full-screen alarms and are happy to pay once for extra control.
+**Pick this if** you want full-screen alarms and are happy to pay for extra control.
 
 ## Option 4: Events Notifier for Calendar
 
@@ -111,7 +111,7 @@ This app listens for the reminders your calendar already sends and repeats them,
 
 BuzzKill isn't a calendar app. It lets you write rules for any notification. Its "Alarm" and "Remind me" actions can turn a Google Calendar notification into something much harder to ignore, and it has a Wear OS companion. It's a one-time $3.99 purchase with no ads, and the listing says it doesn't access the internet.
 
-**Trade-offs:** it works from the notifications Google Calendar sends. If those are set up wrong, the rule never fires. It also takes some setup.
+**Trade-offs:** it works from the notifications Google Calendar sends, so those need to stay on and set up correctly. Writing the rules also takes some setup.
 
 **Pick this if** you want one tool to manage all your notifications, including calendar ones.
 
@@ -119,10 +119,10 @@ BuzzKill isn't a calendar app. It lets you write rules for any notification. Its
 
 Two newer, meeting-focused apps:
 
-- **Meeting Alarm** plays a persistent alarm and shows a full-screen alarm screen before meetings. Its listing says this works even when the phone is set to silent. You choose which calendars and meetings to track.
-- **Callendar** syncs the primary calendar of a connected Google account and can open Zoom, Google Meet and Teams links. Its listing says the full-screen call-style alarm needs Premium on supported devices. It doesn't sync Outlook, shared calendars or secondary calendars.
+- **Meeting Alarm** plays a persistent alarm and shows a full-screen alarm screen before meetings. Its listing pitches it at people who overlook notifications or keep their phone on silent. You choose which calendars and meetings to track.
+- **Callendar** syncs the primary calendar of a connected Google account (Premium allows more than one account) and can open Zoom, Google Meet and Teams links. Its listing says the full-screen call-style alarm needs Premium on supported devices. It doesn't sync Outlook, shared calendars or secondary calendars.
 
-Both are recent with few ratings so far, so there's less user feedback to go on.
+Both show 10+ downloads and no public rating yet, so there's less user feedback to go on.
 
 ## Option 7: Always On Time
 
@@ -134,10 +134,10 @@ What it does, per its Play listing and app:
 - Detects Google Meet, Zoom, Microsoft Teams and Webex links, so you can join from the alarm screen.
 - Snooze or dismiss on the alarm screen or on a compatible Wear OS watch.
 - Guided setup for notifications, exact alarms, full-screen alerts and battery settings. Alarms are restored after a restart.
-- Optional travel-time alarms for events with an address, which ring when it's time to leave.
+- Optional travel-time alarms for events with an address, which ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - It was designed with ADHD and time blindness in mind, and it has no scores or streaks.
 
-**Trade-offs:** it's Android-only for now and still new, so it doesn't have many ratings yet. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
+**Trade-offs:** it's Android-only and still new, so it doesn't have many ratings yet. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
 
 **Pick this if** most of your day is video calls or appointments and you want one tap from the alarm to the meeting.
 
@@ -146,7 +146,7 @@ What it does, per its Play listing and app:
 - **You sometimes miss notifications but want nothing new installed:** tune Google Calendar's sounds and your Do Not Disturb exceptions first.
 - **You want all your notifications under control, not just calendar ones:** BuzzKill.
 - **You want a calendar, a wake-up alarm and event alarms in one app:** Calendar Alarm Clock Reminder.
-- **You want a polished full-screen alarm and don't mind ads or a one-time upgrade:** ZenLendar.
+- **You want a polished full-screen alarm and don't mind ads or a paid upgrade:** ZenLendar.
 - **You live in video calls and want to join from the alarm, or need leave-on-time alarms, with no ads:** Always On Time.
 
 Whatever you choose, run a test alarm before you rely on it, and check your phone's battery settings. Some phones restrict background apps by default, and that can delay any alarm app.

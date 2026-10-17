@@ -14,7 +14,7 @@ faq:
   - q: "How do I change the Google Calendar notification sound on Android?"
     a: "In Google Calendar, open Settings > General, tap Calendar notifications under Notifications, then tap Sound. Menu names can vary a little by phone maker."
   - q: "Will a calendar alarm app ring when my phone is on silent?"
-    a: "Always On Time plays its alarm through Android's alarm audio channel, so it uses your alarm volume rather than the ringer or notification volume. If a Do Not Disturb mode blocks alarms, change that mode's settings."
+    a: "Always On Time plays its alarm through Android's alarm sound, so it follows your alarm volume rather than the ringer or notification volume. Turn your alarm volume up and run a test alarm from the app's Settings to check before a real meeting."
 sources:
   - title: "Google Calendar Help: Change your notifications (Android)"
     url: "https://support.google.com/calendar/answer/37242?hl=en&co=GENIE.Platform%3DAndroid"
@@ -30,9 +30,6 @@ sources:
     accessed: "2026-10-17"
   - title: "Samsung Knox: Alert options for Samsung Calendar app aren't available in a work profile"
     url: "https://docs.samsungknox.com/admin/knox-platform-for-enterprise/kbas/kba-1222-samsung-calendar-options-are-not-available-in-the-work-profile/"
-    accessed: "2026-10-17"
-  - title: "Samsung Community: Samsung Calendar long alerts don't work properly (user thread on alert styles)"
-    url: "https://eu.community.samsung.com/t5/galaxy-s25-series/samsung-calendar-long-alerts-don-t-work-properly/td-p/11832224"
     accessed: "2026-10-17"
   - title: "Google Play: Calendar Alarm: Always On Time"
     url: "https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime&hl=en_US"
@@ -80,7 +77,7 @@ If your phone has **Notification cooldown** turned on, repeated notifications fr
 
 ## Step 4: Let calendar alerts through Do Not Disturb
 
-This is the most common reason people "never got" a reminder. On recent Android versions, Do Not Disturb lives under **Settings > Modes**.
+This is a common reason people "never got" a reminder. On recent Android versions, Do Not Disturb lives under **Settings > Modes**.
 
 1. Open **Settings > Modes > Do Not Disturb** (or your focus or work mode).
 2. Open **Notification filters**.
@@ -91,7 +88,7 @@ Do this for every mode you use, such as Bedtime or a work mode.
 
 ## Step 5 (Samsung phones): Check Samsung Calendar's alert setting
 
-If you use Samsung Calendar instead of Google Calendar, its settings include an alert type option. On many Galaxy phones, the strongest choice shows a full-screen alert with a longer sound. Open Samsung Calendar, tap the menu, open Settings and look for the alert setting. Names differ between One UI versions, and Samsung's documentation notes that some alert options aren't available in a work profile.
+If you use Samsung Calendar instead of Google Calendar, it has its own **Alert type** setting, separate from Android's notification settings. Open Samsung Calendar, tap the menu, open Settings and look for the alert setting. Try each option with a test event and keep the one you notice most. Names differ between One UI versions, and Samsung's documentation notes that some alert options aren't available in a work profile.
 
 ## Step 6: Add your watch
 
@@ -116,19 +113,19 @@ For many people that's fine. If you're deep in focused work, have ADHD or time b
 
 A calendar alarm app reads the calendars already on your phone and schedules a real alarm for each event. Our app, Always On Time, is one option, and we compare others in our [roundup of calendar alarm apps for Android](/blog/calendar-alarm-apps-android-comparison/). Here's how to set ours up:
 
-1. **Install Always On Time** from Google Play. It's free, with no ads.
-2. **Pick your alarm times.** Choose default alarms, such as 10 minutes before and at the start. You'll see a live example of when they'll ring.
-3. **Allow calendar and notification access**, then choose which calendars to watch. Any calendar synced to your phone's Android calendar works, including Google Calendar and Outlook if it syncs there.
+1. **Install Always On Time** from Google Play. It's free to download, with no ads.
+2. **Allow calendar and notification access**, then choose which calendars to watch. The app reads calendars synced to your phone's Android calendar, including Google Calendar and Outlook if it syncs there.
+3. **Pick your alarm times.** The app suggests 10 minutes before and at the start, and a live preview shows when an alarm would ring.
 4. **Turn on exact alarms and full-screen alerts.** The setup checks these and links to the right system screen. On Android, exact alarms appear as "Alarms & reminders".
 5. **Follow the battery steps** for your phone so the system doesn't delay alarms.
 6. **Run a test alarm** from Settings to see and hear it before a real meeting.
 
-When an event comes up, the alarm fills the screen with the event title and a countdown, with sound and vibration until you snooze or dismiss it. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can join from the alarm screen. You can also snooze or dismiss from a compatible Wear OS watch.
+When an event comes up, the alarm fills the screen with the event title and how soon it starts, with sound and vibration. By default it rings for a minute, and you can set it to keep ringing until you snooze or dismiss it. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can join from the alarm screen. You can also snooze or dismiss from a compatible Wear OS watch.
 
 A few details that matter for alarms:
 
-- **It uses the alarm volume.** Alarms play through Android's alarm audio channel, not the notification channel. Check your alarm volume, and check that your Do Not Disturb modes allow alarms.
-- **It won't blast you mid-call.** If you're already on a phone call when an alarm is due, it vibrates once and tries again five minutes later.
+- **It uses the alarm volume.** Alarms play through Android's alarm sound, not the notification sound, so check your alarm volume.
+- **It won't blast you mid-call.** If you're already on a call when an alarm is due, it vibrates once and tries again five minutes later.
 - **It survives restarts.** Upcoming alarms are restored after you reboot.
 - **You stay in control.** Change alarms per event, per recurring series or per calendar, skip one, or pause all alarms for a while.
 
