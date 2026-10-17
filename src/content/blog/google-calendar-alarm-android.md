@@ -96,22 +96,22 @@ A buzz on your wrist is harder to miss than a phone in another room. Google Cale
 
 ## Step 7: For the one meeting you can't miss, set a Clock alarm
 
-It's low-tech, but it works. For an interview or a flight, set a regular alarm in your Clock app as well. The downside is obvious: it's manual, and it won't move if the event does.
+For an interview or a flight, set a regular alarm in your Clock app as well. It's manual, though, and it won't move if the event does.
 
 ## The limits of the built-in options
 
 Even with all of this, Google Calendar is still sending a notification:
 
-- **It plays once.** A short tone, then silence. If you didn't hear it, it's gone.
+- **It plays once.** The tone is short, and if you miss it, it doesn't repeat.
 - **It's easy to swipe away.** A banner sits among other notifications and can be cleared by accident.
 - **It depends on several settings.** Notification channel, Do Not Disturb, cooldown and battery settings all have to line up.
 - **It doesn't help you join.** You still have to find the meeting link.
 
-For many people that's fine. If you're deep in focused work, have ADHD or time blindness, or have back-to-back calls, a notification may simply not register.
+For many people that's fine. If you're deep in focused work, have ADHD or time blindness, or have back-to-back calls, a notification may not register.
 
 ## The app option: turn events into real alarms
 
-A calendar alarm app reads the calendars already on your phone and schedules a real alarm for each event. Our app, Always On Time, is one option, and we compare others in our [roundup of calendar alarm apps for Android](/blog/calendar-alarm-apps-android-comparison/). Here's how to set ours up:
+A calendar alarm app reads the calendars already on your phone and schedules a real alarm for each event. Our app, Always On Time, is one option, and we compare others in our [roundup of calendar alarm apps for Android](/blog/calendar-alarm-apps-android-comparison/). To set ours up:
 
 1. **Install Always On Time** from Google Play. It's free to download, with no ads.
 2. **Allow calendar and notification access**, then choose which calendars to watch. The app reads calendars synced to your phone's Android calendar, including Google Calendar and Outlook if it syncs there.
@@ -125,9 +125,9 @@ When an event comes up, the alarm fills the screen with the event title and how 
 A few details that matter for alarms:
 
 - **It uses the alarm volume.** Alarms play through Android's alarm sound, not the notification sound, so check your alarm volume.
-- **It won't blast you mid-call.** If you're already on a call when an alarm is due, it vibrates once and tries again five minutes later.
+- **It holds off during calls.** If you're already on a call when an alarm is due, it vibrates once and tries again five minutes later.
 - **It survives restarts.** Upcoming alarms are restored after you reboot.
-- **You stay in control.** Change alarms per event, per recurring series or per calendar, skip one, or pause all alarms for a while.
+- **You can adjust or pause alarms.** Change alarms per event, per recurring series or per calendar, skip one, or pause all alarms for a while.
 
 ## Summary
 

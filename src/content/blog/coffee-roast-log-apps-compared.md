@@ -54,7 +54,7 @@ draft: true
 
 The best roast log depends on how much data your setup can capture. If your roaster or a probe connects to a computer, Artisan is the widely used free choice for temperature curves. If you roast by sight, sound and a scale, a simple mobile log or a spreadsheet that records weights, times and tasting notes will do more for your consistency than a tool built for data you can't collect.
 
-This guide compares the main options and then lists what's worth recording. We make one of the apps here, Coffee Roast Tracker, so we've tried to be clear about what it doesn't do. Prices and ratings come from the App Store and Google Play (US) as of October 2026.
+Below are the main options, then a list of what to record. We make one of the apps here, Coffee Roast Tracker, and its section lists what it doesn't do. Prices and ratings come from the App Store and Google Play (US) as of October 2026.
 
 ## Quick comparison
 
@@ -71,7 +71,7 @@ This guide compares the main options and then lists what's worth recording. We m
 
 ## Spreadsheets and paper logs
 
-Plenty of home roasters never move past a notebook or a Google Sheet, and that's a reasonable choice. You decide the columns, you can chart anything, and it costs nothing.
+Many home roasters stick with a notebook or a Google Sheet, and that's a reasonable choice. You decide the columns, you can chart anything, and it costs nothing.
 
 **Downsides:** typing numbers into a spreadsheet on a phone next to a hot roaster is awkward, and the weight-loss formula is one more thing to get right. A good compromise is to jot times on paper during the roast and enter everything afterward.
 
@@ -81,9 +81,9 @@ There's a ready-to-copy column list in the "What to track" section below.
 
 Artisan is open-source roasting software released under AGPLv3. It runs on Windows, macOS, Linux and Raspberry Pi. Its site lists support for roasting machines from 80+ brands and 50+ devices. It calculates rate of rise, development time ratio and area under the curve, and it can detect events and project phases. An optional paid cloud platform, with a three-month free trial, adds inventory management.
 
-**Where it's strong:** it's a very capable free option, with a large user base and support for a huge range of hardware.
+**Where it's strong:** it's free, it has a large user base, and it supports a wide range of hardware.
 
-**Trade-offs:** it's desktop software, and it shines when it's reading temperatures from a connected roaster or probe. If you roast in a popcorn popper with no probe, most of its power goes unused.
+**Trade-offs:** it's desktop software, and it's most useful when it's reading temperatures from a connected roaster or probe. If you roast in a popcorn popper with no probe, most of its features go unused.
 
 **Pick this if** you have, or plan to buy, a probe or a connected roaster.
 
@@ -103,7 +103,7 @@ Beanconqueror is a free, open-source coffee companion that's mostly about brewin
 
 ## CrackLog, RoastTrace and Coffee Roaster Pro
 
-Three smaller apps worth a look if you log by hand:
+Three smaller apps to consider if you log by hand:
 
 - **CrackLog** (iPhone and Android, free) gives you a big button to tap at first and second crack while you type in temperatures as you read them. It draws a curve as you go, works out total time and development time ratio, and saves each batch as a card. There's no account, logs stay on your phone, and you can export them to a file. An optional one-time Roaster's Kit ($7.99 on iPhone) adds a replay guide and multi-curve overlay. It doesn't connect to probes by design.
 - **RoastTrace** (Android, free with a one-time Premium) records beans and batch setup, runs a roast timer, captures events and temperatures, and calculates development ratio and weight loss. It also has cupping notes and JSON backup. The free version has capacity limits that Premium raises.

@@ -1,6 +1,6 @@
 ---
 title: "Google Calendar Travel Time on Android: Get Time-to-Leave Alarms"
-description: "Google Calendar won't add travel time automatically. Here's how to get leave-on-time alerts on Android with buffers, Waze, or a travel-time alarm."
+description: "Google Calendar won't add travel time automatically. How to get leave-on-time alerts on Android with manual buffers, Waze, or a travel-time alarm app."
 slug: "google-calendar-travel-time-android"
 date: "2026-10-17"
 updated: "2026-10-17"
@@ -42,8 +42,6 @@ draft: true
 
 Google Calendar doesn't add travel time to your events automatically, and its Android notification settings have no "time to leave" option. A reminder 15 minutes before a dentist appointment is no help if the drive takes 25. You have three practical fixes: add travel time by hand, connect your calendar to Waze for traffic-based driving alerts, or use an app that plans the trip and rings an alarm when it's time to go.
 
-Here's how each one works, and where each one falls short.
-
 ## Why a normal reminder isn't enough
 
 A calendar reminder counts back from the start of the event. Getting there on time means counting back from when you need to leave. That gap changes with the place, the time of day, traffic, and whether you're coming from home or work. A fixed "30 minutes before" reminder is too early for a short trip and too late for a long one.
@@ -52,13 +50,11 @@ Two things help: a reminder based on the actual trip, and an alert that's hard t
 
 ## Option 1: Add travel time by hand (free, no setup)
 
-The simplest fix is to account for the trip yourself.
-
 1. **Add an earlier notification to the event.** Open the event in Google Calendar, tap **Edit**, then **Add notification**, and set it for your travel time plus a few minutes of buffer.
 2. **Or block the trip as its own event.** Create a "Drive to dentist" event that ends when the appointment starts. Its start time is your leave time, and its notification is your leave reminder.
 3. **Check the trip in a maps app** when you add the event, so the estimate isn't a guess.
 
-In Google's help community, the answer to the travel-time question is the same: there's no automatic option, so you pick a route and add the time yourself.
+In Google's help community, the answer to the travel-time question is that there's no automatic option, so you pick a route and add the time yourself.
 
 Some reports say Google can show a leave-time alert for events that have a location, but Google Calendar's help pages don't document it and there's no setting for it, so don't count on it.
 
@@ -108,7 +104,7 @@ For driving, **live traffic** lets the leave time move when roads are slow. With
 - **Location is your choice.** With "Use my places," your location is never used. "Use my location" needs location access set to "Allow all the time," because leave times are planned while the app is closed.
 - **Addresses go to route providers.** To estimate the trip, the event's location and your starting point are sent to TomTom or Google, and address search uses Google. The app's privacy policy explains this.
 - **Online meetings are skipped.** Events with a Meet, Zoom, Teams or Webex link get normal alarms, not travel alarms.
-- **Estimates aren't guarantees.** Road closures and late trains happen. A few minutes of "Arrive early" buffer is a good habit.
+- **Estimates aren't guarantees.** Road closures and late trains happen, so keep a few minutes of "Arrive early" buffer.
 
 **Pick this if** you want a real alarm rather than a notification, or you travel by transit, bike or on foot.
 
