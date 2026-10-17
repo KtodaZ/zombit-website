@@ -1,53 +1,5 @@
-import Image from "next/image";
 import { priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
-import { asset } from "@/lib/site";
 import { onAccent } from "@/lib/accent";
-
-/** Intrinsic pixel size of each committed raster, so nothing is guessed at render. */
-const SHOT_SIZE: Record<string, { w: number; h: number }> = {
-  "/shots/alwaysontime-1.webp": { w: 620, h: 1103 },
-  "/shots/alwaysontime-2.webp": { w: 620, h: 1103 },
-  "/shots/alwaysontime-3.webp": { w: 620, h: 1103 },
-  "/shots/artillery-1.webp": { w: 620, h: 1348 },
-  "/shots/artillery-2.webp": { w: 620, h: 1378 },
-  "/shots/artillery-3.webp": { w: 620, h: 1378 },
-  "/shots/coffee-1.webp": { w: 620, h: 1237 },
-  "/shots/montessori-1.webp": { w: 620, h: 1287 },
-  "/shots/montessori-2.webp": { w: 620, h: 1203 },
-  "/shots/montessori-3.webp": { w: 620, h: 1203 },
-  "/shots/wordgarden-1.webp": { w: 620, h: 1257 },
-};
-
-/**
- * One device screen. The frame is site-drawn and identical across apps, which is
- * what lets unrelated apps sit in one catalogue without looking mismatched.
- */
-export function Screen({
-  src,
-  alt,
-  priority = false,
-  className = "",
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-  className?: string;
-}) {
-  const size = SHOT_SIZE[src] ?? { w: 620, h: 1103 };
-  return (
-    <figure className={`screen settle ${className}`}>
-      <Image
-        src={asset(src)}
-        alt={alt}
-        width={size.w}
-        height={size.h}
-        priority={priority}
-        sizes="(max-width: 640px) 78vw, 300px"
-        className="block h-auto w-full"
-      />
-    </figure>
-  );
-}
 
 const STORE_NAME: Record<Store["kind"], string> = { ios: "App Store", android: "Google Play" };
 

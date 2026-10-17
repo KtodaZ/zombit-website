@@ -77,8 +77,9 @@ existing Google Analytics property (`G-8VH9SBYS6Z`, property "zombit.io").
   then committed as static JSON. Counts are genuinely low or absent (Artillery: 22 on iOS, 1,219 on
   Play; Montessori 4; Word Garden 1; none for Always On Time or Coffee) — the design must not lean
   on volume as proof.
-- Screenshots are real screens in one site-drawn frame. Word Garden and Coffee Roast Tracker have
-  one each, because their store images are composites with only one clean screen.
+- Each app shows its current store listing's screenshots (the store's own composed images) in a
+  sideways strip, plus its video where one exists (Always On Time, Montessori Visual Timer). The
+  owner asked for the store images on the site, 2026-10-17. Videos load from YouTube only on play.
 - No backend, so no working contact form. Support is email (zombit.studios@gmail.com), the
   Artillery Let Loose Discord, and Always On Time's account deletion page.
 

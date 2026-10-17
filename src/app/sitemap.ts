@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { APPS, privacyPath } from "@/data/apps";
+import { APPS, privacyPath, storeShotUrls } from "@/data/apps";
 import { ASSISTANTS_LIVE, LASTMOD } from "@/data/flags";
 import { SITE_ROOT, abs } from "@/lib/site";
 import { indexedPosts, postPath } from "@/lib/blog";
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: at(LASTMOD.apps),
       changeFrequency: "monthly" as const,
       priority: 0.9,
-      images: [abs(a.icon), ...a.shots.map((s) => abs(s))],
+      images: [abs(a.icon), ...storeShotUrls(a).map((s) => abs(s))],
     })),
     ...(ASSISTANTS_LIVE
       ? [

@@ -75,6 +75,10 @@ export default function SitePrivacyPage() {
             </li>
             <li>GitHub Pages hosts the site and logs visitors’ IP addresses for security.</li>
             <li>
+              Embedded videos load from YouTube (Google) only when you press play; Google’s privacy
+              policy then applies.
+            </li>
+            <li>
               Questions:{" "}
               <a className={link} href={`mailto:${SITE.email}`}>
                 {SITE.email}
@@ -137,6 +141,16 @@ export default function SitePrivacyPage() {
               GitHub’s documentation
             </a>
             .
+          </p>
+
+          <h2 id="videos">Embedded videos</h2>
+          <p>
+            Some pages show one of our videos. Nothing loads from YouTube until you press play; then
+            the video loads from YouTube (Google), and the{" "}
+            <a className={link} href="https://policies.google.com/privacy" rel="noopener">
+              Google Privacy Policy
+            </a>{" "}
+            applies to that playback.
           </p>
 
           <h2 id="contact">Contact</h2>

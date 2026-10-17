@@ -96,7 +96,7 @@ anti-reference.
 - Paper ground, ink text, hairline rules in one weight. Never boxes or cards.
 - Newsreader for every heading, Geist for everything read.
 - Exactly one accent per app, and it only ever marks the store action.
-- Real screenshots in one site-drawn frame, so unrelated apps sit together.
+- The store listing's own screenshots, all at one plate height, so unrelated apps sit together.
 - Static, legible without JavaScript; motion is one optional settle.
 
 ## Colors
@@ -153,9 +153,15 @@ One centred column, max 74rem, with 24px gutters (32px from `sm`). Two measures:
 marketing copy, 40rem for documents. Sections are separated by full-width hairline rules and
 48px/64px vertical padding. Capability lists go 1 → 2 → 3 columns; FAQs go 1 → 2.
 
-On phones, the masthead collapses to "Apps", "Blog" (once a post is published), and "Support", and an app's screenshots become one
-sideways-scrolling row (snap, keyboard-focusable) instead of a tall stack. An app with a single
-screenshot carries it beside the header instead of in a row of its own.
+On phones, the masthead collapses to "Apps", "Blog" (once a post is published), and "Support", and every app's plates are one
+sideways-scrolling row (snap, keyboard-focusable).
+
+**The plate tray.** Every catalogue entry and every app page carries one tray under its copy: the
+store listing's screenshots at a single plate height (21rem, 24rem from `xl`), in listing order,
+with a slate provenance line ("Images from the Google Play listing."). A landscape video sits
+beside the row from `lg` (above it on phones); a portrait video is simply the first plate. The row
+scrolls sideways and never moves on its own; previous/next buttons appear only when it
+overflows.
 
 ## Elevation & Depth
 
@@ -173,7 +179,14 @@ store shape (~22%); pill store actions. No other radii.
 - **Store action:** pill, accent background, computed text colour, store glyph, a visually hidden
   "(opens App Store)". Lifts 1px on hover and focus, not under reduced motion. Min height 40px.
 - **Platform tags:** uppercase labels in hairline boxes beside the icon: platforms, then category.
-- **Screen:** real screenshot, black mat, 14px corners, sized from its intrinsic pixels.
+- **Store plate:** a store screenshot as published, 14px corners, a 1px ink hairline and soft
+  drop (`.store-shot`), fixed height, width from its intrinsic ratio (no layout shift), lazy,
+  WebP at 360/540/720 with `srcset`. Alt text names the slide's caption and the screen shown.
+- **Video plate:** our own poster in the `.screen` mat with a paper "Play 0:17" pill in the
+  bottom-left corner (never centred over the poster's own text; never an accent colour). It is a
+  link to the YouTube page until clicked; the click swaps in the youtube-nocookie player in the
+  same box, so nothing loads from YouTube before play. Caption: "Video, 0:17, loads from YouTube
+  when you press play."
 - **Ratings:** one line per store, only for fetched ratings with at least 10 ratings; a dated
   footnote.
 - **Blog post:** the document armature (crumbs, h1, a slate kind-and-date line) over `.post`
@@ -193,7 +206,7 @@ store shape (~22%); pill store actions. No other radii.
 ## Do's and Don'ts
 
 - **Do** state platform availability, price, and limits per app, from the store listing.
-- **Do** keep every image a real screen; crop composites back to the screen or leave it out.
+- **Do** show store screenshots exactly as the store publishes them; never redraw or re-caption.
 - **Don't** add a hero device render, gradients, glass, glow, or cards.
 - **Don't** use an accent for anything but the store action.
 - **Don't** invent ratings, counts, testimonials, or claims; small numbers are shown as they are.

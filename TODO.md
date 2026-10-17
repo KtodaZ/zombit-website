@@ -54,10 +54,10 @@ assistants is live on Google Play. The connector server is already deployed (202
 
 ## 4. Content
 
-- **Screenshots.** Word Garden and Coffee Roast Tracker ship one screen each. Their store images
-  are marketing composites, and only one per app shows a full, straight-on screen that could be
-  cropped back. The other apps have three. Two more real captures per app would close it; see
-  `ASSETS.md` for the crop and encode commands.
+- **Store screenshots and videos.** The showcase shows each listing's own images (see
+  `ASSETS.md`). Re-fetch when a listing changes. Artillery, Word Garden, and Coffee Roast Tracker
+  have no video yet; adding `video` to an entry in `src/data/apps.ts` (plus its poster) is all it
+  takes for the player to appear.
 - **Ratings and prices go stale.** `src/data/ratings.json` is generated; re-run
   `node scripts/fetch-ratings.mjs` to refresh ratings and US prices from the App Store and Google
   Play. Never hand-edit it. A store that cannot be read keeps its previous value. Play ratings come

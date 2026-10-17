@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Masthead, Colophon } from "@/components/Chrome";
 import {
-  Screen,
   StoreAction,
   PlatformTags,
   Ratings,
@@ -13,11 +12,13 @@ import {
 } from "@/components/Specimen";
 import { JsonLd } from "@/components/JsonLd";
 import { Faqs } from "@/components/Faqs";
+import { Showcase } from "@/components/Showcase";
 import {
   organization,
   mobileApplication,
   faqPage,
   breadcrumbs,
+  videoObject,
 } from "@/lib/schema";
 import {
   APPS,
@@ -68,7 +69,6 @@ export default async function AppPage({
   const app = bySlug(slug);
   if (!app) notFound();
   const url = `${SITE_ROOT}/${app.slug}/`;
-  const single = app.shots.length === 1;
   const guides = postsForApp(app.slug);
 
   return (
@@ -77,18 +77,13 @@ export default async function AppPage({
       <JsonLd data={mobileApplication(app)} />
       <JsonLd data={faqPage(url, app.faq)} />
       <JsonLd data={breadcrumbs([[app.name, `/${app.slug}/`]])} />
+      {app.video && <JsonLd data={videoObject(app)} />}
       <Masthead current={app.slug} />
       <main
         id="main"
         className="mx-auto max-w-[var(--measure-page)] px-6 sm:px-8"
       >
-        {/* Entry head. An app with a single screen carries it here, beside the copy, instead of
-            alone in a row built for three. */}
-        <header
-          className={`settle grid grid-cols-1 gap-10 border-b border-rule pt-12 pb-10 sm:pt-16 sm:pb-14 ${
-            single ? "md:grid-cols-[1fr_auto] md:gap-14" : ""
-          }`}
-        >
+        <header className="settle border-b border-rule pt-12 pb-10 sm:pt-16 sm:pb-14">
           <div>
             <div className="flex items-center gap-3">
               <Image
@@ -133,39 +128,13 @@ export default async function AppPage({
               </div>
             )}
           </div>
-          {single && (
-            <div className="w-[12rem] sm:w-[14rem]">
-              <Screen
-                src={app.shots[0]}
-                alt={app.shotAlts[0] ?? `${app.name} screen`}
-                priority
-              />
-            </div>
-          )}
         </header>
 
-        {/* Plates. On phones they sit in one row that scrolls sideways, rather than a tall stack. */}
-        {!single && (
-          <section aria-label="Screens" className={sectionRule}>
-            <div
-              tabIndex={0}
-              aria-label={`${app.name} screens`}
-              className="-mx-6 flex snap-x snap-mandatory scroll-px-6 items-start gap-5 overflow-x-auto px-6 pb-3 sm:mx-0 sm:flex-wrap sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0"
-            >
-              {app.shots.map((src, i) => (
-                <div
-                  key={src}
-                  className="w-[12.5rem] shrink-0 snap-start sm:w-[13.5rem]"
-                >
-                  <Screen
-                    src={src}
-                    alt={app.shotAlts[i] ?? `${app.name}, screen ${i + 1}`}
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* Plates: the video, when there is one, and the store listing's screenshots. They sit
+            right under the head, so the first few load eagerly. */}
+        <section aria-label="Video and screenshots" className={sectionRule}>
+          <Showcase app={app} eager />
+        </section>
 
         {/* Body */}
         <section aria-label="About the app" className={sectionRule}>
