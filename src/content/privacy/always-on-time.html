@@ -142,9 +142,12 @@ The phone remains authoritative for calendar data, settings, and history.</p>
 <p>When you choose <strong>Leave feedback</strong>, the app sends the text you enter, a required email
 address, the app version, and a server-generated submission time to our Firebase Cloud Firestore
 database. Optional screenshots or photos are uploaded to Firebase Cloud Storage under a user-scoped
-path that other app users cannot read. Firebase Anonymous Authentication creates a random account
-identifier only to authorize the submission; that identifier is not included in the feedback
-document.</p>
+path that other app users cannot read. The app signs in to Firebase to authorize the submission,
+and that account identifier is part of the storage path of any attached files. In some app
+versions, if you are signed in with Google for account sync, it is the same identifier as your
+synced account. Otherwise, and in newer app versions, it is a random identifier from Firebase
+Anonymous Authentication that is not linked to your account. Files uploaded for feedback that is
+never submitted are deleted after about a day.</p>
 <p>After you submit, a trusted Firebase backend sends us a short alert in a private Discord channel
 saying that feedback arrived. The alert contains only the app version, the platform, and the number
 of attached images and logs. It does not include your feedback text, email address, images, or
