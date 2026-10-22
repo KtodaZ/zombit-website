@@ -65,6 +65,7 @@ they show AdMob test banners.
 |---|---|
 | `alwaysontime.webp`, `artillery.webp`, `montessori.webp` | store listing icons, 256px, WebP |
 | `wordgarden.webp`, `coffee.webp` | App Store listing icons (`artworkUrl512` from the iTunes lookup API at 1024px), resized to 256px, WebP q90 |
+| `photovault.webp` | the app's launcher vector (`photo-vault` `app/src/main/res/drawable/ic_vault.xml`) as SVG, `rsvg-convert -w 256`, WebP q90. It has no public store icon yet |
 | `zombit-mark.webp` | the studio's existing blue Z mark, 512px, WebP |
 
 The Z mark is existing brand work and is not to be redrawn or retired. It is used subtly —
@@ -73,7 +74,8 @@ favicon, masthead, colophon — and never as a hero element.
 ## Open Graph cards — `public/og/`
 
 Rendered by `scripts/og-images.mjs` with headless Chrome from the icons and first screenshot
-above, in the site's own fonts. Nothing else is in them.
+above, in the site's own fonts. Nothing else is in them. PhotoVault's card has no screenshot plate
+because the app has no store screenshots yet; prerelease apps are left off the studio card.
 
 ## Store copy
 
@@ -97,6 +99,10 @@ apps and store listings deep-link to them.
 | `montessori-visual-timer.html` | <https://doc-hosting.flycricket.io/montessori-visual-timer/1c5cdcb2-37e1-424c-988b-4e81d2ee7950/privacy> | October 17, 2026 |
 | `word-garden.html` | <https://doc-hosting.flycricket.io/word-garden-spelling/d33dc669-7ac3-449a-b039-8adbd3019491/privacy> | October 17, 2026 |
 | `coffee-roast-tracker.html` | <https://doc-hosting.flycricket.io/coffee-roast-tracker/214425cb-dda9-4b2e-8894-d739a752cae3/privacy> | October 17, 2026 |
+| `photovault.html` | Written for this site in the same format, from the `photo-vault` Android source at `390e9db` (no earlier policy existed) | October 22, 2026 |
+
+PhotoVault's page copy in `src/data/apps.ts` comes from the same source and its `PRODUCT.md`, not a
+store listing: it has none yet.
 
 One hosting reference changed in the Always On Time policy: the account deletion link now points
 to `https://alwaysontime.zombit.io/delete-account/` instead of the Firebase Hosting address.

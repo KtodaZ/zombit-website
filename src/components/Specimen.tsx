@@ -1,4 +1,4 @@
-import { priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
+import { platformsOf, priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
 import { onAccent } from "@/lib/accent";
 
 const STORE_NAME: Record<Store["kind"], string> = { ios: "App Store", android: "Google Play" };
@@ -40,9 +40,9 @@ export function PlatformTags({ app }: { app: AppEntry }) {
       aria-label="Platforms and category"
       className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.6875rem] uppercase tracking-[0.11em] text-slate"
     >
-      {app.stores.map((s) => (
-        <li key={s.kind} className="border border-rule-soft px-1.5 py-0.5">
-          {s.kind === "ios" ? "iOS" : "Android"}
+      {platformsOf(app).map((k) => (
+        <li key={k} className="border border-rule-soft px-1.5 py-0.5">
+          {k === "ios" ? "iOS" : "Android"}
         </li>
       ))}
       <li className="border border-rule-soft px-1.5 py-0.5">{app.category}</li>

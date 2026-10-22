@@ -6,13 +6,13 @@ import { notFound } from "next/navigation";
 import { Masthead, Colophon, Crumbs } from "@/components/Chrome";
 import { JsonLd } from "@/components/JsonLd";
 import { organization, breadcrumbs, webPage } from "@/lib/schema";
-import { APPS, SITE, bySlug, privacyPath } from "@/data/apps";
+import { ALL_APPS, SITE, bySlug, privacyPath } from "@/data/apps";
 import { pageMeta } from "@/lib/meta";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return APPS.map((a) => ({ slug: a.slug }));
+  return ALL_APPS.map((a) => ({ slug: a.slug }));
 }
 
 /**
@@ -38,6 +38,7 @@ export async function generateMetadata({
     description: `How ${app.name} handles your information: what it collects, what it shares, and how to reach ${SITE.legalName} about privacy.`,
     path: privacyPath(app),
     og: `/og/${app.slug}.png`,
+    noindex: Boolean(app.prerelease),
   });
 }
 
@@ -93,7 +94,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ slug: 
           </Link>
           <span aria-hidden="true"> · </span>
           <Link
-            href={`/support/#${app.slug}`}
+            href={app.prerelease ? "/support/" : `/support/#${app.slug}`}
             className="text-ink underline decoration-rule underline-offset-4 hover:decoration-ink"
           >
             Support

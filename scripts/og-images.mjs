@@ -4,6 +4,7 @@
 //
 //   node scripts/og-images.mjs          # studio, app, and blog cards
 //   node scripts/og-images.mjs blog     # blog post cards only (public/og/blog/<slug>.png)
+//   node scripts/og-images.mjs <slug>   # one app's card only
 //
 // Post cards are rendered for published posts only (pass --drafts to include drafts for a
 // look; do not commit those). A post without its own card falls back to its app's card.
@@ -25,10 +26,19 @@ mkdirSync(OUT, { recursive: true });
 // Pull name, descriptor, icon, and first shot straight out of the content model source, so the
 // cards cannot drift from the pages without a TypeScript toolchain at hand.
 const src = readFileSync(join(ROOT, "src/data/apps.ts"), "utf8");
-const apps = [...src.matchAll(/slug: "([^"]+)",\s*name: "([^"]+)",[\s\S]*?descriptor: "([^"]+)",[\s\S]*?icon: "([^"]+)",\s*shots: \[\s*"([^"]+)"/g)].map(
-  ([, slug, name, descriptor, icon, shot]) => ({ slug, name, descriptor, icon, shot }),
-);
-if (apps.length !== 5) throw new Error(`expected 5 apps, parsed ${apps.length}`);
+// One block per entry, so an app without a screenshot (a prerelease app) cannot borrow the next
+// entry's. Prerelease apps get their own card but stay off the studio card, as they stay off the
+// home page.
+const apps = src
+  .split(/\n  \{\n(?=    slug: ")/)
+  .slice(1)
+  .map((block) => {
+    const m = block.match(/slug: "([^"]+)",\s*name: "([^"]+)",[\s\S]*?descriptor: "([^"]+)",[\s\S]*?icon: "([^"]+)",\s*shots: \[\s*(?:"([^"]+)")?/);
+    if (!m) throw new Error(`could not parse an app entry: ${block.slice(0, 60)}`);
+    const [, slug, name, descriptor, icon, shot] = m;
+    return { slug, name, descriptor, icon, shot, prerelease: /\n    prerelease: /.test(block) };
+  });
+if (apps.filter((a) => !a.prerelease).length !== 5) throw new Error(`expected 5 released apps, parsed ${apps.length} entries`);
 
 const file = (p) => `file://${join(ROOT, "public", p)}`;
 const FONTS =
@@ -56,7 +66,7 @@ function appCard(a) {
   <img class="icon" src="${file(a.icon)}">
   <h1>${a.name}</h1>
   <p>${a.descriptor}</p>
-  <div class="plate"><img src="${file(a.shot)}"></div>
+  ${a.shot ? `<div class="plate"><img src="${file(a.shot)}"></div>` : ""}
   <div class="foot">zombit.io/${a.slug}</div>
   </body></html>`;
 }
@@ -70,7 +80,7 @@ function homeCard() {
   <div class="mast"><img src="${file("/icons/zombit-mark.webp")}">Zombit Studios</div>
   <div class="rule"></div>
   <h1>Small, useful apps for phones and watches.</h1>
-  <div class="icons">${apps.map((a) => `<img src="${file(a.icon)}">`).join("")}</div>
+  <div class="icons">${apps.filter((a) => !a.prerelease).map((a) => `<img src="${file(a.icon)}">`).join("")}</div>
   <div class="foot">zombit.io</div>
   </body></html>`;
 }
@@ -132,6 +142,11 @@ function render(name, html) {
   console.log("wrote public/og/" + name + ".png");
 }
 
+const only = apps.find((a) => a.slug === process.argv[2]);
+if (only) {
+  render(only.slug, appCard(only));
+  process.exit(0);
+}
 if (process.argv[2] !== "blog") {
   render("home", homeCard());
   for (const a of apps) render(a.slug, appCard(a));

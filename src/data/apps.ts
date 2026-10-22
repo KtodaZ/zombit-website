@@ -81,11 +81,23 @@ export type AppEntry = {
   shots: string[];
   /** Short description of each shot, in order, for alt text. */
   shotAlts: string[];
-  /** The current store listing's screenshots, shown in the showcase strip. */
-  storeShots: StoreShots;
+  /** The current store listing's screenshots, shown in the showcase strip. Absent before release. */
+  storeShots?: StoreShots;
   /** Present only when the app has a published video. */
   video?: Video;
   stores: Store[];
+  /** Platforms it runs on, when there is no public store listing yet to say so. */
+  platforms?: StoreKind[];
+  /**
+   * Set while the app has no public store listing (for example, only a closed or internal test
+   * track). The text replaces the store actions. A prerelease app keeps its own page and privacy
+   * policy (store and Google OAuth reviews need both), but they render noindex and the app is left
+   * out of APPS: navigation, the home page, the sitemap, llms.txt, the support page, and the
+   * catalogue. Remove it, and add the store, once the listing is public.
+   */
+  prerelease?: string;
+  /** Show Google's Limited Use statement: the app requests Google user data through an API. */
+  googleApiData?: boolean;
   listings: { ios?: Listing; android?: Listing };
   /** schema.org applicationCategory, e.g. "UtilitiesApplication". */
   schemaCategory: string;
@@ -105,7 +117,8 @@ export type AppEntry = {
 
 const r = ratings.apps as Record<string, { ios?: Listing; android?: Listing }>;
 
-export const APPS: AppEntry[] = [
+/** Every app with pages on the site, released or not. Use APPS for anything that lists them. */
+export const ALL_APPS: AppEntry[] = [
   {
     slug: "always-on-time",
     name: "Always On Time",
@@ -648,9 +661,99 @@ export const APPS: AppEntry[] = [
     privacySource:
       "https://doc-hosting.flycricket.io/coffee-roast-tracker/214425cb-dda9-4b2e-8894-d739a752cae3/privacy",
   },
+  {
+    slug: "photovault",
+    name: "PhotoVault",
+    shortName: "PhotoVault",
+    descriptor: "Private encrypted photo and video vault for Android",
+    line: "Keeps private photos and videos encrypted behind a six-digit passcode, with optional backup to your own Google Drive.",
+    lede:
+      "PhotoVault keeps your private photos and videos in an encrypted vault on your Android phone, behind a six-digit passcode. Optional Google Drive backup stores only encrypted copies, in your own Drive.",
+    body: [
+      "Everything you add is encrypted on your phone and kept in PhotoVault’s private storage, never in your phone’s gallery. The vault asks for its passcode every time you open it, and blocks screenshots and screen recording while it is open.",
+      "There is no PhotoVault account and no PhotoVault server. If you connect Google Drive, PhotoVault uploads only encrypted data, to a hidden folder in your own Drive that only PhotoVault can use. We can’t see your photos and videos, and Google receives only encrypted files.",
+    ],
+    groups: [
+      {
+        title: "Private by default",
+        items: [
+          "A six-digit passcode every time you open the app",
+          "Screenshots and screen recording blocked inside the vault",
+          "A neutral cover on the recent-apps screen",
+          "Photos and videos encrypted on your phone and never saved to the gallery",
+        ],
+      },
+      {
+        title: "Add and organize",
+        items: [
+          "Take photos and record videos with the private in-app camera",
+          "Import from Android’s photo picker, or share into PhotoVault from other apps",
+          "Albums, plus All Media, Camera, Favorites, Videos, and Unsorted",
+          "Trash, with restore and permanent delete",
+          "Export a copy of a photo or video when you choose",
+        ],
+      },
+      {
+        title: "Your Google Drive, optional",
+        items: [
+          "Encrypted backup to a hidden PhotoVault folder in your own Google Drive",
+          "Automatic backup while the vault is open, on Wi-Fi only unless you change it",
+          "A master password protects a recovery copy of your vault key, for opening the vault on a new phone",
+          "Disconnect at any time; your vault stays on your phone",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Can Zombit Studios see my photos?",
+        a: "No. PhotoVault encrypts your photos and videos on your phone. There is no PhotoVault server, and copies in Google Drive are encrypted with a key we never receive.",
+      },
+      {
+        q: "Where are my photos and videos stored?",
+        a: "In PhotoVault’s private, encrypted storage on your phone. If you connect Google Drive, encrypted copies go into a hidden app folder in your own Drive. They don’t appear with your other Drive files, and they count against your Google storage.",
+      },
+      {
+        q: "Does importing delete the original photo?",
+        a: "No. Importing or sharing into PhotoVault copies the photo or video into the vault. The original stays where it was.",
+      },
+      {
+        q: "What if I forget my master password?",
+        a: "We can’t reset it. The master password unlocks the recovery copy of your vault key, and it never leaves your phone, so nobody else can open that copy for you.",
+      },
+      {
+        q: "Can I download PhotoVault?",
+        a: "Not yet. PhotoVault is in testing and isn’t on Google Play yet. It is an Android app; there is no iPhone version.",
+      },
+    ],
+    accent: "#3D7A66",
+    accentInk: "#2B5C4C",
+    icon: "/icons/photovault.webp",
+    shots: [],
+    shotAlts: [],
+    stores: [],
+    platforms: ["android"],
+    prerelease: "Coming soon to Google Play. PhotoVault is in testing and can’t be downloaded yet.",
+    googleApiData: true,
+    listings: {},
+    schemaCategory: "MultimediaApplication",
+    category: "Photography",
+    notes: [
+      "Android only. There is no iPhone version.",
+      "In testing, not yet on Google Play.",
+      "No ads, analytics, or crash reporting in the app.",
+      "No PhotoVault account or server. Google Drive backup is optional and stores only encrypted data.",
+    ],
+    privacyEffective: "October 22, 2026",
+    privacySource: "Written for zombit.io from the PhotoVault Android source (KtodaZ/photo-vault, 390e9db)",
+  },
 ];
 
-export const bySlug = (slug: string) => APPS.find((a) => a.slug === slug);
+/** Released apps: the ones the site lists anywhere. */
+export const APPS: AppEntry[] = ALL_APPS.filter((a) => !a.prerelease);
+
+export const bySlug = (slug: string) => ALL_APPS.find((a) => a.slug === slug);
+/** The platforms an app runs on: its store listings, or `platforms` before it has any. */
+export const platformsOf = (app: AppEntry): StoreKind[] => app.platforms ?? app.stores.map((s) => s.kind);
 export const RATINGS_FETCHED_AT = ratings.fetchedAt;
 
 /**
@@ -667,7 +770,8 @@ export const showsRating = (l: Listing | undefined): l is Listing =>
 /** public/ path of one encoded store image, n counted from 1. */
 export const storeShotPath = (app: AppEntry, n: number, w: number) => `/screens/${app.slug}/${n}-${w}.webp`;
 /** The widest encoding of every store image, in listing order. */
-export const storeShotUrls = (app: AppEntry) => app.storeShots.alts.map((_, i) => storeShotPath(app, i + 1, 720));
+export const storeShotUrls = (app: AppEntry) =>
+  (app.storeShots?.alts ?? []).map((_, i) => storeShotPath(app, i + 1, 720));
 export const posterPath = (app: AppEntry, w: number) => `/screens/${app.slug}/video-poster-${w}.webp`;
 export const watchUrl = (v: Video) => `https://www.youtube.com/watch?v=${v.youtubeId}`;
 export const embedUrl = (v: Video) => `https://www.youtube-nocookie.com/embed/${v.youtubeId}`;

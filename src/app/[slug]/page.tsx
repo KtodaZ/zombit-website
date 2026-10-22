@@ -21,6 +21,7 @@ import {
   videoObject,
 } from "@/lib/schema";
 import {
+  ALL_APPS,
   APPS,
   RATINGS_FETCHED_AT,
   SITE,
@@ -35,7 +36,7 @@ import { postPath, postsForApp } from "@/lib/blog";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return APPS.map((a) => ({ slug: a.slug }));
+  return ALL_APPS.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({
@@ -52,9 +53,11 @@ export async function generateMetadata({
     path: `/${app.slug}/`,
     og: `/og/${app.slug}.png`,
     ogAlt: `${app.name}, ${app.descriptor.toLowerCase()}`,
+    noindex: Boolean(app.prerelease),
   });
 }
 
+const GOOGLE_USER_DATA_POLICY = "https://developers.google.com/terms/api-services-user-data-policy";
 const sectionRule = "border-b border-rule py-12 sm:py-16";
 const sectionTitle = "font-display text-[1.375rem] leading-snug text-ink";
 const textLink =
@@ -105,7 +108,12 @@ export default async function AppPage({
             <p className="mt-5 max-w-[var(--measure-read)] text-[1.0625rem] leading-relaxed text-ink-soft">
               {app.lede}
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-4">
+            {app.prerelease && (
+              <p className="mt-7 max-w-[var(--measure-read)] border-l-2 border-rule pl-4 text-[0.9375rem] leading-relaxed text-ink">
+                {app.prerelease}
+              </p>
+            )}
+            <div className="mt-7 flex flex-wrap items-center gap-4 empty:hidden">
               {app.stores.map((s) => (
                 <StoreAction key={s.kind} store={s} accent={app.accent} app={app.slug} placement="app-hero" />
               ))}
@@ -132,9 +140,11 @@ export default async function AppPage({
 
         {/* Plates: the video, when there is one, and the store listing's screenshots. They sit
             right under the head, so the first few load eagerly. */}
-        <section aria-label="Video and screenshots" className={sectionRule}>
-          <Showcase app={app} eager />
-        </section>
+        {(app.storeShots || app.video) && (
+          <section aria-label="Video and screenshots" className={sectionRule}>
+            <Showcase app={app} eager />
+          </section>
+        )}
 
         {/* Body */}
         <section aria-label="About the app" className={sectionRule}>
@@ -187,7 +197,13 @@ export default async function AppPage({
                 Where to get it
               </h2>
               <div className="mt-5">
-                <StoreFacts app={app} />
+                {app.prerelease ? (
+                  <p className="max-w-[var(--measure-read)] text-[0.9375rem] leading-relaxed text-ink-soft">
+                    {app.prerelease}
+                  </p>
+                ) : (
+                  <StoreFacts app={app} />
+                )}
               </div>
             </div>
             {app.notes && (
@@ -227,7 +243,7 @@ export default async function AppPage({
           </h2>
           <ul className="mt-5 max-w-[var(--measure-read)] space-y-2.5 text-[0.9375rem] leading-relaxed text-ink-soft">
             <li>
-              <Link href={`/support/#${app.slug}`} className={textLink}>
+              <Link href={app.prerelease ? "/support/" : `/support/#${app.slug}`} className={textLink}>
                 {app.shortName} support
               </Link>{" "}
               — or email{" "}
@@ -255,6 +271,20 @@ export default async function AppPage({
                 {app.shortName} privacy policy
               </Link>
             </li>
+            {app.googleApiData && (
+              <li>
+                {app.name}’s use and transfer of information received from Google APIs, including
+                Google Workspace scopes, will adhere to the{" "}
+                <a href={GOOGLE_USER_DATA_POLICY} rel="noopener" className={textLink}>
+                  Google API Services User Data Policy
+                </a>
+                , including the{" "}
+                <a href={`${GOOGLE_USER_DATA_POLICY}#additional_requirements_for_specific_api_scopes`} rel="noopener" className={textLink}>
+                  Limited Use requirements
+                </a>
+                .
+              </li>
+            )}
           </ul>
         </section>
 
