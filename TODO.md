@@ -52,7 +52,21 @@ assistants is live on Google Play. The connector server is already deployed (202
 
 ---
 
-## 4. Content
+## 4. PhotoVault (prerelease)
+
+PhotoVault has only a draft on Google Play's internal track, so its entry in `src/data/apps.ts`
+carries `prerelease`. `/photovault/` and `/photovault/privacy/` build (the Play listing and the
+Google OAuth consent screen point at them) but render `noindex`, say it is coming soon, and are left
+out of navigation, the home page, the sitemap, llms.txt, the support page, and the catalogue.
+
+**To go live,** once the Google Play listing is public: delete `prerelease` (and `platforms`), add
+the Play store entry and its `storeShots` (see ASSETS.md), add the package to
+`scripts/fetch-ratings.mjs`, update the home page's "five apps" line and `SITE.description`, then
+re-run `node scripts/og-images.mjs`.
+
+---
+
+## 5. Content
 
 - **Store screenshots and videos.** The showcase shows each listing's own images (see
   `ASSETS.md`). Re-fetch when a listing changes. Artillery, Word Garden, and Coffee Roast Tracker
@@ -73,7 +87,7 @@ assistants is live on Google Play. The connector server is already deployed (202
 
 ---
 
-## 5. Design
+## 6. Design
 
 The impeccable finish sequence is done: detector clean, one batched desktop + mobile inspection
 round with its fixes, and [DESIGN.md](DESIGN.md) written from the built site. Keep the direction
@@ -87,7 +101,7 @@ The owner has said to expect **lots of refinements** to the visual design. None 
 
 ---
 
-## 6. Build gotchas worth knowing
+## 7. Build gotchas worth knowing
 
 - **`dev` and `build` are pinned to `--webpack`.** Turbopack cannot load
   Tailwind's native oxide binding through its bundled postcss worker on this

@@ -22,7 +22,8 @@ binding through its bundled postcss worker on this toolchain.
 ## Content
 
 - `src/data/apps.ts` — the whole content model. Copy is drawn from the official
-  store listings; per-app store availability, accents, and caveats live here.
+  store listings; per-app store availability, accents, and caveats live here. An entry with
+  `prerelease` (no public store listing yet) gets noindex pages and is left out of every list.
 - `src/data/ratings.json` — generated. Run `node scripts/fetch-ratings.mjs` to
   refresh ratings and prices from the App Store and Google Play. Never edit by hand. The
   deploy workflow also refreshes it before each build, falling back to the committed file.
@@ -30,7 +31,7 @@ binding through its bundled postcss worker on this toolchain.
 - `src/content/blog/` — blog posts as Markdown with frontmatter; see docs/AEO.md. Drafts
   (`draft: true`) appear only in `npm run dev`.
 - `src/data/flags.ts` — `ASSISTANTS_LIVE`, the connector address, and sitemap dates.
-- `src/content/privacy/` — the privacy policies, ported verbatim. Legal text; see TODO.md §4.
+- `src/content/privacy/` — the privacy policies. Legal text; see TODO.md §5.
 - `src/components/Analytics.tsx` — GA4, apex production build only; `/privacy/` (`src/app/privacy/`)
   describes what it collects. Store links carry `data-store`/`data-app`/`data-placement` for the
   `store_click` event; visits from AI assistants send `ai_referral`.

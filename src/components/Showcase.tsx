@@ -57,6 +57,7 @@ const filmNote = (v: Video) => `Video, ${clock(v.seconds)}, loads from YouTube w
  */
 export function Showcase({ app, eager = false }: { app: AppEntry; eager?: boolean }) {
   const { storeShots: set, video } = app;
+  if (!set) return null;
   const ratio = set.w / set.h;
   const landscape = video?.orientation === "landscape";
   const source = `Images from the ${STORE[set.source]} listing`;

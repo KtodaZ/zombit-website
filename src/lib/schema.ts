@@ -1,6 +1,7 @@
 import {
   APPS,
   SITE,
+  platformsOf,
   embedUrl,
   posterPath,
   privacyPath,
@@ -85,11 +86,12 @@ export function mobileApplication(app: AppEntry) {
     url: `${SITE_ROOT}/${app.slug}/`,
     description: app.lede,
     applicationCategory: app.schemaCategory,
-    operatingSystem: app.stores.map((s) => OS[s.kind]).join(", "),
+    operatingSystem: platformsOf(app).map((k) => OS[k]).join(", "),
     image: abs(app.icon),
     screenshot: storeShotUrls(app).map((s) => abs(s)),
-    installUrl: app.stores.map((s) => s.url),
-    sameAs: app.stores.map((s) => s.url),
+    ...(app.stores.length
+      ? { installUrl: app.stores.map((s) => s.url), sameAs: app.stores.map((s) => s.url) }
+      : {}),
     featureList: app.groups.flatMap((g) => g.items),
     publisher: { "@id": ORG_ID },
     author: { "@id": ORG_ID },
