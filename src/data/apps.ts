@@ -244,8 +244,8 @@ export const ALL_APPS: AppEntry[] = [
       "No ads.",
       "Your calendar is processed on your phone to schedule alarms.",
     ],
-    privacyEffective: "October 17, 2026",
-    privacySource: "always-on-time-cloud, account-web/privacy-policy.html on main",
+    privacyEffective: "October 23, 2026",
+    privacySource: "Maintained in src/content/privacy/always-on-time.html",
   },
   {
     slug: "artillery-calculator",
