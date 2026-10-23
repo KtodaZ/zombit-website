@@ -1,24 +1,24 @@
-<p><strong>Effective date:</strong> October 22, 2026</p>
+<p><strong>Effective date:</strong> October 23, 2026</p>
 <h2 id="short-version">The short version</h2>
 <p>This policy covers the PhotoVault app for Android (its Google Play name is Photo Vault), made by Zombit Studios LLC ("we"). The app is provided "AS IS".</p>
 <ul>
-<li>There is no PhotoVault account and no PhotoVault server. We never receive your photos, videos, albums, passcode, master password, or vault key.</li>
+<li>There is no PhotoVault account, and your vault never passes through a PhotoVault server. We never receive your photos, videos, albums, passcode, master password, or vault key.</li>
 <li>Photos and videos you add are encrypted on your phone and kept in the app's private storage, not in your phone's gallery.</li>
 <li>Google Drive backup is optional. If you connect it, PhotoVault uploads only encrypted data, to a hidden app folder in your own Google Drive. The permission it asks for covers only that folder, not your other Drive files.</li>
-<li>The app has no advertising, analytics, or crash-reporting services. Its only network connections are to Google, for Google Drive.</li>
-<li>A diagnostics report is created only when you export it, and it reaches us only if you send it to us yourself.</li>
+<li>The app has no advertising, analytics, or crash-reporting services. It connects to Google Drive if you connect it, and to Google Firebase only when you send us feedback.</li>
+<li>Feedback reaches us only when you tap Send in Settings › Send feedback. It contains what you write, an optional reply email, app and Android version numbers, a random ID, and, only if you turn it on, a redacted diagnostics summary.</li>
 <li>Uninstalling removes the vault from your phone. You can delete PhotoVault's data from Google Drive in Drive's settings. To ask us anything, email zombit.studios@gmail.com.</li>
 </ul>
 <p>The details are below.</p>
 <h2 id="on-your-phone">What stays on your phone</h2>
 <p>Each photo and video you add is encrypted with AES-256-GCM before it is stored; videos are encrypted in separately authenticated chunks so they can play without a decrypted copy. The files sit in PhotoVault's app-private storage, which other apps can't read, and are never written to your phone's gallery or shared media storage. Photos are decrypted in memory for viewing, and videos are decrypted piece by piece as they play.</p>
-<p>The vault's catalog (such as album names, favorites, Trash, the date each item was added, and whether it was captured in the app or imported) is kept in an encrypted database. The keys for your media and catalog are protected by Android Keystore on your phone. Your six-digit passcode is stored only as a salted, one-way hash, in encrypted storage. PhotoVault asks for the passcode every time you open it, blocks screenshots and screen recording, and shows a neutral cover on the recent-apps screen.</p>
+<p>The vault's catalog (such as album names, favorites, Trash, the date each item was added, and whether it was captured in the app or imported) is kept in an encrypted database. The keys for your media and catalog are protected by Android Keystore on your phone. Your six-digit passcode is stored only as a salted, one-way hash, in encrypted storage. PhotoVault asks for the passcode whenever the vault has locked: when your screen turns off, when the app restarts, and after you've been away for your chosen lock timeout (20 seconds unless you change it; you can choose Immediately, 1 minute, or 5 minutes in Settings › Privacy). By default it also blocks screenshots and screen recording and shows a neutral cover on the recent-apps screen; you can turn either off in Settings › Privacy.</p>
 <p>PhotoVault opts out of Android's own backup and device-to-device transfer, so your phone's Google backup does not include the vault.</p>
 <p>The app also keeps a small, encrypted log of recent app events on your phone (times, error codes, and status values, never media or names), which the Diagnostics screen shows. See <a href="#diagnostics">Exports and diagnostics</a>.</p>
 <h2 id="adding-media">Camera, imports, and permissions</h2>
 <p>The in-app camera asks for camera permission, and microphone permission so videos can record sound, when you first open it. A capture is written to a temporary file in app-private storage, encrypted, and the temporary file is deleted. The app does not request location, contacts, or access to all your photos.</p>
 <p>To import, PhotoVault uses Android's photo picker, or you share photos and videos into it from another app. Either way, it can read only the items you choose. Importing copies them into the vault; PhotoVault does not move or delete the originals.</p>
-<p>PhotoVault also uses the internet and network-state permissions, to reach Google Drive and to check for a connection (and, by default, for Wi-Fi) before backing up.</p>
+<p>PhotoVault also uses the internet and network-state permissions, to reach Google Drive, to send feedback you choose to send, and to check for a connection (and, by default, for Wi-Fi) before backing up.</p>
 <h2 id="google-drive">Optional Google Drive backup</h2>
 <p>You can use PhotoVault without Google Drive. If you choose to connect it, Google shows its own account choice and consent screen. PhotoVault asks for one permission, Google Drive's app-data scope (<code>drive.appdata</code>), which Google describes as letting the app "see, create, and delete its own configuration data in your Google Drive". It covers only a hidden folder that belongs to PhotoVault. PhotoVault cannot see your other Drive files, and the folder does not appear among them.</p>
 <p>Once connected, PhotoVault uploads to that folder:</p>
@@ -42,16 +42,28 @@
 <h2 id="diagnostics">Exports and diagnostics</h2>
 <p>When you export a photo or video, PhotoVault decrypts that one item and saves it where you choose with Android's file picker. The exported copy is not encrypted and is no longer protected by PhotoVault.</p>
 <p>The Diagnostics screen can export a text report: status counts, self-check results, and recent app events (time, component, operation, error code, attempt, and duration). It never includes media, file names, paths, links, email addresses, account or provider IDs, tokens, keys, passwords, or crash traces. It is saved only where you choose, and PhotoVault keeps no copy. The app never sends it anywhere; if you email it to us for help, we use it only to answer you, and we delete it when you ask.</p>
+<h2 id="feedback">Feedback</h2>
+<p>Settings › Send feedback lets you write to us from the app. Nothing is sent until you tap Send. A message contains:</p>
+<ul>
+<li>the text you write;</li>
+<li>a reply email, only if you enter one, used only to answer that message;</li>
+<li>the app version and your phone's Android version (API level);</li>
+<li>only if you turn on <strong>Include diagnostics</strong>, a summary of the diagnostics report described above, which you can preview before sending; and</li>
+<li>a random identifier from Firebase Anonymous Authentication, which is not linked to you or your Google account, and the time the message arrived.</li>
+</ul>
+<p>Feedback never includes your photos, videos, album names, passcode, master password, vault key, or anything from Google Drive. To keep out abuse, the app signs in to Firebase anonymously and uses Firebase App Check, which asks Google Play to confirm the request comes from a genuine copy of the app. None of this happens until you send feedback.</p>
+<p>The message is stored in our Google Firebase Cloud Firestore database in the United States, which Google operates for us. Only we can read it. We use feedback only to answer you and to improve PhotoVault, keep it only as long as we need it for that, and delete it when you ask. A message that fails to send stays on the screen and is never sent later on its own.</p>
 <h2 id="third-parties">Third parties</h2>
-<p>The app contains no advertising, analytics, or crash-reporting services, and we don't sell or share your information. The only outside services involved are Google's: Google Drive storage, and Google Play services, which shows the Google account choice and consent screen. Google Play also distributes the app. Each operates under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+<p>The app contains no advertising, analytics, or crash-reporting services, and we don't sell or share your information. The only outside services involved are Google's: Google Drive storage; Google Play services, which shows the Google account choice and consent screen; and Google Firebase (Cloud Firestore, Authentication, and App Check), which receives feedback you send. Google Play also distributes the app. Each operates under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
 <h2 id="deletion">Your choices and deletion</h2>
 <ul>
 <li><strong>Delete an item:</strong> move it to Trash, then delete it permanently. It is removed from your phone right away, and PhotoVault then tries to delete its encrypted copy from Google Drive after a later successful backup or sync.</li>
 <li><strong>Disconnect Google Drive:</strong> in the app's Connected storage screen, choose Disconnect. PhotoVault stops backup work and revokes its Google access through Google. Your vault stays on your phone, and the encrypted data already in Drive stays there. You can also remove PhotoVault's access from your Google Account's third-party connections page.</li>
 <li><strong>Delete PhotoVault's data from Google Drive:</strong> on a computer, open Google Drive, choose Settings › Manage apps, find PhotoVault (or Photo Vault), and choose Options › Delete hidden app data. This removes every encrypted copy, including any extra copies left after reconnecting Drive.</li>
+<li><strong>Delete feedback you sent:</strong> email zombit.studios@gmail.com. If you didn't add a reply email, tell us roughly when you sent it and what it said, and we'll find and delete it.</li>
 <li><strong>Delete everything on your phone:</strong> uninstall PhotoVault. This removes the vault, its keys, and its settings from your phone. Export anything you want to keep first: without the vault key, the data can't be recovered.</li>
 </ul>
-<p>We hold no copy of your vault, so there is nothing for us to delete on our side. If you emailed us, you can ask us to delete those messages at zombit.studios@gmail.com.</p>
+<p>We hold no copy of your vault, so there is nothing of it for us to delete on our side. If you sent feedback or emailed us, you can ask us to delete it at zombit.studios@gmail.com.</p>
 <h2 id="children">Children</h2>
 <p>PhotoVault is not directed to children under 13, and we don't knowingly collect personal information from children. If you believe a child has sent us personal information, email zombit.studios@gmail.com and we will delete it.</p>
 <h2 id="security">Security</h2>

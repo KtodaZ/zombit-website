@@ -670,16 +670,16 @@ export const ALL_APPS: AppEntry[] = [
     lede:
       "PhotoVault keeps your private photos and videos in an encrypted vault on your Android phone, behind a six-digit passcode. Optional Google Drive backup stores only encrypted copies, in your own Drive.",
     body: [
-      "Everything you add is encrypted on your phone and kept in PhotoVault’s private storage, never in your phone’s gallery. The vault asks for its passcode every time you open it, and blocks screenshots and screen recording while it is open.",
-      "There is no PhotoVault account and no PhotoVault server. If you connect Google Drive, PhotoVault uploads only encrypted data, to a hidden folder in your own Drive that only PhotoVault can use. We can’t see your photos and videos, and Google receives only encrypted files.",
+      "Everything you add is encrypted on your phone and kept in PhotoVault’s private storage, never in your phone’s gallery. The vault locks when your screen turns off or after you’ve been away for a short timeout you choose, and by default blocks screenshots and screen recording while it is open.",
+      "There is no PhotoVault account, and your vault never passes through a PhotoVault server. If you connect Google Drive, PhotoVault uploads only encrypted data, to a hidden folder in your own Drive that only PhotoVault can use. We can’t see your photos and videos, and Google receives only encrypted files.",
     ],
     groups: [
       {
         title: "Private by default",
         items: [
-          "A six-digit passcode every time you open the app",
-          "Screenshots and screen recording blocked inside the vault",
-          "A neutral cover on the recent-apps screen",
+          "A six-digit passcode whenever the vault locks: on screen off, and after a timeout you choose",
+          "Screenshots and screen recording blocked inside the vault, unless you turn it off",
+          "A neutral cover on the recent-apps screen, unless you turn it off",
           "Photos and videos encrypted on your phone and never saved to the gallery",
         ],
       },
@@ -706,7 +706,7 @@ export const ALL_APPS: AppEntry[] = [
     faq: [
       {
         q: "Can Zombit Studios see my photos?",
-        a: "No. PhotoVault encrypts your photos and videos on your phone. There is no PhotoVault server, and copies in Google Drive are encrypted with a key we never receive.",
+        a: "No. PhotoVault encrypts your photos and videos on your phone. Your vault never passes through a PhotoVault server, and copies in Google Drive are encrypted with a key we never receive. The only thing that reaches us is feedback you choose to send, and it never includes your photos or videos.",
       },
       {
         q: "Where are my photos and videos stored?",
@@ -741,10 +741,10 @@ export const ALL_APPS: AppEntry[] = [
       "Android only. There is no iPhone version.",
       "In testing, not yet on Google Play.",
       "No ads, analytics, or crash reporting in the app.",
-      "No PhotoVault account or server. Google Drive backup is optional and stores only encrypted data.",
+      "No PhotoVault account. Your vault never passes through our servers; Google Drive backup is optional and stores only encrypted data.",
     ],
-    privacyEffective: "October 22, 2026",
-    privacySource: "Written for zombit.io from the PhotoVault Android source (KtodaZ/photo-vault, 390e9db)",
+    privacyEffective: "October 23, 2026",
+    privacySource: "Written for zombit.io from the PhotoVault Android source (KtodaZ/photo-vault, f9d8a42)",
   },
 ];
 
