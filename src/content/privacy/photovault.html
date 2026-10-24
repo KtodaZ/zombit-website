@@ -33,10 +33,11 @@
 <h2 id="google-user-data">Google user data</h2>
 <p>When you connect Google Drive, PhotoVault accesses only:</p>
 <ul>
-<li>the files PhotoVault itself creates in its hidden app-data folder, described above; and</li>
+<li>the files PhotoVault itself creates in its hidden app-data folder, described above;</li>
+<li>the email address of the account you pick from Android's account list, only for the moment it takes to ask Google for access; and</li>
 <li>your Google Drive permission ID (Google's identifier for your account in Drive), read when you connect and whenever Google access is renewed, to check which account is connected.</li>
 </ul>
-<p>PhotoVault does not request your email address, name, profile picture, contacts, or any other Google data. From the permission ID it keeps only a one-way fingerprint, in encrypted storage on your phone, so the vault can't be connected to a different Google account by mistake. Google's access token is kept in memory only while the vault is unlocked, and is cleared when the vault locks; PhotoVault does not store a long-lived refresh token.</p>
+<p>When you choose a Google account from Android's account list, PhotoVault receives that account's email address and uses it only to ask Google for access to that account. It is held in memory for that one request and is never stored, logged, or sent to us. PhotoVault does not request your name, profile picture, contacts, or any other Google data. From the permission ID it keeps only a one-way fingerprint, in encrypted storage on your phone, so the vault can't be connected to a different Google account by mistake. Google's access token is kept in memory only while the vault is unlocked, and is cleared when the vault locks; PhotoVault does not store a long-lived refresh token.</p>
 <p>This data is used only to back up, restore, and sync your own vault. It stays on your phone and in your Google account: it is never sent to us or to anyone else, never sold, never used for advertising, and never used to develop, improve, or train artificial intelligence or machine learning models. No person reads it.</p>
 <p>PhotoVault's use and transfer of information received from Google APIs, including Google Workspace scopes, will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Limited Use requirements</a>.</p>
 <h2 id="diagnostics">Exports and diagnostics</h2>
