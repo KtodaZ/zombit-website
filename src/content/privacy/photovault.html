@@ -1,4 +1,4 @@
-<p><strong>Effective date:</strong> October 23, 2026</p>
+<p><strong>Effective date:</strong> October 24, 2026</p>
 <h2 id="short-version">The short version</h2>
 <p>This policy covers the PhotoVault app for Android (its Google Play name is Photo Vault), made by Zombit Studios LLC ("we"). The app is provided "AS IS".</p>
 <ul>
@@ -12,7 +12,7 @@
 <p>The details are below.</p>
 <h2 id="on-your-phone">What stays on your phone</h2>
 <p>Each photo and video you add is encrypted with AES-256-GCM before it is stored; videos are encrypted in separately authenticated chunks so they can play without a decrypted copy. The files sit in PhotoVault's app-private storage, which other apps can't read, and are never written to your phone's gallery or shared media storage. Photos are decrypted in memory for viewing, and videos are decrypted piece by piece as they play.</p>
-<p>The vault's catalog (such as album names, favorites, Trash, the date each item was added, and whether it was captured in the app or imported) is kept in an encrypted database. The keys for your media and catalog are protected by Android Keystore on your phone. Your six-digit passcode is stored only as a salted, one-way hash, in encrypted storage. PhotoVault asks for the passcode whenever the vault has locked: when your screen turns off, when the app restarts, and after you've been away for your chosen lock timeout (20 seconds unless you change it; you can choose Immediately, 1 minute, or 5 minutes in Settings › Privacy). By default it also blocks screenshots and screen recording and shows a neutral cover on the recent-apps screen; you can turn either off in Settings › Privacy.</p>
+<p>The vault's catalog (such as album names, favorites, Trash, the date each item was added, and whether it was captured in the app or imported) is kept in an encrypted database. The keys for your media and catalog are protected by Android Keystore on your phone. Your four-digit passcode is stored only as a salted, one-way hash, in encrypted storage. PhotoVault asks for the passcode whenever the vault has locked: when your screen turns off, when the app restarts, and after you've been away for your chosen lock timeout (20 seconds unless you change it; you can choose Immediately, 1 minute, or 5 minutes in Settings › Privacy). By default it also blocks screenshots and screen recording and shows a neutral cover on the recent-apps screen; you can turn either off in Settings › Privacy.</p>
 <p>PhotoVault opts out of Android's own backup and device-to-device transfer, so your phone's Google backup does not include the vault.</p>
 <p>The app also keeps a small, encrypted log of recent app events on your phone (times, error codes, and status values, never media or names), which the Diagnostics screen shows. See <a href="#diagnostics">Exports and diagnostics</a>.</p>
 <h2 id="adding-media">Camera, imports, and permissions</h2>
