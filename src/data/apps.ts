@@ -670,7 +670,7 @@ export const ALL_APPS: AppEntry[] = [
     lede:
       "PhotoVault keeps your private photos and videos in an encrypted vault on your Android phone, behind a four-digit passcode. Optional Google Drive backup stores only encrypted copies, in your own Drive.",
     body: [
-      "Everything you add is encrypted on your phone and kept in PhotoVault’s private storage, never in your phone’s gallery. The vault locks when your screen turns off or after you’ve been away for a short timeout you choose, and by default blocks screenshots and screen recording while it is open.",
+      "Everything you add is encrypted on your phone and kept in PhotoVault’s private storage, never in your phone’s gallery. The vault locks when your screen turns off or after you’ve been away for a short timeout you choose, and can block screenshots and screen recording while it is open.",
       "There is no PhotoVault account, and your vault never passes through a PhotoVault server. If you connect Google Drive, PhotoVault uploads only encrypted data, to a hidden folder in your own Drive that only PhotoVault can use. We can’t see your photos and videos, and Google receives only encrypted files.",
     ],
     groups: [
@@ -678,7 +678,7 @@ export const ALL_APPS: AppEntry[] = [
         title: "Private by default",
         items: [
           "A four-digit passcode whenever the vault locks: on screen off, and after a timeout you choose",
-          "Screenshots and screen recording blocked inside the vault, unless you turn it off",
+          "Optional blocking of screenshots and screen recording inside the vault",
           "A neutral cover on the recent-apps screen, unless you turn it off",
           "Photos and videos encrypted on your phone and never saved to the gallery",
         ],
