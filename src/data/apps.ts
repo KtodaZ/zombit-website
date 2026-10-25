@@ -713,6 +713,14 @@ export const ALL_APPS: AppEntry[] = [
         a: "In PhotoVault’s private, encrypted storage on your phone. If you connect Google Drive, encrypted copies go into a hidden app folder in your own Drive. They don’t appear with your other Drive files, and they count against your Google storage.",
       },
       {
+        q: "How can I see my backup in Google Drive?",
+        a: "The backup sits in a hidden folder that only PhotoVault can open, so it isn’t in your Drive file list. To check that it exists and how much space it uses, open drive.google.com in a browser, then go to Settings › Manage apps › PhotoVault. If you have more than one Google account, check each one; that shows which account holds your backup. Don’t choose Delete hidden app data there: it permanently erases your backup.",
+      },
+      {
+        q: "Can I share my backup with someone else?",
+        a: "No. PhotoVault is a vault for one person, and its Drive folder can’t be shared. Everything in it is encrypted with your vault key, so a copy would be unreadable without your master password anyway. To give someone a photo or video, export it from the vault and send it.",
+      },
+      {
         q: "Does importing delete the original photo?",
         a: "No. Importing or sharing into PhotoVault copies the photo or video into the vault. The original stays where it was.",
       },
