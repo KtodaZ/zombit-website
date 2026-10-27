@@ -3,7 +3,7 @@ title: "Calendar Alarm Apps for Android Compared (2026)"
 description: "Google Calendar only sends notifications on Android. Always On Time turns events into free, ad-free full-screen alarms. How it compares with ZenLendar and more."
 slug: "calendar-alarm-apps-android-comparison"
 date: "2026-10-17"
-updated: "2026-10-17"
+updated: "2026-10-26"
 app: "always-on-time"
 kind: "comparison"
 faq:
@@ -75,9 +75,9 @@ We make Always On Time. Everything below about other apps comes from their Googl
 | Snooze from the alarm | ✓ | ✓ | ✓ | Not listed | ✓ | Not listed | Pro |
 | Any calendar synced to your phone | ✓ | ✓ | ✓ | Via notifications | ✗ Google primary only | Not listed | Not listed |
 | Wear OS watch | Beta¹ | PRO+ | Not listed | ✓ | Not listed | Not listed | Not listed |
-| AI assistant connector (Claude, ChatGPT, Gemini) | Coming soon² | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
+| AI assistant connector (Claude, ChatGPT, Gemini) | ✓² | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
 
-From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Always On Time's connector for Claude, ChatGPT and Gemini isn't in a released version yet.
+From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Claude and ChatGPT connect through Always On Time's account sync ([setup](/always-on-time/assistants/)); Gemini works on Android 16 and later.
 
 ## Prices at a glance
 
