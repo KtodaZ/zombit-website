@@ -16,7 +16,7 @@ that was deleted, never committed). Each is encoded at 360, 540, and 720px wide 
 
 | App | Set used | Why |
 |---|---|---|
-| Always On Time | Google Play, 4 images (1080×1920) | Android only |
+| Always On Time | Google Play, 6 images (1080×1920), updated 2026-10-26 from the uploaded masters in the app repo's `play-store-assets/screenshots/en-US/framed/` | Android only |
 | Artillery Let Loose | Google Play, 3 images (1080×1920) | Most of its ratings are on Play; the iOS set is the same slides drawn on an iPhone |
 | Montessori Visual Timer | Google Play, 4 images (1080×1920) | Superset of the iOS set (adds Quick Timers) |
 | Word Garden | App Store iPhone 6.5", 4 images (1242×2688) | Identical to the Play set |
@@ -28,7 +28,7 @@ Re-fetch when a listing's screenshots change, and keep the alt text in step with
 
 | App | Video | Poster |
 |---|---|---|
-| Always On Time | YouTube `UVZwlFZaIBc` (landscape, 0:17, 2026-09-24) | YouTube `maxresdefault.jpg`, encoded at 640/960/1280 |
+| Always On Time | YouTube `YSqSesX5g_Q` (landscape, 0:22, 2026-10-26) | YouTube `maxresdefault.jpg` (the custom thumbnail), encoded at 640/960/1280 |
 | Montessori Visual Timer | YouTube Short `W3l46xFXA5s` (portrait, 0:28, 2026-10-14) | Frame at 2 s of the master `Montessori-Visual-Timer/marketing/promo-video/out/preview-final.mp4` (YouTube's thumbnail is a landscape crop of the PIN pad), encoded at 360/540/720 |
 
 The player is the youtube-nocookie embed, loaded only after a click (`src/components/VideoFacade.tsx`).
