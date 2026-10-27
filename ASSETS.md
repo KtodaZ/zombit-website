@@ -63,13 +63,24 @@ they show AdMob test banners.
 
 | File | Source |
 |---|---|
-| `alwaysontime.webp`, `artillery.webp`, `montessori.webp` | store listing icons, 256px, WebP |
+| `alwaysontime.webp`, `artillery.webp`, `montessori.webp` | store listing icons, 256px, WebP. Always On Time's comes from `calendar-meeting-alarm/play-store-assets/icon_512_play.png` (`cwebp -q 90 -resize 256 0`) |
+| `alwaysontime.png` | the same Play icon at 512px, PNG, for the Claude Connectors Directory listing's icon field |
 | `wordgarden.webp`, `coffee.webp` | App Store listing icons (`artworkUrl512` from the iTunes lookup API at 1024px), resized to 256px, WebP q90 |
 | `photovault.webp` | the app's launcher vector (`photo-vault` `app/src/main/res/drawable/ic_vault.xml`) as SVG, `rsvg-convert -w 256`, WebP q90. It has no public store icon yet |
 | `zombit-mark.webp` | the studio's existing blue Z mark, 512px, WebP |
 
+`src/app/favicon.ico` is the Z mark from `_assets-raw/icons/zombit-mark-blue.png` at 16, 32, 48, 64
+and 256px. Google's favicon service reads it for every zombit.io page, including the Claude
+Connectors Directory icon for `alwaysontime.zombit.io`, which redirects here.
+
 The Z mark is existing brand work and is not to be redrawn or retired. It is used subtly —
 favicon, masthead, colophon — and never as a hero element.
+
+## Connector listing images — `public/connectors/`
+
+| File | Source |
+|---|---|
+| `alwaysontime-claude-1..4-*.png` | Carousel images for the Always On Time listing in the Claude Connectors Directory, each paired there with the prompt it shows. Retina captures of real claude.ai chats against the review account's demo phone (no personal data), centred on a 1600×900 canvas in the chat's background colour |
 
 ## Open Graph cards — `public/og/`
 
