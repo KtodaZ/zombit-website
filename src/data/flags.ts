@@ -15,8 +15,8 @@ export const CONNECTOR_URL = "https://alwaysontime.zombit.io/mcp";
  */
 export const LASTMOD = {
   home: "2026-10-17",
-  apps: "2026-10-17",
-  privacy: "2026-10-17",
+  apps: "2026-10-30",
+  privacy: "2026-10-30",
   support: "2026-10-17",
   assistants: "2026-10-26",
 } as const;

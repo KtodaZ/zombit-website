@@ -185,7 +185,7 @@ export const ALL_APPS: AppEntry[] = [
       },
       {
         q: "Is Always On Time available on iPhone?",
-        a: "No. It is an Android app, with a companion for compatible Wear OS watches. There is no iPhone version.",
+        a: "Not yet. Always On Time is on Google Play for Android, with a companion for compatible Wear OS watches. It is not on the App Store yet.",
       },
       {
         q: "Will my alarms still ring after I restart my phone?",
@@ -242,11 +242,11 @@ export const ALL_APPS: AppEntry[] = [
     schemaCategory: "ProductivityApplication",
     category: "Productivity",
     notes: [
-      "Android only, with a Wear OS companion. There is no iPhone build.",
+      "Android, with a Wear OS companion. Not on the App Store yet.",
       "No ads.",
       "Your calendar is processed on your phone to schedule alarms.",
     ],
-    privacyEffective: "October 23, 2026",
+    privacyEffective: "October 30, 2026",
     privacySource: "Maintained in src/content/privacy/always-on-time.html",
   },
   {

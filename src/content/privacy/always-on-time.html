@@ -1,16 +1,23 @@
-<p><strong>Effective date:</strong> October 23, 2026</p>
+<p><strong>Effective date:</strong> October 30, 2026</p>
 <h2 id="at-a-glance">The short version</h2>
-<p>Always On Time: Calendar Alarm is an Android and Wear OS alarm app from Zombit Studios LLC
-(&quot;we&quot;).</p>
+<p>Always On Time: Calendar Alarm is a calendar alarm app from Zombit Studios LLC (&quot;we&quot;) for
+Android and Wear OS, and for iPhone. This policy covers both. Where the apps differ, the section
+says which one it applies to.</p>
 <ul>
 <li>Your calendar is processed on your phone to schedule alarms. Alarm preferences and history are
 stored on your device.</li>
-<li>Crash reports are sent to Firebase Crashlytics automatically. Other transfers depend on the
-features you use, including account sync and feedback (Google Firebase), travel-time alarms (TomTom
-or Google), AI assistants (the assistant&#x27;s provider, such as Anthropic, OpenAI or Google),
-remote log streaming, battery guidance (DontKillMyApp.com) and the Wear OS companion.</li>
-<li>Usage statistics (Google Analytics for Firebase) are optional and on by default in some regions.
-You can turn them off in Settings.</li>
+<li>On Android, crash reports are sent to Firebase Crashlytics automatically. Other transfers depend
+on the features you use, including account sync and feedback (Google Firebase), travel-time alarms
+(TomTom or Google on Android, Apple Maps on iPhone), AI assistants (the assistant&#x27;s provider,
+such as Anthropic, OpenAI or Google), battery guidance (DontKillMyApp.com) and the Wear OS
+companion.</li>
+<li>On iPhone, you can connect a Google account so the app can read your Google Calendar. Access is
+read-only, and calendar data goes straight from Google to your iPhone. Background updates use our
+relay on Cloudflare, which never receives your calendar content. See <a href="#iphone">On
+iPhone</a>.</li>
+<li>On Android, usage statistics (Google Analytics for Firebase) are optional and on by default in
+some regions. You can turn them off in Settings. The iPhone app has no usage statistics or crash
+reporting.</li>
 <li>The app shows no ads. We never sell your information or use it for advertising.</li>
 <li>To delete your account and synced data, go to <strong>Settings &gt; Account &gt; Manage account
 &gt; Delete account</strong>. For feedback or diagnostics, email zombit.studios@gmail.com.</li>
@@ -21,10 +28,83 @@ You can turn them off in Settings.</li>
 <h2 id="information-processed-on-your-devices">On your devices</h2>
 <p>With your permission, the app reads selected calendar details, including event titles,
 descriptions, times, and meeting links, to schedule alarms. Alarm preferences and history are
-stored on your device.</p>
+stored on your device. On Android, the app reads the calendars synced to your phone. On iPhone, it
+reads the calendars in iOS Calendar and, if you connect one, your Google account (see
+<a href="#iphone">On iPhone</a>).</p>
 <p>The app does not display ads, use AdMob, or use behavioral advertising.</p>
+<h2 id="iphone">On iPhone</h2>
+<p>The iPhone app schedules alarms on your iPhone with Apple&#x27;s AlarmKit. Calendar details are
+processed on your iPhone. Alarm preferences, alarm history and the most recent calendar data are
+stored on your iPhone.</p>
+<h3 id="iphone-calendars">Calendars on your iPhone</h3>
+<p>With your permission, the app reads the calendars available in iOS Calendar, including accounts
+you added in iPhone Settings. This uses Apple&#x27;s calendar access on the iPhone and sends nothing
+to us.</p>
+<h3 id="google-calendar">Connecting Google Calendar</h3>
+<p>This is optional. In <strong>Calendars &gt; Calendar accounts</strong>, or during setup, you can
+connect a Google account. Google&#x27;s sign-in page opens in a secure browser sheet and asks you to
+allow read-only access to your calendars. The app requests one Google scope:</p>
+<ul>
+<li><code>https://www.googleapis.com/auth/calendar.readonly</code>: to list your calendars so you can
+choose which ones to watch, and to read the events in the calendars you choose (titles, times,
+descriptions, locations, meeting links, your invitation response and organizer status) so the app
+can schedule, move and cancel your alarms, show your upcoming events and offer a Join button. The
+app never creates, changes or deletes anything in your Google Calendar.</li>
+</ul>
+<p>Your Google sign-in tokens are stored in your iPhone&#x27;s keychain, and calendar data is
+downloaded directly from Google to your iPhone. Your Google tokens are never sent to us. To update
+alarms soon after a calendar changes, the app asks Google to send a change notice to our relay
+(described below). Google&#x27;s notice says only that a watched calendar changed, and the relay
+records no event details from it.</p>
+<p>Disconnect a Google account anytime in <strong>Calendars &gt; Calendar accounts</strong>. The app
+then revokes its access with Google, deletes the tokens from your iPhone and stops watching that
+account&#x27;s calendars. You can also remove the app&#x27;s access at
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+<h3 id="google-limited-use">How we use information from Google</h3>
+<p>Always On Time&#x27;s use and transfer of information received from Google APIs will adhere to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
+Data Policy</a>, including the Limited Use requirements.</p>
+<ul>
+<li>Google Calendar data is used only to provide the alarm features you see in the app.</li>
+<li>It leaves your iPhone only when you turn on a feature that sends it: account sync stores your
+recent alarm history, including event titles (see <a href="#optional-google-account-sync">account
+sync</a>), and a connected AI assistant receives the upcoming alarms copy described in
+<a href="#assistants">Connecting an AI assistant</a>. With travel-time alarms on, an in-person
+event&#x27;s address is sent to Apple Maps to work out the travel time. Feedback diagnostics leave
+out event titles.</li>
+<li>It is not used for advertising, is not sold, and is not used to train AI or machine-learning
+models.</li>
+<li>People do not read it, except with your permission for a support request you send, when
+needed for security or to investigate abuse, or to comply with the law.</li>
+</ul>
+<h3 id="iphone-background-updates">Background updates</h3>
+<p>iOS lets an app check calendars while it is closed only when a notification arrives. With
+<strong>Background updates</strong> on (the default; switch it in Settings), the iPhone registers
+with our relay, a service we run on Cloudflare (Workers and Durable Objects). The relay sends the
+iPhone a quiet notification when a connected calendar changes, from time to time during your active
+hours, and shortly before alarms, so the app can check your calendars and update its alarms.</p>
+<p>The relay stores your iPhone&#x27;s Apple push notification token and environment, a one-way hash
+of a random secret created for this installation, your time zone, active hours, and whether the
+app checks iPhone calendars; one-way hashes of alarm identifiers with their alarm times; one-way
+hashes of the identifiers of Google calendar change notices, with their expiry times; and delivery
+bookkeeping, such as when the last notification was sent and when the iPhone last reported a
+check. It never receives OAuth tokens, event titles, descriptions, locations, attendees or meeting
+links. Its logs record installation IDs, notification types and error codes, never tokens, IP
+addresses or request headers. Cloudflare sees the IP address of each request in order to deliver
+it.</p>
+<p>When you register, your iPhone proves it is running the genuine app with Firebase App Check,
+which uses Apple&#x27;s App Attest. Alarm times leave the relay a day after they pass. Expired
+change-notice records are deleted 7 days after they expire. If Apple reports the push token is no
+longer valid, the installation is disabled and deleted after 30 days. Turning off Background
+updates deletes the installation and everything stored with it right away.</p>
+<h3 id="iphone-other">Other iPhone details</h3>
+<p>Travel-time alarms, account sync, AI assistants and feedback on iPhone are described in their
+sections below. The iPhone app has no ads, no usage statistics or analytics, no crash reporting and
+no tracking. It has no subscription or in-app purchases. Spoken alarms are created on the iPhone
+with Apple&#x27;s built-in voices.</p>
 <h2 id="travel-location">Travel-time alarms and location</h2>
-<p>Travel-time alarms are off by default. If you turn them on, you choose where trips start from.</p>
+<p>Travel-time alarms are off by default. If you turn them on, you choose where trips start from.
+On iPhone, see <a href="#travel-iphone">travel on iPhone</a> below.</p>
 <p><strong>Use my location.</strong> With your permission to access location all the time, the app
 collects your device&#x27;s location, including when the app is closed or not in use, to work out
 when you need to leave for in-person calendar events. It reads location only when an in-person
@@ -51,8 +131,16 @@ reliability and service costs. These aggregate totals contain no installation id
 addresses, coordinates or trip details and may be kept after the per-installation counts expire.
 The routing service does not store trip details. If routing is unavailable, the app keeps the last successful
 plan or falls back to the event&#x27;s existing alarms.</p>
+<p id="travel-iphone"><strong>On iPhone.</strong> You can use your location (while using the app,
+or all the time so leave times stay current when the app is closed) or saved places. Your location
+and saved places stay on your iPhone and are shared only with Apple Maps for travel times. To plan
+a trip, the app sends the starting point, the event&#x27;s address, the transport mode and the
+arrival time to Apple Maps (MapKit), which also matches event addresses and place searches to map
+coordinates. Apple&#x27;s privacy policy applies to those requests. The iPhone app does not use our
+routing service, TomTom or Google for travel, and does not send your location to us.</p>
 <h2 id="always-on-time-plus-subscription">Always On Time Plus subscription</h2>
-<p>Always On Time Plus is an optional subscription sold through Google Play. Google Play processes
+<p>Always On Time Plus is an optional subscription sold through Google Play on Android. The iPhone
+app has no subscription. Google Play processes
 payment and your Google account details under Google&#x27;s terms; we don&#x27;t receive your payment
 details. The app reads from Google Play whether your subscription is active and stores that status
 on your device. Manage or cancel the subscription in Google Play.</p>
@@ -61,6 +149,11 @@ on your device. Manage or cancel the subscription in Google Play.</p>
 processes your Google profile, email address, and account identifier to identify your Always On
 Time account. Signing in does not give the app access to your Gmail or Google Calendar through
 Google&#x27;s web APIs; calendar access still uses the phone&#x27;s calendar permission.</p>
+<p>On iPhone, Google&#x27;s sign-in page opens in a secure browser sheet and the app asks only for
+your basic identity (the <code>openid</code> and <code>email</code> scopes). This is separate from
+<a href="#google-calendar">connecting Google Calendar</a>: account sync works the same way whether
+or not you connect a calendar, and syncs the same information as on Android. The device label on
+iPhone history is &quot;iPhone&quot;.</p>
 <p>While you&#x27;re signed in, the app saves these to Firebase Cloud Firestore: supported alarm and
 appearance preferences, selected-calendar choices, calendar and recurring-series alarm rules,
 individual event overrides, and whether alarms are paused. Calendar and event matching identifiers
@@ -101,7 +194,9 @@ lists, locations, meeting links, travel origins or destinations, or sound choice
 the phone replaces the copy.</li>
 <li><strong>Phone registration.</strong> Your phone registers a Firebase Cloud Messaging token, its
 model label, app version and supported features, so the connector can ask it to apply a change,
-refresh the copy, or show a test notification.</li>
+refresh the copy, or show a test notification. An iPhone registers its label, app version and
+supported features without a push token, and applies an assistant&#x27;s changes the next time the
+app syncs your account.</li>
 <li><strong>Connection records.</strong> We store which assistant is connected, the address it
 returns to after approval, when it connected and was last used, and its access tokens, stored only
 as one-way hashes. Changes the assistant makes are logged with the previous values for 30 days so
@@ -142,6 +237,13 @@ Connected assistants</strong>.</p>
 passes between your paired phone and watch through Google Play services&#x27; Wearable Data Layer.
 The phone remains authoritative for calendar data, settings, and history.</p>
 <h2 id="feedback-and-diagnostic-information-collected">Feedback and diagnostics</h2>
+<p><strong>On iPhone.</strong> Sending feedback opens an email to zombit.studios@gmail.com in your
+mail app. It contains your message, the reply address you enter, if any, and the app and iOS
+versions. If you leave the diagnostics option checked (it is checked by default), it also attaches a text file with
+alarm scheduling counts and states and a technical event log; links, addresses, account names and
+event titles are left out. Screenshots you choose are attached too. Nothing is sent until you send
+the email from your mail app, and it then travels through your email provider. The rest of this
+section describes Android.</p>
 <p>When you choose <strong>Leave feedback</strong>, the app sends the text you enter, a required email
 address, the app version, and a server-generated submission time to our Firebase Cloud Firestore
 database. Optional screenshots or photos are uploaded to Firebase Cloud Storage under a user-scoped
@@ -161,12 +263,11 @@ entries from the last 24 hours. Android system <code>logcat</code> is not includ
 apps cannot read it. Links and email addresses are removed from this export before upload. The log
 is stored privately in Firebase Cloud Storage for us to review and is not included in the Discord
 alert.</p>
-<p>When <strong>Remote log streaming</strong> is on in Settings &gt; Developer, the app sends
-diagnostic information to our remote logging service to monitor alarm reliability and troubleshoot
-problems. It is off on fresh installs, and you can turn it off at any time from the same menu.
-Separately, Firebase Crashlytics receives crash, non-fatal error, and application-not-responding
-reports.</p>
-<p>Diagnostic records can include:</p>
+<p>Firebase Crashlytics receives crash, non-fatal error, and application-not-responding reports
+from the Android app. Earlier Android versions had an off-by-default <strong>Remote log
+streaming</strong> developer option; it has been removed, and its logging service no longer
+receives data.</p>
+<p>Android diagnostic records can include:</p>
 <ul><li>a Firebase Installation ID and a short identifier for the current app session;</li><li>device manufacturer and model, device build family fields, Android release/API level, security
   patch level, app version/build type, supported CPU ABIs, locale, IP-derived approximate
   location, timestamps, and log severity;</li><li>network availability, internet validation, metered state, and transport type; battery percentage,
@@ -182,6 +283,8 @@ problems. Diagnostics are used only for app-health analytics, troubleshooting, s
 reliability improvements. Service providers, including Google Firebase and our hosting provider,
 process information on our behalf. Information is sent over HTTPS.</p>
 <h2 id="usage-statistics">Usage statistics</h2>
+<p>This applies to Android only. The iPhone app does not include Google Analytics and sends no usage
+statistics.</p>
 <p>The <strong>Share usage statistics</strong> setting in Settings is on by default, except in the
 European Economic Area, the United Kingdom and Switzerland (or when the app cannot tell the region).
 There it stays off unless you turn it on during setup or in Settings. When it is on, the app uses
@@ -200,7 +303,7 @@ city-level location and detailed device collection are turned off. Google acts a
 provider, and we have set Google Analytics to keep this data for 2 months. Turning the setting off
 stops collection right away and resets the analytics data stored on your device.</p>
 <h2 id="other-network-requests">Other network requests</h2>
-<p>The app may request public, manufacturer-specific battery guidance from DontKillMyApp.com. The
+<p>On Android, the app may request public, manufacturer-specific battery guidance from DontKillMyApp.com. The
 request can reveal the device manufacturer and IP address, but it does not intentionally include
 calendar events or meeting links.</p>
 <h2 id="retention-and-deletion">Retention and deletion</h2>
@@ -213,12 +316,17 @@ them, so we can find matching records. We will respond within a reasonable perio
 if records cannot be reliably identified from the details provided.</p>
 <p>Local app data stays on your devices until you delete it in the app, clear the app&#x27;s storage,
 or uninstall the app. Wear alarm records are removed or replaced as alarms are completed, cancelled,
-or updated.</p>
+or updated. Background-update records for an iPhone are kept as described in
+<a href="#iphone-background-updates">Background updates</a>.</p>
 <h2 id="permissions">Permissions</h2>
 <p>The app asks for the permissions it needs for calendar access, notifications, exact alarms,
 full-screen alarm presentation, vibration, startup restoration, and related reliability features.
 It also asks for location (including all the time) if you choose &quot;Use my location&quot; for
 travel-time alarms. You can review or revoke permissions in Android system settings.</p>
+<p>On iPhone, the app asks for full access to your calendars, notifications, and permission to
+schedule alarms (AlarmKit). It asks for location, while using the app or all the time, only if you
+choose to use your location for travel-time alarms. You can review or change these in iPhone
+Settings.</p>
 <h2 id="children">Children</h2>
 <p>The app is not directed to children under 13, and we do not knowingly collect personal
 information from children under 13. If you believe a child has supplied personal information,
