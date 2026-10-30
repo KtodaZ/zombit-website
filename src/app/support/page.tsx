@@ -1,3 +1,4 @@
+import { storeAttribution } from "@/lib/store-attribution";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +59,7 @@ function extras(app: AppEntry) {
   for (const s of app.support ?? []) {
     items.push(
       <>
-        <a className={link} href={s.url} rel="noopener">
+        <a className={link} href={storeAttribution(s.url, app.slug, "support")} rel="noopener">
           {s.label}
         </a>
         {s.note && <span> — {s.note}</span>}
@@ -146,7 +147,7 @@ export default function SupportPage() {
                       {i > 0 && <span aria-hidden="true"> · </span>}
                       <a
                         className={link}
-                        href={s.url}
+                        href={storeAttribution(s.url, app.slug, "support")}
                         rel="noopener"
                         data-store={s.kind}
                         data-app={app.slug}

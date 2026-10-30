@@ -1,3 +1,4 @@
+import { storeAttribution } from "@/lib/store-attribution";
 import Link from "next/link";
 import Image from "next/image";
 import { APPS, SITE, privacyPath, type AppEntry } from "@/data/apps";
@@ -118,7 +119,7 @@ export function Colophon({ app }: { app?: AppEntry }) {
               </li>
               {app?.support?.map((s) => (
                 <li key={s.url}>
-                  <a className={quietLink} href={s.url} rel="noopener">
+                  <a className={quietLink} href={storeAttribution(s.url, "studio", "footer")} rel="noopener">
                     {s.label}
                   </a>
                 </li>

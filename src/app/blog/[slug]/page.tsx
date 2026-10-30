@@ -1,3 +1,4 @@
+import { storeAttribution } from "@/lib/store-attribution";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -108,7 +109,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <ol className="mt-5 max-w-[var(--measure-doc)] list-decimal space-y-2 pl-5 text-[0.9375rem] leading-relaxed text-ink-soft marker:text-slate">
                 {post.sources.map((s) => (
                   <li key={s.url}>
-                    <a href={s.url} rel="noopener" className={`${textLink} [overflow-wrap:anywhere]`}>
+                    <a href={storeAttribution(s.url, post.slug, "blog-source")} rel="noopener" className={`${textLink} [overflow-wrap:anywhere]`}>
                       {s.title}
                     </a>
                     {s.accessed && <span className="text-slate"> · accessed {longDate(s.accessed)}</span>}
