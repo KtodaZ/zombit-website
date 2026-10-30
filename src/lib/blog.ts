@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { load } from "js-yaml";
 import { Marked, type Tokens } from "marked";
 import { bySlug } from "@/data/apps";
+import { storeAttribution } from "@/lib/store-attribution";
 import { BASE_PATH } from "@/lib/site";
 import { INK, onAccent } from "@/lib/accent";
 
@@ -113,9 +114,12 @@ function renderer(app?: string) {
  * wide tables scroll sideways on phones instead of squeezing the page. A table row whose first
  * cell is wholly bold is our app's row and gets a tint.
  */
-const finish = (html: string) =>
+const finish = (html: string, slug: string) =>
   matrices(
     html
+      .replace(/<a href="(https:\/\/(?:play\.google\.com|apps\.apple\.com)\/[^"]*)"/g, (_, href: string) =>
+        `<a href="${esc(storeAttribution(href.replace(/&amp;/g, "&"), slug, "blog-body"))}"`,
+      )
       .replace(/<a href="\/(?!\/)/g, `<a href="${BASE_PATH}/`)
       .replace(/<a href="(https?:\/\/(?!zombit\.io)[^"]*)"/g, '<a rel="noopener" href="$1"')
       .replace(/<table>/g, '<div class="table-wrap" tabindex="0"><table>')
@@ -166,7 +170,7 @@ function parse(file: string): Post {
     faq: Array.isArray(fm.faq) ? (fm.faq as Post["faq"]) : [],
     sources: Array.isArray(fm.sources) ? (fm.sources as Post["sources"]) : [],
     draft: fm.draft === true,
-    html: finish(renderer(str("app") || undefined).parse(m[2], { async: false }) as string),
+    html: finish(renderer(str("app") || undefined).parse(m[2], { async: false }) as string, slug),
   };
   // Fail the build on a malformed post rather than ship a page with holes in its metadata.
   const problems = [

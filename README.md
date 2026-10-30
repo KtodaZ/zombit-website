@@ -34,7 +34,9 @@ binding through its bundled postcss worker on this toolchain.
 - `src/content/privacy/` — the privacy policies. Legal text; see TODO.md §5.
 - `src/components/Analytics.tsx` — GA4, apex production build only; `/privacy/` (`src/app/privacy/`)
   describes what it collects. Store links carry `data-store`/`data-app`/`data-placement` for the
-  `store_click` event; visits from AI assistants send `ai_referral`.
+  `store_click` event; visits from AI assistants send `ai_referral`. Outbound store links carry
+  `utm_source=zombit`, `utm_medium=website`, a page/app campaign and placement content; Google
+  Play links also include those tags in the encoded `referrer`. Canonical metadata stays clean.
 - `docs/AEO.md` — structured data, llms.txt, robots, and the post-cutover search steps.
 - `ASSETS.md` — where every shipping image came from.
 - `PRODUCT.md` / `DESIGN.md` — product truth and the visual system.

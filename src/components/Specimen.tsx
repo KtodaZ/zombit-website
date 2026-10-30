@@ -1,4 +1,5 @@
 import { platformsOf, priceLabel, showsRating, type AppEntry, type Listing, type Store } from "@/data/apps";
+import { storeAttribution } from "@/lib/store-attribution";
 import { onAccent } from "@/lib/accent";
 
 const STORE_NAME: Record<Store["kind"], string> = { ios: "App Store", android: "Google Play" };
@@ -18,7 +19,7 @@ export function StoreAction({
 }) {
   return (
     <a
-      href={store.url}
+      href={storeAttribution(store.url, app, placement)}
       rel="noopener"
       data-store={store.kind}
       data-app={app}
@@ -92,7 +93,7 @@ export function StoreFacts({ app }: { app: AppEntry }) {
             <dt className="text-[0.75rem] uppercase tracking-[0.11em] text-slate">{STORE_NAME[s.kind]}</dt>
             <dd className="mt-1 text-ink">
               <a
-                href={s.url}
+                href={storeAttribution(s.url, app.slug, "app-facts")}
                 rel="noopener"
                 data-store={s.kind}
                 data-app={app.slug}
