@@ -8,7 +8,7 @@ app: "always-on-time"
 kind: "guide"
 faq:
   - q: "Can a calendar alarm work without relying on sound?"
-    a: "Always On Time on Android offers stronger vibration and flash alerts that blink the flashlight and screen while an alarm rings. Choose the combination you notice and try it with a test alarm."
+    a: "Always On Time on Android offers stronger vibration and flash alerts that blink the screen and, when available, the flashlight while an alarm rings. Choose the combination you notice and try it with a test alarm."
   - q: "Can my calendar alarm say the meeting name?"
     a: "Yes. Spoken alarms in Always On Time can announce the event name and time until it starts. You can choose which details are spoken."
   - q: "Can I join early to set up captions or an interpreter?"
@@ -28,15 +28,15 @@ We make Always On Time. These are features in our app, and this guide covers its
 
 ## Choose how the alarm gets your attention
 
-Open **Settings > Accessibility** in Always On Time. The settings are grouped around getting your attention, stopping the alarm and joining a meeting.
+Open **Settings > Accessibility** in Always On Time. The settings are grouped around getting your attention, stopping the alarm and joining a meeting. Spoken alarms are available with **Sound and vibration**; vibration patterns are available with **Sound and vibration** or **Vibration only**.
 
 If a sound alone is easy to miss, try a different combination:
 
 - **Spoken alarms** can say the event name and how soon it starts. Choose the details you want to hear, then preview the announcement.
-- **Strong vibration** uses long, full-strength buzzes. **Rising** starts gently and builds to full strength.
-- **Flash alerts** blink the phone's flashlight and screen while the alarm rings. They are optional; leave them off if flashing light is uncomfortable for you.
+- **Vibration pattern:** **Strong** uses long, full-strength buzzes. **Rising** starts gently and builds to full strength.
+- **Flash alerts** blink the screen and, when available, the phone's flashlight while the alarm rings. They are optional; leave them off if flashing light is uncomfortable for you.
 
-You can also have the alarm speak over your chosen tone. The tone goes quiet while the meeting name is spoken.
+When **Also speak over other alarm sounds** is on, your chosen tone goes quiet while the meeting name is spoken. It is on by default for new setups.
 
 Use **Try your alarm** to check the result before depending on it for an appointment. Test with the phone where you normally keep it: a vibration on a desk feels different from one in a pocket.
 

@@ -60,7 +60,7 @@ While an assistant is connected, the Android app shares a copy of upcoming event
 
 Open **Settings > Connected assistants > See what your assistant can see** to inspect that copy. Information the assistant reads goes to its provider, such as Anthropic or OpenAI, under that provider's privacy policy.
 
-Changes appear in **Settings > Connected assistants > Activity**. The app keeps that activity for 30 days; a change can be undone if those settings have not changed since. The connector instructs assistants to check with you before changes that could stop or quiet alarms.
+Changes appear in **Settings > Connected assistants > Activity**. Activity stays for 30 days; a change can be undone if those settings have not changed since. The connector instructs assistants to check with you before changes that could stop or quiet alarms, unless you asked for that exact change.
 
 You can disconnect in the app at any time. Disconnecting the last assistant deletes the shared copy and change log. Your phone's alarms keep working. The [privacy policy](/always-on-time/privacy/#assistants) has the full details.
 
