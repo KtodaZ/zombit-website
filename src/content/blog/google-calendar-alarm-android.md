@@ -3,7 +3,7 @@ title: "How to Make Google Calendar Events Ring Like an Alarm on Android"
 description: "Google Calendar on Android sends notifications, not alarms. Use these settings to make them harder to miss, or Always On Time to turn events into real alarms."
 slug: "google-calendar-alarm-android"
 date: "2026-10-17"
-updated: "2026-10-17"
+updated: "2026-10-30"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -49,6 +49,8 @@ Google Calendar on Android can't ring like an alarm clock. It only sends notific
 > - **Free, with no ads.**
 >
 > [Get it on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) · [See the app](/always-on-time/)
+
+Always On Time also offers spoken alarms, stronger vibration and flashing alerts. You can connect Claude or ChatGPT through its optional MCP connector to check upcoming alarms or change alarm settings ([setup](/always-on-time/assistants/)).
 
 ## Always On Time vs the built-in options
 

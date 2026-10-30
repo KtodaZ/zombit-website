@@ -158,6 +158,20 @@ export const ALL_APPS: AppEntry[] = [
         ],
       },
       {
+        title: "Accessibility",
+        items: [
+          "Choose spoken alarms, stronger vibration or flashing alerts",
+          "Show the Join button early to allow time for captions or an interpreter",
+        ],
+      },
+      {
+        title: "Connected assistants",
+        items: [
+          "Connect Claude or ChatGPT through the optional MCP connector",
+          "Ask what will ring or change Always On Time’s alarm settings",
+        ],
+      },
+      {
         title: "Set up for reliable alarms",
         items: [
           "Guided setup for notifications, exact alarms, full-screen alerts, and battery settings",

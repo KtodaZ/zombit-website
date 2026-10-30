@@ -3,7 +3,7 @@ title: "Google Calendar Travel Time on Android: Get Time-to-Leave Alarms"
 description: "Google Calendar won't add travel time for you. Always On Time plans the trip and rings a full-screen alarm when it's time to leave, for any way you travel."
 slug: "google-calendar-travel-time-android"
 date: "2026-10-17"
-updated: "2026-10-17"
+updated: "2026-10-30"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -145,6 +145,8 @@ Some reports say Google can show a leave-time alert for events that have a locat
 - **Plans transit, biking and walking trips**, where Waze's reminders are for drives.
 - **Works without location access** when you plan from saved places. Waze needs location set to Allow all the time.
 - **Adjusts for live traffic** on drives with Always On Time Plus, free for a limited time.
+
+Accessibility features include spoken alarms, stronger vibration and flashing alerts. You can also check upcoming alarms or change alarm settings through Claude or ChatGPT with the optional MCP connector ([setup](/always-on-time/assistants/)).
 
 [Get Always On Time on Google Play](https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime) and turn on **Plan time to leave** under Getting there in Settings.
 
