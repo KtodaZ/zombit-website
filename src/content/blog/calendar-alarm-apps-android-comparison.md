@@ -3,7 +3,7 @@ title: "Calendar Alarm Apps for Android Compared (2026)"
 description: "Google Calendar only sends notifications on Android. Always On Time turns events into free, ad-free full-screen alarms. How it compares with ZenLendar and more."
 slug: "calendar-alarm-apps-android-comparison"
 date: "2026-10-17"
-updated: "2026-10-26"
+updated: "2026-10-30"
 app: "always-on-time"
 kind: "comparison"
 faq:
@@ -121,6 +121,8 @@ What it does, per its Play listing and app:
 - **Guided setup for reliable alarms.** It walks you through notifications, exact alarms, full-screen alerts and battery settings, and alarms are restored after a restart.
 - **Leave-on-time alarms.** Optional travel-time alarms for events with an address ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - **Designed with ADHD and time blindness in mind**, with no scores or streaks.
+
+Accessibility features include spoken alarms, stronger vibration and flashing alerts. The optional MCP connector lets Claude or ChatGPT check upcoming alarms and change alarm settings ([setup](/always-on-time/assistants/)).
 
 **Trade-offs:** it's Android-only and still new. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
 
