@@ -151,6 +151,16 @@ a {
 .doc h2 + * {
   margin-top: 0.75em;
 }
+.policy h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin-top: 1.6em;
+}
+.policy h3 + * {
+  margin-top: 0.5em;
+}
 .policy strong {
   color: var(--color-ink);
   font-weight: 600;
