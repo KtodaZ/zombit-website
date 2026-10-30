@@ -144,7 +144,7 @@ app has no subscription. Google Play processes
 payment and your Google account details under Google&#x27;s terms; we don&#x27;t receive your payment
 details. The app reads from Google Play whether your subscription is active and stores that status
 on your device. Manage or cancel the subscription in Google Play.</p>
-<h2 id="optional-google-account-sync">Optional Google account sync</h2>
+<h2 id="optional-google-account-sync">Optional account sync</h2>
 <p>When you choose <strong>Sign in with Google</strong> in Settings, Google Firebase Authentication
 processes your Google profile, email address, and account identifier to identify your Always On
 Time account. Signing in does not give the app access to your Gmail or Google Calendar through
@@ -154,6 +154,13 @@ your basic identity (the <code>openid</code> and <code>email</code> scopes). Thi
 <a href="#google-calendar">connecting Google Calendar</a>: account sync works the same way whether
 or not you connect a calendar, and syncs the same information as on Android. The device label on
 iPhone history is &quot;iPhone&quot;.</p>
+<p>On iPhone you can instead choose <strong>Sign in with Apple</strong>. Apple confirms your identity
+and Google Firebase Authentication receives an Apple account identifier and the email address you
+choose to share, which can be a private relay address from Apple&#x27;s Hide My Email. The app asks
+Apple for your email only, not your name. Android offers only Sign in with Google, so an account made
+with Sign in with Apple syncs between iPhones only. When you delete an account made with Sign in
+with Apple, the app or the account deletion page also asks Apple to revoke the app&#x27;s sign-in
+access.</p>
 <p>While you&#x27;re signed in, the app saves these to Firebase Cloud Firestore: supported alarm and
 appearance preferences, selected-calendar choices, calendar and recurring-series alarm rules,
 individual event overrides, and whether alarms are paused. Calendar and event matching identifiers
@@ -175,12 +182,13 @@ Time account.</p>
 identity, choose <strong>Settings &gt; Account &gt; Manage account &gt; Delete account</strong>, or
 use the <a href="https://alwaysontime.zombit.io/delete-account/">account deletion page</a>. You may
 need to sign in again to confirm. We keep a minimal disabled account identifier to block writes
-from previously issued authentication tokens. This does not delete your Google account, Google
+from previously issued authentication tokens. This does not delete your Google or Apple account, your
 calendars, local phone data, or feedback and diagnostics you sent separately. To delete those
 records, follow the <a href="#retention-and-deletion">deletion instructions below</a>.</p>
 <h2 id="assistants">Connecting an AI assistant</h2>
 <p>This is optional and needs account sync. To connect an assistant such as Claude or ChatGPT, you
-sign in with your Google account on the Always On Time connection page and approve the connection.
+sign in on the Always On Time connection page the way you do in the app, with Google or, for an
+account made on iPhone, Sign in with Apple, and approve the connection.
 The cloud connector collects the information below only after you approve a connection. Gemini on
 this phone works separately, as described below.</p>
 <ul>
@@ -208,7 +216,7 @@ and app or browser type, for up to 30 days.</li>
 </ul>
 <p>A connected assistant can read the upcoming alarms copy, your synced alarm settings and 14 days
 of alarm history, and it can change your alarm settings. It cannot read or change your calendar,
-and signing in on the connection page does not give the assistant your Google account.</p>
+and signing in on the connection page does not give the assistant your Google or Apple account.</p>
 <p><strong>What the assistant reads is sent to the assistant&#x27;s provider</strong> (for example
 Anthropic or OpenAI). From then on, that provider&#x27;s privacy policy and terms apply to it, not
 this policy.</p>
