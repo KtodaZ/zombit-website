@@ -134,7 +134,7 @@ Some practical points:
 - **Follow the plan.** If a student's plan names a timer, the team decides how it's used. This post isn't a substitute for that.
 - **Give them their own device** if the class timer isn't close enough to see easily.
 - **Let them start it.** Pressing start helps the timer feel like it belongs to the student.
-- **It's a tool, not a treatment.** A timer can make time visible. It doesn't address the reasons a student needs support, so keep talking with families and specialists.
+- **It's a tool, not a treatment.** A timer can make time visible. It doesn't address the reasons a student needs support, so keep talking with families and specialists. Families can read our [visual timer guide for kids with ADHD or autism](/blog/visual-timer-for-adhd-autism/).
 
 ## A caution for Montessori classrooms
 
