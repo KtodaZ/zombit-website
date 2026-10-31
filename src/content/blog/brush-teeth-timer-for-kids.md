@@ -12,7 +12,7 @@ faq:
   - q: "How much toothpaste should a child use?"
     a: "The CDC's 2019 report on children's toothpaste use says children under 3 should use a smear the size of a grain of rice, and children 3 to 6 no more than a pea-sized amount. For children under 2, the CDC suggests asking your doctor or dentist about fluoride toothpaste first."
   - q: "What is a good 2-minute toothbrush timer for kids?"
-    a: "Any timer your child can see and start. Montessori Visual Timer has a Brush Teeth quick timer already set to two minutes, so a child taps once and brushes until the color is gone."
+    a: "Any timer your child can see and start. Montessori Visual Timer has a Brush Teeth quick timer already set to two minutes, so a child taps once and brushes until the color is gone. If you use the optional PIN lock, a parent unlocks the app before each session."
   - q: "Should I still help my child brush?"
     a: "Yes, for young children. The CDC says to watch children younger than 6 brush. In a Montessori routine the child does what they can, and the adult helps with the rest."
   - q: "What is a Montessori toothbrushing station?"
@@ -96,7 +96,7 @@ Starting the timer is part of the routine, and it's the child's job. In Montesso
 
 Some practical details:
 
-- **Set a PIN first.** Auto-lock on start is on by default, so once brushing begins, the timer can't be paused or changed without the PIN.
+- **Decide on a PIN.** If small fingers like to fiddle, set one. Auto-lock on start is on by default, so once brushing begins the timer can't be paused or changed without the PIN. The app stays locked afterwards, so you'll enter the PIN before the next session. If you want your child to start every brush alone, skip the PIN.
 - **Leave "Keep Screen Awake" on.** It's on by default and only applies while a timer runs, so the clock doesn't go dark at the one-minute mark.
 - **Decide on sound.** The alert plays until someone taps it, which gives your child a last job: tap the screen, then rinse. If you'd rather a quiet ending, turn off **Play Sound** in settings.
 - **Keep the quick timer.** The app holds four quick timers. Brush Teeth comes with it, so leave it in place if you use it twice a day.

@@ -128,7 +128,7 @@ The goal is a timer your child runs, not one that runs them.
 
 - **Let them press start.** Starting it themselves gives them some control over the countdown.
 - **Name the quick timers in their words.** Edit the four quick timers to match their routines, like "Get Dressed" or "Lego Break." The app holds four, so choose the ones you use most.
-- **Use the PIN lock for fairness, not control.** With a PIN set, auto-lock on start (on by default) stops anyone, sibling or parent, from quietly changing the time.
+- **Use the PIN lock for fairness, not control.** With a PIN set, auto-lock on start (on by default) stops anyone, sibling or parent, from quietly changing the time. The app stays locked after the timer ends, so an adult enters the PIN before the next one.
 - **Keep the screen on.** "Keep Screen Awake" is on by default and only applies while a timer runs, so the clock stays visible.
 - **Fade it when they're ready.** Some kids eventually need the timer only for hard transitions.
 
@@ -159,7 +159,7 @@ Montessori Visual Timer details from the app and its store listings, October 202
 ## Setting it up
 
 1. Install [Montessori Visual Timer](/montessori-visual-timer/) on a phone or tablet your child can see during routines.
-2. In settings, set a PIN and decide on Play Sound. Turn it off if alerts upset your child.
+2. In settings, decide whether to set a PIN (an adult unlocks it between timers) and whether to keep Play Sound. Turn it off if alerts upset your child.
 3. Edit the quick timers to match your child's hardest transitions.
 4. Practice once when nothing is at stake, so your child sees what happens when the color is gone.
 5. Watch for a week and adjust lengths, sound and wording.
