@@ -73,7 +73,7 @@ Lay clothes out the night before so "get dressed" is a choice between two shirts
 
 ### A brush teeth timer
 
-Two minutes of brushing feels long to a small child, and it's hard to judge without a clock. A visual timer on the bathroom counter shows exactly when they can stop. Montessori Visual Timer's Brush Teeth quick timer is already set to two minutes, so your child taps it, brushes, and finishes when the color is gone.
+Two minutes of brushing feels long to a small child, and it's hard to judge without a clock. A visual timer on the bathroom counter shows exactly when they can stop. Montessori Visual Timer's Brush Teeth quick timer is already set to two minutes, so your child taps it, brushes, and finishes when the color is gone. For a full Montessori toothbrushing setup, see our [brush teeth timer guide](/blog/brush-teeth-timer-for-kids/).
 
 ## Leaving the house chart
 

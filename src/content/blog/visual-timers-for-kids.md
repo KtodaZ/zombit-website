@@ -125,7 +125,7 @@ Many families find that "the timer says it's time" lands differently from "I say
 
 Start with one routine that regularly causes friction, and keep the times short at first.
 
-- **Brushing teeth.** Two minutes is hard to judge. A timer shows when they're done.
+- **Brushing teeth.** Two minutes is hard to judge. A timer shows when they're done. See our [brush teeth timer guide](/blog/brush-teeth-timer-for-kids/).
 - **Clean-up time.** Five minutes to put the blocks away turns a vague demand into a small, finishable task.
 - **Screen time.** Set the timer where the child can see it before the show starts, not when it's about to end. Our [screen-time timer guide](/blog/screen-time-timer-for-kids/) has a full routine for it.
 - **Taking turns.** Two children, one toy: each gets the toy until the color runs out. The timer settles the argument.
@@ -151,7 +151,7 @@ Teachers use visual timers for many of the same reasons, across a whole group:
 
 For setup tips, timer lengths per activity and IEP or 504 use, see our [classroom visual timer guide](/blog/visual-timer-for-classroom/).
 
-Many parents and teachers of children with ADHD or autism also use visual timers. A timer is a practical tool rather than a treatment, so if your child has support needs, talk to their clinician or school about what fits.
+Many parents and teachers of children with ADHD or autism also use visual timers. A timer is a practical tool rather than a treatment, so if your child has support needs, talk to their clinician or school about what fits. Our guide to [visual timers for kids with ADHD or autism](/blog/visual-timer-for-adhd-autism/) has practical ideas.
 
 ## Visual timers and Montessori principles
 
