@@ -245,22 +245,18 @@ Connected assistants</strong>.</p>
 passes between your paired phone and watch through Google Play services&#x27; Wearable Data Layer.
 The phone remains authoritative for calendar data, settings, and history.</p>
 <h2 id="feedback-and-diagnostic-information-collected">Feedback and diagnostics</h2>
-<p><strong>On iPhone.</strong> Sending feedback opens an email to zombit.studios@gmail.com in your
-mail app. It contains your message, the reply address you enter, if any, and the app and iOS
-versions. If you leave the diagnostics option checked (it is checked by default), it also attaches a text file with
-alarm scheduling counts and states and a technical event log; links, addresses, account names and
-event titles are left out. Screenshots you choose are attached too. Nothing is sent until you send
-the email from your mail app, and it then travels through your email provider. The rest of this
-section describes Android.</p>
-<p>When you choose <strong>Leave feedback</strong>, the app sends the text you enter, a required email
-address, the app version, and a server-generated submission time to our Firebase Cloud Firestore
-database. Optional screenshots or photos are uploaded to Firebase Cloud Storage under a user-scoped
-path that other app users cannot read. The app signs in to Firebase to authorize the submission,
-and that account identifier is part of the storage path of any attached files. In some app
-versions, if you are signed in with Google for account sync, it is the same identifier as your
-synced account. Otherwise, and in newer app versions, it is a random identifier from Firebase
-Anonymous Authentication that is not linked to your account. Files uploaded for feedback that is
-never submitted are deleted after about a day.</p>
+<p>When you send feedback from the app&#x27;s <strong>Feedback</strong> page, on Android or iPhone,
+the app sends the text you enter, a required email address, the app version, the platform (Android
+or iPhone), and a server-generated submission time to our Firebase Cloud Firestore database.
+Optional screenshots or photos are uploaded
+to Firebase Cloud Storage under a user-scoped path that other app users cannot read. On iPhone,
+photos are re-saved as JPEG images before upload, which leaves out their location and other photo
+details. The app signs in to Firebase to authorize the submission, and that account identifier is
+part of the storage path of any attached files. In some Android app versions, if you are signed in
+with Google for account sync, it is the same identifier as your synced account. Otherwise, in newer
+Android versions and always on iPhone (whether or not you signed in with Google or Apple), it is a
+random identifier from Firebase Anonymous Authentication that is not linked to your account. Files
+uploaded for feedback that is never submitted are deleted after about a day.</p>
 <p>After you submit, a trusted Firebase backend sends us a short alert in a private Discord channel
 saying that feedback arrived. The alert contains only the app version, the platform, and the number
 of attached images and logs. It does not include your feedback text, email address, images, or
@@ -270,7 +266,9 @@ checked by default. When it is checked, the app attaches a text export of Always
 entries from the last 24 hours. Android system <code>logcat</code> is not included because ordinary
 apps cannot read it. Links and email addresses are removed from this export before upload. The log
 is stored privately in Firebase Cloud Storage for us to review and is not included in the Discord
-alert.</p>
+alert. On iPhone, the same checkbox attaches a text file with alarm scheduling counts and states, the
+app and iOS versions, and a technical event log; links, email addresses, phone numbers, account
+names and event titles are left out.</p>
 <p>Firebase Crashlytics receives crash, non-fatal error, and application-not-responding reports
 from the Android app. Earlier Android versions had an off-by-default <strong>Remote log
 streaming</strong> developer option; it has been removed, and its logging service no longer
