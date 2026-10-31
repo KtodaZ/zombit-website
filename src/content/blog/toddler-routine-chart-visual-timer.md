@@ -43,7 +43,7 @@ A toddler routine chart works best when it is short, the same every day, and pai
 >
 > We make it, and we built it for exactly this: **a calm timer a young child can read without numbers**.
 >
-> - **One-tap quick timers** for Brush Teeth, Cleanup, Quiet Time and Screen Time. Edit them or add your own, like "Shoes On."
+> - **One-tap quick timers** for Brush Teeth, Cleanup, Quiet Time and Screen Time. Edit any of the four to fit your routine, like turning one into "Shoes On."
 > - **A colored section shrinks** as time passes, from a few seconds up to 60 minutes.
 > - **A gentle alert** when time is up.
 > - **PIN lock**, so small hands can't change the time, and it can lock as soon as a timer starts.
@@ -136,6 +136,6 @@ The PIN lock helps here too: set it once, and curious hands at the front table c
 
 ## Choosing a timer for routines
 
-If you want a simple visual timer for your kids, a sand timer or a kitchen timer can work, but an app lets you save a timer for each step and start it with one tap. If you want to compare options, see our [visual timer apps compared](/blog/visual-timer-apps-compared/). For routines like these, [Montessori Visual Timer](/montessori-visual-timer/) gives you editable quick timers, a gentle alert, a PIN lock and no ads. It runs on iPhone, iPad and Android, **free on Google Play** and $1.99 on the App Store.
+If you want a simple visual timer for your kids, a sand timer or a kitchen timer can work, but an app lets you save up to four quick timers for your routine steps and start it with one tap. If you want to compare options, see our [visual timer apps compared](/blog/visual-timer-apps-compared/). For routines like these, [Montessori Visual Timer](/montessori-visual-timer/) gives you editable quick timers, a gentle alert, a PIN lock and no ads. It runs on iPhone, iPad and Android, **free on Google Play** and $1.99 on the App Store.
 
 Ending screen time is a routine of its own. Our guide to [a screen-time timer for kids](/blog/screen-time-timer-for-kids/) covers it.
