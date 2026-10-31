@@ -127,10 +127,10 @@ Start with one routine that regularly causes friction, and keep the times short 
 
 - **Brushing teeth.** Two minutes is hard to judge. A timer shows when they're done.
 - **Clean-up time.** Five minutes to put the blocks away turns a vague demand into a small, finishable task.
-- **Screen time.** Set the timer where the child can see it before the show starts, not when it's about to end.
+- **Screen time.** Set the timer where the child can see it before the show starts, not when it's about to end. Our [screen-time timer guide](/blog/screen-time-timer-for-kids/) has a full routine for it.
 - **Taking turns.** Two children, one toy: each gets the toy until the color runs out. The timer settles the argument.
 - **Quiet time or rest.** A longer timer shows that quiet time has an end.
-- **Getting out the door.** A ten-minute timer for shoes and coats makes "hurry up" visible.
+- **Getting out the door.** A ten-minute timer for shoes and coats makes "hurry up" visible. See our [toddler routine chart](/blog/toddler-routine-chart-visual-timer/) for printable-style morning, leaving and bedtime steps.
 - **Homework blocks.** Older children can work for a set period and then take a break.
 
 A few habits help:
