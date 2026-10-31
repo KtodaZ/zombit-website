@@ -10,7 +10,7 @@ faq:
   - q: "Is there a free Time Timer app?"
     a: "Yes. The official Time Timer app is free to download on iPhone, iPad, Mac and Apple Watch, and on Android. The free version lets you create up to three timers. As of October 2026, premium features are a $9.95 in-app purchase on the App Store, and Google Play lists a $9.95 in-app purchase too."
   - q: "What is the best visual timer app for kids?"
-    a: "We make Montessori Visual Timer and recommend it for a calm timer a child can run alone: no ads, a PIN lock, and one-tap quick timers, free on Android and $1.99 on iPhone and iPad. Time Timer suits families and schools that want the classic red-disk look across many devices. Visual Countdown Timer and Visual Timer for Kids reveal a picture as time runs down. Mouse Timer and Little Timer use animated characters."
+    a: "We make Montessori Visual Timer and recommend it for a calm timer a child can run alone: no ads, one-tap quick timers, and an optional PIN lock, free on Android and $1.99 on iPhone and iPad. Time Timer suits families and schools that want the classic red-disk look across many devices. Visual Countdown Timer and Visual Timer for Kids reveal a picture as time runs down. Mouse Timer and Little Timer use animated characters."
   - q: "Is a physical Time Timer better than an app?"
     a: "A physical timer has no screen, can't open other apps, and sits on a shelf where everyone can see it, which many classrooms prefer. An app is cheaper or free, is always with you, and can offer presets and sounds. Plenty of families use both."
   - q: "How much does a physical Time Timer cost?"

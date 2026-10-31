@@ -130,7 +130,7 @@ The PIN lock helps here too: set it once, and curious hands at the front table c
 - **Show it first.** Say what happens when the time runs out, then start the timer together.
 - **Let your child press start.** It's their timer and their routine.
 - **Match timer names to the chart.** In Montessori Visual Timer you can rename a quick timer and pick its color, so "Shoes On" on the chart is "Shoes On" in the app.
-- **Lock it if needed.** If little fingers keep adding time, set a PIN and turn on auto-lock so the timer locks when it starts.
+- **Lock it if needed.** If little fingers keep adding time, set a PIN and turn on auto-lock so the timer locks when it starts. It stays locked after the timer ends, so an adult enters the PIN before the next one.
 - **Follow through.** When the color is gone, move to the next step, calmly and every time.
 - **Adjust after a week.** If a step always runs out, give it more time. A timer that's too short teaches that the timer can't be trusted.
 

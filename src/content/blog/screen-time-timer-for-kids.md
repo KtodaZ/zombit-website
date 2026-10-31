@@ -84,7 +84,7 @@ When the timer ends, keep it short and calm: "The color's gone. Screen time is d
 ## Common snags
 
 - **"Just one more!"** Calmly point to the timer. The answer is the same every day, which is what makes it work.
-- **Little fingers adding time.** Set a PIN in Montessori Visual Timer and turn on auto-lock, so the timer locks itself when it starts.
+- **Little fingers adding time.** Set a PIN in Montessori Visual Timer and turn on auto-lock, so the timer locks itself when it starts. It stays locked after the timer ends, so an adult enters the PIN before the next one.
 - **The show is longer than the limit.** Pick shorter episodes, or agree to pause at the end of a scene.
 - **Big feelings anyway.** Some upset is normal. Stay close, name the feeling, and follow through. The Mount Sinai Parenting Center suggests getting up close and making eye contact with your child before a change, rather than calling across the room.
 
