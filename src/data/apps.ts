@@ -418,7 +418,7 @@ export const ALL_APPS: AppEntry[] = [
       },
       {
         q: "Can my child use it on their own?",
-        a: "Yes. It is designed so children can use it themselves. A PIN lock keeps the controls from being changed, and quick timers start common routines like brushing teeth or clean-up time with one tap.",
+        a: "Yes. It is designed so children can use it themselves. Quick timers start common routines like brushing teeth or clean-up time with one tap. An optional PIN lock keeps the controls from being changed; an adult unlocks it before the next timer.",
       },
       {
         q: "Does Montessori Visual Timer have ads?",

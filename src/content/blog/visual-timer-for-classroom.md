@@ -75,7 +75,7 @@ Montessori Visual Timer details from the app and its store listings, October 202
 
 **One student.** For a student who needs their own timer, use a phone or small tablet on their desk. A second device means the class timer and theirs don't have to match.
 
-**Set the PIN first.** Choose a PIN in settings before you hand the device to students. Auto-lock on start is on by default, so once a timer is running, students can see it but can't pause, reset or change it without the PIN.
+**Set the PIN first.** Choose a PIN in settings before you hand the device to students. Auto-lock on start is on by default, so once a timer is running, students can see it but can't pause, reset or change it without the PIN. The app stays locked after the timer ends, so you'll enter the PIN to start the next one.
 
 **Check the screen setting.** The app keeps the screen on while a timer runs, which is on by default. Leave it on for the classroom tablet so the screen doesn't go dark halfway through an activity.
 

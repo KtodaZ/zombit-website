@@ -72,7 +72,7 @@ A visual timer helps children by turning time into something they can see. Inste
 > Our app puts the ideas in this guide into **one simple timer children can read and run themselves**.
 >
 > - **Time they can see.** A colored section of the clock face shrinks as time passes, from a few seconds up to 60 minutes.
-> - **Kids press start**, and a **PIN lock** stops them changing the time.
+> - **Kids press start.** An optional **PIN lock** stops them changing the time; an adult unlocks it between timers.
 > - **One-tap quick timers** for Brush Teeth, Cleanup, Quiet Time and Screen Time.
 > - **No ads**, and both store listings say **no data is collected**.
 > - **Free on Google Play**, $1.99 on the App Store for iPhone and iPad.
