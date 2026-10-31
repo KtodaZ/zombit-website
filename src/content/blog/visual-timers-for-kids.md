@@ -149,6 +149,8 @@ Teachers use visual timers for many of the same reasons, across a whole group:
 - **Brain breaks.** Understood.org suggests a visual timer so students can see how much of a break is left.
 - **Independent work.** Understood.org lists a visual timer among common classroom accommodations for time management, and many teachers use one with any student who benefits from seeing time.
 
+For setup tips, timer lengths per activity and IEP or 504 use, see our [classroom visual timer guide](/blog/visual-timer-for-classroom/).
+
 Many parents and teachers of children with ADHD or autism also use visual timers. A timer is a practical tool rather than a treatment, so if your child has support needs, talk to their clinician or school about what fits.
 
 ## Visual timers and Montessori principles
