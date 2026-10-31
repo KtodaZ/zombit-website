@@ -119,7 +119,7 @@ Understood.org suggests using a visual timer during brain breaks "so students ca
 
 For independent work, a timer helps students pace themselves without asking you how long is left. Start with short blocks for younger children and build up.
 
-During quiet tests or reading, the gentle alert won't jolt the room. If you'd rather it end silently, keep the device's volume down and just watch for the color to finish.
+For quiet tests or silent reading, turn off **Play Sound** in the app's settings first. The alert keeps playing until someone taps it, so a silent ending is easier on a quiet room. Students can still watch the color run out.
 
 ## Turn-taking
 
