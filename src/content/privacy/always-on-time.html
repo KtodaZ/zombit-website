@@ -82,10 +82,11 @@ needed for security or to investigate abuse, or to comply with the law.</li>
 <strong>Background updates</strong> on (the default; switch it in Settings), the iPhone registers
 with our relay, a service we run on Cloudflare (Workers and Durable Objects). The relay sends the
 iPhone a quiet notification when a connected calendar changes, from time to time during your active
-hours, and shortly before alarms, so the app can check your calendars and update its alarms.</p>
+hours, shortly before alarms, and when an alarm's ring time ends, so the app can check your
+calendars, update its alarms and stop an alarm nobody answered.</p>
 <p>The relay stores your iPhone&#x27;s Apple push notification token and environment, a one-way hash
-of a random secret created for this installation, your time zone, active hours, and whether the
-app checks iPhone calendars; one-way hashes of alarm identifiers with their alarm times; one-way
+of a random secret created for this installation, your time zone, active hours, whether the
+app checks iPhone calendars, and how long alarms ring (your Alarm duration setting); one-way hashes of alarm identifiers with their alarm times; one-way
 hashes of the identifiers of Google calendar change notices, with their expiry times; and delivery
 bookkeeping, such as when the last notification was sent and when the iPhone last reported a
 check. It never receives OAuth tokens, event titles, descriptions, locations, attendees or meeting
