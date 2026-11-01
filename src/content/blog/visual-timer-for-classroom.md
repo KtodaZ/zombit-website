@@ -140,7 +140,7 @@ Some practical points:
 
 Montessori classrooms protect long stretches of uninterrupted work. AMI's article on the three-hour work cycle says "there is no magic in the number '3'," and that the important thing is "to never interrupt children to gather them, asking them to put their work away." It also notes that gathering a small group for a brief lesson is still fine.
 
-So in a Montessori room, use the timer for routines around the work cycle, like snack, clean-up, turn-taking and transitions outdoors, and not to end a child's chosen work. A child can also use a timer on their own for practice, such as timing a task they've chosen.
+So in a Montessori room, use the timer for routines around the work cycle, like snack, clean-up, turn-taking and transitions outdoors, and not to end a child's chosen work. You can also set a timer for a child who wants to time a task they've chosen.
 
 ## Setting up the app for your classroom
 

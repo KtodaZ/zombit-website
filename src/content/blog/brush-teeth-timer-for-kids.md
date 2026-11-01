@@ -1,6 +1,6 @@
 ---
 title: "Brush Teeth Timer for Kids: A Montessori Toothbrushing Routine"
-description: "Set up a Montessori-style toothbrushing station your child can use on their own, with a two-minute visual timer they start themselves, the right amount of toothpaste by age, and a simple step-by-step routine."
+description: "Set up a Montessori-style toothbrushing station your child can use on their own, with a two-minute visual timer you start and they can watch, the right amount of toothpaste by age, and a simple step-by-step routine."
 slug: "brush-teeth-timer-for-kids"
 date: "2026-10-31"
 updated: "2026-10-31"
@@ -12,7 +12,7 @@ faq:
   - q: "How much toothpaste should a child use?"
     a: "The CDC's 2019 report on children's toothpaste use says children under 3 should use a smear the size of a grain of rice, and children 3 to 6 no more than a pea-sized amount. For children under 2, the CDC suggests asking your doctor or dentist about fluoride toothpaste first."
   - q: "What is a good 2-minute toothbrush timer for kids?"
-    a: "Any timer your child can see and start. Montessori Visual Timer has a Brush Teeth quick timer already set to two minutes, so a child taps once and brushes until the color is gone. If you use the optional PIN lock, a parent unlocks the app before each session."
+    a: "Any timer your child can see. Montessori Visual Timer has a Brush Teeth quick timer already set to two minutes, so you tap once and your child brushes until the color is gone. If you use the optional PIN lock, a parent unlocks the app before each session."
   - q: "Should I still help my child brush?"
     a: "Yes, for young children. The CDC says to watch children younger than 6 brush. In a Montessori routine the child does what they can, and the adult helps with the rest."
   - q: "What is a Montessori toothbrushing station?"
@@ -43,13 +43,13 @@ sources:
     accessed: "2026-10-31"
 ---
 
-Two minutes is a long time to a three-year-old with a toothbrush. A visual timer shows them how long that is. In a Montessori home, the child sets up and starts the routine and the adult stands nearby.
+Two minutes is a long time to a three-year-old with a toothbrush. A visual timer shows them how long that is. In a Montessori home, the adult starts the timer and stands nearby, and the child does the brushing.
 
 > **Our pick: Montessori Visual Timer**
 >
 > We make it, and the toothbrushing routine is one it was built around:
 >
-> - **A Brush Teeth quick timer** already set to two minutes. Your child taps it once to start.
+> - **A Brush Teeth quick timer** already set to two minutes. Tap it once to start.
 > - **A large clock face** where the color shrinks as time passes, easy to read from the step stool.
 > - **A PIN lock that turns on when the timer starts**, so a curious finger can't cut brushing short.
 > - **The screen stays awake** while the timer runs, and a gentle alert plays at the end until it's tapped. You can turn the sound off in settings.
@@ -90,22 +90,22 @@ What that looks like at home:
 - **A towel on a hook** they can reach.
 - **The timer where they can see it** from the stool, out of splash range.
 
-## The child starts the timer
+## Starting the timer
 
-Starting the timer is part of the routine, and it's the child's job. In Montessori Visual Timer, the **Brush Teeth** quick timer is already set to two minutes. Your child taps it and brushes until the color is gone.
+You start the timer; the brushing is your child's job. In Montessori Visual Timer, the **Brush Teeth** quick timer is already set to two minutes. Tap it and your child brushes until the color is gone.
 
 Some practical details:
 
-- **Decide on a PIN.** If small fingers like to fiddle, set one. Auto-lock on start is on by default, so once brushing begins the timer can't be paused or changed without the PIN. The app stays locked afterwards, so you'll enter the PIN before the next session. If you want your child to start every brush alone, skip the PIN.
+- **Decide on a PIN.** If small fingers like to fiddle, set one. Auto-lock on start is on by default, so once brushing begins the timer you set can't be paused or changed without the PIN. The app stays locked afterwards, so you'll enter the PIN before the next session.
 - **Leave "Keep Screen Awake" on.** It's on by default and only applies while a timer runs, so the clock doesn't go dark at the one-minute mark.
-- **Decide on sound.** The alert plays until someone taps it, which gives your child a last job: tap the screen, then rinse. If you'd rather a quiet ending, turn off **Play Sound** in settings.
+- **Decide on sound.** The alert plays until someone taps it, so tap the screen and your child rinses. If you'd rather a quiet ending, turn off **Play Sound** in settings.
 - **Keep the quick timer.** The app holds four quick timers. Brush Teeth comes with it, so leave it in place if you use it twice a day.
 
 ## A step-by-step toothbrushing routine
 
 1. **Step up.** Your child climbs onto the stool.
 2. **Get ready.** Wet the toothbrush and put on the right amount of toothpaste for their age (or use one you've portioned out).
-3. **Start the timer.** Your child taps Brush Teeth.
+3. **Start the timer.** Tap Brush Teeth where your child can see it.
 4. **Brush.** Top teeth, bottom teeth, fronts, backs and chewing surfaces, until the color is gone.
 5. **Stop the alert.** Tap the screen when it plays.
 6. **Spit and rinse the brush.** Put the brush back in its cup.
@@ -121,7 +121,6 @@ Keep the order the same morning and night. For the rest of the morning and bedti
 |---|---|---|---|---|
 | Child can see time left | ✓ Shrinking color | ✓ Sand level | ✗ | Numbers only |
 | Two-minute preset | ✓ Brush Teeth quick timer | ✓ Fixed | ✓ Fixed | ✗ Set each time |
-| Child starts it | ✓ One tap | ✓ Flip it | ✓ Button | Harder for small children |
 | Can't be changed mid-brush | ✓ PIN lock | Nothing to change | Nothing to change | ✗ |
 | Other routines too | ✓ Up to 60 minutes | ✗ | ✗ | ✓ |
 | Ads | None | None | None | None |
@@ -133,7 +132,7 @@ Montessori Visual Timer details from the app and its store listings, October 202
 
 Some children resist brushing whatever you try. A few things that may help:
 
-- **Practice when it's calm.** Let your child start the timer and brush a doll's teeth first.
+- **Practice when it's calm.** Start the timer and let your child brush a doll's teeth first.
 - **Name what's left.** "Half the color is gone. Now the bottom teeth."
 - **Keep it short and predictable.** The timer ends at two minutes every time, so your child knows when it will stop.
 
@@ -149,4 +148,4 @@ If your child has sensory sensitivities, our guide to [visual timers for kids wi
 - **Three more quick timers** for Cleanup, Quiet Time and Screen Time, all editable.
 - **No ads**, free on Google Play and $1.99 on the App Store.
 
-[Get Montessori Visual Timer](/montessori-visual-timer/) and let your child start tonight's brushing.
+[Get Montessori Visual Timer](/montessori-visual-timer/) and start tonight's brushing together.

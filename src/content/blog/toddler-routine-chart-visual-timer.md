@@ -14,10 +14,10 @@ faq:
   - q: "Does a bedtime routine need a timer?"
     a: "Not every step needs one. The American Academy of Pediatrics suggests a regular routine such as brush, book, bed. A timer helps most with the steps that tend to stretch, like bath time or one more book."
   - q: "What is a good brush teeth timer for kids?"
-    a: "Any timer your child can see for two minutes works. Montessori Visual Timer has a Brush Teeth quick timer set to two minutes, so a child can start it with one tap and brush until the color is gone."
+    a: "Any timer your child can see for two minutes works. Montessori Visual Timer has a Brush Teeth quick timer set to two minutes, so you can start it with one tap and your child brushes until the color is gone."
   - q: "Can I use a visual timer for classroom routines?"
     a: "Yes. The same charts work for a class: post the steps where everyone can see them and run the timer on a tablet or iPad at the front of the room for clean-up, centers and lining up."
-  - q: "At what age can a child use a visual timer?"
+  - q: "At what age can a child follow a visual timer?"
     a: "Toddlers and preschoolers can follow one because it doesn't depend on reading numbers. They see a colored area shrink and learn that the step ends when the color is gone."
 sources:
   - title: "The Work of Transitions (Mount Sinai Parenting Center)"
@@ -73,7 +73,7 @@ Lay clothes out the night before so "get dressed" is a choice between two shirts
 
 ### A brush teeth timer
 
-Two minutes of brushing feels long to a small child, and it's hard to judge without a clock. A visual timer on the bathroom counter shows exactly when they can stop. Montessori Visual Timer's Brush Teeth quick timer is already set to two minutes, so your child taps it, brushes, and finishes when the color is gone. For a full Montessori toothbrushing setup, see our [brush teeth timer guide](/blog/brush-teeth-timer-for-kids/).
+Two minutes of brushing feels long to a small child, and it's hard to judge without a clock. A visual timer on the bathroom counter shows exactly when they can stop. Montessori Visual Timer's Brush Teeth quick timer is already set to two minutes, so you tap it, your child brushes, and they finish when the color is gone. For a full Montessori toothbrushing setup, see our [brush teeth timer guide](/blog/brush-teeth-timer-for-kids/).
 
 ## Leaving the house chart
 
@@ -127,8 +127,8 @@ The PIN lock helps here too: set it once, and curious hands at the front table c
 
 ## Tips for using the timer
 
-- **Show it first.** Say what happens when the time runs out, then start the timer together.
-- **Let your child press start.** It's their timer and their routine.
+- **Show it first.** Say what happens when the time runs out, then start the timer where your child can see it.
+- **Let your child watch the color.** The routine is theirs; they can see how long is left without asking.
 - **Match timer names to the chart.** In Montessori Visual Timer you can rename a quick timer and pick its color, so "Shoes On" on the chart is "Shoes On" in the app.
 - **Lock it if needed.** If little fingers keep adding time, set a PIN and turn on auto-lock so the timer locks when it starts. It stays locked after the timer ends, so an adult enters the PIN before the next one.
 - **Follow through.** When the color is gone, move to the next step, calmly and every time.

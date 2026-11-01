@@ -383,18 +383,18 @@ export const ALL_APPS: AppEntry[] = [
       "Help children understand time in a calm, visual way. Instead of numbers counting down, children see time pass, which makes routines, transitions, and waiting periods easier to understand.",
     body: [
       "Montessori Visual Timer is a simple, distraction-free timer for kids and their parents, teachers, and therapists. Inspired by Montessori principles, it focuses on independence, clarity, and calm environments, at home, in classrooms, and in therapy settings.",
-      "It is simple enough that children can run it themselves, which is the point: the timer belongs to the child, not to the adult enforcing it.",
+      "An adult sets and starts it in front of the child. The child watches the colour shrink and can see how much time is left without asking, so the routine itself becomes theirs.",
     ],
     groups: [
       {
         title: "Features",
         items: [
           "Visual countdown, so children see how much time is left",
-          "Simple and intuitive, designed so children can use it themselves",
+          "Simple for adults to set, easy for children to read",
           "Adjustable durations for short tasks or longer activities",
           "A gentle completion alert when time is up",
           "Quick timers: one tap for daily routines",
-          "Lock controls: a PIN keeps little hands out",
+          "Lock controls: a PIN keeps the timer you set from being changed",
           "Minimalist design with no ads and no clutter",
         ],
       },
@@ -419,8 +419,8 @@ export const ALL_APPS: AppEntry[] = [
         a: "Children see time disappear instead of watching numbers count down, which makes it easier to understand how long is left in a routine, a transition, or a wait. A gentle alert signals when time is up.",
       },
       {
-        q: "Can my child use it on their own?",
-        a: "Yes. It is designed so children can use it themselves. Quick timers start common routines like brushing teeth or clean-up time with one tap. An optional PIN lock keeps the controls from being changed; an adult unlocks it before the next timer.",
+        q: "How do I use it with my child?",
+        a: "Set and start the timer where your child can see it, then let them watch the colour shrink. Quick timers start common routines like brushing teeth or clean-up time with one tap. An optional PIN lock keeps the timer you set from being changed; an adult unlocks it before the next timer.",
       },
       {
         q: "Does Montessori Visual Timer have ads?",

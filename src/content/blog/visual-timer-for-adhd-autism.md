@@ -116,7 +116,7 @@ For screens in particular, our [screen-time timer guide](/blog/screen-time-timer
 The National Autistic Society lists "unexpected noises (e.g. alarms, sirens)" among common triggers for people who are sensitive to sound. A timer alert can be one of those noises. Some ideas:
 
 - **Make the ending silent.** In Montessori Visual Timer, turn off **Play Sound** in settings. The color still runs out, so your child sees the end without hearing it.
-- **If you keep the sound, make it predictable.** Let your child hear the alert when nothing is at stake, so it isn't a surprise later. The alert keeps playing until someone taps it, which gives your child a clear job: tap to stop it.
+- **If you keep the sound, make it predictable.** Let your child hear the alert when nothing is at stake, so it isn't a surprise later. The alert keeps playing until someone taps it, so the ending is always clear.
 - **Keep the screen calm.** Put the device on a plain surface away from clutter. The app has no ads, so nothing pops up mid-routine.
 - **Use color to tell timers apart.** Each quick timer has its own color, so "Shoes" and "Tablet time" look different at a glance.
 
@@ -124,11 +124,11 @@ If any timer makes your child anxious, stop using it for a while. That's useful 
 
 ## Building independence
 
-The goal is a timer your child runs, not one that runs them.
+The goal is a timer your child can read on their own, not one that runs them.
 
-- **Let them press start.** Starting it themselves gives them some control over the countdown.
+- **Start it where they can see it.** Watching the color go lets them check the time left without asking you.
 - **Name the quick timers in their words.** Edit the four quick timers to match their routines, like "Get Dressed" or "Lego Break." The app holds four, so choose the ones you use most.
-- **Use the PIN lock for fairness, not control.** With a PIN set, auto-lock on start (on by default) stops anyone, sibling or parent, from quietly changing the time. The app stays locked after the timer ends, so an adult enters the PIN before the next one.
+- **Use the PIN lock for fairness, not control.** With a PIN set, auto-lock on start (on by default) stops anyone, sibling or parent, from quietly changing the time you set. The app stays locked after the timer ends, so an adult enters the PIN before the next one.
 - **Keep the screen on.** "Keep Screen Awake" is on by default and only applies while a timer runs, so the clock stays visible.
 - **Fade it when they're ready.** Some kids eventually need the timer only for hard transitions.
 
