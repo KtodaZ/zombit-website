@@ -75,7 +75,7 @@ A visual timer fits that idea. It's on from the start, so there's no surprise co
 
 1. **Agree before you start.** "You can watch until the timer runs out, then it's snack time." Say it while the screen is still off.
 2. **Match the timer to the show.** If an episode is about 20 minutes, set 20 minutes, so the show and the timer end together at a natural stopping point.
-3. **Put the timer where they can see it.** Next to the TV, or on a phone or iPad propped beside the screen. Let your child press start.
+3. **Put the timer where they can see it.** Next to the TV, or on a phone or iPad propped beside the screen. Start it where your child can see it.
 4. **Turn off autoplay.** Then the screen stops on its own and agrees with the timer.
 5. **Have the next thing ready.** Snack on the table, shoes by the door, a favorite toy out. It's easier to move toward something than away from something.
 

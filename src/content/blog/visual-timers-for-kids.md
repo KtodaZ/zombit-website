@@ -16,7 +16,7 @@ faq:
   - q: "Are visual timers used with children who have ADHD?"
     a: "Many parents and teachers use them with all kinds of children. Understood.org lists a visual timer among common classroom accommodations for time management. A timer is a practical tool, not a treatment, so talk to your child's clinician or school about support that fits your child."
   - q: "Is a visual timer Montessori?"
-    a: "Montessori classrooms emphasize independence and a prepared environment, and Montessori curricula for young children include exploring how time is measured with timers and clocks. A visual timer fits that when the child can see and run it, and when it isn't used to cut short focused work."
+    a: "Montessori classrooms emphasize independence and a prepared environment, and Montessori curricula for young children include exploring how time is measured with timers and clocks. A visual timer fits that when the child can see it and read it without asking, and when it isn't used to cut short focused work."
 sources:
   - title: "How to Help Your Child Manage Time and Understand Expectations (NCPMI / Pyramid Model Backpack Connection)"
     url: "https://challengingbehavior.org/docs/backpack/BackpackConnection_socialskills_time.pdf"
@@ -69,10 +69,10 @@ A visual timer helps children by turning time into something they can see. Inste
 
 > **Our pick: Montessori Visual Timer**
 >
-> Our app puts the ideas in this guide into **one simple timer children can read and run themselves**.
+> Our app puts the ideas in this guide into **one simple timer you set and children can read at a glance**.
 >
 > - **Time they can see.** A colored section of the clock face shrinks as time passes, from a few seconds up to 60 minutes.
-> - **Kids press start.** An optional **PIN lock** stops them changing the time; an adult unlocks it between timers.
+> - **Set it and it stays set.** An optional **PIN lock** keeps the timer you started from being changed; an adult unlocks it between timers.
 > - **One-tap quick timers** for Brush Teeth, Cleanup, Quiet Time and Screen Time.
 > - **No ads**, and both store listings say **no data is collected**.
 > - **Free on Google Play**, $1.99 on the App Store for iPhone and iPad.
@@ -85,7 +85,6 @@ A visual timer helps children by turning time into something they can see. Inste
 
 | Feature | **Montessori Visual Timer** | Time Timer app | Physical Time Timer | Sand timer |
 |---|---|---|---|---|
-| A child can start it alone | ✓ | Not listed | Not listed | ✓ |
 | PIN lock so the time can't be changed | ✓ | Not listed | Not listed | Nothing to change |
 | One-tap timers for routines | ✓ | ✓ | ✗ | ✗ |
 | Sound when time is up | ✓ | ✓ | ✓ Can be switched off | ✗ Silent |
@@ -135,8 +134,8 @@ Start with one routine that regularly causes friction, and keep the times short 
 
 A few habits help:
 
-- **Show it before you start it.** Say "when the red is gone, it's time for bath," then start the timer together.
-- **Hand over control.** Let your child press start. NCPMI notes that children are more cooperative when they can be part of the process.
+- **Show it before you start it.** Say "when the red is gone, it's time for bath," then start the timer where they can see it.
+- **Let them watch it.** Your child can check the color instead of asking how long is left. NCPMI notes that children are more cooperative when they can be part of the process.
 - **Follow through.** If the timer ends and nothing changes, it stops meaning anything.
 - **Keep it calm.** A gentle sound at the end is enough.
 
@@ -170,15 +169,15 @@ One caution: Montessori classrooms protect long stretches of focused work. AMI's
 You can use a physical timer, a sand timer or an app. Whatever you pick, look for:
 
 - **A clear visual.** A shrinking colored area children can read at a glance.
-- **Simple controls** a child can use without help.
+- **Simple controls** an adult can set in a few seconds.
 - **A gentle end signal** rather than a harsh alarm.
 - **No distractions.** No ads, games or pop-ups competing with the routine.
-- **A way to stop fiddling.** If small hands keep changing the time, you'll want a lock.
+- **A way to stop fiddling.** If small hands keep changing the time you set, you'll want a lock.
 
 **We built [Montessori Visual Timer](/montessori-visual-timer/) to tick every box on this list**, and it's the app we recommend:
 
 - **A clear visual.** A colored section of the clock face shrinks as time passes, and you can set anything from a few seconds up to 60 minutes.
-- **Simple enough for a child to run.** Quick timers start common routines in one tap. It comes with Brush Teeth, Cleanup, Quiet Time and Screen Time, and you can edit them.
+- **Simple for adults to set.** Quick timers start common routines in one tap. It comes with Brush Teeth, Cleanup, Quiet Time and Screen Time, and you can edit them.
 - **A gentle alert** when time is up.
 - **No distractions.** No ads on iOS or Android, and both store listings say it collects no data.
 - **A PIN lock** keeps the controls from being changed, and it can lock automatically when the timer starts.

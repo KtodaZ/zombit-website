@@ -10,7 +10,7 @@ faq:
   - q: "Is there a free Time Timer app?"
     a: "Yes. The official Time Timer app is free to download on iPhone, iPad, Mac and Apple Watch, and on Android. The free version lets you create up to three timers. As of October 2026, premium features are a $9.95 in-app purchase on the App Store, and Google Play lists a $9.95 in-app purchase too."
   - q: "What is the best visual timer app for kids?"
-    a: "We make Montessori Visual Timer and recommend it for a calm timer a child can run alone: no ads, one-tap quick timers, and an optional PIN lock, free on Android and $1.99 on iPhone and iPad. Time Timer suits families and schools that want the classic red-disk look across many devices. Visual Countdown Timer and Visual Timer for Kids reveal a picture as time runs down. Mouse Timer and Little Timer use animated characters."
+    a: "We make Montessori Visual Timer and recommend it for a calm timer an adult sets and a child can follow: no ads, one-tap quick timers, and an optional PIN lock, free on Android and $1.99 on iPhone and iPad. Time Timer suits families and schools that want the classic red-disk look across many devices. Visual Countdown Timer and Visual Timer for Kids reveal a picture as time runs down. Mouse Timer and Little Timer use animated characters."
   - q: "Is a physical Time Timer better than an app?"
     a: "A physical timer has no screen, can't open other apps, and sits on a shelf where everyone can see it, which many classrooms prefer. An app is cheaper or free, is always with you, and can offer presets and sounds. Plenty of families use both."
   - q: "How much does a physical Time Timer cost?"
@@ -84,7 +84,7 @@ The best-known visual timer app is the official Time Timer app: free to download
 
 > **Our pick: Montessori Visual Timer**
 >
-> We make it, and we built it for one job: **a calm visual timer a child can run alone**.
+> We make it, and we built it for one job: **a calm visual timer an adult sets and a child can follow**.
 >
 > - **No ads** and no clutter around the clock face, on iPhone, iPad and Android.
 > - **PIN lock.** Small hands can't change the time, and it can lock itself when a timer starts.
@@ -115,7 +115,7 @@ From each app's App Store and Google Play listings, October 2026. "Not listed" m
 For children, these features matter most:
 
 - **A clear visual.** A colored area that shrinks as time passes, readable without numbers.
-- **Child-friendly controls.** Can your child start it alone?
+- **Easy to read.** Can your child see how much time is left at a glance?
 - **A way to stop fiddling.** A lock, so the time doesn't get changed mid-routine.
 - **Ads and upsells.** A timer you hand to a four-year-old shouldn't show ads.
 - **Presets.** One-tap timers for routines you repeat every day.
@@ -182,7 +182,7 @@ Many families end up with both: a physical timer at home for daily routines and 
 
 ## Choosing a visual timer
 
-**If you want a quiet timer your child can run alone, we recommend Montessori Visual Timer.** You get:
+**If you want a quiet timer your child can follow at a glance, we recommend Montessori Visual Timer.** You get:
 
 - **A PIN lock**, so the time can't be changed mid-routine, plus an option to lock as soon as a timer starts.
 - **No ads, and no data collected** according to both store listings.
