@@ -148,6 +148,8 @@ export const ALL_APPS: AppEntry[] = [
           "Optional travel alarms tell you when to leave, based on driving, transit, cycling, or walking time",
           "Live traffic for driving is part of Always On Time Plus, free for a limited time",
           "Choose where the trip starts and how early you want to arrive",
+          "See each trip as a timeline: when the alarm rings, when to leave, when you arrive and when the event starts",
+          "Joining online or not going this time? Mark it for one event and its leave alarms are skipped",
         ],
       },
       {

@@ -3,7 +3,7 @@ title: "Google Calendar Travel Time on Android: Get Time-to-Leave Alarms"
 description: "Google Calendar won't add travel time for you. Always On Time plans the trip and rings a full-screen alarm when it's time to leave, for any way you travel."
 slug: "google-calendar-travel-time-android"
 date: "2026-10-17"
-updated: "2026-10-30"
+updated: "2026-10-31"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -96,6 +96,8 @@ Always On Time is our app. It **turns calendar events into full-screen alarms**,
 
 For events with an address coming up in the next few days, the app estimates the trip from your starting point, beginning the day before, and refreshes the estimate as the event gets closer. If a refresh fails, it usually keeps the existing plan rather than dropping it. While a trip is planned, the leave alarms take the place of your default "before the event" alarms, which come back if travel planning is turned off. **Directions** opens Google Maps with the destination and travel mode filled in.
 
+Tap an event's alarms to see the trip as a timeline: when the alarm rings, when to leave, when you arrive and when the event starts. You can add or change alarms before you leave and before the event right there.
+
 For driving, **live traffic** lets the leave time move when roads are slow. Without it, driving estimates use typical traffic for that time of day. Live traffic is part of Always On Time Plus, which is free for a limited time right now.
 
 ### Things to know
@@ -103,6 +105,7 @@ For driving, **live traffic** lets the leave time move when roads are slow. With
 - **Location is your choice.** With "Use my places," your location is never used. "Use my location" needs location access set to "Allow all the time," because leave times are planned while the app is closed.
 - **Addresses go to route providers.** To estimate the trip, the event's location and your starting point are sent to TomTom or Google, and address search uses Google. The app's privacy policy explains this.
 - **Online meetings are skipped.** Events with a Meet, Zoom, Teams or Webex link get normal alarms, not travel alarms.
+- **Not going this time?** Under **How are you going?** on an event, choose **Joining online** or **Not going in person** to skip that occurrence's leave alarms. Your event alarms still ring.
 - **Estimates aren't guarantees.** Road closures and late trains happen, so keep a few minutes of "Arrive early" buffer.
 
 **Pick this if** you want a real alarm rather than a notification, you travel by transit, bike or on foot, or you'd rather not share your location.
