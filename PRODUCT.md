@@ -63,7 +63,7 @@ existing Google Analytics property (`G-8VH9SBYS6Z`, property "zombit.io").
 - Store availability differs per app and must be stated accurately, never uniformly. Store titles
   differ from the app names for two apps, and both are shown:
   - **Always On Time** — Android only (`com.zombitstudios.alwaysontime`, listed as "Calendar
-    Alarm: Always On Time"). Has a Wear OS companion. No iOS build exists.
+    Alarm: Always On Time"). No iOS build exists.
   - **Artillery Let Loose** — iOS (`1616413054`, "ALL - HLL Artillery Calculator", $1.99) and
     Android (`flutter.app.artillery_let_loose`, "Wardogs & HLL Calculator", free with in-app
     purchases).

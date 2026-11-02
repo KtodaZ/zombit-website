@@ -1,6 +1,6 @@
 ---
 name: Zombit Studios
-description: Small, useful apps for phones and watches.
+description: Small, useful apps for phones.
 colors:
   paper: "#F7F4ED"
   paper-deep: "#EFEBE0"

@@ -3,7 +3,7 @@ title: "Calendar Alarm Apps for Android Compared (2026)"
 description: "Google Calendar only sends notifications on Android. Always On Time turns events into free, ad-free full-screen alarms. How it compares with ZenLendar and more."
 slug: "calendar-alarm-apps-android-comparison"
 date: "2026-10-17"
-updated: "2026-10-30"
+updated: "2026-11-02"
 app: "always-on-time"
 kind: "comparison"
 faq:
@@ -74,10 +74,10 @@ We make Always On Time. Everything below about other apps comes from their Googl
 | No ads | ✓ | Pro | ✗ | ✓ | ✓ | ✓ | Pro |
 | Snooze from the alarm | ✓ | ✓ | ✓ | Not listed | ✓ | Not listed | Pro |
 | Any calendar synced to your phone | ✓ | ✓ | ✓ | Via notifications | ✗ Google primary only | Not listed | Not listed |
-| Wear OS watch | Beta¹ | PRO+ | Not listed | ✓ | Not listed | Not listed | Not listed |
-| AI assistant connector (Claude, ChatGPT, Gemini) | ✓² | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
+| Wear OS watch | ✗ | PRO+ | Not listed | ✓ | Not listed | Not listed | Not listed |
+| AI assistant connector (Claude, ChatGPT, Gemini) | ✓¹ | Not listed | Not listed | Not listed | Not listed | Not listed | Not listed |
 
-From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Always On Time's Wear OS app is in open testing on Google Play. ² Claude and ChatGPT connect through Always On Time's account sync ([setup](/always-on-time/assistants/)); Gemini works on Android 16 and later.
+From each app's Google Play listing, October 2026. "Not listed" means the listing doesn't mention it. "Pro", "PRO+" and "Premium" mean the feature needs that paid upgrade. "No ads" means the listing has no "Contains ads" label. ¹ Claude and ChatGPT connect through Always On Time's account sync ([setup](/always-on-time/assistants/)); Gemini works on Android 16 and later.
 
 ## Prices at a glance
 
@@ -117,7 +117,6 @@ What it does, per its Play listing and app:
 - **Full-screen alarms, not banners.** By default an alarm rings for a minute, and you can set it to ring until you snooze or dismiss it. Alarms play at your alarm volume, not the notification volume.
 - **One tap from the alarm to the meeting.** It detects Google Meet, Zoom, Microsoft Teams and Webex links, so you can join from the alarm screen.
 - **Alarms that fit your day.** Choose which calendars to watch, set several alarms per event (such as 10 minutes before and at the start), and adjust settings per calendar or per event.
-- **Snooze or dismiss from your wrist** on a compatible Wear OS watch.
 - **Guided setup for reliable alarms.** It walks you through notifications, exact alarms, full-screen alerts and battery settings, and alarms are restored after a restart.
 - **Leave-on-time alarms.** Optional travel-time alarms for events with an address ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - **Designed with ADHD and time blindness in mind**, with no scores or streaks.

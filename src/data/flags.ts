@@ -14,8 +14,8 @@ export const CONNECTOR_URL = "https://alwaysontime.zombit.io/mcp";
  * when the page's content actually changes; a build alone is not a change.
  */
 export const LASTMOD = {
-  home: "2026-10-17",
-  apps: "2026-10-30",
+  home: "2026-11-02",
+  apps: "2026-11-02",
   privacy: "2026-10-30",
   support: "2026-10-17",
   assistants: "2026-10-26",

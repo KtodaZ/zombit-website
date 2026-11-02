@@ -179,7 +179,6 @@ export const ALL_APPS: AppEntry[] = [
         items: [
           "Guided setup for notifications, exact alarms, full-screen alerts, and battery settings",
           "Upcoming alarms are restored after a phone restart",
-          "Receive meeting alarms on a compatible Wear OS watch, and snooze or dismiss there",
         ],
       },
     ],
@@ -202,7 +201,7 @@ export const ALL_APPS: AppEntry[] = [
       },
       {
         q: "Is Always On Time available on iPhone?",
-        a: "Not yet. Always On Time is on Google Play for Android, with a companion for compatible Wear OS watches. It is not on the App Store yet.",
+        a: "Not yet. Always On Time is on Google Play for Android. It is not on the App Store yet.",
       },
       {
         q: "Will my alarms still ring after I restart my phone?",
@@ -259,7 +258,7 @@ export const ALL_APPS: AppEntry[] = [
     schemaCategory: "ProductivityApplication",
     category: "Productivity",
     notes: [
-      "Android, with a Wear OS companion. Not on the App Store yet.",
+      "Android. Not on the App Store yet.",
       "No ads.",
       "Your calendar is processed on your phone to schedule alarms.",
     ],
@@ -815,7 +814,7 @@ export function priceLabel(l: Listing | undefined) {
 export const SITE = {
   name: "Zombit Studios",
   legalName: "Zombit Studios LLC",
-  tagline: "Small, useful apps for phones and watches.",
+  tagline: "Small, useful apps for phones.",
   description:
     "Zombit Studios LLC is a small independent app studio. It makes five single-purpose apps: Always On Time, a calendar alarm for Android; Artillery Let Loose, an artillery calculator for Hell Let Loose and WARDOGS; Montessori Visual Timer for children; Word Garden, a daily spelling bee puzzle; and Coffee Roast Tracker for home roasters.",
   email: "zombit.studios@gmail.com",
