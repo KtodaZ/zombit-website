@@ -123,13 +123,14 @@ export const ALL_APPS: AppEntry[] = [
     slug: "always-on-time",
     name: "Always On Time",
     shortName: "Always On Time",
-    descriptor: "Calendar meeting alarm for Android",
+    descriptor: "Calendar meeting alarm for Android, coming soon to iPhone",
     line: "Turns calendar events into full-screen alarms, so the next meeting does not slip past.",
     lede:
       "Always On Time turns your calendar events, appointments, and meetings into full-screen alarms with sound and vibration. Use it with Google Calendar and other calendars synced to your Android phone, then join a meeting straight from the alarm screen.",
     body: [
       "When you are absorbed in a task, a calendar notification is easy to miss. Always On Time gives meetings and appointments a full alarm instead, so you notice when it is time to switch. It is built for people with ADHD, people who experience time blindness, and anyone with back-to-back calls who simply loses track of time.",
-      "The app reads the calendars available through Android’s device calendar. A calendar has to be synced to your phone and appear in the app’s calendar selection; a calendar visible only inside another app may not be available.",
+      "On Android, the app reads the calendars available through Android’s device calendar. A calendar has to be synced to your phone and appear in the app’s calendar selection; a calendar visible only inside another app may not be available.",
+      "On iPhone, the app reads the calendars on your phone, and you can also connect a Google account. With Google connected, the app reads the calendars you choose to schedule alarms and keep them up to date when events change. The privacy policy explains how Google data is used.",
     ],
     groups: [
       {
