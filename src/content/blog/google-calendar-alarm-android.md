@@ -3,7 +3,7 @@ title: "How to Make Google Calendar Events Ring Like an Alarm on Android"
 description: "Google Calendar on Android sends notifications, not alarms. Use these settings to make them harder to miss, or Always On Time to turn events into real alarms."
 slug: "google-calendar-alarm-android"
 date: "2026-10-17"
-updated: "2026-10-30"
+updated: "2026-11-02"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -65,10 +65,10 @@ Always On Time also offers spoken alarms, stronger vibration and flashing alerts
 | Join Meet, Zoom, Teams or Webex from the alert | ✓ | From the event | ✗ |
 | Alarm times per calendar or per event | ✓ | ✓ | ✗ |
 | "Time to leave" alarms | ✓ | ✗ | ✗ |
-| Wear OS watch | Beta¹ | ✓ | Varies by phone |
+| Wear OS watch | ✗ | ✓ | Varies by phone |
 | No ads | ✓ | ✓ | ✓ |
 
-Google Calendar details are from Google's help pages, October 2026. ¹ Always On Time's Wear OS app is in open testing on Google Play.
+Google Calendar details are from Google's help pages, October 2026.
 
 Below are the built-in steps first, then the app option. Menu names vary a little between Android versions and phone makers, so look for the closest match on your phone.
 
@@ -151,7 +151,7 @@ A calendar alarm app reads the calendars already on your phone and schedules a *
 5. **Follow the battery steps** for your phone so the system doesn't delay alarms.
 6. **Run a test alarm** from Settings to see and hear it before a real meeting.
 
-When an event comes up, **the alarm fills the screen** with the event title and how soon it starts, with sound and vibration. By default it rings for a minute, and you can set it to **keep ringing until you snooze or dismiss it**. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can **join from the alarm screen** in one tap. You can also snooze or dismiss from a compatible Wear OS watch.
+When an event comes up, **the alarm fills the screen** with the event title and how soon it starts, with sound and vibration. By default it rings for a minute, and you can set it to **keep ringing until you snooze or dismiss it**. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can **join from the alarm screen** in one tap.
 
 A few details that matter for alarms:
 

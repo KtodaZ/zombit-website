@@ -79,7 +79,7 @@ function homeCard() {
   </style></head><body>
   <div class="mast"><img src="${file("/icons/zombit-mark.webp")}">Zombit Studios</div>
   <div class="rule"></div>
-  <h1>Small, useful apps for phones and watches.</h1>
+  <h1>Small, useful apps for phones.</h1>
   <div class="icons">${apps.filter((a) => !a.prerelease).map((a) => `<img src="${file(a.icon)}">`).join("")}</div>
   <div class="foot">zombit.io</div>
   </body></html>`;
