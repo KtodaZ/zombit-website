@@ -262,7 +262,7 @@ export const ALL_APPS: AppEntry[] = [
       "No ads.",
       "Your calendar is processed on your phone to schedule alarms.",
     ],
-    privacyEffective: "October 30, 2026",
+    privacyEffective: "November 3, 2026",
     privacySource: "Maintained in src/content/privacy/always-on-time.html",
   },
   {
