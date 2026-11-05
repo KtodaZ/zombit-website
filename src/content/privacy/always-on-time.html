@@ -276,16 +276,9 @@ from the Android app. Earlier Android versions had an off-by-default <strong>Rem
 streaming</strong> developer option; it has been removed, and its logging service no longer
 receives data.</p>
 <p>Android diagnostic records can include:</p>
-<ul><li>a Firebase Installation ID and a short identifier for the current app session;</li><li>device manufacturer and model, device build family fields, Android release/API level, security
-  patch level, app version/build type, supported CPU ABIs, locale, IP-derived approximate
-  location, timestamps, and log severity;</li><li>network availability, internet validation, metered state, and transport type; battery percentage,
-  charging, and power-save state; whether the app is exempt from battery optimization or restricted in
-  the background, its standby bucket, Data Saver, device idle state, and the phone's OS build number;
-  the reasons Android ended the app's earlier processes; calendar and account sync settings and status
-  (accounts are numbered, not named) and whether Google Calendar and its sync service are installed,
-  disabled or stopped; which fields of an event changed in a sync, without their values; available/total memory and low-memory status; and available/total
-  app-storage capacity in an explicit diagnostics export or when a feedback or diagnostic
-  transport failure is recorded;</li><li>app interactions and technical diagnostic messages; and</li><li>calendar-event titles and internal identifiers when the app records
+<ul><li>a Firebase Installation ID and a short identifier for the current app session;</li><li>device and app details, such as the device model, operating system and app version, locale, and
+  log timestamps, along with IP-derived approximate location;</li><li>device status and settings that can affect alarms and calendar updates, such as network, battery,
+  memory, storage, background limits, and calendar sync, where accounts are numbered rather than named;</li><li>app interactions and technical diagnostic messages; and</li><li>calendar-event titles and internal identifiers when the app records
   scheduling, synchronization, cancellation, alarm, or restoration activity.</li></ul>
 <p>Failure context does not include serial numbers, Android IDs, IMEI/SIM identifiers, Wi-Fi or
 Bluetooth names, precise location, feedback text, contact email, or attachment contents. A
