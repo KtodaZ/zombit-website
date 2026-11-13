@@ -1,4 +1,4 @@
-<p><strong>Effective date:</strong> November 6, 2026</p>
+<p><strong>Effective date:</strong> November 12, 2026</p>
 <h2 id="at-a-glance">The short version</h2>
 <p>Always On Time: Calendar Alarm is a calendar alarm app from Zombit Studios LLC (&quot;we&quot;) for
 Android and Wear OS, and for iPhone. This policy covers both. Where the apps differ, the section
@@ -98,7 +98,21 @@ it.</p>
 which uses Apple&#x27;s App Attest. Alarm times and meeting start times leave the relay a day after they pass. Expired
 change-notice records are deleted 7 days after they expire. If Apple reports the push token is no
 longer valid, the installation is disabled and deleted after 30 days. Turning off Background
-updates deletes the installation and everything stored with it right away.</p>
+updates requests deletion of the installation and everything stored with it; if your iPhone is
+offline, deletion completes when it can reconnect.</p>
+<h3 id="iphone-countdowns">Countdown cards</h3>
+<p>On iPhone, a Live Activity can show the ten minutes before you need to leave or an event starts.
+To start and end these cards while the app is closed, the Cloudflare relay also stores Apple Live
+Activity push tokens, opaque card identifiers, whether a countdown is for departure or event start,
+its target time, and delivery and dismissal bookkeeping. Event titles, locations, meeting links and
+colors for the card stay on your iPhone.</p>
+<p>The current countdown schedule and start token stay with your installation until replaced or
+deleted. Update tokens are removed after a card ends successfully; failed cleanup is retried for
+up to a day after its target. A bounded list of rejected tokens prevents their reuse until later
+rejections replace it or the installation is deleted. Turning off Background updates requests
+deletion of all relay records; if your iPhone is offline, deletion completes when it can reconnect.
+You can also disable Live Activities for the app in iPhone Settings. Countdown appearance and
+removal depend on Apple&#x27;s delivery and may be delayed.</p>
 <h3 id="iphone-other">Other iPhone details</h3>
 <p>Travel-time alarms, account sync, AI assistants and feedback on iPhone are described in their
 sections below. The iPhone app has no ads, no usage statistics or analytics, no crash reporting and
