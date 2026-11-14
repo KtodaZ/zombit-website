@@ -209,9 +209,13 @@ lists, locations, meeting links, travel origins or destinations, or sound choice
 the phone replaces the copy.</li>
 <li><strong>Phone registration.</strong> Your phone registers a Firebase Cloud Messaging token, its
 model label, app version and supported features, so the connector can ask it to apply a change,
-refresh the copy, or show a test notification. An iPhone registers its label, app version and
-supported features without a push token, and applies an assistant&#x27;s changes the next time the
-app syncs your account.</li>
+refresh the copy, or show a test notification. An iPhone registers its label, app version,
+supported features, its Apple push notification token and environment, and a one-way hash of a
+random key that stays on the iPhone. The connector then reaches the iPhone through Apple&#x27;s push
+service, even while the app is closed. The notification carries only random IDs and the
+assistant&#x27;s name; the iPhone uses its key to fetch the change and send back its updated copy
+over a secure connection. The push token is shared only while notifications are allowed for the
+app.</li>
 <li><strong>Connection records.</strong> We store which assistant is connected, the address it
 returns to after approval, when it connected and was last used, and its access tokens, stored only
 as one-way hashes. Changes the assistant makes are logged with the previous values for 30 days so
