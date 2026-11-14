@@ -114,9 +114,15 @@ export default function AssistantsPage() {
             Before you start
           </h2>
           <ul>
-            <li>Always On Time installed on your Android phone.</li>
             <li>
-              Signed in with Google under <strong className="text-ink">Settings › Account &amp; sync</strong>.
+              Always On Time on your phone, from{" "}
+              <a href="https://play.google.com/store/apps/details?id=com.zombitstudios.alwaysontime">Google Play</a>{" "}
+              on Android or the <a href="https://testflight.apple.com/join/eDkjtRpg">iPhone beta on TestFlight</a>.
+              On iPhone, changes from an assistant apply the next time you open the app.
+            </li>
+            <li>
+              Signed in under <strong className="text-ink">Settings › Account &amp; sync</strong>, with
+              Google (or Apple on iPhone).
               Assistants reach your alarms through account sync, so the connection works only for an
               account that has turned it on.
             </li>
