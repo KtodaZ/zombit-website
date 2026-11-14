@@ -8,7 +8,7 @@ there too.</li>
 <li>Information leaves your device only for features you turn on: account sync, travel-time alarms,
 an AI assistant connection, feedback, and, Android only, automatic crash reports and optional usage
 statistics.</li>
-<li>No ads, ever; we never sell your information or use it for advertising. iPhone also has no
+<li>The app shows no ads; we never sell your information or use it for advertising. iPhone also has no
 usage statistics or crash reporting, and no subscription (Plus sells only through Google Play on
 Android).</li>
 <li>Delete your account and synced data at <strong>Settings &gt; Account &gt; Manage account &gt;
@@ -75,8 +75,11 @@ links, except where a feature below says so.</p>
 service we run on Cloudflare. We store the notification and timing identifiers needed to reach your
 iPhone and know when to notify you: your alarm-timing preferences, and hashed references to your
 alarms and any watched calendar change notices, never your Google tokens, event titles,
-descriptions, locations, attendees, or meeting links. Turning off Background updates deletes the
-registration and everything stored with it.</p>
+descriptions, locations, attendees, or meeting links. The same relay starts and ends iPhone
+countdown cards (Live Activities) while the app is closed. Your iPhone proves it is the genuine app
+with Apple&#x27;s App Attest, and Cloudflare sees the IP address of each request in order to deliver
+it. Turning off Background updates deletes the registration and everything stored with it; if your
+iPhone is offline, deletion completes when it reconnects.</p>
 <h3 id="account-sync">Optional account sync</h3>
 <p>Signing in, with Google on Android, or with Google or Sign in with Apple on iPhone, lets Google
 Firebase Authentication identify your account from your profile, email, and account identifier. It
@@ -141,8 +144,9 @@ them, or to anyone else.</p>
 <ul>
 <li>Local device data: until you delete it in the app, clear app storage, or uninstall.</li>
 <li>Synced alarm history: 14 days, cleared automatically.</li>
-<li>iPhone relay records: within days of the alarm or notice they relate to; deleted entirely if you
-turn off Background updates.</li>
+<li>iPhone relay records: within days of the alarm or notice they relate to; the whole
+registration is deleted if you turn off Background updates, or 30 days after Apple reports it can
+no longer be reached.</li>
 <li>Travel abuse checks: about 2 days; usage counts for sizing and pricing routing: 90 days;
 aggregate reliability totals: no fixed expiry, and hold no personal detail.</li>
 <li>Assistant connection records, change logs, and request logs: up to 30 days; an unused connection
