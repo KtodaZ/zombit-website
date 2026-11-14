@@ -70,15 +70,15 @@ status on your device.</p>
 never include your calendar content, such as titles, descriptions, locations, attendees, or meeting
 links, except where a feature below says so.</p>
 <h3 id="iphone-alarm-refresh">Keeping iPhone alarms current in the background</h3>
-<p>iOS only lets an app check calendars while closed when a notification arrives. With
-<strong>Background updates</strong> on (the default), your iPhone registers with our relay, a
-service we run on Cloudflare. We store the notification and timing identifiers needed to reach your
-iPhone and know when to notify you: your alarm-timing preferences, and hashed references to your
-alarms and any watched calendar change notices, never your Google tokens, event titles,
-descriptions, locations, attendees, or meeting links. The same relay starts and ends iPhone
-countdown cards (Live Activities) while the app is closed. Your iPhone proves it is the genuine app
-with Apple&#x27;s App Attest, and Cloudflare sees the IP address of each request in order to deliver
-it. Turning off Background updates deletes the registration and everything stored with it; if your
+<p>iOS lets a closed app do work only when a notification arrives. With <strong>Background
+updates</strong> on (the default), your iPhone registers with our relay, a service we run on
+Cloudflare, which sends the notifications that keep your alarms, notices and countdowns current.
+The relay stores what it needs to reach your iPhone and know when to notify it: Apple push tokens,
+your alarm-timing preferences, the times of upcoming alarms and countdowns, and hashed references to
+your alarms and watched calendars. Your Google tokens and event details such as titles, locations,
+attendees and meeting links stay on your iPhone. Your iPhone proves it is the genuine app with
+Apple&#x27;s App Attest, and Cloudflare sees the IP address of each request in order to deliver it.
+Turning off Background updates deletes the registration and everything stored with it; if your
 iPhone is offline, deletion completes when it reconnects.</p>
 <h3 id="account-sync">Optional account sync</h3>
 <p>Signing in, with Google on Android, or with Google or Sign in with Apple on iPhone, lets Google
@@ -86,8 +86,7 @@ Firebase Authentication identify your account from your profile, email, and acco
 doesn&#x27;t give the app extra access to your Gmail or Google Calendar; calendar access still uses
 the device&#x27;s own permission. While signed in, the app syncs across your devices: alarm and
 appearance preferences, which calendars and events you watch, your alarm rules, and the most recent
-14 days of alarm history, including event titles. It does not sync event descriptions, meeting
-links, destinations, saved places, sound files, voices, permissions, or diagnostic choices. Signing
+14 days of alarm history, including event titles. It doesn&#x27;t sync event descriptions, meeting links or places. Signing
 out stops sync on that device but keeps your saved account.</p>
 <h3 id="travel">Travel-time alarms</h3>
 <p>Travel-time alarms are off by default, and you choose where trips start from: your current
