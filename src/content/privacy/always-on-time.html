@@ -1,4 +1,4 @@
-<p><strong>Effective date:</strong> November 6, 2026</p>
+<p><strong>Effective date:</strong> November 14, 2026</p>
 <h2 id="at-a-glance">The short version</h2>
 <p>Always On Time: Calendar Alarm is a calendar alarm app from Zombit Studios LLC (&quot;we&quot;) for
 Android and Wear OS, and for iPhone. This policy covers both. Where the apps differ, the section
@@ -85,9 +85,9 @@ iPhone a quiet notification when a connected calendar changes, from time to time
 hours, shortly before alarms, when an alarm's ring time ends, and just after a meeting its upcoming-alarm
 notice announces has started, so the app can check your calendars, update its alarms and clear
 that notice, and stop an alarm nobody answered.</p>
-<p>The relay stores your iPhone&#x27;s Apple push notification token and environment, a one-way hash
+<p>The relay stores your iPhone&#x27;s Apple push notification and Live Activity tokens and push environment, a one-way hash
 of a random secret created for this installation, your time zone, active hours, whether the
-app checks iPhone calendars, and how long alarms ring (your Alarm duration setting); one-way hashes of alarm identifiers with their alarm times; the start time of the meeting the upcoming-alarm notice announces, with nothing else about it; one-way
+app checks iPhone calendars, and how long alarms ring (your Alarm duration setting); one-way hashes of alarm identifiers with their alarm times; the times of upcoming countdown cards; the start time of the meeting the upcoming-alarm notice announces, with nothing else about it; one-way
 hashes of the identifiers of Google calendar change notices, with their expiry times; and delivery
 bookkeeping, such as when the last notification was sent and when the iPhone last reported a
 check. It never receives OAuth tokens, event titles, descriptions, locations, attendees or meeting
@@ -98,7 +98,8 @@ it.</p>
 which uses Apple&#x27;s App Attest. Alarm times and meeting start times leave the relay a day after they pass. Expired
 change-notice records are deleted 7 days after they expire. If Apple reports the push token is no
 longer valid, the installation is disabled and deleted after 30 days. Turning off Background
-updates deletes the installation and everything stored with it right away.</p>
+updates requests deletion of the installation and everything stored with it; if your iPhone is
+offline, deletion completes when it can reconnect.</p>
 <h3 id="iphone-other">Other iPhone details</h3>
 <p>Travel-time alarms, account sync, AI assistants and feedback on iPhone are described in their
 sections below. The iPhone app has no ads, no usage statistics or analytics, no crash reporting and
