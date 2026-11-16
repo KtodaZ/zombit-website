@@ -298,6 +298,7 @@ export const ALL_APPS: AppEntry[] = [
           "Vietnam mortar support",
           "Terrain-height and vehicle-slope adjustments where supported",
           "Target history, labels, and favourites",
+          "Optional Voice Entry: say the distance instead of typing it, recognised on your phone",
         ],
       },
       {

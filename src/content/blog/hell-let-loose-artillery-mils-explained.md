@@ -3,7 +3,7 @@ title: "Hell Let Loose Artillery Mils Explained, With Tables"
 description: "How Hell Let Loose artillery mils work, with tables for US/Germany, Soviet and British guns, worked examples, and Artillery Let Loose to do the math mid-match."
 slug: "hell-let-loose-artillery-mils-explained"
 date: "2026-10-17"
-updated: "2026-10-17"
+updated: "2026-11-16"
 app: "artillery-calculator"
 kind: "guide"
 faq:
@@ -42,7 +42,7 @@ In Hell Let Loose, artillery is aimed by setting the gun's elevation in mils. Yo
 > Our calculator holds every table in this guide, so you **type the distance and read the mils**.
 >
 > - **The right table for your gun.** US, German, Soviet, British and Canadian howitzers, each self-propelled gun, the Vietnam mortar, and WARDOGS.
-> - **Built for mid-match use.** A large readout you can glance at, with USB or Bluetooth keyboard and numpad input.
+> - **Built for mid-match use.** A large readout you can glance at, with USB or Bluetooth keyboard and numpad input, or Voice Entry to say the distance.
 > - **Terrain and slope corrections** where the game needs them.
 > - **History mode and walk buttons** to juggle several targets and step your fire 10 to 100 m at a time.
 > - **Rated 4.7 on Google Play** from over 1,200 ratings, and 4.9 on the App Store (October 2026).
@@ -124,7 +124,7 @@ The tables were measured on flat ground, so park the SPH-2 on level ground: vehi
 The math is easy on paper and harder with tanks rolling toward your gun and your squad lead calling targets. **Artillery Let Loose takes over every error-prone step above:**
 
 - **The right table every time.** Pick your faction or vehicle once, and every number comes from that gun's scale. No more British numbers on a US gun.
-- **Speed.** Type the distance and **read the mils straight away**, on a large readout you can glance at mid-match. It also accepts input from a connected USB or Bluetooth keyboard or numpad.
+- **Speed.** Type the distance and **read the mils straight away**, on a large readout you can glance at mid-match. It also accepts input from a connected USB or Bluetooth keyboard or numpad, or you can [say the distance with Voice Entry](/blog/hell-let-loose-artillery-voice-entry/).
 - **Several targets at once.** History mode keeps your targets in a grid, color-coded by range, with optional labels, so you can switch between fire missions without re-measuring. It's included in the iPhone app; on Android it's a one-time purchase, or you can unlock it free for 3 hours by watching an ad.
 - **Walk buttons.** Optional − and + buttons step the distance by 10, 25, 50 or 100 m after each shot.
 - **Terrain and slope.** Height and vehicle-tilt adjustments are built in where the game needs them.
