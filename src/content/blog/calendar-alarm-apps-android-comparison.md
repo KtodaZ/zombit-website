@@ -3,7 +3,7 @@ title: "Calendar Alarm Apps for Android Compared (2026)"
 description: "Google Calendar only sends notifications on Android. Always On Time turns events into free, ad-free full-screen alarms. How it compares with ZenLendar and more."
 slug: "calendar-alarm-apps-android-comparison"
 date: "2026-10-17"
-updated: "2026-11-02"
+updated: "2026-11-16"
 app: "always-on-time"
 kind: "comparison"
 faq:
@@ -52,7 +52,7 @@ On Android, Google Calendar can only send notifications. It can't ring like an a
 > Our own app, and the one we recommend if calendar notifications keep slipping past you. It's **free, with no ads**.
 >
 > - **Rings like a real alarm.** A full-screen alarm with sound and vibration that can show over the lock screen. Google Calendar only sends a notification.
-> - **Rings until you act, if you want.** One minute by default, or set it to keep ringing until you snooze or dismiss it.
+> - **Rings until you act, if you want.** Two minutes by default, or set it to keep ringing until you snooze or dismiss it.
 > - **Join the call from the alarm.** One tap opens Google Meet, Zoom, Microsoft Teams or Webex links.
 > - **Set up to ring reliably.** Guided setup checks exact alarms, full-screen alerts and battery settings, and alarms come back after a restart.
 > - **Tells you when to leave.** Optional travel-time alarms for events with an address.
@@ -114,14 +114,14 @@ Always On Time is our app. It **turns calendar events into full-screen alarms** 
 
 What it does, per its Play listing and app:
 
-- **Full-screen alarms, not banners.** By default an alarm rings for a minute, and you can set it to ring until you snooze or dismiss it. Alarms play at your alarm volume, not the notification volume.
+- **Full-screen alarms, not banners.** By default an alarm rings for two minutes, and you can set it to ring until you snooze or dismiss it. Alarms play at your alarm volume, not the notification volume.
 - **One tap from the alarm to the meeting.** It detects Google Meet, Zoom, Microsoft Teams and Webex links, so you can join from the alarm screen.
-- **Alarms that fit your day.** Choose which calendars to watch, set several alarms per event (such as 10 minutes before and at the start), and adjust settings per calendar or per event.
+- **Alarms that fit your day.** Choose which calendars to watch, set several alarms per event (such as 10 minutes before and at the start), and adjust settings per calendar or per event. Each calendar can have its own sound, volume, vibration and color, and events with words you choose in the title, like "Lunch", can be skipped.
 - **Guided setup for reliable alarms.** It walks you through notifications, exact alarms, full-screen alerts and battery settings, and alarms are restored after a restart.
 - **Leave-on-time alarms.** Optional travel-time alarms for events with an address ring when it's time to leave. Live traffic for these is part of Always On Time Plus, which is free for a limited time.
 - **Designed with ADHD and time blindness in mind**, with no scores or streaks.
 
-Accessibility features include spoken alarms, stronger vibration and flashing alerts. The optional MCP connector lets Claude or ChatGPT check upcoming alarms and change alarm settings ([setup](/always-on-time/assistants/)).
+Accessibility features include spoken alarms, stronger vibration, flashing alerts and a volume that can start quiet and build. Home screen widgets show your day and when each alarm rings. The optional MCP connector lets Claude or ChatGPT check upcoming alarms and change alarm settings ([setup](/always-on-time/assistants/)).
 
 **Trade-offs:** it's Android-only and still new. It isn't a full calendar app, so you keep using Google Calendar to create and edit events.
 

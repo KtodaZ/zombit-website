@@ -3,7 +3,7 @@ title: "Calendar Alarms You Can Hear, Feel or See on Android"
 description: "Use spoken alarms, stronger vibration, flashing alerts and easier dismiss controls in Always On Time. Make room to set up captions before a meeting."
 slug: "accessible-calendar-alarms-android"
 date: "2026-10-30"
-updated: "2026-10-30"
+updated: "2026-11-16"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -35,6 +35,10 @@ If a sound alone is easy to miss, try a different combination:
 - **Spoken alarms** can say the event name and how soon it starts. Choose the details you want to hear, then preview the announcement.
 - **Vibration pattern:** **Strong** uses long, full-strength buzzes. **Rising** starts gently and builds to full strength.
 - **Flash alerts** blink the screen and, when available, the phone's flashlight while the alarm rings. They are optional; leave them off if flashing light is uncomfortable for you.
+
+If some of your meetings have titles in another language, a spoken alarm reads the title in that language when the app is confident about it and your phone has an offline voice for it. The rest of the announcement stays in the app's language.
+
+A sudden loud alarm can be startling. In **Settings > Alarms**, turn on **Gradual volume** and choose a **Fade-in time** from 5 to 90 seconds: the alarm starts quietly and builds to your chosen volume, and a spoken alarm stays easy to hear while it does.
 
 When **Also speak over other alarm sounds** is on, your chosen tone goes quiet while the meeting name is spoken. It is on by default for new setups.
 
