@@ -31,6 +31,8 @@ We make Artillery Let Loose. Voice Entry is a free, optional feature on iPhone a
 2. Read the short intro and tap **Continue**. The app downloads a 73 MB speech model once.
 3. Allow microphone access when your phone asks.
 
+![The Voice Entry intro in Artillery Let Loose: numbers only, processed on your phone, and turns itself off](/blog/hell-let-loose-artillery-voice-entry/voice-entry-intro.webp "The intro explains what Voice Entry hears and keeps")
+
 A mic key now appears on the calculator keypad. Tap it to start listening and tap it again to stop.
 
 ## Say a number
@@ -38,6 +40,8 @@ A mic key now appears on the calculator keypad. Tap it to start listening and ta
 Say the distance the way you'd call it out: "eight fifty", "nine twenty-five" or "twelve hundred". The hint above the keypad shows what it heard: **Entering 850 m — C cancels**.
 
 The number waits a moment before it commits, three seconds by default. Tap **C** in that time to cancel it. You can change the pause under **Voice Commit Delay** (1.5, 3 or 5 seconds).
+
+![The calculator listening, with the hint Say a distance, e.g. eight fifty](/blog/hell-let-loose-artillery-voice-entry/listening.webp "Listening for a distance") ![The calculator after hearing eight fifty: 850 m entered, elevation 800, with the hint Entering 850 m, C cancels](/blog/hell-let-loose-artillery-voice-entry/entering-850.webp "Heard \"eight fifty\": 850 m, elevation 800")
 
 For self-propelled guns, switch to slope and say the vehicle's tilt, like "minus five".
 
