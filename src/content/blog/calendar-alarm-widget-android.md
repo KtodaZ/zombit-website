@@ -14,7 +14,7 @@ faq:
   - q: "Can I turn off a meeting's alarm from the widget?"
     a: "Yes. Tap an event on the widget to open a small sheet with an Alarm for this event switch. For a recurring meeting it changes just that one occurrence; open the event in the app to change the whole series. The sheet also has buttons to add another alarm or open the event in the app."
   - q: "Can I join a video call from the widget?"
-    a: "When an event has a supported Google Meet, Zoom, Microsoft Teams or Webex link, the widget can show a Join button next to it, space permitting."
+    a: "When an event has a supported Google Meet, Zoom, Microsoft Teams or Webex link, the widget shows a Join button next to it once it's time to join."
 sources:
   - title: "Always On Time: features and availability"
     url: "https://zombit.io/always-on-time/"
@@ -33,9 +33,11 @@ We make Always On Time. These widgets are part of its Android app, which turns c
 
 ## Pick a widget
 
-- **Today** lists your day in order. Each row shows the event, where it is and when its alarm rings. It starts at 4 × 4 cells.
-- **Cards** shows the same day as separate cards, which are easier to scan at a glance. It also starts at 4 × 4.
+- **Today** lists your day in order, with each start time down the left and when its alarm rings. It starts at 4 × 4 cells.
+- **Cards** shows the same day with the next event highlighted, its meeting app and when each alarm rings. It also starts at 4 × 4.
 - **Next up** is the small one, at 2 × 2. It shows your next event and when it rings, and as you make it bigger it fills in the rest of the day.
+
+![The Cards widget on an Android home screen listing four events, each with its meeting app and the time its alarm rings](/blog/calendar-alarm-widget-android/cards-widget.webp "Cards: the rest of today, with when each alarm rings") ![The Next up widget on an Android home screen showing Design review at 4:15 PM, ringing at 4:05, with three more events today](/blog/calendar-alarm-widget-android/next-up-widget.webp "Next up: the next event at a glance")
 
 All three can be resized. They follow the calendars you chose in the app, so a calendar you don't watch won't clutter them.
 
@@ -58,11 +60,13 @@ Each event carries a short note about its alarm:
 
 If alarms are paused, the widget says so and when they come back. If something would stop alarms from ringing, such as a missing permission, the widget shows **Alarms may not ring. Tap to fix.** and takes you to the fix.
 
-When an event has a Google Meet, Zoom, Microsoft Teams or Webex link, a **Join** button can appear beside it, so you can open the call straight from the home screen.
+When an event has a Google Meet, Zoom, Microsoft Teams or Webex link, a **Join** button appears beside it once it's time to join, following the app's **Show Join button** setting, so you can open the call straight from the home screen.
 
 ## Change an alarm from the widget
 
 Tap an event to open a small sheet over your home screen:
+
+![The event sheet for 1:1 with Priya, showing the Alarm for this event switch with rings at 4:50 and 5:00, and buttons to add another alarm or open the event](/blog/calendar-alarm-widget-android/event-sheet.webp "Tap an event to change just its alarm")
 
 - **Alarm for this event** turns that event's alarm off or on. For a recurring meeting it changes just this one; open the event in the app to change the whole series. If you change your mind, tap **Undo**.
 - **Add another alarm** opens the event in the app, ready to add an extra ring, such as one five minutes before the start.

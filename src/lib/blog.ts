@@ -51,6 +51,44 @@ const STORE_HOSTS: [RegExp, "ios" | "android", string][] = [
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
 /**
+ * Pixel size of a WebP or PNG under public/, so post screenshots carry width and height and do
+ * not shift the layout as they load. Unknown formats return null.
+ */
+function imageSize(src: string): { w: number; h: number } | null {
+  const file = join(process.cwd(), "public", src.replace(/^\//, ""));
+  if (!existsSync(file)) throw new Error(`Blog image not found: ${src}`);
+  const b = readFileSync(file);
+  if (b.toString("ascii", 1, 4) === "PNG") return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+  if (b.toString("ascii", 0, 4) !== "RIFF" || b.toString("ascii", 8, 12) !== "WEBP") return null;
+  const kind = b.toString("ascii", 12, 16);
+  if (kind === "VP8X") return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  if (kind === "VP8 ") return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+  if (kind === "VP8L") {
+    const bits = b.readUInt32LE(21);
+    return { w: (bits & 0x3fff) + 1, h: ((bits >> 14) & 0x3fff) + 1 };
+  }
+  return null;
+}
+
+/**
+ * A paragraph of nothing but images becomes a row of screenshots: each a `.store-shot` plate
+ * with its Markdown title as the caption. `![alt](/blog/<slug>/shot.webp "Caption")`.
+ */
+function shots(tokens: Tokens.Generic[]): string | false {
+  const images = tokens.filter((t) => t.type === "image") as Tokens.Image[];
+  if (!images.length || !tokens.every((t) => t.type === "image" || (t.type === "text" && !t.raw.trim()) || t.type === "br"))
+    return false;
+  const figures = images.map((img) => {
+    const size = img.href.startsWith("/") ? imageSize(img.href) : null;
+    const dims = size ? ` width="${size.w}" height="${size.h}"` : "";
+    const src = img.href.startsWith("/") ? `${BASE_PATH}${img.href}` : img.href;
+    const caption = img.title ? `<figcaption>${esc(img.title)}</figcaption>` : "";
+    return `<figure><img src="${esc(src)}" alt="${esc(img.text)}"${dims} loading="lazy" decoding="async" class="store-shot">${caption}</figure>`;
+  });
+  return `<div class="post-shots" data-count="${images.length}">\n${figures.join("\n")}\n</div>\n`;
+}
+
+/**
  * A post can open with one "pick" callout: a blockquote whose first line is `**Our pick: Name**`.
  * It renders as a tinted inset (the design's one sanctioned inset) with the app name set as a
  * title, the body as written, and a last line of links turned into actions: store links become
@@ -62,6 +100,9 @@ function renderer(app?: string) {
   const accent = (app && bySlug(app)?.accent) || INK;
   md.use({
     renderer: {
+      paragraph({ tokens }) {
+        return shots(tokens as Tokens.Generic[]);
+      },
       heading({ tokens, depth }) {
         const text = this.parser.parseInline(tokens);
         // The title is the page's only h1; a stray "#" in a post is demoted.
