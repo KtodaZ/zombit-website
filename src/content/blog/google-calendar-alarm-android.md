@@ -3,7 +3,7 @@ title: "How to Make Google Calendar Events Ring Like an Alarm on Android"
 description: "Google Calendar on Android sends notifications, not alarms. Use these settings to make them harder to miss, or Always On Time to turn events into real alarms."
 slug: "google-calendar-alarm-android"
 date: "2026-10-17"
-updated: "2026-11-02"
+updated: "2026-11-16"
 app: "always-on-time"
 kind: "guide"
 faq:
@@ -43,7 +43,7 @@ Google Calendar on Android can't ring like an alarm clock. It only sends notific
 > The steps below help, but Google Calendar still sends a notification. Always On Time, our free app, **turns each calendar event into a real alarm**.
 >
 > - **Full-screen, with sound and vibration.** It can show over the lock screen and plays at your alarm volume, not the notification volume.
-> - **Hard to miss.** It rings for a minute by default, or until you snooze or dismiss it if you choose.
+> - **Hard to miss.** It rings for two minutes by default, or until you snooze or dismiss it if you choose.
 > - **One tap to join.** Google Meet, Zoom, Microsoft Teams and Webex links open from the alarm screen.
 > - **Guided setup.** It checks exact alarms, full-screen alerts and battery settings for you.
 > - **Free, with no ads.**
@@ -151,7 +151,7 @@ A calendar alarm app reads the calendars already on your phone and schedules a *
 5. **Follow the battery steps** for your phone so the system doesn't delay alarms.
 6. **Run a test alarm** from Settings to see and hear it before a real meeting.
 
-When an event comes up, **the alarm fills the screen** with the event title and how soon it starts, with sound and vibration. By default it rings for a minute, and you can set it to **keep ringing until you snooze or dismiss it**. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can **join from the alarm screen** in one tap.
+When an event comes up, **the alarm fills the screen** with the event title and how soon it starts, with sound and vibration. By default it rings for two minutes, and you can set it to **keep ringing until you snooze or dismiss it**. If the event has a Google Meet, Zoom, Microsoft Teams or Webex link, you can **join from the alarm screen** in one tap.
 
 A few details that matter for alarms:
 
@@ -159,6 +159,8 @@ A few details that matter for alarms:
 - **It holds off during calls.** If you're already on a call when an alarm is due, it vibrates once and tries again five minutes later.
 - **It survives restarts.** Upcoming alarms are restored after you reboot.
 - **You can adjust or pause alarms.** Change alarms per event, per recurring series or per calendar, skip one, or pause all alarms for a while.
+- **Each calendar can sound different.** Give a work calendar its own alarm times, sound, volume, vibration and color, separate from a personal one.
+- **Some events can stay quiet.** Under **Skip events containing**, list words like "Lunch" or "Focus", and events with those words in the title won't ring.
 
 ## Summary
 
@@ -167,7 +169,7 @@ Start with the free steps: two notifications per event, a distinct tone, pop-on-
 If calendar notifications still slip past you, **install Always On Time**. Compared with tuning notifications, it gives you:
 
 - **An alarm instead of a notification**, full-screen and at your alarm volume.
-- **Ringing that lasts**, for a minute by default or until you act.
+- **Ringing that lasts**, for two minutes by default or until you act.
 - **One-tap joining** for video calls.
 - **One setup** that checks the permissions and battery settings alarms depend on.
 

@@ -140,6 +140,9 @@ export const ALL_APPS: AppEntry[] = [
           "Set alarms before an event, including 5, 10, or 15-minute reminders",
           "Add more than one alarm per meeting to give yourself time to prepare",
           "Choose sound and vibration, then snooze or dismiss from the alarm screen",
+          "Give each calendar its own alarm times, sound, volume, vibration and color",
+          "Skip events with words you choose in the title, like “Lunch”",
+          "Start alarms quietly and build to full volume over up to 90 seconds",
           "Alarms can appear over your lock screen once the required Android permissions are on",
         ],
       },
@@ -151,6 +154,7 @@ export const ALL_APPS: AppEntry[] = [
           "Choose where the trip starts and how early you want to arrive",
           "See each trip as a timeline: when the alarm rings, when to leave, when you arrive and when the event starts",
           "Joining online or not going this time? Mark it for one event and its leave alarms are skipped",
+          "Turn travel alarms on or off for each calendar",
         ],
       },
       {
@@ -164,7 +168,15 @@ export const ALL_APPS: AppEntry[] = [
         title: "Accessibility",
         items: [
           "Choose spoken alarms, stronger vibration or flashing alerts",
+          "Spoken alarms read a meeting title in its own language when your phone has a voice for it",
           "Show the Join button early to allow time for captions or an interpreter",
+        ],
+      },
+      {
+        title: "Home screen widgets",
+        items: [
+          "Today, Cards and Next up widgets show your events and when each alarm rings",
+          "Tap an event to turn its alarm on or off, add another alarm or open the event",
         ],
       },
       {
