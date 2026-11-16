@@ -273,6 +273,36 @@ a {
 .post a:hover {
   text-decoration-color: var(--color-ink);
 }
+/* Screenshots in a post: phone-shaped plates in a row, captions underneath, never wider than a
+   phone. One shot sits centred; two or three share the row and wrap on narrow screens. */
+.post .post-shots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+}
+.post .post-shots figure {
+  flex: 0 1 15rem;
+  min-width: 10rem;
+  margin: 0;
+}
+.post .post-shots[data-count="1"] figure {
+  flex-basis: 17rem;
+}
+.post .post-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.post .post-shots figcaption {
+  margin-top: 0.6em;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-slate);
+  text-align: center;
+}
 .post code {
   font-family: var(--font-mono);
   font-size: 0.875em;
